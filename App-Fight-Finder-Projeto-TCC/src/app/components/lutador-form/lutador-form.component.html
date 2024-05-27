@@ -1,0 +1,64 @@
+<div class="form">
+
+    <h3>Formulário do Aluno</h3>
+
+    <div>
+        <label for="matricula">Matrícula</label>
+        <input type="text" id="matricula" readonly [(ngModel)]="lutadorEditado.id">
+    </div>
+
+    <div>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" [(ngModel)]="lutadorEditado.nome">
+    </div>
+
+<div>
+    <label for="idade">Idade</label>
+    <input type="text" id="idade" [(ngModel)]="lutadorEditado.email">
+</div>
+
+<div>
+    <label for="modalidade">Modalidade</label>
+    <input type="text" id="modalidade" [(ngModel)]="lutadorEditado.curso">
+</div>
+
+<div>
+    <label for="nivel">Nível</label>
+    <input type="text" id="nivel" [(ngModel)]="lutadorEditado.curso">
+</div>
+
+<div>
+    <label for="peso">Peso</label>
+    <input type="text" id="peso" [(ngModel)]="lutadorEditado.curso">
+</div>
+
+<div>
+    <label for="altura">Altura</label>
+    <input type="text" id="altura" [(ngModel)]="lutadorEditado.curso">
+</div>
+    
+<div class="input-radio">
+    <input type="radio" id="feminino" name="genero" 
+    [checked]="lutadorEditado.genero" value="{{ lutadorEditado.genero}}">
+    <label for="feminino">Feminino</label>
+    
+    <input type="radio" id="masculino" name="genero" 
+    [checked]="!lutadorEditado.genero" value="{{ !lutadorEditado.genero}}"> 
+    <label for="masculino">Masculino</label>
+
+    <div class="input-radio">
+        <input type="radio" id="true" name="ativo" 
+        [checked]="lutadorEditado.ativo" value="{{ lutadorEditado.ativo}}">
+        <label for="true">Ativo</label>
+        
+        <input type="radio" id="false" name="ativo" 
+        [checked]="!lutadorEditado.ativo" value="{{ !lutadorEditado.ativo}}"> 
+        <label for="false">Masculino</label>
+    
+    
+<div>
+    <button class="btn-padrao"(click)="salvarDados()">Salvar</button>
+    <button class="btn-padrao" (click)="cancelar()">Cancelar</button>
+
+</div>
+</div>

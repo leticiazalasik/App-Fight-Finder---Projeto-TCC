@@ -1,0 +1,36 @@
+.form{
+    padding: 16px;
+} 
+.form h3{
+    text-align: center;
+}
+
+.form input[type='text']{
+    width: 100%;
+padding: 8px;
+font-size: 16px;
+border-radius: 4px;
+border: solid 1px silver;
+}
+
+.form div{
+    margin: 16px 0;
+}
+
+.form  label {
+    margin-right: 8px;
+}
+
+.btn-padrao{
+    border: none;
+    background-color: rgb(0, 0, 87);
+    border-radius: 4px;
+    padding: 4px;
+    color: #FFF;
+    cursor: pointer;
+    margin: 4px;
+}
+
+.btn-padrao:hover{
+    background-color:#ff6a00;;
+}
