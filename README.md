@@ -14,4 +14,4 @@ Esse projeto foi criado utilizando as tecnologias:
 ### :small_blue_diamond: Projeto - Figma (protótipo) e Draw.io(diagrama de classe). 
 
 
-🚧 REPOSITÓRIO EM ANDAMENTO 
+🚧 REPOSITÓRIO EM ANDAMENTO 🚧
