@@ -1,5 +1,26 @@
-<!-- app.component.html -->
+<header>
+    <h1>App FightFinder</h1>
+</header>
 
-<app-lutador></app-lutador>
+<main>
+    <section class="menu">
 
-<app-lutador-form></app-lutador-form>
+        <div>
+        <button class="btn-padrao" (click)="filtrarLutadores(true)"> Exibir lutadores ativos</button>
+        <button class="btn-padrao" (click)="exibirTodos()"> Exibir todos os lutadores</button>
+    </div>
+
+    </section>
+
+    <section>
+        <app-lutador-list [listaLutadores]="listaLutadoresFiltro"
+            (excluir)="onExcluir($event)"
+            (editar)="onEditar($event)"
+            (inserir)="onInserir($event)">
+        </app-lutador-list>
+    </section>
+</main>
+
+<footer>
+    <p>- Desenvolvido Por Letícia -</p>
+</footer>
