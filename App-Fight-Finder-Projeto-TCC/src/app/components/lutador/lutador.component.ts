@@ -20,5 +20,7 @@ peso: number = 80;
 altura: number = 182;
 genero: string= 'masculino';
 ativo: Boolean= true;
+foto = 'assets/img/perfil.png';
+
 
 }

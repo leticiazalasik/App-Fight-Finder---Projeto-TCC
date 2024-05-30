@@ -1,0 +1,42 @@
+<div class="lista-lutadores">
+
+    <button class="botao-adicionar" (click)="novoLutador()">Adicionar</button>
+
+    <p *ngIf="listaLutadores.length==0">
+        Nennhum registro encontrado. 
+    </p>
+    <table *ngIf="listaLutadores.length>0">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Modalidade</th>
+                <th>Nível</th>
+                <th>Idade</th>
+                <th>Gênero</th>
+                <th>Peso</th>
+                <th>Altura</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lutador of listaLutadores">
+                <td>{{ luatdor.id }}</td>
+                <td>{{ lutador.nome }}</td>
+                <td>{{ lutador.modalidade }}</td>
+                <td>{{ lutador.nivel }}</td>
+                <td>{{ lutador.idade }}</td>
+                <td>{{ lutador.genero }}</td>
+                <td>{{ lutador.peso }}</td>
+                <td>{{ lutador.altura }}</td>
+            <td>
+                <button class="bkg-green" (click)="editarLutador(luatdor)">Editar</button>
+                <button class="bkg-red" (click)="excluirLutador(lutador.id)">Excluir</button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-luatdor-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo' " 
+[lutador]="luatdorEditar" 
+(salvar)="onSalvar($event)"> </app-lutador-form>

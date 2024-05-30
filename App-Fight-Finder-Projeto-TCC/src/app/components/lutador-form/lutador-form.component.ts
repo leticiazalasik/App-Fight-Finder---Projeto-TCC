@@ -1,5 +1,5 @@
 import { Component, Input, Output } from '@angular/core';
-import { EventEmitter } from 'stream';
+import { EventEmitter } from 'events';
 import { Lutador } from '../../interfaces/Lutador';
 
 
@@ -11,8 +11,8 @@ import { Lutador } from '../../interfaces/Lutador';
 export class LutadorFormComponent {
   @Input() lutador: Lutador | null = null; 
 
-  @Output() salvar: EventEmitter<Lutador> = new EventEmitter<Lutador>(); 
-@Output() editar: EventEmitter<Lutador> = new EventEmitter<Lutador>(); 
+  @Output() salvar: EventEmitter<any> = new EventEmitter<any>(); 
+@Output() editar: EventEmitter<any> = new EventEmitter<any>(); 
 
 
 
@@ -27,6 +27,7 @@ if (this.lutador !=null ){
     idade: this.lutador.idade,
     modalidade: this.lutador.modalidade,
     nivel: this.lutador.nivel,
+    genero: this.lutador.genero,
     peso: this.lutador.peso,
     altura: this.lutador.altura,
     ativo: this.lutador.ativo,
@@ -48,14 +49,13 @@ if (radioSelecionado==='feminino'){
 
 salvarDados(): void{
   this.lutadorEditado.ativo= this.ObterRadioSelecionado(); 
-  this.lutadorEditado.genero= this.ObterRadioSelecionado(); 
   this.salvar.emit(this.lutadorEditado);
 }
 
 cancelar(): void {
   this.limparLutador();
-  this.salvar.emit();
 }
+
 limparLutador():void {
   this.lutadorEditado={
     id: 0,

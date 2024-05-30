@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Aluno } from './interfaces/Lutador';
+import { Lutador } from './interfaces/Lutador';
 import { filter } from 'rxjs';
 
 @Component({
@@ -9,4 +9,6 @@ import { filter } from 'rxjs';
 })
 export class AppComponent {
   title = 'App-Fight-Finder-Projeto-TCC';
+
+  
 }
