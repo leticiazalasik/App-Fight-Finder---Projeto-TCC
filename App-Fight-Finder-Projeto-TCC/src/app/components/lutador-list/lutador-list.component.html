@@ -21,7 +21,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let lutador of listaLutadores">
-                <td>{{ luatdor.id }}</td>
+                <td>{{ lutador.id }}</td>
                 <td>{{ lutador.nome }}</td>
                 <td>{{ lutador.modalidade }}</td>
                 <td>{{ lutador.nivel }}</td>
@@ -37,6 +37,6 @@
         </tbody>
     </table>
 </div>
-<app-luatdor-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo' " 
+<app-lutador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo' " 
 [lutador]="luatdorEditar" 
 (salvar)="onSalvar($event)"> </app-lutador-form>
