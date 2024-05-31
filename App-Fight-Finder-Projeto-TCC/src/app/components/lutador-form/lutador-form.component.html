@@ -38,13 +38,13 @@
 </div>
     
 <div class="input-radio">
-    <input type="radio" id="feminino" name="genero" 
+    <input type="radio" id="Feminino" name="genero" 
     [checked]="lutadorEditado.genero" value="{{ lutadorEditado.genero}}">
-    <label for="feminino">Feminino</label>
+    <label for="Feminino">Feminino</label>
     
-    <input type="radio" id="masculino" name="genero" 
+    <input type="radio" id="Masculino" name="genero" 
     [checked]="!lutadorEditado.genero" value="{{ !lutadorEditado.genero}}"> 
-    <label for="masculino">Masculino</label>
+    <label for="Masculino">Masculino</label>
 
     <div class="input-radio">
         <input type="radio" id="true" name="ativo" 
@@ -53,8 +53,7 @@
         
         <input type="radio" id="false" name="ativo" 
         [checked]="!lutadorEditado.ativo" value="{{ !lutadorEditado.ativo}}"> 
-        <label for="false">Masculino</label>
-    
+        <label for="false">Inativo</label>
     
 <div>
     <button class="btn-padrao"(click)="salvarDados()">Salvar</button>

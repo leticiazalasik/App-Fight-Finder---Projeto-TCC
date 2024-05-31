@@ -16,6 +16,8 @@
                 <th>Gênero</th>
                 <th>Peso</th>
                 <th>Altura</th>
+                <th>Ativo</th>
+
 
             </tr>
         </thead>
@@ -29,8 +31,10 @@
                 <td>{{ lutador.genero }}</td>
                 <td>{{ lutador.peso }}</td>
                 <td>{{ lutador.altura }}</td>
+                <td>{{ lutador.ativo }}</td>
+
             <td>
-                <button class="bkg-green" (click)="editarLutador(luatdor)">Editar</button>
+                <button class="bkg-green" (click)="editarLutador(lutador)">Editar</button>
                 <button class="bkg-red" (click)="excluirLutador(lutador.id)">Excluir</button>
             </td>
             </tr>
@@ -38,5 +42,5 @@
     </table>
 </div>
 <app-lutador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo' " 
-[lutador]="luatdorEditar" 
+[lutador]="lutadorEditar" 
 (salvar)="onSalvar($event)"> </app-lutador-form>

@@ -1,6 +1,9 @@
 import { Component, Input, Output } from '@angular/core';
-import { EventEmitter } from 'events';
+import { EventEmitter } from '@angular/core';
+
 import { Lutador } from '../../interfaces/Lutador';
+import { AfterViewInit } from '@angular/core';
+
 
 
 @Component({
@@ -9,6 +12,13 @@ import { Lutador } from '../../interfaces/Lutador';
   styleUrl: './lutador-form.component.css'
 })
 export class LutadorFormComponent {
+
+  ngAfterViewInit() {
+    this.ObterRadioSelecionadoString();
+    this.ObterRadioSelecionado();
+
+  }
+
   @Input() lutador: Lutador | null = null; 
 
   @Output() salvar: EventEmitter<any> = new EventEmitter<any>(); 
@@ -39,16 +49,28 @@ if (this.lutador !=null ){
 }
 
 ObterRadioSelecionado(): boolean{
-  const radioSelecionado = document.querySelector('input[name="cadastro"]:checked')?.getAttribute('id');
-if (radioSelecionado==='feminino'){
+  const radioSelecionado = document.querySelector('input[name="ativo"]:checked')?.getAttribute('id');
+if (radioSelecionado==='true'){
   return true; 
 } else {
   return false; 
 }
 }
 
+ObterRadioSelecionadoString(): string {
+  const radioSelecionado = document.querySelector('input[name="genero"]:checked')?.getAttribute('id');
+if (radioSelecionado==='Feminino'){
+  return 'Feminino'; 
+} else {
+  return 'Masculino'; 
+}
+}
+
+
 salvarDados(): void{
   this.lutadorEditado.ativo= this.ObterRadioSelecionado(); 
+  this.lutadorEditado.genero= this.ObterRadioSelecionadoString(); 
+
   this.salvar.emit(this.lutadorEditado);
 }
 

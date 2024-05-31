@@ -13,6 +13,8 @@ export class LutadorListComponent {
   @Output() excluir: EventEmitter<number>=new EventEmitter<number>();
 
   @Input() listaLutadores: Lutador[] = [];
+  @Input() lutador!: Lutador;
+
 
   @Output() editar: EventEmitter<any>=new EventEmitter(); 
 
