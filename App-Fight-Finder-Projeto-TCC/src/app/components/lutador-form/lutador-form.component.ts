@@ -48,6 +48,26 @@ if (this.lutador !=null ){
 }
 }
 
+onFileSelected(event:any) {
+  const file:File = event.target.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = this.handleReaderLoaded.bind(this);
+    reader.readAsArrayBuffer(file);
+  }
+}
+
+handleReaderLoaded(readerEvt: ProgressEvent<FileReader>) {
+  if (readerEvt && readerEvt.target && readerEvt.target.result) {
+    let arrayBuffer = readerEvt.target.result as ArrayBuffer;
+    let binaryString = Array.from(new Uint8Array(arrayBuffer)).map(b => String.fromCharCode(b)).join('');
+    this.lutadorEditado.foto = 'data:image/jpeg;base64,' + btoa(binaryString);
+  }
+}
+
+
 ObterRadioSelecionado(): boolean{
   const radioSelecionado = document.querySelector('input[name="ativo"]:checked')?.getAttribute('id');
 if (radioSelecionado==='true'){

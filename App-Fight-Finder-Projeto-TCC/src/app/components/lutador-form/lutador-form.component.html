@@ -9,12 +9,12 @@
 
     <div>
         <label for="nome">Nome</label>
-        <input type="text" id="nome" [(ngModel)]="lutadorEditado.nome">
+        <input type="text" id="nome" [(ngModel)]="lutadorEditado.nome" required>>
     </div>
 
 <div>
     <label for="idade">Idade</label>
-    <input type="text" id="idade" [(ngModel)]="lutadorEditado.idade">
+    <input type="text" id="idade" [(ngModel)]="lutadorEditado.idade" >
 </div>
 
 <div>
@@ -31,7 +31,7 @@
 <div>
 
     <label for="nivel">Nível</label>
-    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="nivel" [(ngModel)]="lutadorEditado.nivel">
+    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="nivel" [(ngModel)]="lutadorEditado.nivel" required>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
@@ -57,32 +57,44 @@
 
 <div>
     <label for="peso">Peso</label>
-    <input type="text" id="peso" [(ngModel)]="lutadorEditado.peso">
+    <input type="text" id="peso" [(ngModel)]="lutadorEditado.peso" required>>
 </div>
 
 <div>
     <label for="altura">Altura</label>
-    <input type="text" id="altura" [(ngModel)]="lutadorEditado.altura">
+    <input type="text" id="altura" [(ngModel)]="lutadorEditado.altura" required>>
 </div>
     
 <div class="input-radio">
     <input type="radio" id="Feminino" name="genero" 
-    [checked]="lutadorEditado.genero" value="{{ lutadorEditado.genero}}">
+    [checked]="lutadorEditado.genero === 'Feminino'" value="Feminino" required>>
     <label for="Feminino">Feminino</label>
     
     <input type="radio" id="Masculino" name="genero" 
-    [checked]="!lutadorEditado.genero" value="{{ !lutadorEditado.genero}}"> 
+    [checked]="lutadorEditado.genero === 'Masculino'" value="Masculino"> 
     <label for="Masculino">Masculino</label>
+</div>
 
-    <div class="input-radio">
-        <input type="radio" id="true" name="ativo" 
-        [checked]="lutadorEditado.ativo" value="{{ lutadorEditado.ativo}}">
-        <label for="true">Ativo</label>
-        
-        <input type="radio" id="false" name="ativo" 
-        [checked]="!lutadorEditado.ativo" value="{{ !lutadorEditado.ativo}}"> 
-        <label for="false">Inativo</label>
+
+<div class="input-radio">
+    <input type="radio" id="true" name="ativo" 
+    [checked]="lutadorEditado.ativo" value="true" required>>
+    <label for="true">Ativo</label>
     
+    <input type="radio" id="false" name="ativo" 
+    [checked]="!lutadorEditado.ativo" value="false"> 
+    <label for="false">Inativo</label>
+</div>
+
+<div> 
+    <form>
+        <div class="form-group">
+          <label for="file">Escolha a foto do lutador:</label>
+          <input type="file" id="file" (change)="onFileSelected($event)">
+        </div>
+      </form>
+</div>
+
 <div>
     <button class="btn-padrao"(click)="salvarDados()">Salvar</button>
     <button class="btn-padrao" (click)="cancelar()">Cancelar</button>
