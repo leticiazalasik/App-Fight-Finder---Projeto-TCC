@@ -1,49 +1,40 @@
-<div class="lista-lutadores">
-
-    <button class="botao-adicionar" (click)="novoLutador()">Adicionar</button>
-
+<div class="container">
+    <button class="btn btn-primary" (click)="novoLutador()">Adicionar</button>
+  
     <p *ngIf="listaLutadores.length==0">
-        Nennhum registro encontrado. 
+      Nennhum registro encontrado. 
     </p>
-    <table *ngIf="listaLutadores.length>0">
+    <div class="table-responsive" *ngIf="listaLutadores.length>0">
+      <table class="table">
         <thead>
-            <tr>
-                <th>Foto</th>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>Modalidade</th>
-                <th>Nível</th>
-                <th>Idade</th>
-                <th>Gênero</th>
-                <th>Peso</th>
-                <th>Altura</th>
-                <th>Ativo</th>
-
-
-            </tr>
+          <tr>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Peso</th>
+            <th>Altura</th>
+            <th>Nível</th>
+            <th>Ações</th>
+          </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let lutador of listaLutadores">
-                <td><img src="{{ lutador.foto }}" alt="Foto do lutador" style="width: 100px; height: 100px;"></td>
-                <td>{{ lutador.foto }}</td>
-                <td>{{ lutador.id }}</td>
-                <td>{{ lutador.nome }}</td>
-                <td>{{ lutador.modalidade }}</td>
-                <td>{{ lutador.nivel }}</td>
-                <td>{{ lutador.idade }}</td>
-                <td>{{ lutador.genero }}</td>
-                <td>{{ lutador.peso }}</td>
-                <td>{{ lutador.altura }}</td>
-                <td>{{ lutador.ativo }}</td>
-
+          <tr *ngFor="let lutador of listaLutadores">
+            <td><img src="{{ lutador.foto }}" alt="Foto do lutador" style="width: 80px; height: 80px;" ></td>
+            <td>{{ lutador.nome }}</td>
+            <td>{{ lutador.idade }}</td>
+            <td>{{ lutador.peso }}</td>
+            <td>{{ lutador.altura }}</td>
+            <td>{{ lutador.nivel }}</td>
             <td>
-                <button class="bkg-green" (click)="editarLutador(lutador)">Editar</button>
-                <button class="bkg-red" (click)="excluirLutador(lutador.id)">Excluir</button>
+              <button class="btn btn-success" (click)="editarLutador(lutador)" style="margin-bottom: 3px;">Editar</button>
+              <button class="btn btn-danger" (click)="excluirLutador(lutador.id)">Excluir</button>
             </td>
-            </tr>
+          </tr>
         </tbody>
-    </table>
-</div>
-<app-lutador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo' " 
-[lutador]="lutadorEditar" 
-(salvar)="onSalvar($event)"> </app-lutador-form>
+      </table>
+    </div>
+  </div>
+  
+  <app-lutador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
+  [lutador]="lutadorEditar" 
+  (salvar)="onSalvar($event)"> </app-lutador-form>
