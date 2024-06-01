@@ -48,16 +48,28 @@ if (this.lutador !=null ){
 }
 }
 
-onFileSelected(event:any) {
-  const file:File = event.target.files[0];
+onFileSelected(event: any) {
+  const file: File = event.target.files[0];
 
   if (file) {
     const reader = new FileReader();
 
     reader.onload = this.handleReaderLoaded.bind(this);
     reader.readAsArrayBuffer(file);
+
+    let fileNameElement = document.getElementById('file-name');
+    if (fileNameElement) {
+      fileNameElement.textContent = file.name;
+    }
+  } else {
+    // Limpe o nome do arquivo se nenhum arquivo for selecionado
+    let fileNameElement = document.getElementById('file-name');
+    if (fileNameElement) {
+      fileNameElement.textContent = 'Nenhum arquivo selecionado';
+    }
   }
 }
+
 
 handleReaderLoaded(readerEvt: ProgressEvent<FileReader>) {
   if (readerEvt && readerEvt.target && readerEvt.target.result) {
@@ -115,5 +127,6 @@ limparLutador():void {
 AdicionarDados(): void{
   this.editar.emit(this.lutadorEditado);
 }
+
 
 } 

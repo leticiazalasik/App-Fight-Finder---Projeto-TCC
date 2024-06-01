@@ -9,17 +9,17 @@
 
     <div>
         <label for="nome">Nome</label>
-        <input type="text" id="nome" [(ngModel)]="lutadorEditado.nome" required>>
+        <input type="text" id="nome" [(ngModel)]="lutadorEditado.nome" required>
     </div>
 
 <div>
     <label for="idade">Idade</label>
-    <input type="text" id="idade" [(ngModel)]="lutadorEditado.idade" >
+    <input type="text" id="idade" [(ngModel)]="lutadorEditado.idade" required>
 </div>
 
 <div>
     <label for="nivel">Modalidade</label>
-    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade" [(ngModel)]="lutadorEditado.modalidade">
+    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade" [(ngModel)]="lutadorEditado.modalidade" required>
         <option value="Taekwondo">Taekwondo</option>
         <option value="Karatê">Karatê</option>
         <option value="Jiu-jitsu">Jiu-jitsu</option>
@@ -57,17 +57,17 @@
 
 <div>
     <label for="peso">Peso</label>
-    <input type="text" id="peso" [(ngModel)]="lutadorEditado.peso" required>>
+    <input type="text" id="peso" [(ngModel)]="lutadorEditado.peso" required>
 </div>
 
 <div>
     <label for="altura">Altura</label>
-    <input type="text" id="altura" [(ngModel)]="lutadorEditado.altura" required>>
+    <input type="text" id="altura" [(ngModel)]="lutadorEditado.altura" required>
 </div>
     
 <div class="input-radio">
     <input type="radio" id="Feminino" name="genero" 
-    [checked]="lutadorEditado.genero === 'Feminino'" value="Feminino" required>>
+    [checked]="lutadorEditado.genero === 'Feminino'" value="Feminino" required>
     <label for="Feminino">Feminino</label>
     
     <input type="radio" id="Masculino" name="genero" 
@@ -78,7 +78,7 @@
 
 <div class="input-radio">
     <input type="radio" id="true" name="ativo" 
-    [checked]="lutadorEditado.ativo" value="true" required>>
+    [checked]="lutadorEditado.ativo" value="true" required>
     <label for="true">Ativo</label>
     
     <input type="radio" id="false" name="ativo" 
@@ -89,8 +89,10 @@
 <div> 
     <form>
         <div class="form-group">
-          <label for="file">Escolha a foto do lutador:</label>
-          <input type="file" id="file" (change)="onFileSelected($event)">
+          <label for="file">Foto de perfil (opcional):</label>
+          <input type="file" id="file" (change)="onFileSelected($event)" style="display: none">
+          <label for="file" class="custom-file-upload">Escolher arquivo</label>
+          <span id="file-name">Nenhum arquivo selecionado</span>
         </div>
       </form>
 </div>
