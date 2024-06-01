@@ -28,26 +28,6 @@ export class LutadorFormComponent {
 
 lutadorEditado!: Lutador; 
 
-ngOnChanges(): void{
-if (this.lutador !=null ){
-
-  this.lutadorEditado={
-    id: this.lutador.id,
-    nome: this.lutador.nome,
-    idade: this.lutador.idade,
-    modalidade: this.lutador.modalidade,
-    nivel: this.lutador.nivel,
-    genero: this.lutador.genero,
-    peso: this.lutador.peso,
-    altura: this.lutador.altura,
-    ativo: this.lutador.ativo,
-    foto: this.lutador.foto    
-  }; 
-} else {
-  this.limparLutador(); 
-}
-}
-
 onFileSelected(event: any) {
   const file: File = event.target.files[0];
 
@@ -68,16 +48,40 @@ onFileSelected(event: any) {
       fileNameElement.textContent = 'Nenhum arquivo selecionado';
     }
   }
+  
 }
-
 
 handleReaderLoaded(readerEvt: ProgressEvent<FileReader>) {
   if (readerEvt && readerEvt.target && readerEvt.target.result) {
     let arrayBuffer = readerEvt.target.result as ArrayBuffer;
     let binaryString = Array.from(new Uint8Array(arrayBuffer)).map(b => String.fromCharCode(b)).join('');
     this.lutadorEditado.foto = 'data:image/jpeg;base64,' + btoa(binaryString);
+    console.log(this.lutadorEditado.foto);
   }
+  
 }
+ngOnChanges(): void{
+if (this.lutador !=null ){
+
+  this.lutadorEditado={
+    id: this.lutador.id,
+    nome: this.lutador.nome,
+    idade: this.lutador.idade,
+    modalidade: this.lutador.modalidade,
+    nivel: this.lutador.nivel,
+    genero: this.lutador.genero,
+    peso: this.lutador.peso,
+    altura: this.lutador.altura,
+    ativo: this.lutador.ativo,
+    foto: this.lutador.foto   ,
+  }; 
+  console.log(this.lutador.foto);
+} else {
+  this.limparLutador(); 
+}
+}
+
+
 
 
 ObterRadioSelecionado(): boolean{

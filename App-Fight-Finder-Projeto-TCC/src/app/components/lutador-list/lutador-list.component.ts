@@ -23,7 +23,6 @@ export class LutadorListComponent {
   lutadorEditar:Lutador|null=null;
   exibirFormulario: string=''; 
 
-
   excluirLutador (id:number): void {
     this.excluir.emit(id); 
   }

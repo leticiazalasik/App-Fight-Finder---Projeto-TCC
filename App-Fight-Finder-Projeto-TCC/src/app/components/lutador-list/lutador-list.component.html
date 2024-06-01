@@ -8,6 +8,7 @@
     <table *ngIf="listaLutadores.length>0">
         <thead>
             <tr>
+                <th>Foto</th>
                 <th>Id</th>
                 <th>Nome</th>
                 <th>Modalidade</th>
@@ -23,6 +24,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let lutador of listaLutadores">
+                <td><img src="{{ lutador.foto }}" alt="Foto do lutador" style="width: 100px; height: 100px;"></td>
+                <td>{{ lutador.foto }}</td>
                 <td>{{ lutador.id }}</td>
                 <td>{{ lutador.nome }}</td>
                 <td>{{ lutador.modalidade }}</td>
