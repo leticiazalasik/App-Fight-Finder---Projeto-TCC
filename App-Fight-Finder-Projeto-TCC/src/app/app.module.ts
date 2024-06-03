@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { LutadorComponent } from './components/lutador/lutador.component';
 import { LutadorFormComponent } from './components/lutador-form/lutador-form.component';
 import { LutadorListComponent } from './components/lutador-list/lutador-list.component';
+import { LutadorEditComponent } from './components/lutador-edit/lutador-edit.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LutadorListComponent } from './components/lutador-list/lutador-list.com
     AppComponent,
     LutadorComponent,
     LutadorFormComponent, 
-    LutadorListComponent
+    LutadorListComponent, 
+    LutadorEditComponent
   ],
   imports: [
     BrowserModule,

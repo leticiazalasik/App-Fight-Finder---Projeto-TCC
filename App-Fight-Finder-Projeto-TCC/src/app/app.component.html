@@ -20,7 +20,7 @@
             <div>
             <button class="btn-padrao" (click)="tela('listarLutadores')"> Listar lutadores</button>
             <button class="btn-padrao" (click)="tela('adicionarLutadores')"> Adicionar lutador novo </button>
-            <button class="btn-padrao" (click)="tela('listarLutadores')"> Editar lutador, excluir, inativar </button>
+            <button class="btn-padrao" (click)="tela('editarLutadores')"> Editar lutador, excluir, inativar </button>
         </div>
     </section>
 </section>
@@ -39,7 +39,9 @@
         </app-lutador-list>
 </section>
 
-
+<section *ngIf="telaAtual === 'adicionarLutadores'"></section>
+<app-lutador-form></app-lutador-form>
+</section>
 
 </main>
 
