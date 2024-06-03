@@ -7,6 +7,20 @@ header, footer{
 
 header{
     padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img{ 
+    height: 8%;
+    width: 8%;
+    border-radius: 10%;
+
+}
+
+div {
+    text-align: center;
 }
 
 footer{
