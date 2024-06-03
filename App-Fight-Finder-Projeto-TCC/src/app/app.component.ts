@@ -10,6 +10,12 @@ import { filter } from 'rxjs';
 export class AppComponent {
   title = 'App-Fight-Finder-Projeto-TCC';
 
+  telaAtual!: string;
+
+    tela(nomeTela: string) {
+        this.telaAtual = nomeTela;
+    }
+
   listalutadores: Lutador[] = [
     {
       id: 1,

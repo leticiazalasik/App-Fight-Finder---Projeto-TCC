@@ -3,22 +3,44 @@
 </header>
 
 <main>
-    <section class="menu">
 
+    <section class="menu-inicial">
         <div>
-        <button class="btn-padrao" (click)="filtrarLutadores(true)"> Exibir lutadores ativos</button>
-        <button class="btn-padrao" (click)="exibirTodos()"> Exibir todos os lutadores</button>
+        <button class="btn-padrao" (click)="tela('lutadores')"> Lutadores (cadastro, editar, listar...)</button>
+        <button class="btn-padrao" (click)="tela('treinadores')"> Treinadores (cadastro, editar, listar...)</button>
+        <button class="btn-padrao" (click)="tela('lutas')"> Gerar lutas </button>
     </div>
 
+    <button class="btn-padrao" (click)="tela('ajuda')">   Não encontrou o que procura, precisa de ajuda? Clique Aqui!  </button>
     </section>
 
-    <section>
+    <section *ngIf="telaAtual === 'lutadores'">
+        <section class="menu-lutadores">
+
+            <div>
+            <button class="btn-padrao" (click)="tela('listarLutadores')"> Listar lutadores</button>
+            <button class="btn-padrao" (click)="tela('adicionarLutadores')"> Adicionar lutador novo </button>
+            <button class="btn-padrao" (click)="tela('listarLutadores')"> Editar lutador, excluir, inativar </button>
+        </div>
+    </section>
+</section>
+
+    <section *ngIf="telaAtual === 'listarLutadores'">
+        <div>
+        <button class="btn-padrao" (click)="filtrarLutadores(true)"> Exibir lutadores ativos</button>
+        <button class="btn-padrao" (click)="filtrarLutadores(false)"> Exibir lutadores inativos</button>
+        <button class="btn-padrao" (click)="exibirTodos()"> Exibir todos</button>
+    </div>
+
         <app-lutador-list [listaLutadores]="listaLutadoresFiltro"
             (excluir)="onExcluir($event)"
             (editar)="onEditar($event)"
             (inserir)="onInserir($event)">
         </app-lutador-list>
-    </section>
+</section>
+
+
+
 </main>
 
 <footer>

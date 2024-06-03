@@ -44,4 +44,6 @@ export class LutadorListComponent {
     this.inserir.emit(lutador); 
     }
   }
+
+  
 }
