@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Lutador } from './interfaces/Lutador';
 import { filter } from 'rxjs';
 
@@ -10,11 +10,7 @@ import { filter } from 'rxjs';
 export class AppComponent {
   title = 'App-Fight-Finder-Projeto-TCC';
 
-  telaAtual!: string;
 
-    tela(nomeTela: string) {
-        this.telaAtual = nomeTela;
-    }
 
   listalutadores: Lutador[] = [
     {
@@ -54,7 +50,7 @@ return lutador.id === id;
     this.listalutadores.splice(indexLutador,1)
    }
   }
-
+  
   onEditar(lutadorEditado:Lutador): void{
 const indexLutador = this.listalutadores.findIndex( lutador =>{
 return lutador.id===lutadorEditado.id;
@@ -65,6 +61,8 @@ if (indexLutador>=0){
   alert(`Lutador não encontrado para id ${lutadorEditado.id}`)
 }
   }
+
+  
 
   onInserir(novoLutador:Lutador): void{
 novoLutador.foto="assets/img/perfil.png";
@@ -81,4 +79,17 @@ this.listalutadores.push(novoLutador);
 
     return 1; 
       }
+
+      telaAtual!: string;
+
+    tela(nomeTela: string) {
+        this.telaAtual = nomeTela;
+        if (nomeTela=='editarLutadores'){ 
+          this.listaLutadoresFiltro=this.listalutadores; 
+        }
+    }
+
+    OnInativar(lutador: Lutador): void {
+      lutador.ativo = false;
+  }
 }

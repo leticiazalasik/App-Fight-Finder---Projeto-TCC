@@ -1,1 +1,47 @@
-<p>lutador-edit works!</p>
+<div class="container">
+
+    <h1>Lista de lutadores</h1>
+    
+    <section class="menu-lista-lutadores">
+      <button class="botao-adicionar" (click)="novoLutador()">Adicionar</button>
+  
+    
+  </section>
+  
+      <p *ngIf="listaLutadores.length==0">
+        Nennhum registro encontrado. 
+      </p>
+      <div class="table-responsive" *ngIf="listaLutadores.length>0">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let lutador of listaLutadores">
+              <td><img src="{{ lutador.foto }}" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
+              <td>{{ lutador.nome }} </td>
+              <td>{{ lutador.idade }}</td>
+              <td><button class="btn btn-danger" (click)="excluirLutador(lutador.id)">Excluir</button></td>
+              <td> <button class="btn btn-success" (click)="editarLutador(lutador)">Editar</button> </td>
+              <td>
+                <button class="btn btn-success" (click)="inativarLutador(lutador)">
+                    {{ lutador.ativo ? 'Inativar' : 'Ativar' }}
+                </button>
+            </td>
+            
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      
+    <app-lutador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
+    [lutador]="lutadorEditar" 
+    (salvar)="onSalvar($event)"> </app-lutador-form>

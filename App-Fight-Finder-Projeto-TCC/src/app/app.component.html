@@ -39,8 +39,16 @@
         </app-lutador-list>
 </section>
 
-<section *ngIf="telaAtual === 'adicionarLutadores'"></section>
+<section *ngIf="telaAtual === 'adicionarLutadores'">
 <app-lutador-form></app-lutador-form>
+</section>
+
+<section *ngIf="telaAtual === 'editarLutadores'">
+<app-lutador-edit [listaLutadores]="listaLutadoresFiltro"
+(excluir)="onExcluir($event)"
+(editar)="onEditar($event)"
+(inativar)="OnInativar($event)">
+</app-lutador-edit>
 </section>
 
 </main>
