@@ -1,3 +1,7 @@
+body {
+    height: 100%;
+}
+
 .navbar-nav .nav-item .nav-link {
     display: flex;
     flex-direction: column;
@@ -33,15 +37,16 @@ header, footer{
 }
 
 header{
-    padding: 16px;
+    padding: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 10%;
 }
 
 img{ 
-    height: 8%;
-    width: 8%;
+    height: 50%;
+    width: 50%;
     border-radius: 10%;
 
 }
@@ -49,6 +54,15 @@ img{
 div {
     text-align: center;
 }
+
+.img {
+    margin-top: 5%;
+    text-align: center;
+    margin-right: 0;
+    width: 20%;
+    }
+
+   
 
 footer{
     padding: 2px;
@@ -91,26 +105,5 @@ main section{
     align-items: end;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-  }
-  .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-  }
-  @media screen and (max-width: 600px) {
-    .grid-container {
-      grid-template-columns: auto auto;
-    }
-  }
-  @media screen and (max-width: 400px) {
-    .grid-container {
-      grid-template-columns: auto;
-    }
-  }
+
 
