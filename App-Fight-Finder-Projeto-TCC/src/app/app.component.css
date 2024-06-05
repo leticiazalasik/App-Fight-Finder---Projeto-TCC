@@ -1,3 +1,30 @@
+.navbar-nav .nav-item .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    color: black;
+    
+}
+
+nav{
+    border: 1px solid rgb(216, 216, 216); /* Define a largura, o estilo e a cor da borda */
+    background-color: rgb(235, 235, 235);
+    color: black;
+   height: 15%;
+   display: flex; 
+   justify-content: space-around; 
+   align-items: center; 
+   position: fixed; 
+   bottom: 0;
+    width: 100%;
+}
+.navbar-nav .nav-item .nav-link i {
+    color: black;
+
+}
+
+
 header, footer{
     width: 100%;
     background-color: hsl(0, 79%, 34%);
@@ -24,9 +51,10 @@ div {
 }
 
 footer{
-    padding: 8px;
+    padding: 2px;
     position: fixed;
     bottom: 0;
+    height: 3%;
 }
 
 main{
@@ -62,4 +90,27 @@ main section{
     flex-direction: column;
     align-items: end;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+  }
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
+  @media screen and (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: auto auto;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    .grid-container {
+      grid-template-columns: auto;
+    }
+  }
 

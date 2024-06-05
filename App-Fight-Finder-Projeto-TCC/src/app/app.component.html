@@ -9,55 +9,73 @@
 
 <main>
 
-    <section class="menu-inicial">
-        <div>
+    <!-- Menu Inicial -->
+    <section>
+      <div>
         <button class="btn-padrao" (click)="tela('lutadores')"> Lutadores (cadastro, editar, listar...)</button>
         <button class="btn-padrao" (click)="tela('treinadores')"> Treinadores (cadastro, editar, listar...)</button>
         <button class="btn-padrao" (click)="tela('lutas')"> Gerar lutas </button>
-    </div>
-
-    <button class="btn-padrao" (click)="tela('ajuda')">   Não encontrou o que procura, precisa de ajuda? Clique Aqui!  </button>
+      </div>
+      <button class="btn-padrao" (click)="tela('ajuda')"> Não encontrou o que procura, precisa de ajuda? Clique Aqui! </button>
     </section>
-
+  
+    <!-- Tela Lutadores -->
     <section *ngIf="telaAtual === 'lutadores'">
-        <section class="menu-lutadores">
-
-            <div>
-            <button class="btn-padrao" (click)="tela('listarLutadores')"> Listar lutadores</button>
-            <button class="btn-padrao" (click)="tela('adicionarLutadores')"> Adicionar lutador novo </button>
-            <button class="btn-padrao" (click)="tela('editarLutadores')"> Editar lutador, excluir, inativar </button>
-        </div>
-    </section>
-</section>
-
-    <section *ngIf="telaAtual === 'listarLutadores'">
+      <section class="menu-lutadores">
         <div>
+          <button class="btn-padrao" (click)="tela('listarLutadores')"> Listar lutadores</button>
+          <button class="btn-padrao" (click)="tela('adicionarLutadores')"> Adicionar lutador novo </button>
+          <button class="btn-padrao" (click)="tela('editarLutadores')"> Editar lutador, excluir, inativar </button>
+        </div>
+      </section>
+    </section>
+  
+    <!-- Listar Lutadores -->
+    <section *ngIf="telaAtual === 'listarLutadores'" >
+      <div>
         <button class="btn-padrao" (click)="filtrarLutadores(true)"> Exibir lutadores ativos</button>
         <button class="btn-padrao" (click)="filtrarLutadores(false)"> Exibir lutadores inativos</button>
         <button class="btn-padrao" (click)="exibirTodos()"> Exibir todos</button>
+      </div>
+      <app-lutador-list [listaLutadores]="listaLutadoresFiltro"
+                        (excluir)="onExcluir($event)"
+                        (editar)="onEditar($event)"
+                        (inserir)="onInserir($event)">
+      </app-lutador-list>
+    </section>
+  
+    <!-- Adicionar Lutadores -->
+    <section *ngIf="telaAtual === 'adicionarLutadores'" >
+      <app-lutador-form></app-lutador-form>
+    </section>
+  
+    <!-- Editar Lutadores -->
+    <section *ngIf="telaAtual === 'editarLutadores'" >
+      <app-lutador-edit [listaLutadores]="listaLutadoresFiltro"
+                        (excluir)="onExcluir($event)"
+                        (editar)="onEditar($event)"
+                        (inativar)="OnInativar($event)">
+      </app-lutador-edit>
+    </section>
+  
+  </main>
+
+  <nav >
+    <div>
+        <a [routerLink]="['/caminho-para-inicial']"><i class="fas fa-home"></i><br>Inicial</a>
     </div>
+    <div>
+        <a [routerLink]="['/caminho-para-perfil']"><i class="fas fa-user"></i><br>Perfil</a>
+    </div>
+    <div>
+        <a [routerLink]="['/caminho-para-voltar']"><i class="fas fa-arrow-left"></i><br>Voltar</a>
+    </div>
+    <div>
+        <a [routerLink]="['/caminho-para-sair']"><i class="fas fa-times-circle"></i><br>Sair</a>
+    </div>
+</nav>
 
-        <app-lutador-list [listaLutadores]="listaLutadoresFiltro"
-            (excluir)="onExcluir($event)"
-            (editar)="onEditar($event)"
-            (inserir)="onInserir($event)">
-        </app-lutador-list>
-</section>
-
-<section *ngIf="telaAtual === 'adicionarLutadores'">
-<app-lutador-form></app-lutador-form>
-</section>
-
-<section *ngIf="telaAtual === 'editarLutadores'">
-<app-lutador-edit [listaLutadores]="listaLutadoresFiltro"
-(excluir)="onExcluir($event)"
-(editar)="onEditar($event)"
-(inativar)="OnInativar($event)">
-</app-lutador-edit>
-</section>
-
-</main>
-
-<footer>
+  <footer>
     <p>- Desenvolvido Por Letícia -</p>
-</footer>
+  </footer>
+  
