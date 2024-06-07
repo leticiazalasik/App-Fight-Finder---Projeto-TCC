@@ -2,40 +2,6 @@ body {
     height: 100%;
 }
 
-.navbar-nav .nav-item .nav-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    color: black;
-    
-}
-
-nav{
-    border: 1px solid rgb(216, 216, 216); /* Define a largura, o estilo e a cor da borda */
-    background-color: rgb(235, 235, 235);
-    color: black;
-   height: 15%;
-   display: flex; 
-   justify-content: space-around; 
-   align-items: center; 
-   position: fixed; 
-   bottom: 0;
-    width: 100%;
-}
-.navbar-nav .nav-item .nav-link i {
-    color: black;
-
-}
-
-
- footer{
-    width: 100%;
-    background-color: hsl(0, 79%, 34%);
-    color: #FFF;
-    text-align: center;
-}
-
 .header{
     padding: 2%;
     display: flex;
@@ -63,15 +29,6 @@ div {
 }
 
 
-
-   
-
-footer{
-    padding: 2px;
-    position: fixed;
-    bottom: 0;
-    height: 3%;
-}
 .cards, .lista{
     display: flex;
     justify-content: center;
@@ -91,12 +48,12 @@ footer{
 .btn-padrao:hover{
     background-color:#ff6a00;;
 }
-.menu{
-    display: flex;
-    padding: 16px;
-    flex-direction: column;
-    align-items: end;
+
+a {
+    color: black; /* Muda a cor do texto para preto */
+    text-decoration: none; /* Remove o sublinhado */
 }
+
 
 
 
