@@ -1,8 +1,14 @@
 footer{
-    padding: 2px;
-    position: fixed;
-    height: 4%;
-    background-color: hsl(0, 79%, 34%);
+    height: 35%;
+    display: flex;
+    align-items: center;
+background-color: hsl(0, 79%, 34%);
     color: #FFF;
-    text-align: center;
+
+}
+
+p{ 
+    width: 100%;
+    margin: 2%;
+
 }
