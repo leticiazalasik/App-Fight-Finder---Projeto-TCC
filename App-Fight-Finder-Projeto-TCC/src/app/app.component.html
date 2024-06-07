@@ -1,23 +1,38 @@
-<header>
+<div class="container" >
+  <div class="row">
+    <div class="col-sm header">
     <h1>App FightFinder</h1>
+
     <div class="img">
     <img src="../assets/img/logo.jpg" alt="logo">
     <p>FightFinder</p>
 </div>
+</div>
 
-</header>
-
-<main>
 
     <!-- Menu Inicial -->
-    <section>
-      <div>
+  
+      <div class="row">
+        <div class="col-sm">
         <button class="btn-padrao" (click)="tela('lutadores')"> Lutadores (cadastro, editar, listar...)</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
         <button class="btn-padrao" (click)="tela('treinadores')"> Treinadores (cadastro, editar, listar...)</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
         <button class="btn-padrao" (click)="tela('lutas')"> Gerar lutas </button>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
       <button class="btn-padrao" (click)="tela('ajuda')"> Não encontrou o que procura, precisa de ajuda? Clique Aqui! </button>
-    </section>
+    </div>
+  </div>
+
   
     <!-- Tela Lutadores -->
     <section *ngIf="telaAtual === 'lutadores'">
@@ -58,23 +73,23 @@
       </app-lutador-edit>
     </section>
   
-  </main>
-
-  <nav >
-    <div>
-        <a [routerLink]="['/caminho-para-inicial']"><i class="fas fa-home"></i><br>Inicial</a>
-    </div>
-    <div>
-        <a [routerLink]="['/caminho-para-perfil']"><i class="fas fa-user"></i><br>Perfil</a>
-    </div>
-    <div>
-        <a [routerLink]="['/caminho-para-voltar']"><i class="fas fa-arrow-left"></i><br>Voltar</a>
-    </div>
-    <div>
-        <a [routerLink]="['/caminho-para-sair']"><i class="fas fa-times-circle"></i><br>Sair</a>
-    </div>
-</nav>
-
+   
+        <div class="row">
+          <div class="col-sm">
+            <a [routerLink]="['/caminho-para-inicial']"><i class="fas fa-home"></i><br>Inicial</a>
+          </div>
+          <div class="col-sm">
+            <a [routerLink]="['/caminho-para-perfil']"><i class="fas fa-user"></i><br>Perfil</a>
+          </div>
+          <div class="col-sm">
+            <a [routerLink]="['/caminho-para-voltar']"><i class="fas fa-arrow-left"></i><br>Voltar</a>
+          </div>
+          <div class="col-sm">
+            <a [routerLink]="['/caminho-para-sair']"><i class="fas fa-times-circle"></i><br>Sair</a>
+          </div>
+        </div>
+      </div>
+      
   <footer>
     <p>- Desenvolvido Por Letícia -</p>
   </footer>

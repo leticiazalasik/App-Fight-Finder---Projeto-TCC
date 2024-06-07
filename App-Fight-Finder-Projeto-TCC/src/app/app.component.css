@@ -29,38 +29,40 @@ nav{
 }
 
 
-header, footer{
+ footer{
     width: 100%;
     background-color: hsl(0, 79%, 34%);
     color: #FFF;
     text-align: center;
 }
 
-header{
+.header{
     padding: 2%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10%;
+    background-color: hsl(0, 79%, 34%);
+    margin: 0;
+
 }
 
 img{ 
-    height: 50%;
-    width: 50%;
+    max-height: 50px; /* A imagem vai ocupar no máximo 50px de altura */
     border-radius: 10%;
+    margin-right: 15%;
 
 }
 
+.img {
+    text-align: center;
+    text-align: right;
+
+    }
 div {
     text-align: center;
 }
 
-.img {
-    margin-top: 5%;
-    text-align: center;
-    margin-right: 0;
-    width: 20%;
-    }
+
 
    
 
@@ -70,15 +72,6 @@ footer{
     bottom: 0;
     height: 3%;
 }
-
-main{
-    padding: 16px;
-}
-
-main section{
-    margin-bottom: 20px;
-}
-
 .cards, .lista{
     display: flex;
     justify-content: center;
