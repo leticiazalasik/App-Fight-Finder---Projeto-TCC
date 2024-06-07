@@ -1,0 +1,22 @@
+.header{
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(0, 79%, 34%);
+    margin: 0;
+    color: white;
+}
+
+img{ 
+    max-height: 50px; /* A imagem vai ocupar no máximo 50px de altura */
+    border-radius: 10%;
+    margin-right: 15%;
+
+}
+
+.img {
+    text-align: center;
+    text-align: right;
+
+    }
