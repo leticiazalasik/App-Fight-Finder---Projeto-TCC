@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Lutador } from '../../interfaces/Lutador';
 
 @Component({
@@ -7,6 +7,12 @@ import { Lutador } from '../../interfaces/Lutador';
   styleUrl: './tela-lutadores.component.css'
 })
 export class TelaLutadoresComponent {
+
+  @Output() editar: EventEmitter<Lutador>=new EventEmitter(); 
+
+  @Output() inserir: EventEmitter<Lutador>=new EventEmitter();
+
+  @Output() salvar: EventEmitter<Lutador>=new EventEmitter();
 
   
   listalutadores: Lutador[] = [
@@ -61,22 +67,6 @@ if (indexLutador>=0){
 
   
 
-  onInserir(novoLutador:Lutador): void{
-novoLutador.foto="assets/img/perfil.png";
-novoLutador.id=this.obterId();
-this.listalutadores.push(novoLutador);
-  }
-
-  obterId():number{
-    let ultimoLutadorCadastrado:Lutador; 
-    if(this.listalutadores.length>0) {
-      ultimoLutadorCadastrado=this.listalutadores[this.listalutadores.length-1];
-      return ultimoLutadorCadastrado.id+1; 
-    }
-
-    return 1; 
-      }
-
       telaLutadores: string='';
 
     novaTelaLutadores(tela: string) {
@@ -88,6 +78,40 @@ this.listalutadores.push(novoLutador);
 
     OnInativar(lutador: Lutador): void {
       lutador.ativo = false;
+  }
+
+  lutadorEditar:Lutador|null=null;
+
+  exibirFormulario: string=''; 
+
+  
+  onInserir(novoLutador:Lutador): void{
+    novoLutador.foto="assets/img/perfil.png";
+    novoLutador.id=this.obterId();
+    this.listalutadores.push(novoLutador);
+      }
+    
+      obterId():number{
+        let ultimoLutadorCadastrado:Lutador; 
+        if(this.listalutadores.length>0) {
+          ultimoLutadorCadastrado=this.listalutadores[this.listalutadores.length-1];
+          return ultimoLutadorCadastrado.id+1; 
+        }
+    
+        return 1; 
+          }
+    
+  novoLutador(): void {
+    this.exibirFormulario='novo';
+    this.lutadorEditar=null;
+  }
+  onSalvar(lutador:Lutador): void {
+    this.exibirFormulario=' '; 
+    if (lutador.id!=0){
+    this.editar.emit(lutador);
+    } else {
+    this.inserir.emit(lutador); 
+    }
   }
 }
 

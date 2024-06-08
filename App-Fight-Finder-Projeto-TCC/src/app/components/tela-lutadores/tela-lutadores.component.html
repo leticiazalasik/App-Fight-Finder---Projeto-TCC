@@ -1,14 +1,15 @@
 <div class="container" >
     <div class="row">
       <div class="col-sm">
-        <app-menu-lutadores (telaLutadores)="novaTelaLutadores($event)"> </app-menu-lutadores>
+        <app-menu-lutadores (telaLutadores)="novaTelaLutadores($event)" > </app-menu-lutadores>
 </div>
 </div>
 </div>
 
 
 <section *ngIf="telaLutadores === 'listarLutadores'" >
-    
+ 
+  
 <app-lutador-list [listaLutadores]="listaLutadoresFiltro"
 (excluir)="onExcluir($event)"
 (editar)="onEditar($event)"
@@ -17,7 +18,7 @@
 </section>
 
 <section *ngIf="telaLutadores === 'adicionarLutadores'" >
-    <app-lutador-form></app-lutador-form>
+    <app-lutador-form (salvar)="onSalvar($event)" ></app-lutador-form>
   </section>
 
   

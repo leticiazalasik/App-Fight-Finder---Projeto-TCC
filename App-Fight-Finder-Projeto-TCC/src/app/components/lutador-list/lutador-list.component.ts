@@ -1,4 +1,4 @@
-import { Component, Input, } from '@angular/core';
+import { Component, Input, OnInit, } from '@angular/core';
 import { Lutador } from '../../interfaces/Lutador';
 import { Output, EventEmitter } from '@angular/core';
 
@@ -8,13 +8,22 @@ import { Output, EventEmitter } from '@angular/core';
   templateUrl: './lutador-list.component.html',
   styleUrl: './lutador-list.component.css'
 })
-export class LutadorListComponent {
+export class LutadorListComponent implements OnInit{
 
-  @Output() excluir: EventEmitter<number>=new EventEmitter<number>();
-
-  @Input() listaLutadores: Lutador[] = [];
   @Input() lutador!: Lutador;
 
+  @Input() listaLutadores: Lutador[] = [];
+
+  @Input() salvar: any;
+
+
+  listaLutadoresFiltro: Lutador[]= this.listaLutadores; 
+
+  ngOnInit() {
+    this.listaLutadoresFiltro = this.listaLutadores;
+  }
+
+  @Output() excluir: EventEmitter<number>=new EventEmitter<number>();
 
   @Output() editar: EventEmitter<any>=new EventEmitter(); 
 
@@ -32,12 +41,15 @@ export class LutadorListComponent {
     this.lutadorEditar=lutador;
   }
 
-  novoLutador(): void {
+  novoLutador(novoLutador: Lutador): void {
     this.exibirFormulario='novo';
     this.lutadorEditar=null;
+    
   }
+
   onSalvar(lutador:Lutador): void {
     this.exibirFormulario=' '; 
+    
     if (lutador.id!=0){
     this.editar.emit(lutador);
     } else {
@@ -45,5 +57,24 @@ export class LutadorListComponent {
     }
   }
 
-  
+  filtro:Boolean=true; 
+
+  telaLutadoresFiltro(tela:Boolean):void{
+  this.filtro=tela; 
+  console.log(tela);
+  this.filtrarLutadores(tela);
+  }
+
+  filtrarLutadores(tela:Boolean):void{ 
+    //opção usando Filter
+    this.listaLutadoresFiltro=this.listaLutadores.filter(lutador=>{
+      return lutador.ativo==tela; 
+      console.log(tela);
+    }); 
+
+   }
+   exibirTodos():void{
+    this.listaLutadoresFiltro=this.listaLutadores;
+  }
 }
+

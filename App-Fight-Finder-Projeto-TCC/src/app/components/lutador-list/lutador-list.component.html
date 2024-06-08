@@ -2,11 +2,8 @@
 
   <h1>Lista de lutadores</h1>
   
-  <app-menu-lista-lutadores>
-  </app-menu-lista-lutadores>
-  <section class="menu-lista-lutadores">
-    <button class="botao-adicionar" (click)="novoLutador()">Adicionar</button>
-</section>
+  <app-menu-lista-lutadores (filtro)="telaLutadoresFiltro($event)"> </app-menu-lista-lutadores>
+
 
     <p *ngIf="listaLutadores.length==0">
       Nennhum registro encontrado. 
@@ -25,7 +22,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let lutador of listaLutadores">
+          <tr *ngFor="let lutador of listaLutadoresFiltro">
             <td><img src="{{ lutador.foto }}" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
             <td>{{ lutador.nome }} </td>
             <td>{{ lutador.idade }}</td>

@@ -12,7 +12,13 @@ import { AfterViewInit } from '@angular/core';
   styleUrl: './lutador-form.component.css'
 })
 export class LutadorFormComponent {
+  inserir: any;
+  exibirFormulario: string | undefined;
 
+  ngOnInit() {
+    this.limparLutador();
+  }
+  
   ngAfterViewInit() {
     this.ObterRadioSelecionadoString();
     this.ObterRadioSelecionado();
@@ -27,6 +33,42 @@ export class LutadorFormComponent {
 
 
 lutadorEditado!: Lutador; 
+limparLutador():void {
+  this.lutadorEditado={
+    id: 0,
+    nome: '',
+    idade: 0,
+    nivel: 0,
+    modalidade: '',
+    altura: 0,
+    peso: 0,
+    genero: '',
+    ativo: false,
+    foto: ''
+  }
+}
+
+
+ngOnChanges(): void{
+  if (this.lutador !=null ){
+  
+    this.lutadorEditado={
+      id: this.lutador.id,
+      nome: this.lutador.nome,
+      idade: this.lutador.idade,
+      modalidade: this.lutador.modalidade,
+      nivel: this.lutador.nivel,
+      genero: this.lutador.genero,
+      peso: this.lutador.peso,
+      altura: this.lutador.altura,
+      ativo: this.lutador.ativo,
+      foto: this.lutador.foto   ,
+    }; 
+    console.log(this.lutador.foto);
+  } else {
+    this.limparLutador(); 
+  }
+  }
 
 onFileSelected(event: any) {
   const file: File = event.target.files[0];
@@ -60,29 +102,6 @@ handleReaderLoaded(readerEvt: ProgressEvent<FileReader>) {
   }
   
 }
-ngOnChanges(): void{
-if (this.lutador !=null ){
-
-  this.lutadorEditado={
-    id: this.lutador.id,
-    nome: this.lutador.nome,
-    idade: this.lutador.idade,
-    modalidade: this.lutador.modalidade,
-    nivel: this.lutador.nivel,
-    genero: this.lutador.genero,
-    peso: this.lutador.peso,
-    altura: this.lutador.altura,
-    ativo: this.lutador.ativo,
-    foto: this.lutador.foto   ,
-  }; 
-  console.log(this.lutador.foto);
-} else {
-  this.limparLutador(); 
-}
-}
-
-
-
 
 ObterRadioSelecionado(): boolean{
   const radioSelecionado = document.querySelector('input[name="ativo"]:checked')?.getAttribute('id');
@@ -110,27 +129,29 @@ salvarDados(): void{
   this.salvar.emit(this.lutadorEditado);
 }
 
+
 cancelar(): void {
   this.limparLutador();
 }
 
-limparLutador():void {
-  this.lutadorEditado={
-    id: 0,
-    nome: '',
-    idade: 0,
-    nivel: 0,
-    modalidade: '',
-    altura: 0,
-    peso: 0,
-    genero: '',
-    ativo: false,
-    foto: ''
-  }
-}
+
 AdicionarDados(): void{
   this.editar.emit(this.lutadorEditado);
 }
 
+novoLutador(novoLutador: Lutador): void {
+  this.exibirFormulario='novo';
+  
+}
+
+onSalvar(lutador:Lutador): void {
+  this.exibirFormulario=' '; 
+  
+  if (lutador.id!=0){
+  this.editar.emit(lutador);
+  } else {
+  this.inserir.emit(lutador); 
+  }
+}
 
 } 
