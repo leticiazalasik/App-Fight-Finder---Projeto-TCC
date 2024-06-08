@@ -3,29 +3,10 @@ body {
 }
 
 
-.cards, .lista{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
 
-.btn-padrao{
-    border: none;
-    background-color: hsl(0, 79%, 34%);
-    border-radius: 4px;
-    padding: 4px;
-    color: #FFF;
-    cursor: pointer;
-    margin: 4px;
-}
 
-.btn-padrao:hover{
-    background-color:#ff6a00;;
-}
 
-a {
-    color: black; /* Muda a cor do texto para preto */
-    text-decoration: none; /* Remove o sublinhado */
-}
+
+
 
 

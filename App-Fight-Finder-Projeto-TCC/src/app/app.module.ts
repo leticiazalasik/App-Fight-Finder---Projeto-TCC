@@ -11,6 +11,11 @@ import { LutadorListComponent } from './components/lutador-list/lutador-list.com
 import { LutadorEditComponent } from './components/lutador-edit/lutador-edit.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { MenunavComponent } from './components/menunav/menunav.component';
+import { MenuInicialComponent } from './components/menu-inicial/menu-inicial.component';
+import { MenuLutadoresComponent } from './components/menu-lutadores/menu-lutadores.component';
+import { MenuListaLutadoresComponent } from './components/menu-lista-lutadores/menu-lista-lutadores.component';
+import { TelaLutadoresComponent } from './components/tela-lutadores/tela-lutadores.component';
 
 
 @NgModule({
@@ -21,7 +26,7 @@ import { HeaderComponent } from './header/header.component';
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent
   ],
   imports: [
     BrowserModule,

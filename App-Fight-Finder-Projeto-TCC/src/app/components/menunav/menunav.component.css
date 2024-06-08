@@ -1,0 +1,8 @@
+a {
+    color: black; /* Muda a cor do texto para preto */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+row{ 
+    align-items: center;
+}

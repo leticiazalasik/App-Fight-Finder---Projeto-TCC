@@ -4,86 +4,17 @@
     <app-header></app-header>
 </div>
 </div>
+  
+      <app-menu-inicial (telaAtual)="novaTelaAtual($event)"> </app-menu-inicial>
 
+      {{ telaAtual }} 
 
-    <!-- Menu Inicial -->
-  
-      <div class="row">
-        <div class="col-sm">
-        <button class="btn-padrao" (click)="tela('lutadores')"> Lutadores (cadastro, editar, listar...)</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        <button class="btn-padrao" (click)="tela('treinadores')"> Treinadores (cadastro, editar, listar...)</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        <button class="btn-padrao" (click)="tela('lutas')"> Gerar lutas </button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-      <button class="btn-padrao" (click)="tela('ajuda')"> Não encontrou o que procura, precisa de ajuda? Clique Aqui! </button>
-    </div>
-  </div>
-
-  
-    <!-- Tela Lutadores -->
-    <section *ngIf="telaAtual === 'lutadores'">
-      <section class="menu-lutadores">
-        <div>
-          <button class="btn-padrao" (click)="tela('listarLutadores')"> Listar lutadores</button>
-          <button class="btn-padrao" (click)="tela('adicionarLutadores')"> Adicionar lutador novo </button>
-          <button class="btn-padrao" (click)="tela('editarLutadores')"> Editar lutador, excluir, inativar </button>
-        </div>
-      </section>
+    <section  *ngIf="telaAtual === 'lutadores'">
+    <app-tela-lutadores></app-tela-lutadores>
     </section>
-  
-    <!-- Listar Lutadores -->
-    <section *ngIf="telaAtual === 'listarLutadores'" >
-      <div>
-        <button class="btn-padrao" (click)="filtrarLutadores(true)"> Exibir lutadores ativos</button>
-        <button class="btn-padrao" (click)="filtrarLutadores(false)"> Exibir lutadores inativos</button>
-        <button class="btn-padrao" (click)="exibirTodos()"> Exibir todos</button>
-      </div>
-      <app-lutador-list [listaLutadores]="listaLutadoresFiltro"
-                        (excluir)="onExcluir($event)"
-                        (editar)="onEditar($event)"
-                        (inserir)="onInserir($event)">
-      </app-lutador-list>
-    </section>
-  
-    <!-- Adicionar Lutadores -->
-    <section *ngIf="telaAtual === 'adicionarLutadores'" >
-      <app-lutador-form></app-lutador-form>
-    </section>
-  
-    <!-- Editar Lutadores -->
-    <section *ngIf="telaAtual === 'editarLutadores'" >
-      <app-lutador-edit [listaLutadores]="listaLutadoresFiltro"
-                        (excluir)="onExcluir($event)"
-                        (editar)="onEditar($event)"
-                        (inativar)="OnInativar($event)">
-      </app-lutador-edit>
-    </section>
-  
+      
    
-        <div class="row">
-          <div class="col-sm">
-            <a [routerLink]="['/caminho-para-inicial']"><i class="fa-solid fa-house"></i><br>Inicial</a>
-          </div>
-          <div class="col-sm">
-            <a [routerLink]="['/caminho-para-perfil']"><i class="fa-solid fa-user"></i><br>Perfil</a>
-          </div>
-          <div class="col-sm">
-            <a [routerLink]="['/caminho-para-voltar']"><i class="fa-solid fa-arrow-left"></i><br>Voltar</a>
-          </div>
-          <div class="col-sm">
-            <a [routerLink]="['/caminho-para-sair']"><i class="fa-solid fa-circle-xmark"></i><br>Sair</a>
-          </div>
-        </div>
+        <app-menunav></app-menunav>
       
       <div class="row">
         <div class="col-sm">
