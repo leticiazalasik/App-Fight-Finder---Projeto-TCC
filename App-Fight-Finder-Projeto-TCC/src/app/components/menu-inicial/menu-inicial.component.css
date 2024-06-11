@@ -9,15 +9,6 @@
     height: 95%;
 }
 
-btn-padrao-ajuda{
-   
-    background-color: hsl(0, 0%, 65%);
-    color: #000000;
-    cursor: pointer;
-    margin: 1%;
-    height: 85%;
-}
-
 .btn-padrao:hover{
     background-color:#001a70;;
 }

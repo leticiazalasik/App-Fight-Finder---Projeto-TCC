@@ -1,0 +1,49 @@
+//Fobtes 
+    $buttonFont: inherit;
+    $buttonFontsize: inherit;
+     $buttonColor: #FFF; 
+     $titleFonte: var(--bs-body-font-family);
+
+//Bordas 
+    $borderNone: none; 
+    $buttonBorderRadius: 4px; 
+    
+//Cores 
+    $buttonBackgroundcolor: hsl(0, 79%, 34%);
+    $buttonHover: #001a70;
+
+//Demais configurações: 
+    $buttonPadding: 4px; 
+    $buttonCursor: pointer; 
+    $buttonMargin: 1%; 
+    $buttonHeight: 95%; 
+    $buttonDisplay: inline-block; 
+    
+////////////////////////////////////////////////////////
+
+    //Botões padrão: 
+
+    .btn-padrao{
+    border: $borderNone; 
+    background-color: $buttonBackgroundcolor; 
+    border-radius: $buttonBorderRadius;
+    padding: $buttonPadding;
+    color: $buttonColor;
+    cursor: $buttonCursor;
+    margin: $buttonMargin;
+    height: $buttonHeight;
+    display: $buttonDisplay;
+
+}
+
+    .btn-padrao:hover{
+    background-color: $buttonHover;
+}
+
+    //titulos 
+h {
+        font-family: $titleFonte;
+
+    }
+
+    

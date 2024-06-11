@@ -14,7 +14,6 @@ export class MenuInicialComponent {
 
   tela(tela: string) {
     this.telaAtual.emit(tela);
-    console.log('Emitindo evento:', tela);
 
     if (tela=='editarLutadores'){ 
       this.listaLutadoresFiltro=this.listalutadores; 
