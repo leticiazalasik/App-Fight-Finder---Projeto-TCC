@@ -65,16 +65,11 @@ export class LutadorListComponent implements OnInit{
   this.filtrarLutadores(tela);
   }
 
-  filtrarLutadores(tela?:Boolean):void{ 
-    //opção usando Filter
-    this.listaLutadoresFiltro=this.listaLutadores.filter(lutador=>{
-      return lutador.ativo==tela; 
-      console.log(tela);
-    }); 
-
-   }
-   exibirTodos():void{
-    this.listaLutadoresFiltro=this.listaLutadores;
-  }
+  filtrarLutadores(tela?: Boolean): void { 
+    this.listaLutadoresFiltro = this.listaLutadores.filter(lutador => {
+        return tela === undefined || lutador.ativo == tela; 
+    });
 }
 
+
+}

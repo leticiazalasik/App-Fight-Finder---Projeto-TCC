@@ -5,7 +5,7 @@
 </div>
 </div>
   
-      <app-menu-inicial (telaAtual)="novaTelaAtual($event)"> </app-menu-inicial>
+      <app-menu-inicial *ngIf="telaAtual == ''" (telaAtual)="novaTelaAtual($event)"> </app-menu-inicial>
 
     <section  *ngIf="telaAtual === 'lutadores'">
     <app-tela-lutadores></app-tela-lutadores>

@@ -18,7 +18,6 @@ telaAtual: string = '';
 
     novaTelaAtual(tela: string) {
       this.telaAtual = tela;
-      console.log('Recebendo evento:', tela);
 
     
   }
