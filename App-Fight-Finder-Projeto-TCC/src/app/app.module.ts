@@ -16,6 +16,7 @@ import { MenuInicialComponent } from './components/menu-inicial/menu-inicial.com
 import { MenuLutadoresComponent } from './components/menu-lutadores/menu-lutadores.component';
 import { MenuListaLutadoresComponent } from './components/menu-lista-lutadores/menu-lista-lutadores.component';
 import { TelaLutadoresComponent } from './components/tela-lutadores/tela-lutadores.component';
+import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { TelaLutadoresComponent } from './components/tela-lutadores/tela-lutador
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent
   ],
   imports: [
     BrowserModule,
