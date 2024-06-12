@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-menunav',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './menunav.component.css'
 })
 export class MenunavComponent {
+  @Output() botaoClicado = new EventEmitter<void>();
 
+  onButtonClick() {
+    this.botaoClicado.emit();
+  }
 }
