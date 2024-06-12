@@ -7,8 +7,6 @@
   
       <app-menu-inicial (telaAtual)="novaTelaAtual($event)"> </app-menu-inicial>
 
-      {{ telaAtual }} 
-
     <section  *ngIf="telaAtual === 'lutadores'">
     <app-tela-lutadores></app-tela-lutadores>
     </section>

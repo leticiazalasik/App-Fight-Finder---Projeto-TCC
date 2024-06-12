@@ -15,9 +15,7 @@ export class LutadorFormComponent {
   inserir: any;
   exibirFormulario: string | undefined;
 
-  ngOnInit() {
-    this.limparLutador();
-  }
+ 
   
   ngAfterViewInit() {
     this.ObterRadioSelecionadoString();

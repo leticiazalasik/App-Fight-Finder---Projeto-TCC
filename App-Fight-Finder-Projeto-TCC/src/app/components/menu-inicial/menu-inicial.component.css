@@ -1,24 +1,7 @@
-.btn-padrao{
-    border: none;
-    background-color: hsl(0, 79%, 34%);
-    border-radius: 4px;
-    padding: 4px;
-    color: #FFF;
-    cursor: pointer;
-    margin: 1%;
-    height: 95%;
-}
+@import '../styleSass.css';
 
-.btn-padrao:hover{
-    background-color:#001a70;;
-}
 
 .container {
     text-align: center;
   }
-  
-  .btn-padrao {
-    display: inline-block;
-  }
-  
   

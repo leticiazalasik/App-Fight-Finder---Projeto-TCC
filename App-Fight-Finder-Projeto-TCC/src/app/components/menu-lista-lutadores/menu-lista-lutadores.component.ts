@@ -27,9 +27,8 @@ export class MenuListaLutadoresComponent {
 
   @Output() filtro: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
-  tela(tela:Boolean): void { 
+  tela(tela?:Boolean): void { 
     this.filtro.emit(tela); 
-    console.log(tela);
   }
 
    exibirTodos():void{
