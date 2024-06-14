@@ -21,6 +21,12 @@ altura: number = 182;
 genero: string= 'masculino';
 ativo: Boolean= true;
 foto = 'assets/img/perfil.png';
+comentario= 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+vitorias=2; 
+empates=1; 
+derrotas=0;
+
+
 
 
 }

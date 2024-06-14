@@ -17,6 +17,8 @@ import { MenuLutadoresComponent } from './components/menu-lutadores/menu-lutador
 import { MenuListaLutadoresComponent } from './components/menu-lista-lutadores/menu-lista-lutadores.component';
 import { TelaLutadoresComponent } from './components/tela-lutadores/tela-lutadores.component';
 import { SplashScreenComponent } from './splash-screen/splash-screen.component';
+import { ComentarioComponent } from './comentario/comentario.component';
+import { AdicionarComentarioComponent } from './adicionar-comentario/adicionar-comentario.component';
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent
   ],
   imports: [
     BrowserModule,
