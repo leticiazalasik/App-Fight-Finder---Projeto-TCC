@@ -14,6 +14,6 @@
   background-color: #001a70;
 }
 
-h {
-  font-family: var(--bs-body-font-family);
+header {
+  background-color: hsl(0, 79%, 34%);
 }/*# sourceMappingURL=styleSass.css.map */

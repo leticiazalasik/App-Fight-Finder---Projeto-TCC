@@ -1,3 +1,6 @@
+
+@import '../components/styleSass.css';
+
 .splash-screen {
     display: flex;
     flex-direction: column;
@@ -15,6 +18,8 @@
     margin-top: 2%;
   }
 
-  header, footer{
-    
+  header{ 
+    height: 20%;
   }
+ 
+  

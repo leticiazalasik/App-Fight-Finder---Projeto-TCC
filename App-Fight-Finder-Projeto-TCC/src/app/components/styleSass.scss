@@ -2,13 +2,16 @@
     $buttonFont: inherit;
     $buttonFontsize: inherit;
      $buttonColor: #FFF; 
-     $titleFonte: var(--bs-body-font-family);
+     $titleFont: var(--bs-body-font-family);
 
 //Bordas 
     $borderNone: none; 
     $buttonBorderRadius: 4px; 
     
 //Cores 
+
+    $masterRed: hsl(0, 79%, 34%);
+
     $buttonBackgroundcolor: hsl(0, 79%, 34%);
     $buttonHover: #001a70;
 
@@ -42,8 +45,12 @@
 
     //titulos 
 h {
-        font-family: $titleFonte;
+    $titleFont: "Font Family Here";
 
     }
 
+    header { 
+        background-color: $masterRed;
+    }
+ 
     
