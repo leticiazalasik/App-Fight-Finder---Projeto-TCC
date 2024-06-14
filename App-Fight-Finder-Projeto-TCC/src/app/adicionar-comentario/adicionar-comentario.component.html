@@ -1,5 +1,7 @@
 <div>
-    <input #textoComentario type="text" placeholder="Digite seu comentário">
-    <button (click)="adicionarComentario(textoComentario.value)">Adicionar Comentário</button>
+    <input #textoComentario type="text" placeholder="Digite seu comentário" class="comentario"> <br>
+
+    <input #nomeLutador type="text" placeholder="Digite o nome do lutador">
+    <button (click)="adicionarComentario(textoComentario.value, nomeLutador.value)">Adicionar Comentário</button>
   </div>
   

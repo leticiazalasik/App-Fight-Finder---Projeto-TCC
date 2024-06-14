@@ -3,6 +3,7 @@ import { EventEmitter } from '@angular/core';
 
 import { Lutador } from '../../interfaces/Lutador';
 import { AfterViewInit } from '@angular/core';
+import { ComentarioComponent } from '../../comentario/comentario.component';
 
 
 
@@ -151,5 +152,6 @@ onSalvar(lutador:Lutador): void {
   this.inserir.emit(lutador); 
   }
 }
+
 
 } 
