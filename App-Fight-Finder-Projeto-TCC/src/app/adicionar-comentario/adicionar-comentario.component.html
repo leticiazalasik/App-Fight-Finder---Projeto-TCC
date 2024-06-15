@@ -4,10 +4,26 @@
         <textarea class="form-control" #descricao placeholder="Comentário sobre o lutador...(opcional)" id="floatingTextarea2" style="height: 100px"></textarea>
     </div>
 
-    <input type="radio" id="lutador1" name="lutador" value="lutador1" [(ngModel)]="nomeLutador">
-    <label for="lutador1">Lutador 1</label>
-    <input type="radio" id="lutador2" name="lutador" value="lutador2" [(ngModel)]="nomeLutador">
-    <label for="lutador2">Lutador 2</label><br>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" value="lutador1" [(ngModel)]="nomeLutador">
+        <label class="form-check-label" for="lutador1">Lutador 1</label>
+      </div>
+    
+      <div class="form-check">
+        <input class="form-check-input" type="radio" value="lutador2" [(ngModel)]="nomeLutador">
+        <label class="form-check-label" for="lutador2">Lutador 2</label>
+      </div>
 
-    <button (click)="adicionarComentario(descricao.value, nomeLutador)">Adicionar Comentário</button>
+    <button (click)="adicionarComentario(descricao.value, nomeLutador)" class="btn-padrao">Adicionar Comentário</button>
 </div>
+
+<label>
+  <input type="radio" name="lutador" value="lutador1" class="hidden-radio" />
+  <span class="custom-radio"></span>
+  Lutador 1
+</label>
+<label>
+  <input type="radio" name="lutador" value="lutador2" class="hidden-radio" />
+  <span class="custom-radio"></span>
+  Lutador 2
+</label>

@@ -1,18 +1,15 @@
-
+@import '../components/styleSass.css';
 
 input{ 
     margin-bottom: 3%;
 
 }
 
-button { 
+.btn-padrao{ 
     margin-bottom: 5%;
-
+    margin-top: 10%;
 }
 
-label{ 
-    margin-right: 6%;
-}
 
 input{
     margin-right: 2%;
@@ -23,15 +20,14 @@ input{
 
 }
 
-button {
-    margin-top: 8%;
-    margin-bottom: 5%;
-}
+
 
 textarea{
     margin-left: 0px;
+    width: 70%;
 }
 
 .form-floating{
     margin-bottom: 3%;
 }
+
