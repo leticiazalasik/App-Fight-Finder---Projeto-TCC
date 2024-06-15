@@ -7,6 +7,7 @@ import { ComentarioComponent } from '../comentario/comentario.component';
   styleUrls: ['./adicionar-comentario.component.css']
 })
 export class AdicionarComentarioComponent {
+  nomeLutador: string='';  
 
   @Output() novoComentario = new EventEmitter<ComentarioComponent>();
 

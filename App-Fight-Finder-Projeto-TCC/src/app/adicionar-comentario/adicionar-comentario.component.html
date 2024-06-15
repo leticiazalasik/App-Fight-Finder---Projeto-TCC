@@ -1,7 +1,13 @@
 <div>
-    <input #textoComentario type="text" placeholder="Digite seu comentário" class="comentario"> <br>
+    <label for="">Comentário</label>
+    <div class="form-floating">
+        <textarea class="form-control" #descricao placeholder="Comentário sobre o lutador...(opcional)" id="floatingTextarea2" style="height: 100px"></textarea>
+    </div>
 
-    <input #nomeLutador type="text" placeholder="Digite o nome do lutador">
-    <button (click)="adicionarComentario(textoComentario.value, nomeLutador.value)">Adicionar Comentário</button>
-  </div>
-  
+    <input type="radio" id="lutador1" name="lutador" value="lutador1" [(ngModel)]="nomeLutador">
+    <label for="lutador1">Lutador 1</label>
+    <input type="radio" id="lutador2" name="lutador" value="lutador2" [(ngModel)]="nomeLutador">
+    <label for="lutador2">Lutador 2</label><br>
+
+    <button (click)="adicionarComentario(descricao.value, nomeLutador)">Adicionar Comentário</button>
+</div>

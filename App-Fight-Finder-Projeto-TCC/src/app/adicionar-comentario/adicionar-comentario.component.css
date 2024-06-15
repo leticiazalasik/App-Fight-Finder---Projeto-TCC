@@ -1,4 +1,37 @@
-.comentario{ 
-    height: 10%;
-    width: 5%;
+
+
+input{ 
+    margin-bottom: 3%;
+
+}
+
+button { 
+    margin-bottom: 5%;
+
+}
+
+label{ 
+    margin-right: 6%;
+}
+
+input{
+    margin-right: 2%;
+}
+
+*{
+    margin-left: 3%;
+
+}
+
+button {
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+
+textarea{
+    margin-left: 0px;
+}
+
+.form-floating{
+    margin-bottom: 3%;
 }
