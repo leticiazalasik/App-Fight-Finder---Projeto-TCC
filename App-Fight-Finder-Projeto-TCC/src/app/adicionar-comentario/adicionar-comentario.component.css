@@ -31,3 +31,12 @@ textarea{
     margin-bottom: 3%;
 }
 
+label {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Alinha os itens à esquerda */
+  }
+  
+  .hidden-radio {
+    margin-right: 8px; /* Ajuste a margem conforme necessário */
+  }
