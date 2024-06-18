@@ -36,4 +36,62 @@ input[type=radio]:checked + span {
   border-color: hsl(0, 79%, 34%); /* Cor da borda quando selecionado */
   box-shadow: 0px 0px 10px #5a5a5a; /* Sombra quando selecionado */
   border-width: 5px; /* Dobrar a espessura da borda quando selecionado */
+}
+
+.form input[type=text], select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: solid 1px rgb(134, 134, 134);
+  color: black;
+}
+
+input:focus {
+  outline: 1px solid red; /* Exemplo para mudar para vermelho */
+  box-shadow: 0px 0px 10px #5a5a5a; /* Sombra quando selecionado */
+}
+
+.form div {
+  margin: 16px 0;
+}
+
+.form label {
+  margin-right: 8px;
+}
+
+.btn-padrao-confirm {
+  border: none;
+  background-color: rgb(0, 157, 0);
+  border-radius: 4px;
+  padding: 4px;
+  color: #FFF;
+  cursor: pointer;
+  margin: 1%;
+  height: 95%;
+  display: inline-block;
+}
+
+.btn-padrao-cancel {
+  border: none;
+  background-color: rgb(225, 0, 0);
+  border-radius: 4px;
+  padding: 4px;
+  color: #FFF;
+  cursor: pointer;
+  margin: 1%;
+  height: 95%;
+  display: inline-block;
+}
+
+.btn-padrao-cancel {
+  border: none;
+  background-color: rgb(225, 0, 0);
+  border-radius: 4px;
+  padding: 4px;
+  color: #FFF;
+  cursor: pointer;
+  margin: 1%;
+  height: 95%;
+  display: inline-block;
 }/*# sourceMappingURL=styleSass.css.map */
