@@ -8,3 +8,8 @@
 .radio-quebra-de-linha{
     margin-bottom: 5%;
 }
+
+button{
+    width: 8%;
+    margin-right: 2px;
+}

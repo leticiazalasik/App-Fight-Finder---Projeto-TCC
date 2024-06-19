@@ -14,10 +14,10 @@
     $masterBlue: #001a70; 
 
     $buttonBackgroundcolor: hsl(0, 79%, 34%);
-    $buttonHover: #001a70;
-    $colorCancel: rgb(225, 0, 0);
-    $colorConfirm: rgb(0, 157, 0);
-    $colorEdit: rgb(0, 0, 198);
+    $buttonHover: #001b72;
+    $colorCancel: rgb(230, 50, 50);
+    $colorConfirm: rgb(46, 143, 46);
+    $colorEdit: rgb(18, 18, 181);
 
 //Demais configurações: 
     $buttonPadding: 4px; 
@@ -31,6 +31,19 @@
     //Botões padrão: 
 
     .btn-padrao{
+    border: $borderNone; 
+    background-color: $buttonBackgroundcolor; 
+    border-radius: $buttonBorderRadius;
+    padding: $buttonPadding;
+    color: $buttonColor;
+    cursor: $buttonCursor;
+    margin: $buttonMargin;
+    height: $buttonHeight;
+    display: $buttonDisplay;
+
+}
+
+@mixin btn-padrao{
     border: $borderNone; 
     background-color: $buttonBackgroundcolor; 
     border-radius: $buttonBorderRadius;
@@ -116,27 +129,18 @@ h {
     }
 
     .btn-padrao-cancel{
-        border: $borderNone; 
-        background-color: $colorCancel; 
-        border-radius: $buttonBorderRadius;
-        padding: $buttonPadding;
-        color: $buttonColor;
-        cursor: $buttonCursor;
-        margin: $buttonMargin;
-        height: $buttonHeight;
-        display: $buttonDisplay;
+    @include btn-padrao; // Inclui todas as propriedades do mixin
+    background-color: $colorCancel;
+    width: 8%;
+    margin-right: 2px;
+      
     
     }
 
-    .btn-padrao-cancel{
-        border: $borderNone; 
-        background-color: $colorCancel; 
-        border-radius: $buttonBorderRadius;
-        padding: $buttonPadding;
-        color: $buttonColor;
-        cursor: $buttonCursor;
-        margin: $buttonMargin;
-        height: $buttonHeight;
-        display: $buttonDisplay;
-    
+    .btn-padrao-edit{
+        @include btn-padrao;
+        background-color: $colorEdit; 
+        width: 8%;
+        margin-right: 2px;
+  
     }
