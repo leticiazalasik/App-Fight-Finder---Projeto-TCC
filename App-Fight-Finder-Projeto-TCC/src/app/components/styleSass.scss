@@ -1,4 +1,4 @@
-//Fobtes 
+//Fontes 
     $buttonFont: inherit;
     $buttonFontsize: inherit;
      $buttonColor: #FFF; 
@@ -28,20 +28,7 @@
     
 ////////////////////////////////////////////////////////
 
-    //Botões padrão: 
-
-    .btn-padrao{
-    border: $borderNone; 
-    background-color: $buttonBackgroundcolor; 
-    border-radius: $buttonBorderRadius;
-    padding: $buttonPadding;
-    color: $buttonColor;
-    cursor: $buttonCursor;
-    margin: $buttonMargin;
-    height: $buttonHeight;
-    display: $buttonDisplay;
-
-}
+//Botões
 
 @mixin btn-padrao{
     border: $borderNone; 
@@ -56,9 +43,66 @@
 
 }
 
-    .btn-padrao:hover{
+//botão padrão 
+.btn-padrao{
+    @include btn-padrao;
+}
+
+.btn-padrao:hover{
     background-color: $buttonHover;
 }
+
+.btn-padrao-cancel{
+    @include btn-padrao;
+    background-color: $colorCancel;
+    width: 8%;
+    margin-right: 2px;
+    }
+
+    .btn-padrao-edit{
+        @include btn-padrao;
+        background-color: $colorEdit; 
+        width: 8%;
+        margin-right: 2px;
+    }
+
+//inputs 
+
+input[type='radio'] {
+    display: none;
+}
+
+input[type='radio'] + span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 2px solid $masterBlue; 
+    box-sizing: border-box;
+}
+
+input[type='radio']:checked + span {
+    border-color: $masterRed; 
+    box-shadow: 0px 0px 10px #5a5a5a; 
+    border-width: 5px; 
+}
+
+.form input[type='text'], select{
+    width: 100%;
+padding: 8px;
+font-size: 16px;
+border-radius: 4px;
+border: solid 1px rgb(134, 134, 134);
+color: black;
+}
+
+input:focus {
+    outline: 1px solid red;
+    box-shadow: 0px 0px 10px #5a5a5a;
+
+}
+
 
     //titulos 
 h {
@@ -66,46 +110,11 @@ h {
 
     }
 
+    //outros 
+
     header { 
         background-color: $masterRed;
     }
- 
-    input[type='radio'] {
-        display: none;
-    }
-    
-    input[type='radio'] + span {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        margin-right: 5px;
-        border: 2px solid $masterBlue; /* Cor da borda */
-        box-sizing: border-box;
-    }
-    
-    input[type='radio']:checked + span {
-        border-color: $masterRed; /* Cor da borda quando selecionado */
-        box-shadow: 0px 0px 10px #5a5a5a; /* Sombra quando selecionado */
-        border-width: 5px; /* Dobrar a espessura da borda quando selecionado */
-    }
-    
-    .form input[type='text'], select{
-        width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 4px;
-    border: solid 1px rgb(134, 134, 134);
-    color: black;
-    }
-    
-    input:focus {
-        outline: 1px solid red; /* Exemplo para mudar para vermelho */
-        box-shadow: 0px 0px 10px #5a5a5a; /* Sombra quando selecionado */
-    
-    }
-    
-    
     
     .form div{
         margin: 16px 0;
@@ -115,32 +124,4 @@ h {
         margin-right: 8px;
     }
 
-    .btn-padrao-confirm{
-        border: $borderNone; 
-        background-color: $colorConfirm; 
-        border-radius: $buttonBorderRadius;
-        padding: $buttonPadding;
-        color: $buttonColor;
-        cursor: $buttonCursor;
-        margin: $buttonMargin;
-        height: $buttonHeight;
-        display: $buttonDisplay;
     
-    }
-
-    .btn-padrao-cancel{
-    @include btn-padrao; // Inclui todas as propriedades do mixin
-    background-color: $colorCancel;
-    width: 8%;
-    margin-right: 2px;
-      
-    
-    }
-
-    .btn-padrao-edit{
-        @include btn-padrao;
-        background-color: $colorEdit; 
-        width: 8%;
-        margin-right: 2px;
-  
-    }
