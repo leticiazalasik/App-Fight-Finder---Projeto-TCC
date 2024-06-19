@@ -65,27 +65,38 @@
     <input type="text" id="altura" [(ngModel)]="lutadorEditado.altura" required>
 </div>
     
-<div >
+<div class="radio-quebra-de-linha">
+<label for="Feminino">
     <input type="radio" id="Feminino" name="genero" 
-    [checked]="lutadorEditado.genero === 'Feminino'" value="Feminino" required>
-    <label for="Feminino">Feminino</label>
+    [checked]="lutadorEditado.genero === 'Feminino'" value="Feminino" required class="hidden-radio">
+    <span class="custom-radio"></span>
+    Feminino
+</label>
     
+<label for="Masculino">
     <input type="radio" id="Masculino" name="genero" 
-    [checked]="lutadorEditado.genero === 'Masculino'" value="Masculino"> 
-    <label for="Masculino">Masculino</label>
+    [checked]="lutadorEditado.genero === 'Masculino'" value="Masculino" class="hidden-radio"> 
+    <span class="custom-radio"></span>
+    Masculino
+</label>
 </div>
 
-
-<div>
+<label for="true">
     <input type="radio" id="true" name="ativo" 
-    [checked]="lutadorEditado.ativo" value="true" required>
-    <label for="true">Ativo</label>
-    
-    <input type="radio" id="false" name="ativo" 
-    [checked]="!lutadorEditado.ativo" value="false"> 
-    <label for="false">Inativo</label>
-</div>
+    [checked]="lutadorEditado.ativo" value="true" required class="hidden-radio">
+    <span class="custom-radio"></span>
+    Ativo
+</label>
 
+<label for="false">
+    <input type="radio" id="false" name="ativo" 
+    [checked]="!lutadorEditado.ativo" value="false" class="hidden-radio"> 
+    <span class="custom-radio"></span>
+    Inativo
+</label>
+
+
+  
 <div> 
     <form>
         <div class="form-group">

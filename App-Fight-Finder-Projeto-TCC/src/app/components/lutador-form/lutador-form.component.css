@@ -1,13 +1,10 @@
 @import '../styleSass.css';
 
 
-.form{
-    padding: 16px;
-} 
 .form h3{
     text-align: center;
 }
 
-
-
-  
+.radio-quebra-de-linha{
+    margin-bottom: 5%;
+}
