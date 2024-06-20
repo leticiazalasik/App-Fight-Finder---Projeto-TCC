@@ -25,7 +25,7 @@
   height: 95%;
   display: inline-block;
   background-color: rgb(230, 50, 50);
-  width: 8%;
+  width: 19%;
   margin-right: 2px;
 }
 
@@ -40,7 +40,21 @@
   height: 95%;
   display: inline-block;
   background-color: rgb(18, 18, 181);
-  width: 8%;
+  margin-right: 2px;
+}
+
+.btn-padrao-confirm {
+  border: none;
+  background-color: hsl(0, 79%, 34%);
+  border-radius: 4px;
+  padding: 4px;
+  color: #FFF;
+  cursor: pointer;
+  margin: 1%;
+  height: 95%;
+  display: inline-block;
+  background-color: rgb(46, 143, 46);
+  width: 19%;
   margin-right: 2px;
 }
 
@@ -88,4 +102,16 @@ header {
 
 .form label {
   margin-right: 8px;
+}
+
+h1, h2, h3, h4, button, span, label, input, p {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 10px;
+}
+
+p {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 10px;
 }/*# sourceMappingURL=styleSass.css.map */

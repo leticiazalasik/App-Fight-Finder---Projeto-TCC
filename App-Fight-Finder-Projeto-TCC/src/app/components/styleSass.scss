@@ -55,14 +55,20 @@
 .btn-padrao-cancel{
     @include btn-padrao;
     background-color: $colorCancel;
-    width: 8%;
+    width: 19%;
     margin-right: 2px;
     }
 
     .btn-padrao-edit{
         @include btn-padrao;
         background-color: $colorEdit; 
-        width: 8%;
+        margin-right: 2px;
+    }
+
+    .btn-padrao-confirm{
+        @include btn-padrao;
+        background-color: $colorConfirm; 
+        width: 19%;
         margin-right: 2px;
     }
 
@@ -124,4 +130,14 @@ h {
         margin-right: 8px;
     }
 
-    
+    h1, h2, h3, h4, button, span, label, input, p{ 
+        font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 10px;
+    }
+
+    p{ 
+        font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 10px;
+    }

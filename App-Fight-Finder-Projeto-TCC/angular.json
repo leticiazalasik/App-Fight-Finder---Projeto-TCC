@@ -36,6 +36,7 @@
             ],
             "styles": [
               "src/styles.css",
+              "src/app/components/styleSass.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css"              
             ],

@@ -1,15 +1,5 @@
 @import '../styleSass.css';
 
-.btn-primary{
-    background-color:  hsl(0, 79%, 34%);
-    color: white;
-    border: none;
-}
-
-.btn-success{
-margin-right: 4px;
-margin-bottom: 3px;
-}
 
 img { 
     border-radius: 30%;

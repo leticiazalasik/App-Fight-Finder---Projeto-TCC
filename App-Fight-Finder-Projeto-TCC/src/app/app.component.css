@@ -1,3 +1,6 @@
+@import 'components/styleSass.css';
+
+
 body {
     height: 100%;
 }
