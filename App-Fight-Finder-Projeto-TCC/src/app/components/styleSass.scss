@@ -15,9 +15,10 @@
 
     $buttonBackgroundcolor: hsl(0, 79%, 34%);
     $buttonHover: #001b72;
-    $colorCancel: rgb(230, 50, 50);
+    $colorCancel: rgb(224, 34, 34);
     $colorConfirm: rgb(46, 143, 46);
-    $colorEdit: rgb(18, 18, 181);
+    $colorEdit: rgb(20, 20, 159);
+    $colorInactive:rgb(171, 171, 13); 
 
 //Demais configurações: 
     $buttonPadding: 4px; 
@@ -55,7 +56,7 @@
 .btn-padrao-cancel{
     @include btn-padrao;
     background-color: $colorCancel;
-    width: 19%;
+    width: 95%;
     margin-right: 2px;
     }
 
@@ -63,12 +64,21 @@
         @include btn-padrao;
         background-color: $colorEdit; 
         margin-right: 2px;
+        width: 95%;
+
     }
 
     .btn-padrao-confirm{
         @include btn-padrao;
         background-color: $colorConfirm; 
-        width: 19%;
+        width: 95%;
+        margin-right: 2px;
+    }
+
+    .btn-padrao-inactive{
+        @include btn-padrao;
+        background-color: $colorInactive; 
+        width: 95%;
         margin-right: 2px;
     }
 
@@ -136,8 +146,20 @@ h {
   font-weight: 10px;
     }
 
-    p{ 
+    h1, h2{ 
         font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 10px;
+  font-weight: 20px;
     }
+
+    footer, header { 
+        background-color: $masterRed;
+    }
+
+    .logo-titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%; 
+      }

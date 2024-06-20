@@ -1,0 +1,22 @@
+<app-header> </app-header>
+
+<div class="tela-login"> 
+    <img src="../../assets/img/logo.jpg" alt="Descrição da imagem">
+    <h1>FightFinder</h1>
+    </div>
+
+    <div class="form">
+
+    <div>
+        <label for="id">ID</label>
+        <input type="text" id="id" readonly [(ngModel)]="lutadorEditado.id">
+    </div>
+
+    <div>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" [(ngModel)]="lutadorEditado.nome" required >
+    </div>
+
+</div>
+
+<app-footer> </app-footer>

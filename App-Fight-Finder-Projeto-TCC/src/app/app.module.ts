@@ -20,6 +20,7 @@ import { SplashScreenComponent } from './splash-screen/splash-screen.component';
 import { ComentarioComponent } from './comentario/comentario.component';
 import { AdicionarComentarioComponent } from './adicionar-comentario/adicionar-comentario.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
+import { EscolaComponent } from './escola/escola.component';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { TelaLoginComponent } from './tela-login/tela-login.component';
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent
   ],
   imports: [
     BrowserModule,

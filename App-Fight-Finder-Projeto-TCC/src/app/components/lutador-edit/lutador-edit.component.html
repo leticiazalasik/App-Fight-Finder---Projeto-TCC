@@ -2,12 +2,7 @@
 
     <h1>Lista de lutadores</h1>
     
-    <section class="menu-lista-lutadores">
-      <button class="botao-adicionar" (click)="novoLutador()">Adicionar</button>
-  
-    
-  </section>
-  
+
       <p *ngIf="listaLutadores.length==0">
         Nennhum registro encontrado. 
       </p>
@@ -28,10 +23,10 @@
               <td><img src="{{ lutador.foto }}" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
               <td>{{ lutador.nome }} </td>
               <td>{{ lutador.idade }}</td>
-              <td><button class="btn btn-danger" (click)="excluirLutador(lutador.id)">Excluir</button></td>
-              <td> <button class="btn btn-success" (click)="editarLutador(lutador)">Editar</button> </td>
+              <td><button class="btn-padrao-cancel" (click)="excluirLutador(lutador.id)">Excluir</button></td>
+              <td> <button class="btn-padrao-edit" (click)="editarLutador(lutador)">Editar</button> </td>
               <td>
-                <button class="btn btn-success" (click)="inativarLutador(lutador)">
+                <button class="btn-padrao-inactive" (click)="inativarLutador(lutador)">
                     {{ lutador.ativo ? 'Inativar' : 'Ativar' }}
                 </button>
             </td>

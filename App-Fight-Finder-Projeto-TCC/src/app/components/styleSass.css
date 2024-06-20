@@ -24,8 +24,8 @@
   margin: 1%;
   height: 95%;
   display: inline-block;
-  background-color: rgb(230, 50, 50);
-  width: 19%;
+  background-color: rgb(224, 34, 34);
+  width: 95%;
   margin-right: 2px;
 }
 
@@ -39,8 +39,9 @@
   margin: 1%;
   height: 95%;
   display: inline-block;
-  background-color: rgb(18, 18, 181);
+  background-color: rgb(20, 20, 159);
   margin-right: 2px;
+  width: 95%;
 }
 
 .btn-padrao-confirm {
@@ -54,7 +55,22 @@
   height: 95%;
   display: inline-block;
   background-color: rgb(46, 143, 46);
-  width: 19%;
+  width: 95%;
+  margin-right: 2px;
+}
+
+.btn-padrao-inactive {
+  border: none;
+  background-color: hsl(0, 79%, 34%);
+  border-radius: 4px;
+  padding: 4px;
+  color: #FFF;
+  cursor: pointer;
+  margin: 1%;
+  height: 95%;
+  display: inline-block;
+  background-color: rgb(171, 171, 13);
+  width: 95%;
   margin-right: 2px;
 }
 
@@ -110,8 +126,20 @@ h1, h2, h3, h4, button, span, label, input, p {
   font-weight: 10px;
 }
 
-p {
+h1, h2 {
   font-family: "Rubik", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 10px;
+  font-weight: 20px;
+}
+
+footer, header {
+  background-color: hsl(0, 79%, 34%);
+}
+
+.logo-titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
 }/*# sourceMappingURL=styleSass.css.map */
