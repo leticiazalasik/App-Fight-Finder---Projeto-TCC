@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Escola } from '../escola/escola.component';
+import { Escola } from '../interfaces/Escola';
 
 @Component({
   selector: 'app-tela-login',

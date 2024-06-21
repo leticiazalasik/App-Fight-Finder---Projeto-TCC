@@ -4,4 +4,22 @@
 img{ 
     width: 20%;
     height: 20%;
+
+  }
+
+ .form {
+  margin-top: 10%;
+  }
+  
+  div{
+    width: 80%;
+
+  }
+
+  .tela-login{ 
+    margin-top: 15%;
+  }
+
+  .btn-padrao-confirm{
+    margin-top: 8%;
   }
