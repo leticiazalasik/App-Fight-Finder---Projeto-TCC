@@ -10,10 +10,10 @@ export class TelaLoginComponent {
 
   @Input() escola: Escola | null = null; 
 
-escolaLogin!:Escola; 
+escolaEditada!:Escola; 
 
 limparEscola():void {
-this.escolaLogin={
+this.escolaEditada={
   id:0,
   nome: ' ', 
   email:' ', 
@@ -29,7 +29,7 @@ this.escolaLogin={
 ngOnChanges(): void{
   if (this.escola !=null ){
   
-  this.escolaLogin={
+  this.escolaEditada={
 
   id:this.escola.id, 
   nome: this.escola.nome,
