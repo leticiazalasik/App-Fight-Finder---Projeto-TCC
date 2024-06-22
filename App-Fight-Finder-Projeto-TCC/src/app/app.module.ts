@@ -21,6 +21,7 @@ import { ComentarioComponent } from './comentario/comentario.component';
 import { AdicionarComentarioComponent } from './adicionar-comentario/adicionar-comentario.component';
 import { TelaLoginComponent } from './tela-login/tela-login.component';
 import { EscolaComponent } from './escola/escola.component';
+import { EscolaFormComponent } from './escola-form/escola-form.component';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { EscolaComponent } from './escola/escola.component';
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent
   ],
   imports: [
     BrowserModule,
