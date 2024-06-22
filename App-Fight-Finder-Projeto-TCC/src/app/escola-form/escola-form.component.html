@@ -1,3 +1,5 @@
+<app-header> </app-header>
+
 <div class="form">
 
     <h3> Perfil escola</h3>
@@ -21,4 +23,25 @@
         <label for="senha">Senha</label>
         <input type="text" id="senha" [(ngModel)]="escolaEditada.senha">
     </div>
+
+    <div> 
+        <form>
+            <div class="form-group">
+              <label for="file">Foto de perfil (opcional):</label>
+              <input type="file" id="file" (change)="onFileSelected($event)" style="display: none" >
+              <label for="file" class="btn-padrao">Escolher arquivo</label>
+              <span id="file-name">Nenhum arquivo selecionado</span>
+            </div>
+          </form>
+    </div>
+    
+    
+    <div class="botoes">
+        <button class="btn-padrao-confirm"(click)="salvarDados()">Salvar</button>
+        <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
+    
+    </div>
+   
 </div>
+
+<app-footer> </app-footer>

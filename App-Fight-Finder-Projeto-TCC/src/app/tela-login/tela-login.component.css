@@ -7,13 +7,8 @@ img{
 
   }
 
- .form {
-  margin-top: 10%;
-  }
-  
-  div{
-    width: 80%;
-
+  input{
+    width: 100%;
   }
 
   .tela-login{ 
@@ -26,6 +21,11 @@ img{
 
   .btn-padrao-confirm{
     margin-top: 8%;
+    margin-bottom: 5%;
+  }
+
+  .btn-padrao-edit{
+    margin-top: 12%;
     margin-bottom: 5%;
   }
 
@@ -46,6 +46,14 @@ img{
   }
 
 button{
-  width: 50%;
+width: 60% !important;
 }
   
+.botoes{ 
+  display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+
