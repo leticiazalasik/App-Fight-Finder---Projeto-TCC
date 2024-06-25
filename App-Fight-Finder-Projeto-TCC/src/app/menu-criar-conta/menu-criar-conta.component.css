@@ -19,13 +19,8 @@ img{
     justify-content: center;
   }
 
-  .btn-padrao-confirm{
+  .btn-padrao{
     margin-top: 8%;
-    margin-bottom: 5%;
-  }
-
-  .btn-padrao-edit{
-    margin-top: 12%;
     margin-bottom: 5%;
   }
 
@@ -56,4 +51,7 @@ align-items: center;
 justify-content: center;
 }
 
-
+app-footer{
+    margin-top: 10%;
+    width: 100%;
+}

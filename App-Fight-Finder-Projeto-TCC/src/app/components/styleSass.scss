@@ -83,6 +83,13 @@
         margin-right: 2px;
     }
 
+    .btn-padrao-ajuda {
+        @include btn-padrao;
+        background-color: hsl(0, 1%, 85%); 
+        color: black;
+    }
+
+
 //inputs 
 
 input[type='radio'] {
