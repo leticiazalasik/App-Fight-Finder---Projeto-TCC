@@ -53,6 +53,23 @@
     background-color: $buttonHover;
 }
 
+.btn-padrao-ajuda:hover{
+    background-color: $buttonHover;
+    color: white;
+}
+
+.btn-padrao-cancel:hover{
+    background-color: $buttonHover;
+}
+
+.btn-padrao-confirm:hover{
+    background-color: $buttonHover;
+}
+
+.btn-padrao-edit:hover{
+    background-color: $buttonHover;
+}
+
 .btn-padrao-cancel{
     @include btn-padrao;
     background-color: $colorCancel;

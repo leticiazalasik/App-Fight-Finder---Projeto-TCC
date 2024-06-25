@@ -24,6 +24,7 @@ import { EscolaComponent } from './escola/escola.component';
 import { EscolaFormComponent } from './escola-form/escola-form.component';
 import { BoasVindasComponent } from './boas-vindas/boas-vindas.component';
 import { MenuCriarContaComponent } from './menu-criar-conta/menu-criar-conta.component';
+import { AjudaComponent } from './ajuda/ajuda.component';
 
 
 @NgModule({
@@ -34,7 +35,7 @@ import { MenuCriarContaComponent } from './menu-criar-conta/menu-criar-conta.com
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent
   ],
   imports: [
     BrowserModule,

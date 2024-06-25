@@ -20,13 +20,21 @@ img{
   }
 
   .btn-padrao-confirm{
-    margin-top: 8%;
     margin-bottom: 5%;
+    width: 100% !important;
+
   }
 
-  .btn-padrao-edit{
-    margin-top: 12%;
-    margin-bottom: 5%;
+  .btn-padrao-edit{ 
+    margin-bottom: 35%;
+    width: 100% !important;
+
+  }
+
+  .btn-padrao-cancel{ 
+    margin-bottom: 15%;
+    width: 100% !important;
+
   }
 
   .container{
@@ -38,9 +46,14 @@ img{
 
   h1{ 
     text-align: center;
+    margin-top: 5%;
+    margin-bottom: 3%;
 
   }
  
+  p{
+    margin-bottom: 2px;
+  }
   input[type="text"] {
     height: 80%;
   }
