@@ -8,9 +8,11 @@
 
   h1{
     margin-top: 2%;
+    margin-bottom: 10%;
+
   }
 
-  header, footer{ 
+  header{ 
     height: 3%;
   }
   

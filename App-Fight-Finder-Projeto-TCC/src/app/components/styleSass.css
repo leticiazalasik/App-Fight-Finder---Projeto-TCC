@@ -177,4 +177,16 @@ footer, header {
   align-items: center;
   justify-content: center;
   margin-top: 10%;
+}
+
+.container-imagem img {
+  width: 40%;
+  height: 40%;
+}
+
+.container-imagem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=styleSass.css.map */

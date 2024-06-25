@@ -1,12 +1,5 @@
 @import '../components/styleSass.css';
 
-
-img{ 
-    width: 40%;
-    height: 40%;
-
-  }
-
   input{
     width: 100%;
   }
@@ -47,12 +40,7 @@ img{
    
   }
 
-  .container{
-    display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  }
+
 
   h1{ 
     text-align: center;

@@ -148,11 +148,6 @@ input:focus {
     margin-top: 10%;
     }
 
-    //titulos 
-h {
-    $titleFont: "Font Family Here";
-
-    }
 
     //outros 
 
@@ -190,4 +185,17 @@ h {
         align-items: center;
         justify-content: center;
         margin-top: 10%; 
+      }
+
+      .container-imagem img{ 
+        width: 40%;
+        height: 40%;
+    
+      }
+    
+      .container-imagem{
+        display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       }
