@@ -19,6 +19,7 @@
     $colorConfirm: rgb(46, 143, 46);
     $colorEdit: rgb(20, 20, 159);
     $colorInactive:rgb(171, 171, 13); 
+    $colorHelp: hsl(0, 1%, 85%); 
 
 //Demais configurações: 
     $buttonPadding: 4px; 
@@ -26,9 +27,19 @@
     $buttonMargin: 1%; 
     $buttonHeight: 95%; 
     $buttonDisplay: inline-block; 
+    $displayCentralizar: flex;
+    $flexDirectionCentralizar: column;
+    $alignItemsCentralizar: center;
+    $justifyContentCentralizar: center;
     
 ////////////////////////////////////////////////////////
 
+@mixin centralizar-elemento{
+    display: $displayCentralizar;
+      flex-direction:  $flexDirectionCentralizar;
+      align-items: $alignItemsCentralizar;
+      justify-content:  $justifyContentCentralizar;
+}
 //Botões
 
 @mixin btn-padrao{
@@ -102,7 +113,7 @@
 
     .btn-padrao-ajuda {
         @include btn-padrao;
-        background-color: hsl(0, 1%, 85%); 
+        background-color: $colorHelp; 
         color: black;
     }
 
@@ -180,10 +191,7 @@ input:focus {
     }
 
     .logo-titulo {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+       @include centralizar-elemento; 
         margin-top: 10%; 
       }
 
@@ -194,8 +202,12 @@ input:focus {
       }
     
       .container-imagem{
-        display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+        @include centralizar-elemento; 
+
+      }
+
+      .suporte{ 
+    color: hsl(0, 1%, 63%); 
+    @include centralizar-elemento; 
+
       }

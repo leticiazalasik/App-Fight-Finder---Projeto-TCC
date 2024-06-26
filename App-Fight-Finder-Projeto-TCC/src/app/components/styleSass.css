@@ -189,4 +189,12 @@ footer, header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.suporte {
+  color: hsl(0, 1%, 63%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=styleSass.css.map */

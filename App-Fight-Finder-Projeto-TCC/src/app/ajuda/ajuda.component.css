@@ -1,0 +1,23 @@
+.accordion-button {
+    background-color: white; /* Define a cor de fundo para branco */
+    color: #000000; /* Define a cor do texto */
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 10px #001a70;
+}
+
+.tituloAjuda{
+    margin-top: 10%;
+    text-align: center;
+    margin-bottom: 7%;
+}
+
+.accordion{
+    margin-bottom: 5%;
+}
+
+.suporte{
+    margin-bottom: 7%;
+}
+
