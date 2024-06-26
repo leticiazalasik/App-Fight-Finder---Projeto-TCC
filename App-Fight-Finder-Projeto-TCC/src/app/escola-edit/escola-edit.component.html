@@ -1,9 +1,8 @@
-<app-header> </app-header>
 
 <div class="container">
     <div class="row">
         <div class="col-sm">
-        <button class="btn-padrao" > Editar perfil</button>
+        <button class="btn-padrao" (click)="mostrarFormulario = !mostrarFormulario"> Editar perfil</button>
       </div>
     </div>
     <div class="row">
@@ -15,4 +14,6 @@
 
 <app-escola-form></app-escola-form>
 
-<app-footer> </app-footer>
+<div class="escola-form">
+<app-footer *ngIf="mostrarFormulario"> </app-footer>
+</div>
