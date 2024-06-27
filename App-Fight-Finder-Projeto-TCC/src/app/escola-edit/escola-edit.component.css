@@ -1,5 +1,23 @@
 
-.escola-form {
-    display: none;
+@import '../components/styleSass.css';
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10%;
+
 }
 
+.btn-padrao{
+    width: 100%;
+    height: 100%;
+    font: 24px; 
+    margin-bottom: 10%;
+}
+
+.lado-lado{
+    display: inline;
+
+}
