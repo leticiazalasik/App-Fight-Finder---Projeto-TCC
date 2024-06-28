@@ -28,7 +28,7 @@
 }
 
 .btn-padrao-edit:hover {
-  background-color: #001b72;
+  background-color: hsl(0, 79%, 34%);
 }
 
 .btn-padrao-cancel {
@@ -101,7 +101,7 @@
   margin: 1%;
   height: 95%;
   display: inline-block;
-  background-color: hsl(0, 1%, 85%);
+  background-color: hsl(0, 8%, 90%);
   color: black;
 }
 
@@ -115,7 +115,7 @@ input[type=radio] + span {
   height: 16px;
   border-radius: 50%;
   margin-right: 5px;
-  border: 2px solid #001a70;
+  border: 2px solid #001a71;
   box-sizing: border-box;
 }
 

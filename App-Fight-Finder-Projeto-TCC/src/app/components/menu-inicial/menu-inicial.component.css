@@ -2,8 +2,36 @@
 
 
 .container {
-    text-align: center;
-    margin-top: 8%;
-  }
-  
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  width: 90%;
+  height: 25%;
+
+}
+
+.lado-lado button{
+  width: 90%;
+  height: 100%;
+  margin-bottom: 5%;
+  box-sizing: border-box; /* Adicione esta linha */
+
+}
+
+.lado-lado{
+  display: inline;
+  width: 90%;
+  height: 90%;
+
+}
+
+.btn-padrao-ajuda{
+  width: 60%;
+  margin-bottom: 2%;
+  font: 10px;
+  margin-left: 10%;
+ 
+}
+

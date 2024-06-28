@@ -1,22 +1,17 @@
 <div class="container">
-<div class="row">
-    <div class="col-sm">
+
+  <div class="lado-lado">
     <button class="btn-padrao" (click)="tela('lutadores')"> Lutadores (cadastro, editar, listar...)</button>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm">
     <button class="btn-padrao" (click)="tela('treinadores')"> Treinadores (cadastro, editar, listar...)</button>
-  </div>
+        </div>
+
+        <div class="lado-lado">
+        <button class="btn-padrao-edit" style= "height: 80px; background-color: #001b72;"(click)="tela('lutas')"> Gerar lutas </button>
+        <button class="btn-padrao" (click)="tela('a')" style= "height: 80px;"> Aulas (Iniciar, histórico...)</button>
+
+      </div>       
 </div>
-<div class="row">
-  <div class="col-sm">
-    <button class="btn-padrao" (click)="tela('lutas')"> Gerar lutas </button>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm">
-  <button class="btn-padrao-ajuda" (click)="tela('ajuda')"> Não encontrou o que procura, precisa de ajuda?</button>
-</div>
-</div>
+
+<div class="container2">
+<button class="btn-padrao-ajuda" (click)="tela('ajuda')"> Não encontrou o que procura, precisa de ajuda?</button>
 </div>

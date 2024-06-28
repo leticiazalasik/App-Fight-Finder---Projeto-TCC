@@ -11,7 +11,7 @@
 //Cores 
 
     $masterRed: hsl(0, 79%, 34%);
-    $masterBlue: #001a70; 
+    $masterBlue: #001a71; 
 
     $buttonBackgroundcolor: hsl(0, 79%, 34%);
     $buttonHover: #001b72;
@@ -19,7 +19,7 @@
     $colorConfirm: rgb(46, 143, 46);
     $colorEdit: rgb(20, 20, 159);
     $colorInactive:rgb(171, 171, 13); 
-    $colorHelp: hsl(0, 1%, 85%); 
+    $colorHelp: hsl(0, 8%, 90%); 
 
 //Demais configurações: 
     $buttonPadding: 4px; 
@@ -78,7 +78,7 @@
 }
 
 .btn-padrao-edit:hover{
-    background-color: $buttonHover;
+    background-color: $masterRed;
 }
 
 .btn-padrao-cancel{

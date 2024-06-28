@@ -36,3 +36,8 @@ button {
     width: 100%; /* Isso faz com que cada botão ocupe toda a largura da coluna */
   }
   
+  .fa-solid {
+    color: #001a71; /* Altere para a cor desejada */
+    margin-bottom: 1%;
+  }
+  
