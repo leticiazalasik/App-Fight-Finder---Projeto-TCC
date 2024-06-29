@@ -1,20 +1,17 @@
-<p>aula-form works!</p>
 
+<app-header></app-header>
 <div class="form">
 
-    <h3>Iniciar aula!</h3>
+    <h2 class="botoes">Iniciar aula!</h2>
 
     <div>
         <label for="id">ID</label>
         <input type="text" id="id" readonly [(ngModel)]="aulaEditada.id">
     </div>
 
-    <div>
-        <label for="data">Data</label>
+    <div class="data">
+        <label for="data">Data</label><br>
         <input type="date" id="data" readonly [(ngModel)]="aulaEditada.data">
-    
-    
-    
     </div>
 
     <div>
@@ -59,22 +56,25 @@
           </select>
     </div>
 
-    <h3>Lutadores presentes</h3>
-    <button> Gerar link de presença </button>
-    <button>Selecionar alunos pelo horário da turma</button>
-    <button>Selecionar a partir da lista de todos os alunos</button>
-
-
-    <h3>Treinadores presentes</h3>
-    <button> Gerar link de presença </button>
-    <button>Selecionar trenadores pelo horário da turma</button>
-    <button>Selecionar a partir da lista de todos os treinadores</button>
+    <div>
+    <h3 style="margin-top: 12%;">Lutadores presentes</h3>
+    <button class="btn-padrao"> Gerar link de presença </button>
+    <button class="btn-padrao">Selecionar com base na turma</button>
+    <button class="btn-padrao" style="margin-bottom: 8%;">Selecionar entre todos os treinadores</button>
+</div>
 
     <div>
-        <button class="btn-padrao-confirm"(click)="salvarDados()">Salvar</button>
+    <h3>Treinadores presentes</h3>
+    <button class="btn-padrao"> Gerar link de presença </button>
+    <button class="btn-padrao">Selecionar com base na turma</button>
+    <button class="btn-padrao">Selecionar entre todos os treinadores</button>
+</div>
+
+    <div class="botoes">
+        <button class="btn-padrao-confirm"(click)="salvarDados()">Iniciar</button>
         <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
-    
-    </div>
     </div>
 
-    
+    </div>
+
+    <app-footer></app-footer>

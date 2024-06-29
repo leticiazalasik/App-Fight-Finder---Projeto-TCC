@@ -1,0 +1,37 @@
+@import '../../components/styleSass.css';
+
+.btn-padrao-cancel, .btn-padrao-confirm{
+    width: 50%;
+    
+}
+
+.botoes{ 
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-padrao-confirm{
+    margin-top: 8%;
+}
+
+.btn-padrao-cancel{
+    margin-bottom: 8%;
+}
+
+.form{
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+
+.data input{
+    height: 50px;
+    font-size: 18px;
+    border: 1px solid;
+    border-radius: 5%;
+    border-color: rgb(145, 145, 145);
+    
+}
+
