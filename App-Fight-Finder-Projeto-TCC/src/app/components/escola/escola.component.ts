@@ -1,5 +1,5 @@
 import { Component, Inject, Injectable, Input } from '@angular/core';
-import { Escola } from '../interfaces/Escola';
+import { Escola } from '../../interfaces/Escola';
 
 
 @Component({

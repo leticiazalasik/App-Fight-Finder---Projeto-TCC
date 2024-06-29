@@ -3,7 +3,7 @@ import { EventEmitter } from '@angular/core';
 
 import { Lutador } from '../../interfaces/Lutador';
 import { AfterViewInit } from '@angular/core';
-import { ComentarioComponent } from '../../comentario/comentario.component';
+import { ComentarioComponent } from '../comentario/comentario.component';
 
 
 
@@ -16,7 +16,6 @@ export class LutadorFormComponent {
   inserir: any;
   exibirFormulario: string | undefined;
 
- 
   
   ngAfterViewInit() {
     this.ObterRadioSelecionadoString();

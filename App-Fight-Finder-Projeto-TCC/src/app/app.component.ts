@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, input } from '@angular/core';
 import { Lutador } from './interfaces/Lutador';
 import { filter } from 'rxjs';
-import { ComentarioComponent } from './comentario/comentario.component';
+import { ComentarioComponent } from './components/comentario/comentario.component';
 
 @Component({
   selector: 'app-root',

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Escola } from '../interfaces/Escola';
+import { Escola } from '../../interfaces/Escola';
 
 @Component({
   selector: 'app-escola-form',
