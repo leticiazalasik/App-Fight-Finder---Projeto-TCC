@@ -12,6 +12,8 @@ export class AulaFormComponent {
   @Output() salvar: EventEmitter<any> = new EventEmitter<any>(); 
   @Output() editar: EventEmitter<any> = new EventEmitter<any>(); 
   
+  inserir: any;
+  exibirFormulario: string | undefined;
 
   aulaEditada!: Aula; 
   limparAula():void {
@@ -42,6 +44,34 @@ export class AulaFormComponent {
     }
     }
   
-
-
-}
+    salvarDados(): void{
+      this.salvar.emit(this.aulaEditada);
+    }
+    
+    
+    cancelar(): void {
+      this.limparAula();
+    }
+    
+    
+    AdicionarDados(): void{
+      this.editar.emit(this.aulaEditada);
+    }
+    
+    novoLutador(novaAula: Aula): void {
+      this.exibirFormulario='novo';
+      
+    }
+    
+    onSalvar(aula:Aula): void {
+      this.exibirFormulario=' '; 
+      
+      if (aula.id!=0){
+      this.editar.emit(aula);
+      } else {
+      this.inserir.emit(aula); 
+      }
+    }
+    
+    
+    } 
