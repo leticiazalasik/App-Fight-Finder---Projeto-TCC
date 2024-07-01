@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PresencaAlunosManualComponent } from './presenca-alunos-manual.component';
+import { PresencaAlunosManualComponent } from './presenca-lutadores-manual.component';
 
 describe('PresencaAlunosManualComponent', () => {
   let component: PresencaAlunosManualComponent;

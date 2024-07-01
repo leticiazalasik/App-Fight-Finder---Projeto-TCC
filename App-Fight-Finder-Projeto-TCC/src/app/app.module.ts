@@ -28,7 +28,8 @@ import { AjudaComponent } from './components/ajuda/ajuda.component';
 import { EscolaEditComponent } from './components/escola-edit/escola-edit.component';
 import { AulaComponent } from './components/aula/aula.component';
 import { AulaFormComponent } from './components/aula-form/aula-form.component';
-import { PresencaAlunosManualComponent } from './components/presenca-alunos-manual/presenca-alunos-manual.component';
+import { PresencaLutadoresManualComponent } from './components/presenca-lutadores-manual/presenca-lutadores-manual.component';
+import { PresencaLutadoresAutomaticaComponent } from './components/presenca-lutadores-automatica/presenca-lutadores-automatica.component';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { PresencaAlunosManualComponent } from './components/presenca-alunos-manu
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent, EscolaEditComponent, AulaComponent, AulaFormComponent, PresencaAlunosManualComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent, EscolaEditComponent, AulaComponent, AulaFormComponent, PresencaLutadoresManualComponent, PresencaLutadoresAutomaticaComponent
   ],
   imports: [
     BrowserModule,

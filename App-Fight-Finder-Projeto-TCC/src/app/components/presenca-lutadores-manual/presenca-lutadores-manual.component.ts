@@ -2,13 +2,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Lutador } from '../../interfaces/Lutador';
 
 @Component({
-  selector: 'app-presenca-alunos-manual',
-  templateUrl: './presenca-alunos-manual.component.html',
-  styleUrl: './presenca-alunos-manual.component.css'
+  selector: 'app-presenca-lutadores-manual',
+  templateUrl: './presenca-lutadores-manual.component.html',
+  styleUrl: './presenca-lutadores-manual.component.css'
 })
 
 
-export class PresencaAlunosManualComponent {
+export class PresencaLutadoresManualComponent {
   @Input() listaLutadores: Lutador[] = [];
   @Input() lutador!: Lutador;
   

@@ -1,0 +1,24 @@
+@import '../styleSass.css';
+
+
+.btn-padrao-cancel, .btn-padrao-confirm{
+    width: 50%;
+    
+}
+
+p, h2, button{ 
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.botao-copiar{
+  border: 2px; 
+  background-color: white;
+
+}
+
+.inline{
+  display: flex; /* Use flexbox para alinhar os elementos na mesma linha */
+}
