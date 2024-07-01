@@ -28,7 +28,7 @@ import { AjudaComponent } from './components/ajuda/ajuda.component';
 import { EscolaEditComponent } from './components/escola-edit/escola-edit.component';
 import { AulaComponent } from './components/aula/aula.component';
 import { AulaFormComponent } from './components/aula-form/aula-form.component';
-import { PresencaAlunosManualComponent } from './presenca-alunos-manual/presenca-alunos-manual.component';
+import { PresencaAlunosManualComponent } from './components/presenca-alunos-manual/presenca-alunos-manual.component';
 
 
 @NgModule({

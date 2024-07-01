@@ -2,6 +2,13 @@ import { Component, EventEmitter, Input, Output, input } from '@angular/core';
 import { Lutador } from './interfaces/Lutador';
 import { filter } from 'rxjs';
 import { ComentarioComponent } from './components/comentario/comentario.component';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+@NgModule({
+  // ...
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+})
+export class SeuModulo { }
 
 @Component({
   selector: 'app-root',

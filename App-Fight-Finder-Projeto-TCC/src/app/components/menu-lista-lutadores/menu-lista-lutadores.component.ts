@@ -26,6 +26,7 @@ export class MenuListaLutadoresComponent {
   listaLutadoresFiltro: Lutador[]= this.listalutadores; 
 
   @Output() filtro: EventEmitter<Boolean> = new EventEmitter<Boolean>();
+  @Output() listaLutadores: Lutador[] = [];
 
   tela(tela?:Boolean): void { 
     this.filtro.emit(tela); 

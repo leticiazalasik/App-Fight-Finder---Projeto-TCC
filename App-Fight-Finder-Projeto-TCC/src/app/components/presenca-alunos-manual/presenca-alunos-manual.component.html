@@ -1,4 +1,5 @@
 
+<app-header> </app-header>
 
 <p *ngIf="listaLutadores.length==0">
     Nennhum registro encontrado. 
@@ -25,4 +26,10 @@
       </tbody>
     </table>
   </div>
+
+<div>
+    <button class="btn-padrao-confirm"(click)="salvarLutadoresSelecionados(listaLutadores)">Salvar</button>
+    <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
 </div>
+
+<app-footer> </app-footer>

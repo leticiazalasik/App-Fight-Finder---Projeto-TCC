@@ -26,7 +26,4 @@ vitorias=2;
 empates=1; 
 derrotas=0;
 
-
-
-
 }

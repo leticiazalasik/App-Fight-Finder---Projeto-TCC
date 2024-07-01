@@ -6,33 +6,32 @@ import { Lutador } from '../../interfaces/Lutador';
   templateUrl: './presenca-alunos-manual.component.html',
   styleUrl: './presenca-alunos-manual.component.css'
 })
+
+
 export class PresencaAlunosManualComponent {
   @Input() listaLutadores: Lutador[] = [];
   @Input() lutador!: Lutador;
-
-
+  
+  @Output() salvar: EventEmitter<any> = new EventEmitter<any>(); 
+@Output() editar: EventEmitter<any> = new EventEmitter<any>(); 
   @Output() presente: EventEmitter<any>=new EventEmitter(); 
 
-
-  filtrarLutadoresSelecionados(lutadores:Lutador[]): Lutador[] {
-    const lutadoresSelecionados = lutadores.filter(lutador => {
-      // Verifica se o botão de rádio está selecionado (ou seja, presente)
+  lutadoresSelecionados: Lutador[] = [];
+  
+  salvarLutadoresSelecionados(lutadores:Lutador[]): Lutador[] {
+    this.lutadoresSelecionados = lutadores.filter(lutador => {
       const radioSelecionado = document.querySelector(`input[name="lutador${lutador.id}"]:checked`);
       return radioSelecionado !== null;
   });
-  return lutadoresSelecionados;
-  console.log(lutadoresSelecionados);
-
+  return this.lutadoresSelecionados;
+  console.log(this.lutadoresSelecionados);
+  this.salvar.emit(this.lutadoresSelecionados);
 }
 
 
-
-// Filtra a lista de alunos e armazena o resultado
-  
-
-  inativarLutador(lutador: Lutador): void {
-    lutador.ativo = !lutador.ativo;
-  }
+cancelar(): void {
+  this.lutadoresSelecionados=[];
+}
 
 
 }
