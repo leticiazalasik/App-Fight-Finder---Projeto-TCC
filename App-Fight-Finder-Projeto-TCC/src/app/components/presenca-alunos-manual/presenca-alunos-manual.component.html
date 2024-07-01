@@ -1,0 +1,28 @@
+
+
+<p *ngIf="listaLutadores.length==0">
+    Nennhum registro encontrado. 
+  </p>
+  <div class="table-responsive" *ngIf="listaLutadores.length>0">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Nome</th>
+          <th>Idade</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lutador of listaLutadores">
+          <td><img src="{{ lutador.foto }}" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
+          <td>{{ lutador.nome }} </td>
+          <td>{{ lutador.idade }}</td>
+          <td> <input type="radio" name="presente" value="presente"> <label for="presente"> Presente</label></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
