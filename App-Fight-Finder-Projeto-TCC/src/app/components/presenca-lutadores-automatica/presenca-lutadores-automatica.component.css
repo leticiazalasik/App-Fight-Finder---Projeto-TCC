@@ -16,9 +16,42 @@ p, h2, button{
 .botao-copiar{
   border: 2px; 
   background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+
+.container {
+  display: table;
+text-align: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  border: solid, 2px, hsl(0, 8%, 90%);
+  width: 90%;
+  height: 5%;
+  margin-bottom: 10%;
 
 }
 
-.inline{
-  display: flex; /* Use flexbox para alinhar os elementos na mesma linha */
+
+
+h2{
+  margin-top: 10%;
+}
+
+.subtitulo{
+  margin-top: 10%;
+  margin-bottom: 1%;
+    font-weight: bold;
+}
+
+.fa-copy{
+  padding-top: 10px;
+  padding-left: 0px;
+}
+
+.container p {
+  display: table-cell;
+  vertical-align: middle; /* Alinha verticalmente */
+  width: 90%;
 }
