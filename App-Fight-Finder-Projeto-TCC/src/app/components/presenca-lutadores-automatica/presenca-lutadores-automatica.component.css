@@ -6,7 +6,7 @@
     
 }
 
-p, h2, button{ 
+p, h2{ 
     display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,23 +15,28 @@ p, h2, button{
 
 .botao-copiar{
   border: 2px; 
-  background-color: white;
-  display: flex;
-  align-items: center;
+  background-color: #f0f0f0;
+  
 }
 
 
 .container {
-  display: table;
-text-align: center;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  border: solid, 2px, hsl(0, 8%, 90%);
-  width: 90%;
-  height: 5%;
-  margin-bottom: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border: 2px solid #cbcbcb;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            font-size: 16px;
+            margin-bottom: 20%;
+            width: 90%;
+            margin-top: 3%;
+        }
 
-}
+        .container i {
+            padding-left: 10px;
+        }
 
 
 
@@ -45,10 +50,6 @@ h2{
     font-weight: bold;
 }
 
-.fa-copy{
-  padding-top: 10px;
-  padding-left: 0px;
-}
 
 .container p {
   display: table-cell;
