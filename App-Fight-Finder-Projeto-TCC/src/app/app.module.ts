@@ -31,7 +31,7 @@ import { AulaFormComponent } from './components/aula-form/aula-form.component';
 import { PresencaLutadoresManualComponent } from './components/presenca-lutadores-manual/presenca-lutadores-manual.component';
 import { PresencaLutadoresAutomaticaComponent } from './components/presenca-lutadores-automatica/presenca-lutadores-automatica.component';
 import { PresencaTreinadoresManualComponent } from './components/presenca-treinadores-manual/presenca-treinadores-manual.component';
-import { TreinadorComponent } from './treinador/treinador.component';
+import { TreinadorComponent } from './components/treinador/treinador.component';
 
 
 @NgModule({

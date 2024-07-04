@@ -1,0 +1,19 @@
+.treinador-card{
+    border: solid 1px black;
+    width: 300px;
+    padding: 16px;
+    margin: 4px
+}
+
+.lutador-card img{
+    width: 100%;
+}
+
+h2{
+    text-align: center;
+    margin: 8px 0;
+}
+
+p, h2{
+    color: #444;
+}
