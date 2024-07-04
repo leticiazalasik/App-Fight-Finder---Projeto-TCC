@@ -7,8 +7,8 @@ import { Treinador } from '../interfaces/Treinador';
   styleUrl: './presenca-treinadores-manual.component.css'
 })
 export class PresencaTreinadoresManualComponent {
-  @Input() listaTreinadores: Lutador[] = [];
-  @Input() treinador!: Lutador;
+  @Input() listaTreinadores: Treinador[] = [];
+  @Input() treinador!: Treinador;
   
   @Output() salvar: EventEmitter<any> = new EventEmitter<any>(); 
 @Output() editar: EventEmitter<any> = new EventEmitter<any>(); 
@@ -16,19 +16,19 @@ export class PresencaTreinadoresManualComponent {
 
   treinadoresSelecionados: Treinador[] = [];
   
-  salvarTreinadoresSelecionados(lutadores:Lutador[]): Lutador[] {
-    this.lutadoresSelecionados = lutadores.filter(lutador => {
-      const radioSelecionado = document.querySelector(`input[name="lutador${lutador.id}"]:checked`);
+  salvarTreinadoresSelecionados(treinadores:Treinador[]): Treinador[] {
+    this.treinadoresSelecionados = treinadores.filter(treinador => {
+      const radioSelecionado = document.querySelector(`input[name="lutador${treinador.id}"]:checked`);
       return radioSelecionado !== null;
   });
-  return this.lutadoresSelecionados;
-  console.log(this.lutadoresSelecionados);
-  this.salvar.emit(this.lutadoresSelecionados);
+  return this.treinadoresSelecionados;
+  console.log(this.treinadoresSelecionados);
+  this.salvar.emit(this.treinadoresSelecionados);
 }
 
 
 cancelar(): void {
-  this.lutadoresSelecionados=[];
+  this.treinadoresSelecionados=[];
 }
 
 }
