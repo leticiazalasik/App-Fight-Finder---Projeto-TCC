@@ -1,0 +1,39 @@
+<p>treinador-list works!</p>
+
+<div class="container">
+
+    <h1>Lista de treinadores</h1>
+    
+    <app-menu-lista-treinadores> </app-menu-lista-lutadores>
+  
+  
+      <p *ngIf="listaTreinadores.length==0">
+        Nennhum registro encontrado. 
+      </p>
+      <div class="table-responsive" *ngIf="listaTreinadores.length>0">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let treinador of listaTreinadoresFiltro">
+              <td><img src="{{ treinador.foto }}" alt="Foto do treinador" style="width: 60px; height: 60px;" ></td>
+              <td>{{ treinador.nome }} </td>
+              <td>{{ treinador.idade }}</td>
+              <td>
+                <button class="btn-padrao-edit" (click)="editarTreinador(treinador)">Editar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      
+    <app-treinador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
+    [treinador]="treinadorEditar" 
+    (salvar)="onSalvar($event)"> </app-treinador-form>
