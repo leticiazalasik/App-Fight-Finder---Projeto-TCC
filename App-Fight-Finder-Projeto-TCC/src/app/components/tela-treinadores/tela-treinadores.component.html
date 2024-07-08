@@ -1,0 +1,31 @@
+<div class="container" >
+    <div class="row">
+      <div class="col-sm">
+        <app-menu-treinadores (telaTreinador)="novaTelaTreinadores($event)" > </app-menu-treinadores>
+</div>
+</div>
+</div>
+
+
+<section *ngIf="telaTreinadores === 'listarTreinadores'" >
+ 
+  
+<app-treinador-list [listaTreinadores]="listaTreinadoresFiltro"
+(excluir)="onExcluir($event)"
+(editar)="onEditar($event)"
+(inserir)="onInserir($event)">
+</app-treinador-list>
+</section>
+
+<section *ngIf="telaTreinadores === 'adicionarTreinadores'" >
+    <app-treinador-form (salvar)="onSalvar($event)" ></app-treinador-form>
+  </section>
+
+  
+  <section *ngIf="telaTreinadores === 'editarTreinadores'" >
+    <app-treinador-edit [listaTreinadores]="listaTreinadoresFiltro"
+                      (excluir)="onExcluir($event)"
+                      (editar)="onEditar($event)"
+                      (inativar)="OnInativar($event)">
+    </app-treinador-edit>
+  </section>
