@@ -1,0 +1,42 @@
+<div class="container">
+
+    <h1>Lista de Treinadores</h1>
+    
+
+      <p *ngIf="listaTreinadores.length==0">
+        Nennhum registro encontrado. 
+      </p>
+      <div class="table-responsive" *ngIf="listaTreinadores.length>0">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Foto</th>
+              <th>Nome</th>
+              <th>Idade</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let treinador of listaTreinadores">
+              <td><img src="{{ treinador.foto }}" alt="Foto do treinador" style="width: 60px; height: 60px;" ></td>
+              <td>{{ treinador.nome }} </td>
+              <td>{{ treinador.idade }}</td>
+              <td><button class="btn-padrao-cancel" (click)="excluirTreinador(treinador.id)">Excluir</button></td>
+              <td> <button class="btn-padrao-edit" (click)="editarTreinador(treinador)">Editar</button> </td>
+              <td>
+                <button class="btn-padrao-inactive" (click)="inativarTreinador(treinador)">
+                    {{ treinador.ativo ? 'Inativar' : 'Ativar' }}
+                </button>
+            </td>
+            
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+      
+    <app-treinador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
+    [treinador]="treinadorEditar" 
+    (salvar)="onSalvar($event)"> </app-treinador-form>
