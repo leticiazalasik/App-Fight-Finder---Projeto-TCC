@@ -38,6 +38,7 @@ import { TreinadorEditComponent } from './components/treinador-edit/treinador-ed
 import { TelaTreinadoresComponent } from './components/tela-treinadores/tela-treinadores.component';
 import { MenuListaTreinadoresComponent } from './components/menu-lista-treinadores/menu-lista-treinadores.component';
 import { MenuTreinadoresComponent } from './components/menu-treinadores/menu-treinadores.component';
+import { AulaListComponent } from './components/aula-list/aula-list.component';
 
 
 @NgModule({
@@ -48,7 +49,7 @@ import { MenuTreinadoresComponent } from './components/menu-treinadores/menu-tre
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent, EscolaEditComponent, AulaComponent, AulaFormComponent, PresencaLutadoresManualComponent, PresencaLutadoresAutomaticaComponent, PresencaTreinadoresManualComponent, TreinadorComponent, TreinadorListComponent, TreinadorFormComponent, TreinadorEditComponent, TelaTreinadoresComponent, MenuListaTreinadoresComponent, MenuTreinadoresComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent, EscolaEditComponent, AulaComponent, AulaFormComponent, PresencaLutadoresManualComponent, PresencaLutadoresAutomaticaComponent, PresencaTreinadoresManualComponent, TreinadorComponent, TreinadorListComponent, TreinadorFormComponent, TreinadorEditComponent, TelaTreinadoresComponent, MenuListaTreinadoresComponent, MenuTreinadoresComponent, PresencaTreinadoresAutomaticaComponent, AulaListComponent
   ],
   imports: [
     BrowserModule,

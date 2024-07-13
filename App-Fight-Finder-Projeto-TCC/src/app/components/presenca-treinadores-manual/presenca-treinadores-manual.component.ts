@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Treinador } from '../interfaces/Treinador';
+import { Treinador } from '../../interfaces/Treinador';
 
 @Component({
   selector: 'app-presenca-treinadores-manual',

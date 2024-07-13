@@ -1,0 +1,78 @@
+<div class="container">
+
+    <h1>Lista de lutadores</h1>
+    
+    <app-menu-lista-aulas (filtro)="telaAulasFiltro($event)"> </app-menu-lista-aulas>
+  
+  
+      <p *ngIf="listaAulas.length==0">
+        Nennhum registro encontrado. 
+      </p>
+      <div class="table-responsive" *ngIf="listaAulas.length > 0">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Horários</th>
+                    <th>Acoes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let aula of listaAulasFiltro">
+                    <td>{{ aula.data }}</td>
+                    <td>{{ aula.horario }}</td>
+                    <td> <button class="btn-padrao-edit" (click)="editarAula(lutador)">Editar</button>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <th>Lutadores Presentes</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li *ngFor="let lutador of aula.lutadoresPresentes">{{ lutador }}</li>
+                        </ul>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <th>Treinadores Presentes</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li *ngFor="let treinador of aula.treinadoresPresentes">{{ treinador }}</li>
+                        </ul>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <th>Lutadores Ausentes</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li *ngFor="let lutador of aula.lutadoresAusentes">{{ lutador }}</li>
+                        </ul>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <th>Treinadores Ausentes</th>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li *ngFor="let treinador of aula.treinadoresAusentes">{{ treinador }}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+      
+    <app-aula-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
+    [aula]="aulaEditar" 
+    (salvar)="onSalvar($event)"> </app-aula-form>
