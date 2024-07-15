@@ -1,9 +1,46 @@
 <div class="container" >
     <div class="row">
       <div class="col-sm">
-    <button class="btn-padrao" (click)="tela(true)"> Exibir treinadores ativos</button>
-    <button class="btn-padrao" (click)="tela(false)"> Exibir treinadores inativos</button>
-    <button class="btn-padrao" (click)="tela()"> Exibir todos</button>
+    <button class="btn-padrao" (click)="tela(true)"> Exibir todas as aulas</button>
+    <button class="btn-padrao" (click)="tela(false)"> Exibir a partir da mais recente</button>
+    <button class="btn-padrao" (click)="tela()"> Aulas do ultimo mês apenas</button>
 </div>
 </div>
 </div>
+
+<form class="row row-cols-lg-auto g-3 align-items-center">
+  <div class="col-12">
+    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Dia</option>
+      <ng-container *ngFor="let day of daysArray; let i = index">
+        <option [value]="i + 1">{{ i + 1 }}</option>
+    </ng-container>
+</select>
+  </div>
+
+  <div class="col-12">
+    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Mês</option>
+      <ng-container *ngFor="let day of mesesArray; let i = index">
+        <option [value]="i + 1">{{ i + 1 }}</option>
+    </ng-container>
+</select>
+  </div>
+
+  <div class="col-12">
+    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Mês</option>
+      <ng-container *ngFor="let day of anosArray; let i = index">
+        <option [value]="i + 1">{{ i + 1 }}</option>
+    </ng-container>
+</select>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
