@@ -11,8 +11,8 @@
 <form class="row row-cols-lg-auto g-3 align-items-center">
   <div class="col-12">
     <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-    <select class="form-select" id="inlineFormSelectPref">
-      <option selected>Dia</option>
+    <select class="form-select" id="inlineFormSelectPref" [(ngModel)]="diaSelecionado">
+      <option selected value="" disabled selected>Dia</option>
       <ng-container *ngFor="let day of daysArray; let i = index">
         <option [value]="i + 1">{{ i + 1 }}</option>
     </ng-container>
@@ -21,8 +21,8 @@
 
   <div class="col-12">
     <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-    <select class="form-select" id="inlineFormSelectPref">
-      <option selected>Mês</option>
+    <select class="form-select" id="inlineFormSelectPref" [(ngModel)]="mesSelecionado">
+      <option value="" disabled selected>Mês</option>
       <ng-container *ngFor="let day of mesesArray; let i = index">
         <option [value]="i + 1">{{ i + 1 }}</option>
     </ng-container>
@@ -31,8 +31,8 @@
 
   <div class="col-12">
     <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-    <select class="form-select" id="inlineFormSelectPref">
-      <option selected>Mês</option>
+    <select class="form-select" id="inlineFormSelectPref" [(ngModel)]="anoSelecionado">
+      <option value="" disabled selected>Ano</option>
       <ng-container *ngFor="let day of anosArray; let i = index">
         <option [value]="i + 1">{{ i + 1 }}</option>
     </ng-container>
@@ -40,7 +40,7 @@
   </div>
 
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
   </div>
 </form>
 

@@ -57,5 +57,36 @@ export class MenuListaAulasComponent {
 
    exibirTodos():void{
     this.listaAulasFiltro=this.listaaulas;
+   }
+
+    diaSelecionado: number | null = null;
+  mesSelecionado: number | null = null;
+  anoSelecionado: number | null = null;
+
+  // Função para verificar se alguma aula corresponde à data selecionada
+  verificarData(): void {
+      this.listaAulasFiltro = [];
+  
+      if (this.anoSelecionado) {
+        this.listaAulasFiltro = this.listaaulas.filter(aula => {
+          const dataAula = new Date(aula.data);
+          return dataAula.getFullYear() === this.anoSelecionado;
+        });
+      }
+  
+      if (this.mesSelecionado) {
+        this.listaAulasFiltro = this.listaAulasFiltro.filter(aula => {
+          const dataAula = new Date(aula.data);
+          return dataAula.getMonth() === this.mesSelecionado ?? - 1;
+        });
+      }
+  
+      if (this.diaSelecionado) {
+        this.listaAulasFiltro = this.listaAulasFiltro.filter(aula => {
+          const dataAula = new Date(aula.data);
+          return dataAula.getDate() === this.diaSelecionado;
+        });
+      }
+    }
   }
-}
+
