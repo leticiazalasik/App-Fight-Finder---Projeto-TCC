@@ -20,10 +20,10 @@ export class AulaFormComponent {
     this.aulaEditada={
       id: 0,
       data: new Date(0, 0, 0),
-      lutadoresPresentes: [],
-      treinadoresPresentes: [], // Array de IDs de lutadores e treinadores
+      lutadoresPresentes: [1],
+      treinadoresPresentes: [1], // Array de IDs de lutadores e treinadores
       lutadoresAusentes: [], // Array de IDs de lutadores e treinadores
-      treinadoresAusentes: [4,5], // Array de IDs de lutadores e treinadores
+      treinadoresAusentes: [], // Array de IDs de lutadores e treinadores
       horario: '19:00',
     }
   }

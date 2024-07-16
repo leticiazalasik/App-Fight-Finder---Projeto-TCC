@@ -1,0 +1,30 @@
+<div class="container" >
+    <div class="row">
+      <div class="col-sm">
+        <app-menu-aulas (telaAulas)="novaTelaAulas($event)" > </app-menu-aulas>
+</div>
+</div>
+</div>
+
+
+<section *ngIf="telaAulas === 'listarAulas'" >
+ 
+  
+<app-aula-list [listaAulas]="listaAulasFiltro"
+(excluir)="onExcluir($event)"
+(editar)="onEditar($event)"
+(inserir)="onInserir($event)">
+</app-lutador-list>
+</section>
+
+<section *ngIf="telaAulas === 'adicionarAulas'" >
+    <app-aula-form (salvar)="onSalvar($event)" ></app-aula-form>
+  </section>
+
+  
+  <section *ngIf="telaAulas === 'editarAulas'" >
+    <app-aula-edit [listaAulas]="listaAulasFiltro"
+                      (excluir)="onExcluir($event)"
+                      (editar)="onEditar($event)">
+    </app-aula-edit>
+  </section>

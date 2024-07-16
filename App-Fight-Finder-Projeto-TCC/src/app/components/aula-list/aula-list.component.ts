@@ -68,4 +68,3 @@ export class AulaListComponent {
     this.listaAulasFiltro = this.listaAulas;
     }
 }
-
