@@ -36,4 +36,21 @@ export class MenuListaLutadoresComponent {
     this.listaLutadoresFiltro=this.listalutadores;
   }
 
+  pesquisarLutador(nomePesquisado: string): void {
+    const lutadorEncontrado = this.listalutadores.find(lutador =>
+      lutador.nome.toLowerCase() === nomePesquisado.toLowerCase()
+    );
+  
+    if (lutadorEncontrado) {
+      // Adicione o lutador à lista listaLutadoresFiltro
+      this.listaLutadoresFiltro.push(lutadorEncontrado);
+      console.log(`Lutador encontrado: ${lutadorEncontrado.nome}`);
+      // Faça outras operações necessárias com o lutador encontrado
+    } else {
+      // Exiba um alerta informando que o lutador não foi encontrado
+      alert('Lutador não encontrado.');
+    }
+  }
+  
+
 }
