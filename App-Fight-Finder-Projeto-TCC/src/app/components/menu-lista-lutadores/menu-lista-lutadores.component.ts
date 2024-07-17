@@ -1,12 +1,15 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Lutador } from '../../interfaces/Lutador';
 
+
 @Component({
   selector: 'app-menu-lista-lutadores',
   templateUrl: './menu-lista-lutadores.component.html',
   styleUrl: './menu-lista-lutadores.component.css'
 })
 export class MenuListaLutadoresComponent {
+
+  
   listalutadores: Lutador[] = [
     {
       id: 1,

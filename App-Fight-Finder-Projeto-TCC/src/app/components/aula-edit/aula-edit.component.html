@@ -31,6 +31,6 @@
       </div>
     </div>
       
-    <app-lutador-aula *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
+    <app-aula-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
     [aula]="aulaEditar" 
     (salvar)="onSalvar($event)"> </app-aula-form>

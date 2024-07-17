@@ -3,10 +3,12 @@ import { Lutador } from './interfaces/Lutador';
 import { filter } from 'rxjs';
 import { ComentarioComponent } from './components/comentario/comentario.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   // ...
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  
 })
 export class SeuModulo { }
 

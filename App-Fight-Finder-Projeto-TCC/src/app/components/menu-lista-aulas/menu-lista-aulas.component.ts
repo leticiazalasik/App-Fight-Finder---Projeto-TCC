@@ -77,7 +77,7 @@ export class MenuListaAulasComponent {
       if (this.mesSelecionado) {
         this.listaAulasFiltro = this.listaAulasFiltro.filter(aula => {
           const dataAula = new Date(aula.data);
-          return dataAula.getMonth() === this.mesSelecionado ?? - 1;
+          return dataAula.getMonth() === this.mesSelecionado;
         });
       }
   
