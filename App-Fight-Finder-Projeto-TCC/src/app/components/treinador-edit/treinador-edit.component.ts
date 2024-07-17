@@ -48,7 +48,7 @@ treinadorEditar:Treinador|null=null;
     }
   }
 
-  inativarLutador(treinador: Treinador): void {
+  inativarTreinador(treinador: Treinador): void {
     treinador.ativo = !treinador.ativo;
 
   }

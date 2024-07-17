@@ -89,4 +89,5 @@ this.listalutadores.push(novoLutador);
         }
     }
 
+    
 }

@@ -39,6 +39,8 @@ export class MenuListaLutadoresComponent {
     this.listaLutadoresFiltro=this.listalutadores;
   }
 
+  nomePesquisado: string = '';
+  
   pesquisarLutador(nomePesquisado: string): void {
     const lutadorEncontrado = this.listalutadores.find(lutador =>
       lutador.nome.toLowerCase() === nomePesquisado.toLowerCase()

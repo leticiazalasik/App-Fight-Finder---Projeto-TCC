@@ -75,10 +75,10 @@ this.listatreinadores.push(novoTreinador);
         treinador.ativo = false;
     }
 
-    @Output() telaLutadores : EventEmitter<string> = new EventEmitter<string>();
+    @Output() telaTreinadores = new EventEmitter<string>();
 
     tela(tela: string) {
-      this.telaLutadores.emit(tela);
+      this.telaTreinadores.emit(tela);
       if (tela=='editarTreinadores'){ 
           this.listaTreinadoresFiltro=this.listatreinadores; 
         }
