@@ -1,0 +1,12 @@
+@import '../styleSass.css';
+
+.cards, .lista{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container{ 
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
