@@ -1,4 +1,17 @@
 <div class="container" >
+  <div class="row">
+    <div class="col-sm">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <form class="d-flex" role="search">
+            <input [(ngModel)]="nomePesquisado" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button (click)="pesquisarTreinador(nomePesquisado)" class="btn btn-outline-success" type="button">Pesquisar</button>
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+
     <div class="row">
       <div class="col-sm">
     <button class="btn-padrao" (click)="tela(true)"> Exibir treinadores ativos</button>

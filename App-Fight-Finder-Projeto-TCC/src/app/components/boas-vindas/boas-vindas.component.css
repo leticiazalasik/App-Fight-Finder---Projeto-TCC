@@ -11,42 +11,27 @@ img{
     width: 100%;
   }
 
-  .tela-login{ 
-    margin-top: 15%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .container{
+    text-align: center
+    
   }
 
-  .btn-padrao-confirm{
+  .btn-padrao{
     margin-bottom: 5%;
-    width: 100% !important;
+    width: 60% !important;
+    height: 90%;
 
   }
 
   .btn-padrao-edit{ 
-    margin-bottom: 35%;
-    width: 100% !important;
+    margin-bottom: 25%;
+    width: 60% !important;
 
-  }
-
-  .btn-padrao-cancel{ 
-    margin-bottom: 15%;
-    width: 100% !important;
-
-  }
-
-  .container{
-    display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   }
 
   h1{ 
     text-align: center;
-    margin-top: 5%;
+    margin-top: 15%;
     margin-bottom: 3%;
 
   }

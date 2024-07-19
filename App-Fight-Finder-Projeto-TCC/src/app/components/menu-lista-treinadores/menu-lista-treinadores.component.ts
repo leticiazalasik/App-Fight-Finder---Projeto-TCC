@@ -33,4 +33,22 @@ export class MenuListaTreinadoresComponent {
     this.listaTreinadoresFiltro=this.listatreinadores;
   }
 
+  nomePesquisado: string = '';
+  
+  pesquisarTreinador(nomePesquisado: string): void {
+    const treinadorEncontrado = this.listatreinadores.find(treinador =>
+      treinador.nome.toLowerCase() === nomePesquisado.toLowerCase()
+    );
+  
+    if (treinadorEncontrado) {
+      // Adicione o lutador à lista listaLutadoresFiltro
+      this.listaTreinadoresFiltro.push(treinadorEncontrado);
+      console.log(`Lutador encontrado: ${treinadorEncontrado.nome}`);
+      // Faça outras operações necessárias com o lutador encontrado
+    } else {
+      // Exiba um alerta informando que o lutador não foi encontrado
+      alert('Treinador não encontrado.');
+    }
+  }
+
 }
