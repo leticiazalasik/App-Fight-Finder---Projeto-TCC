@@ -4,7 +4,6 @@
 img{ 
     width: 45%;
     height: 45%;
-
   }
 
   input{
@@ -25,12 +24,9 @@ img{
   }
 
   .btn-padrao-edit{ 
-    margin-top: 0%;
     margin-bottom: 25%;
     width: 300px !important;
-    height: 30%;
-
-
+    height: 60%;
   }
 
   h1{ 
@@ -42,6 +38,7 @@ img{
  
   p{
     margin-bottom: 2px;
+    height: 1%;
   }
   input[type="text"] {
     height: 80%;
