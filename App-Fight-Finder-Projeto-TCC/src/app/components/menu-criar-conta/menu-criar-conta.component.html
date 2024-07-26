@@ -1,3 +1,4 @@
+
 <div class="container" >
     <div class="row">
       <div class="col-sm">
@@ -5,8 +6,8 @@
 </div>
 </div>
 
-<div class="row">
-    <div class="col-sm">
+    <div class="row">
+      <div class="col-sm">
         <h1>Criar conta</h1>
     </div>
 </div>
@@ -19,20 +20,14 @@
 </div>
         <div class="row" >
             <div class="col-sm">
-        <button class="btn-padrao">Criar cadastro manual </button>
+        <button class="btn-padrao" (click)="alternarExibicaoFormulario()">Criar cadastro manual </button>
     </div>
 </div>
 </div>
 
-    <div class="row">
-        <div class="col-sm">
+<div *ngIf="exibirFormularioEscola">
 <app-escola-form> </app-escola-form>
 </div>
-</div>
 
-<div class="row">
-    <div class="col-sm">
+
 <app-footer> </app-footer>
-</div>
-</div>
-</div>

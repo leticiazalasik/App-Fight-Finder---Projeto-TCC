@@ -1,8 +1,16 @@
 @import '../../components/styleSass.css';
 
+*{ 
+    display: inline;
+}
 .form h3{
     text-align: center;
     margin-top: 15%;
+    margin-bottom: 2%;
+}
+
+input{
+    margin-top: 1%;
 }
 
 .radio-quebra-de-linha{
@@ -10,27 +18,38 @@
 }
 
 .btn-padrao-cancel, .btn-padrao-confirm{
-    width: 50%;
+        padding: 4%; /* Ajuste o preenchimento conforme necessário */
+        width: 60%; /* Defina a largura desejada em porcentagem */
+        height: 70%; /* Defina a altura desejada em porcentagem */
+        
+      }
+      
     
-}
-
 .btn-padrao-confirm{
     margin-top: 10%;
+    margin-bottom: 2%;
 }
 
 .btn-padrao-cancel{
     margin-bottom: 10%;
 }
-.botoes{ 
+.botoes, h3{ 
     display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 
 .form{
     margin-left: 5%;
     margin-right: 5%;
+}
+
+.form-group{
+    margin-top: 30%;
+    
 }
 

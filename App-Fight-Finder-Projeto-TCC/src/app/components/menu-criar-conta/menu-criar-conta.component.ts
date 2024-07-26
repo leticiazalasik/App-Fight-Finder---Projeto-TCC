@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class MenuCriarContaComponent {
 
+  exibirFormularioEscola = false;
+
+// Função para alternar a exibição do formulário
+alternarExibicaoFormulario() {
+  this.exibirFormularioEscola = !this.exibirFormularioEscola;
+}
 }

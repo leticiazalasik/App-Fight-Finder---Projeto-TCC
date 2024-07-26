@@ -14,19 +14,22 @@ img{
     text-align: center;
     width: 100%;
     
+    
   }
 
   .btn-padrao{
     margin-bottom: 5%;
-    width: 300px !important;
-    height: 60%;
+    padding: 5%; /* Ajuste o preenchimento conforme necessário */
+    width: 80%; /* Defina a largura desejada em porcentagem */
+    height: 85%; /* Defina a altura desejada em porcentagem */
 
   }
 
   .btn-padrao-edit{ 
     margin-bottom: 25%;
-    width: 300px !important;
-    height: 60%;
+    padding: 5%; /* Ajuste o preenchimento conforme necessário */
+    width: 80%; /* Defina a largura desejada em porcentagem */
+    height: 45%; /* Defina a altura desejada em porcentagem */
   }
 
   h1{ 
@@ -45,10 +48,8 @@ img{
   }
   
 .botoes{ 
-  display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
 width: 100%;
   height: 100%;
 }
