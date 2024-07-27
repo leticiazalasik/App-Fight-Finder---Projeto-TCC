@@ -1,63 +1,54 @@
 @import '../../components/styleSass.css';
 
-  input{
-    width: 100%;
-  }
-
-  .tela-login{ 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-  }
-
-  .btn-padrao-confirm{
-    margin-top: 8%;
-    margin-bottom: 5%;
-    width: 60% !important;
-
-  }
-
-  .btn-padrao-cancel{
-    margin-top: 3%;
-    width: 60% !important;
-
-  }
-
-  .btn-padrao-edit{
-    margin-top: 12%;
-    margin-bottom: 5%;
-    width: 60% !important;
-
-  }
-
-  .btn-padrao-ajuda{
-    margin-top: 20%;
-    width: 70%;
-    margin-bottom: 8%;
-
-   
-  }
 
 
 
-  h1{ 
-    text-align: center;
+h1{
+  text-align: center;
+  margin-top: 15%;
+}
 
-  }
- 
-  input[type="text"] {
-    height: 80%;
-  }
+h2{
+  margin-top: 3%;
+}
 
+.form div {
+margin: 5px;
 
-  
-.botoes{ 
-  display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+}
+
+.form{
+  margin-top: 5%;
+}
+.container-imagem{
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 180%;
+}
+
+.imagem-login{
+  width: 120%;
+  height: 180%;
+}
+
+.container-imagem2{
+  text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 
+
+.btn-padrao-cancel, .btn-padrao-confirm{
+  padding: 4%; /* Ajuste o preenchimento conforme necessário */
+  width: 70%; /* Defina a largura desejada em porcentagem */
+  height: 90%; /* Defina a altura desejada em porcentagem */
+}
+
+.btn-padrao-ajuda{
+  padding: 4%; /* Ajuste o preenchimento conforme necessário */
+  width: 60%; /* Defina a largura desejada em porcentagem */
+  height: 50%; /* Defina a altura desejada em porcentagem */
+  margin-top: 10%;
+}
