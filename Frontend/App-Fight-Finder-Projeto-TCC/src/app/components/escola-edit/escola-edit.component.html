@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+      <div class="col-sm">
+<app-header> </app-header>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-sm">
+      <h1>Editar Perfil</h1>
+  </div>
+</div>
+
+<div class="botoes">
+<div class="row">
+    <div class="col-sm">
+<button class="btn-padrao" (click)="alternarExibicaoFormulario()">Editar perfil</button>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-sm">
+<button class="btn-padrao" (click)="excluirConta()"> Excluir conta</button>
+</div>
+</div>
+</div>
+
+<div *ngIf="exibirFormularioEscola">
+<app-escola-form ></app-escola-form>
+</div>
+
+
+<app-footer> </app-footer>
+

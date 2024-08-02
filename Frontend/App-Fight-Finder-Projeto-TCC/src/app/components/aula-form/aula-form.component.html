@@ -1,19 +1,37 @@
-
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
 <app-header></app-header>
+</div> 
+</div>
+
 <div class="form">
-
+    <div class="row">
+        <div class="col-sm">
     <h2 class="botoes">Iniciar aula!</h2>
+</div> 
+</div>
 
+    <div class="row">
+        <div class="col-sm">
     <div>
         <label for="id">ID</label>
         <input type="text" id="id" readonly [(ngModel)]="aulaEditada.id">
     </div>
+</div> 
+</div>
 
+    <div class="row">
+        <div class="col-sm">
     <div class="data">
         <label for="data">Data</label><br>
         <input type="date" id="data" readonly [(ngModel)]="aulaEditada.data">
     </div>
+</div> 
+</div>
 
+    <div class="row">
+        <div class="col-sm">
     <div>
         <label for="nivel">Horário</label>
         <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="horario" [(ngModel)]="aulaEditada.horario" required>
@@ -55,26 +73,45 @@
             <option value="Outro">Outro</option>
           </select>
     </div>
+</div> 
+</div>
 
+    <div class="row">
+        <div class="col-sm">
     <div>
     <h3 style="margin-top: 12%;">Lutadores presentes</h3>
     <button class="btn-padrao"> Gerar link de presença </button>
     <button class="btn-padrao">Selecionar com base na turma</button>
     <button class="btn-padrao" style="margin-bottom: 8%;">Selecionar entre todos os treinadores</button>
 </div>
+</div> 
+</div>
 
+<div class="row">
+    <div class="col-sm">
     <div>
     <h3>Treinadores presentes</h3>
     <button class="btn-padrao"> Gerar link de presença </button>
     <button class="btn-padrao">Selecionar com base na turma</button>
     <button class="btn-padrao">Selecionar entre todos os treinadores</button>
 </div>
+</div> 
+</div>
 
+<div class="row">
+    <div class="col-sm">
     <div class="botoes">
         <button class="btn-padrao-confirm"(click)="salvarDados()">Iniciar</button>
         <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
     </div>
+</div> 
+</div>
 
-    </div>
+</div>
 
+<div class="row">
+    <div class="col-sm">
     <app-footer></app-footer>
+</div>
+</div>
+</div>

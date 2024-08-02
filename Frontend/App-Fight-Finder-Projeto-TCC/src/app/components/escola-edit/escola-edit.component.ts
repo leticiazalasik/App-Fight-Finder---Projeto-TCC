@@ -7,12 +7,12 @@ import { Component } from '@angular/core';
 })
 export class EscolaEditComponent {
 
-  mostrarFormulario = false;
+  exibirFormularioEscola = false;
 
-  onClickEditarPerfil() {
-    this.mostrarFormulario = !this.mostrarFormulario;
-    console.log('Valor de mostrarFormulario:', this.mostrarFormulario);
-}
+
+  alternarExibicaoFormulario() {
+    this.exibirFormularioEscola = !this.exibirFormularioEscola;
+  }
 
 excluirConta() {
   const confirmacao = confirm("Tem certeza de que deseja excluir sua conta permanentemente?\n \n Você irá perder todos os seus dados registrados.");
