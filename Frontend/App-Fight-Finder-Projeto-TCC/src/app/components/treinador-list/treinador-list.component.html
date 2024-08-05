@@ -1,7 +1,16 @@
 <div class="container">
+  <div class="row">
+      <div class="col-sm">
+<app-header> </app-header>
+</div> 
+</div>
 
+<div class="row">
+  <div class="col-sm">
     <h1>Lista de treinadores</h1>
-    
+  </div> 
+</div>
+
     <app-menu-lista-treinadores> </app-menu-lista-treinadores>
   
   
@@ -35,3 +44,5 @@
     <app-treinador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
     [treinador]="treinadorEditar" 
     (salvar)="onSalvar($event)"> </app-treinador-form>
+
+    <div class="divosoria"></div>
