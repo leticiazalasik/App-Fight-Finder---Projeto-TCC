@@ -9,13 +9,15 @@
 
 <section *ngIf="telaLutadores === 'listarLutadores'" >
  
-  
+  <div class="espacamento">
 <app-lutador-list [listaLutadores]="listaLutadoresFiltro"
 (excluir)="onExcluir($event)"
 (editar)="onEditar($event)"
 (inserir)="onInserir($event)">
 </app-lutador-list>
+</div>
 </section>
+
 
 <section *ngIf="telaLutadores === 'adicionarLutadores'" >
     <app-lutador-form (salvar)="onSalvar($event)" ></app-lutador-form>
