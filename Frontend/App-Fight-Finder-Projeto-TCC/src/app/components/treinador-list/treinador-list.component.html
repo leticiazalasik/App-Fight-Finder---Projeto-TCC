@@ -11,9 +11,12 @@
   </div> 
 </div>
 
+<div class="espacamento">
     <app-menu-lista-treinadores> </app-menu-lista-treinadores>
-  
-  
+  </div>
+
+    <div class="row">
+      <div class="col-sm">
       <p *ngIf="listaTreinadores.length==0">
         Nennhum registro encontrado. 
       </p>
@@ -40,9 +43,19 @@
         </table>
       </div>
     </div>
-      
+  </div>
+
+  <div class="row">
+    <div class="col-sm">
     <app-treinador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
     [treinador]="treinadorEditar" 
     (salvar)="onSalvar($event)"> </app-treinador-form>
+  </div>
+</div> 
 
-    <div class="divosoria"></div>
+    <div class="row">
+      <div class="col-sm">
+    <app-footer> </app-footer>
+    </div>
+    </div>
+    </div> 

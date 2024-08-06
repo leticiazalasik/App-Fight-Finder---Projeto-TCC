@@ -10,7 +10,11 @@ img {
 }
 
 h1{
-    color:  hsl(0, 79%, 34%);
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10%;
+    margin-top: 15%;
+}
+
+.espacamento{
+    margin-bottom: 30%;
 }
