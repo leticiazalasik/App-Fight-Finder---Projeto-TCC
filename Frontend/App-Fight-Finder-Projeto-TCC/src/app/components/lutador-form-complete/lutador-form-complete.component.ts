@@ -37,7 +37,13 @@ limparLutador():void {
     peso: 0,
     genero: '',
     ativo: false,
-    foto: ''
+    foto: '',
+    comentarios: ["Ótimo desempenho!", "Precisa melhorar.", "Impressionante!"],
+    vitorias: 2, 
+    empates: 1,
+    derrotas: 0,
+    presencas: 5, 
+    faltas: 1
   }
 }
 
@@ -56,6 +62,12 @@ ngOnChanges(): void{
       altura: this.lutador.altura,
       ativo: this.lutador.ativo,
       foto: this.lutador.foto   ,
+      comentarios: this.lutador.comentarios   ,
+      vitorias: this.lutador.vitorias   ,
+      empates: this.lutador.empates   ,
+      derrotas: this.lutador.derrotas   ,
+      presencas: this.lutador.presencas   ,
+      faltas: this.lutador.faltas   ,
     }; 
     console.log(this.lutador.foto);
   } else {

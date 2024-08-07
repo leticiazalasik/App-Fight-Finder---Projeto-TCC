@@ -11,7 +11,7 @@ export interface Lutador{
     altura: number, 
     ativo: Boolean, 
     foto?: string,
-    comentarios?: string, 
+    comentarios?: string[], 
     vitorias?: number, 
     derrotas?: number, 
     empates?: number, 
