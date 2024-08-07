@@ -43,6 +43,8 @@ import { MenuListaAulasComponent } from './components/menu-lista-aulas/menu-list
 import { AulaEditComponent } from './components/aula-edit/aula-edit.component';
 import { TelaAulasComponent } from './components/tela-aulas/tela-aulas.component';
 import { MenuAulasComponent } from './components/menu-aulas/menu-aulas.component';
+import { VisualizacaoLutadorComponent } from './components/visualizacao-lutador/visualizacao-lutador.component';
+import { LutadorFormCompleteComponent } from './components/lutador-form-complete/lutador-form-complete.component';
 
 
 @NgModule({
@@ -53,7 +55,7 @@ import { MenuAulasComponent } from './components/menu-aulas/menu-aulas.component
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent, EscolaEditComponent, AulaComponent, AulaFormComponent, PresencaLutadoresManualComponent, PresencaLutadoresAutomaticaComponent, PresencaTreinadoresManualComponent, TreinadorComponent, TreinadorListComponent, TreinadorFormComponent, TreinadorEditComponent, TelaTreinadoresComponent, MenuListaTreinadoresComponent, MenuTreinadoresComponent, AulaListComponent, MenuListaAulasComponent, AulaEditComponent, TelaAulasComponent, MenuAulasComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent, EscolaEditComponent, AulaComponent, AulaFormComponent, PresencaLutadoresManualComponent, PresencaLutadoresAutomaticaComponent, PresencaTreinadoresManualComponent, TreinadorComponent, TreinadorListComponent, TreinadorFormComponent, TreinadorEditComponent, TelaTreinadoresComponent, MenuListaTreinadoresComponent, MenuTreinadoresComponent, AulaListComponent, MenuListaAulasComponent, AulaEditComponent, TelaAulasComponent, MenuAulasComponent,  VisualizacaoLutadorComponent, LutadorFormCompleteComponent
   ],
   imports: [
     BrowserModule,

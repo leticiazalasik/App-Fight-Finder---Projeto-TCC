@@ -25,5 +25,7 @@ comentario= 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
 vitorias=2; 
 empates=1; 
 derrotas=0;
+presencas=5; 
+faltas=1;
 
 }

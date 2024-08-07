@@ -10,6 +10,12 @@ export interface Lutador{
     peso: number, 
     altura: number, 
     ativo: Boolean, 
-    foto?: string
+    foto?: string,
+    comentarios?: string, 
+    vitorias?: number, 
+    derrotas?: number, 
+    empates?: number, 
+    presencas?: number, 
+    faltas?: number
 
 }
