@@ -1,15 +1,76 @@
-@import '../styleSass.css';
+@import '../../components/styleSass.css';
 
-
-.form h3{
-    text-align: center;
+*{ 
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
 }
 
-.radio-quebra-de-linha{
-    margin-bottom: 5%;
+.custom-margin {
+    margin-bottom: 20%;
+  }
+
+  .row {
+    display: inline;
+  }
+  
+.col-sm, .row{
+    padding: 0px;
+    margin: 0px;
 }
 
-button{
-    width: 8%;
-    margin-right: 2px;
+.btn-padrao-cancel, .btn-padrao-confirm{
+        padding: 4%; /* Ajuste o preenchimento conforme necessário */
+        width: 50%; /* Defina a largura desejada em porcentagem */
+        height: 65%; /* Defina a altura desejada em porcentagem */
+        
+      }
+     
+      .btn-padrao{
+        height: 8%;      }
+    
+.btn-padrao-confirm{
+    margin-top: 10%;
+    margin-bottom: 2%;
 }
+
+.btn-padrao-cancel{
+    margin-bottom: 10%;
+}
+.botoes, h3{ 
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ 
+}
+
+.form-group{
+    margin-top: 10%;
+    
+}
+
+h3{
+    width: 100%;
+}
+
+
+      .form{
+        margin-left: 5%;
+      }
+
+      .center-horizontal {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+      }
+
+      .center-horizontal2 {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; 
+        padding-top: 10%;
+    }
+
+
+      
+      
