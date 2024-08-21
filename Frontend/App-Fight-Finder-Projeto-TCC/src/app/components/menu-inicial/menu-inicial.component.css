@@ -38,3 +38,7 @@
     align-items: center;
     justify-content: center;
 }
+
+.btn-padrao{
+  height: 1000vh;
+}

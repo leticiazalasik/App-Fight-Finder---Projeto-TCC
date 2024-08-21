@@ -1,21 +1,50 @@
-<div>
-    <label for="">Comentário</label>
-    <div class="form-floating">
-        <textarea class="form-control" #descricao placeholder="Comentário sobre o lutador...(opcional)" id="floatingTextarea2" style="height: 100px"></textarea>
-    </div>
+<h3>Resultado</h3>
 
+
+<div class="lutador">
+<p>Lutador</p>
     <label>
   <input type="radio" value="lutador1" [(ngModel)]="nomeLutador"name="lutador" value="lutador1" class="hidden-radio" />
   <span class="custom-radio"  for="lutador1"></span>
   Lutador 1
 </label>
+
 <label>
   <input type="radio" value="lutador2" [(ngModel)]="nomeLutador" name="lutador" value="lutador2" class="hidden-radio" />
   <span class="custom-radio" for="lutador2"></span>
   Lutador 2
 </label>
-
-    <button (click)="adicionarComentario(descricao.value, nomeLutador)" class="btn-padrao">Adicionar Comentário</button>
 </div>
 
+<div class="comentario">
+    <label for="">Comentário</label>
+    <div class="form-floating">
+        <textarea class="form-control" #descricao placeholder="Comentário sobre o lutador...(opcional)" id="floatingTextarea2" style="height: 100px"></textarea>
+    </div>
+    </div>
+
+    <div class="resultado">
+    <p>Resultado</p>
+    <label>
+  <input type="radio" value="vitoria" class="hidden-radio" />
+  <span class="custom-radio"  for=""></span>
+  Vitória
+</label>
+
+<label>
+  <input type="radio" value="derrota" class="hidden-radio" />
+  <span class="custom-radio"  for=""></span>
+  Derrota
+</label>
+
+<label>
+  <input type="radio" value="empate" class="hidden-radio" />
+  <span class="custom-radio"  for=""></span>
+  Empate
+</label>
+</div>  
+
+<div class="button">
+    <button (click)="adicionarComentario(descricao.value, nomeLutador)" class="btn-padrao">Adicionar Informações</button>
+  </div>
 

@@ -40,3 +40,64 @@ label {
   .hidden-radio {
     margin-right: 8px; /* Ajuste a margem conforme necessário */
   }
+
+  .comentario{
+    margin-top: 20%;
+    margin-bottom: 20%;
+
+  }
+
+  .lutador p{
+    margin-left: 7%;
+    font-size: large;
+    font-weight: 500;
+  }
+
+  .lutador{
+    margin-top: 10%;
+  }
+  .resultado p{
+    margin-left: 7%;
+    font-size: large;
+    font-weight: 500;
+  }
+
+  textarea {
+    border-radius: 3%;
+    border: solid 1px rgb(134, 134, 134);
+color: black;
+width: 80%;
+  }
+
+  element.style {
+    height: 200px;
+}
+
+textarea:focus {
+    outline: 1px solid red;
+    box-shadow: 0px 0px 10px #5a5a5a;
+
+}
+
+h3{
+    text-align: center;
+}
+.button{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12%;
+  margin-bottom: 8%;
+  height: 80px;
+}
+
+.btn-padrao{
+    padding: 5%;
+
+}
+
+.comentario label{
+    font-size: large;
+    font-weight: 500;
+}
+

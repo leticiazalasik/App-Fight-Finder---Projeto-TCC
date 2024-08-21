@@ -9,14 +9,32 @@ import { Lutador } from '../../interfaces/Lutador';
 
 
 export class PresencaLutadoresManualComponent {
-  @Input() listaLutadores: Lutador[] = [];
   @Input() lutador!: Lutador;
   
   @Output() salvar: EventEmitter<any> = new EventEmitter<any>(); 
 @Output() editar: EventEmitter<any> = new EventEmitter<any>(); 
   @Output() presente: EventEmitter<any>=new EventEmitter(); 
 
+  listaLutadores: Lutador[] = [
+    {
+      id: 1,
+      nome: 'John Deik',
+    idade: 31,
+    modalidade: 'Taekwondo',
+    nivel: 9,
+    peso: 80,
+    altura: 180,
+    genero: 'masculino',
+    ativo: true,
+    foto: 'assets/img/perfil.png',
+    
+    }
+  ];
   lutadoresSelecionados: Lutador[] = [];
+
+  ngOnInit() {
+    this.listaLutadores = this.listaLutadores;
+  }
   
   salvarLutadoresSelecionados(lutadores:Lutador[]): Lutador[] {
     this.lutadoresSelecionados = lutadores.filter(lutador => {

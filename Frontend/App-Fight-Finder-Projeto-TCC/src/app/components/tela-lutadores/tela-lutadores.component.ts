@@ -23,7 +23,7 @@ export class TelaLutadoresComponent {
     modalidade: 'Taekwondo',
     nivel: 9,
     peso: 80,
-    altura: 182,
+    altura: 180,
     genero: 'masculino',
     ativo: true,
     foto: 'assets/img/perfil.png',
