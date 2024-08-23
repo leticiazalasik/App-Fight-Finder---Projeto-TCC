@@ -1,30 +1,11 @@
-<div class="container" >
-  <div class="row">
-    <div class="col-sm">
-    <app-header></app-header>
-</div>
-</div>
-  
-      <app-menu-inicial *ngIf="telaAtual == ''" (telaAtual)="novaTelaAtual($event)"> </app-menu-inicial>
-
-    <section  *ngIf="telaAtual === 'lutadores'">
-    <app-tela-lutadores></app-tela-lutadores>
-    </section>
-      
-    <div class="row">
-      <div class="col-sm">
-        <app-menunav (botaoClicado)="telaAtual = ''"></app-menunav>
-      </div>
-    </div>
-    
-      <div class="row">
-        <div class="col-sm">
-  <app-footer></app-footer>
-</div>
-</div>
-</div>
 
 <app-splash-screen> </app-splash-screen>
+
+<app-lutador-list></app-lutador-list>
+
+<app-lutador-form></app-lutador-form>
+
+<app-lutador-edit></app-lutador-edit>
 
 <div> 
   <app-adicionar-comentario (novoComentario)="adicionarComentarioAoLutador($event)"></app-adicionar-comentario>

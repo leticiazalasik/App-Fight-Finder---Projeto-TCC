@@ -10,7 +10,6 @@
         <table class="table">
           <thead>
             <tr>
-              <th>Id</th>
               <th>Data</th>
               <th>Horário</th>
               <th></th>
@@ -20,7 +19,6 @@
           </thead>
           <tbody>
             <tr *ngFor="let aula of listaAulas">
-            <td>{{ aula.id }} </td>
               <td>{{ aula.data }} </td>
               <td>{{ aula.horario }}</td>
               <td><button class="btn-padrao-cancel" (click)="excluirAula(aula.id)">Excluir</button></td>

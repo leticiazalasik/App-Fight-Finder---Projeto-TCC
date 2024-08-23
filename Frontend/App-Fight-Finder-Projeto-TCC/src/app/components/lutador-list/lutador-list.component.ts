@@ -32,6 +32,32 @@ export class LutadorListComponent implements OnInit{
   lutadorEditar:Lutador|null=null;
   exibirFormulario: string=''; 
 
+  listalutadores: Lutador[] = [
+    {
+      id: 1,
+      nome: 'John Deik',
+    idade: 31,
+    modalidade: 'Taekwondo',
+    nivel: 9,
+    peso: 80,
+    altura: 182,
+    genero: 'masculino',
+    ativo: false,
+    foto: 'assets/img/perfil.png',
+    
+    }
+  ];
+
+
+  @Output() filtro: EventEmitter<Boolean> = new EventEmitter<Boolean>();
+
+  tela(tela?:Boolean): void { 
+    this.filtro.emit(tela); 
+  }
+
+   exibirTodos():void{
+    this.listaLutadoresFiltro=this.listalutadores;
+  }
   excluirLutador (id:number): void {
     this.excluir.emit(id); 
   }
@@ -57,13 +83,7 @@ export class LutadorListComponent implements OnInit{
     }
   }
 
-  filtro:Boolean=true; 
-
-  telaLutadoresFiltro(tela:Boolean):void{
-  this.filtro=tela; 
-  console.log(tela);
-  this.filtrarLutadores(tela);
-  }
+  
 
   filtrarLutadores(tela?: Boolean): void { 
     this.listaLutadoresFiltro = this.listaLutadores.filter(lutador => {
@@ -71,5 +91,23 @@ export class LutadorListComponent implements OnInit{
     });
 }
 
+nomePesquisado: string = '';
+  
+  pesquisarLutador(nomePesquisado: string): void {
+    const lutadorEncontrado = this.listalutadores.find(lutador =>
+      lutador.nome.toLowerCase() === nomePesquisado.toLowerCase()
+    );
+  
+    if (lutadorEncontrado) {
+      // Adicione o lutador à lista listaLutadoresFiltro
+      this.listaLutadoresFiltro.push(lutadorEncontrado);
+      console.log(`Lutador encontrado: ${lutadorEncontrado.nome}`);
+      // Faça outras operações necessárias com o lutador encontrado
+    } else {
+      // Exiba um alerta informando que o lutador não foi encontrado
+      alert('Lutador não encontrado.');
+    }
+  }
+  
 
 }

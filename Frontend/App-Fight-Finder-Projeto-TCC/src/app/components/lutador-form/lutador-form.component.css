@@ -3,6 +3,7 @@
 
 .form h3{
     text-align: center;
+    margin-top: 10%;
 }
 
 .radio-quebra-de-linha{
@@ -13,3 +14,31 @@ button{
     width: 8%;
     margin-right: 2px;
 }
+
+.espaco{
+    margin-top: 40%;
+}
+
+.form-group{
+    margin-top: 10%;
+}
+
+.btn-padrao-confirm{
+margin-top: 10%;
+width: 50%;
+height: 50px;
+}
+
+.btn-padrao-cancel{
+    width: 50%;
+    height: 50px;
+    }
+
+    .botoes {
+        text-align: center; /* Centraliza horizontalmente */
+    }
+    
+    p {
+        font-weight: 500;
+    }
+    
