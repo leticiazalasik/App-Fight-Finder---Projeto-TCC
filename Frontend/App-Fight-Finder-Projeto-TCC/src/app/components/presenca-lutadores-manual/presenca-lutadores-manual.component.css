@@ -6,11 +6,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 15%;
-  margin-bottom: 25%;
-  width: 100%;
-  height: 100%;
-  padding: 0px;
+  margin-top: 10%;
+  margin-bottom: 7%;
 }
 
 .col-sm, .row{
@@ -19,11 +16,45 @@
 }
 
 .btn-padrao-cancel, .btn-padrao-confirm{
-  width: 110%;
-  height: 70%;    
+  width: 40%;
+  padding: 3%;    
 }
 
 h3{
   text-align: center;
   margin-top: 10%;
+}
+
+.form-check{
+  display: flex;
+  justify-content: center;
+}
+
+.form-check input[type="checkbox"] {
+margin-top: 50%;
+padding: 80%;
+width: 100%;
+}
+
+td{
+  width: 10%;
+}
+
+.form-check-input:checked {
+  background-color:  #001a71;
+  border-color: hsl(0, 79%, 34%);
+}
+
+.table{
+  margin-top: 10%;
+  margin-left: 2%;
+  margin-right: 2%;
+
+}
+
+.class2{
+  background-color: hsl(0, 79%, 34%);
+  border:hsl(0, 79%, 34%);
+  ;
+
 }

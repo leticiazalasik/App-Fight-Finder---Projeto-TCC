@@ -1,14 +1,21 @@
 @import '../../components/styleSass.css';
 
-
-.btn-padrao-cancel, .btn-padrao-confirm{
-    width: 110%;
-    height: 40%;    
+*{
+    box-sizing: border-box;
+}
+.class1{
+    background-color:  hsl(0, 79%, 34%);
+    padding: 3%;
+}
+.pg-total{
+    margin-left: 2%;
 }
 
+
 .btn-padrao{
-    width: 80%;
-    height: 100%;    
+    width: 50%;
+    padding: 2%;
+    margin-bottom: 0%;
 }
 
 
@@ -17,24 +24,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%; 
-  width: 100%;   
 }
 
 .btn-padrao-cancel{
-    margin-bottom: 30%;
+    margin-bottom: 5%;
+    padding: 3%;
+    width: 30%;
 }
 
 .btn-padrao-confirm{
-    margin-bottom: 5%;
     margin-top: 10%;
+    padding: 3%;
+    width: 30%;
+
 }
 
 .data input{
     height: 50px;
     font-size: 18px;
     border: 1px solid;
-    border-radius: 5%;
+    border-radius: 6%;
     border-color: rgb(145, 145, 145);
     
 }
@@ -49,9 +58,13 @@ margin: 1%;
 }
 
 h2{
-    margin-top: 4%;
+    margin-top: 0%;
 }
 
 app-footer{
     height: 30%;
+}
+
+.dropdown{
+    margin-bottom: 10%;
 }
