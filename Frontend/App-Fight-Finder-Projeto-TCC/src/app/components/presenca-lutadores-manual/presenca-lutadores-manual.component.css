@@ -16,8 +16,8 @@
 }
 
 .btn-padrao-cancel, .btn-padrao-confirm{
-  width: 40%;
-  padding: 3%;    
+  padding: 3%;
+  width: 35%; 
 }
 
 h3{

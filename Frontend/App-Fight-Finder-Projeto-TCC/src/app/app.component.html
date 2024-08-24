@@ -1,13 +1,5 @@
-
+//login, entrada, ajuda, criar conta....
 <app-splash-screen> </app-splash-screen>
-
-<app-lutador-list></app-lutador-list>
-
-<app-lutador-form></app-lutador-form>
-
-<div> 
-  <app-adicionar-comentario (novoComentario)="adicionarComentarioAoLutador($event)"></app-adicionar-comentario>
-</div>
 
 <app-boas-vindas> </app-boas-vindas>
 
@@ -15,11 +7,33 @@
 
 <app-tela-login> </app-tela-login>
 
-<app-ajuda> </app-ajuda>
+<app-escola-form></app-escola-form>
 
-<app-escola> </app-escola>
 <app-escola-edit></app-escola-edit>
 
+<app-escola></app-escola>
+
+<app-menu-inicial> </app-menu-inicial>
+
+<app-ajuda> </app-ajuda>
+
+//falta tela esqueci senha 
+
+
+//form
+<app-lutador-form></app-lutador-form>
+
+<app-treinador-form></app-treinador-form>
+
+//edit
+
+
+//list 
+<app-lutador-list></app-lutador-list>
+
+<app-treinador-list></app-treinador-list>
+
+//aulas 
 <app-aula-form></app-aula-form>
 
 <app-presenca-lutadores-manual></app-presenca-lutadores-manual>
@@ -28,10 +42,18 @@
 
 <app-presenca-treinadores-manual></app-presenca-treinadores-manual>
 
-<app-treinador-list></app-treinador-list>
 
-<app-treinador-form></app-treinador-form>
+//lutas 
 
+<div> 
+  <app-adicionar-comentario (novoComentario)="adicionarComentarioAoLutador($event)"></app-adicionar-comentario>
+</div>
+
+//falta a tela de fazer os filtros 
+//resultados 
+
+
+//lutador completo 
 <app-visualizacao-lutador></app-visualizacao-lutador>
 
 <app-lutador-form-complete></app-lutador-form-complete>
