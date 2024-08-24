@@ -19,24 +19,17 @@
     margin: 0px;
 }
 
-.btn-padrao-cancel, .btn-padrao-confirm{
-        padding: 4%; /* Ajuste o preenchimento conforme necessário */
-        width: 50%; /* Defina a largura desejada em porcentagem */
-        height: 65%; /* Defina a altura desejada em porcentagem */
-        
-      }
-     
-      .btn-padrao{
-        height: 8%;      }
-    
 .btn-padrao-confirm{
-    margin-top: 10%;
-    margin-bottom: 2%;
-}
-
-.btn-padrao-cancel{
-    margin-bottom: 10%;
-}
+  margin-top: 7%;
+  width: 50%;
+  padding: 3%;
+  }
+  
+  .btn-padrao-cancel{
+      width: 50%;
+      padding: 3%;
+      }
+  
 .botoes, h3{ 
     display: flex;
   flex-direction: column;
@@ -71,6 +64,9 @@ h3{
         padding-top: 10%;
     }
 
-
+    p {
+      font-weight: 500;
+      margin-bottom: 2%;
+  }
       
       

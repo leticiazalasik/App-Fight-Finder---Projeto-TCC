@@ -98,16 +98,16 @@
 </div>
 
   
-<div> 
-    <form>
-        <div class="form-group" style="margin-top: 10%;">
-          <label for="file">Foto de perfil (opcional):</label>
-          <input type="file" id="file" (change)="onFileSelected($event)" style="display: none" >
-          <label for="file" class="btn-padrao">Escolher arquivo</label>
-          <span id="file-name">Nenhum arquivo selecionado</span>
-        </div>
-      </form>
-</div>
+<div class="form-group center-horizontal2" >
+            <label for="file">Foto de perfil (opcional):</label>
+            <input type="file" id="file" (change)="onFileSelected($event)" style="display: none" >
+            <label for="file" class="btn-padrao">Escolher arquivo</label>
+  </div>
+  
+      <div class="center-horizontal">
+  <span id="file-name">Nenhum arquivo selecionado</span>
+  </div>
+  
 
 
 <div class="botoes">

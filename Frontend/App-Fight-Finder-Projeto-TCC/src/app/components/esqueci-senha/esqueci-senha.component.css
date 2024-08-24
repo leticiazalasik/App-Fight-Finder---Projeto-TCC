@@ -1,0 +1,25 @@
+h2{
+    margin-top: 15%;
+    margin-bottom: 10%;
+  }
+
+  .btn-padrao-cancel, .btn-padrao-confirm{
+    padding: 3%; /* Ajuste o preenchimento conforme necessário */
+    width: 40%; /* Defina a largura desejada em porcentagem */
+  }
+
+  .btn-padrao-cancel{
+    margin-bottom: 10%;
+  }
+  
+  .container-top{
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+  }
+
+  input{
+    width: 85%;
+    padding: 2%;
+    margin-bottom: 10%;
+  }

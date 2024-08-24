@@ -24,14 +24,14 @@ button{
 }
 
 .btn-padrao-confirm{
-margin-top: 10%;
+margin-top: 7%;
 width: 50%;
-height: 50px;
+padding: 3%;
 }
 
 .btn-padrao-cancel{
     width: 50%;
-    height: 50px;
+    padding: 3%;
     }
 
     .botoes {
@@ -42,3 +42,18 @@ height: 50px;
         font-weight: 500;
     }
     
+    .center-horizontal2 {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; 
+        padding-top: 10%;
+    }
+
+    .form{
+        margin-left: 5%;
+      }
+
+      .center-horizontal {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+      }
