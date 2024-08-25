@@ -1,0 +1,82 @@
+@import '../styleSass.css';
+
+
+.tela-toda{
+    margin-right: 2%;
+    margin-left: 3%;
+}
+
+h2{
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+.class2{
+    background-color: hsl(0, 79%, 34%);
+    border: hsl(0, 79%, 34%);
+    margin-top: 3%;
+}
+.form-group label {
+    display: block;
+}
+
+.form-group input {
+    display: block;
+border: solid 1px rgb(166, 166, 166);    
+border-radius: 2%;
+}
+
+.form-check-label{
+margin-right: 2%;
+}
+
+.form-group{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+input{
+    width: 80%;
+    padding: 3%;
+}
+
+/* Aumenta o tamanho do botão de alternância */
+.form-check-input input{
+    width: 70%;   /* Largura do botão */
+    padding: 10%;  /* Altura do botão */
+}
+
+/* Estiliza o toggle switch */
+.form-check-input {
+    width: 60px; /* Largura do toggle switch */
+    height: 34px; /* Altura do toggle switch */
+    background-color: #ccc; /* Cor de fundo cinza inicial */
+    border-radius: 34px; /* Arredondamento total para o fundo do toggle switch */
+    position: relative; /* Necessário para posicionar a bolinha */
+    appearance: none; /* Remove a aparência padrão do input */
+    cursor: pointer; /* Adiciona um cursor de ponteiro */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+}
+
+/* Estiliza a bolinha dentro do toggle switch */
+.form-check-input::before {
+    content: '';
+    position: absolute;
+    top: 4px; /* Ajusta a posição vertical da bolinha */
+    left: 4px; /* Ajusta a posição horizontal da bolinha */
+    width: 26px; /* Largura da bolinha */
+    height: 26px; /* Altura da bolinha */
+    background-color: #fff; /* Cor branca para a bolinha */
+    border-radius: 50%; /* Faz a bolinha ser circular */
+    transition: transform 0.3s; /* Transição suave para o movimento da bolinha */
+}
+
+/* Muda o fundo e a posição da bolinha quando o toggle switch está ativado */
+.form-check-input:checked {
+    background-color: hsl(0, 79%, 34%); /* Cor de fundo vermelho quando checado */
+}
+
+.form-check-input:checked::before {
+    transform: translateX(26px); /* Move a bolinha para a direita quando ativado */
+}
+

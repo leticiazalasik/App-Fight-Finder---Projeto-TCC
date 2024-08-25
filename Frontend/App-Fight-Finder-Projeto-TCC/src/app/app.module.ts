@@ -46,6 +46,7 @@ import { MenuAulasComponent } from './components/menu-aulas/menu-aulas.component
 import { VisualizacaoLutadorComponent } from './components/visualizacao-lutador/visualizacao-lutador.component';
 import { LutadorFormCompleteComponent } from './components/lutador-form-complete/lutador-form-complete.component';
 import { EsqueciSenhaComponent } from './components/esqueci-senha/esqueci-senha.component';
+import { GerarLutaComponent } from './components/gerar-luta/gerar-luta.component';
 
 
 @NgModule({
@@ -56,7 +57,7 @@ import { EsqueciSenhaComponent } from './components/esqueci-senha/esqueci-senha.
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent, EscolaEditComponent, AulaComponent, AulaFormComponent, PresencaLutadoresManualComponent, PresencaLutadoresAutomaticaComponent, PresencaTreinadoresManualComponent, TreinadorComponent, TreinadorListComponent, TreinadorFormComponent, TreinadorEditComponent, TelaTreinadoresComponent, MenuListaTreinadoresComponent, MenuTreinadoresComponent, AulaListComponent, MenuListaAulasComponent, AulaEditComponent, TelaAulasComponent, MenuAulasComponent,  VisualizacaoLutadorComponent, LutadorFormCompleteComponent, EsqueciSenhaComponent
+    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, MenuListaLutadoresComponent, TelaLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent, EscolaEditComponent, AulaComponent, AulaFormComponent, PresencaLutadoresManualComponent, PresencaLutadoresAutomaticaComponent, PresencaTreinadoresManualComponent, TreinadorComponent, TreinadorListComponent, TreinadorFormComponent, TreinadorEditComponent, TelaTreinadoresComponent, MenuListaTreinadoresComponent, MenuTreinadoresComponent, AulaListComponent, MenuListaAulasComponent, AulaEditComponent, TelaAulasComponent, MenuAulasComponent,  VisualizacaoLutadorComponent, LutadorFormCompleteComponent, EsqueciSenhaComponent, GerarLutaComponent
   ],
   imports: [
     BrowserModule,
