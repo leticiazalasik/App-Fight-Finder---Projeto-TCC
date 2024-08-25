@@ -7,7 +7,7 @@
 
     <div class="data">
         <label for="data">Data</label><br>
-        <input type="date" id="data" readonly [(ngModel)]="aulaEditada.data">
+        <input type="text" id="data" placeholder="25/08/24" readonly>
     </div>
 
 
@@ -55,11 +55,10 @@
 
     <div style="margin-top: 8%;">
     <h3>Lutadores presentes</h3>
-    <button class="btn-padrao"> Gerar link de presença </button>
     
-    <div class="dropdown">
+    <div class="dropdown" style="margin-top: 5%; margin-bottom: 10%;">
         <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Presença manual
+          Filtros da lista
         </button>
         <ul class="dropdown-menu">
           <li><a class="dropdown-item" href="#">Alunos da turma</a></li>
@@ -68,14 +67,131 @@
       </div>
 </div>
 
-    <div class="treinadores" style="margin-top: 10%;">
-        <h3>Treinadores presentes</h3>
-        <button class="btn-padrao"> Gerar link de presença </button>
-        <button class="btn-padrao"> Presença manual </button>
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Foto</th>
+      <th>Nome</th>
+      <th>Idade</th>
+      <th>Nível</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> 
+        <div class="form-check" style="display: flex; align-items: center;">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      </div>
+    </td>
+      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
+      <td>John Deik</td>
+      <td style="vertical-align: middle">33</td>
+      <td style="vertical-align: middle">Preta</td>
+      <td style="vertical-align: middle">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+            Ações
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Editar</a></li>
+            <li><a class="dropdown-item" href="#">Inativar</a></li>
+            <li><a class="dropdown-item" href="#">Excluir</a></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td> 
+        <div class="form-check" style="display: flex; align-items: center;">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      </div>
+    </td>
+      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
+      <td>Giovana Santos</td>
+      <td style="vertical-align: middle">28</td>
+      <td style="vertical-align: middle">Colorida</td>
+      <td style="vertical-align: middle">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ações
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Editar</a></li>
+            <li><a class="dropdown-item" href="#">Inativar</a></li>
+            <li><a class="dropdown-item" href="#">Excluir</a></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<div class="treinadores" style="margin-top: 10%;">
+  <h3>Treinadores presentes</h3>
 </div>
 
-<div class="botoes">
+<table class="table-treinadores" style="margin-top: 7%;">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Foto</th>
+      <th>Nome</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> 
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      </div>
+    </td>
+      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
+      <td>John Deik</td>
+      <td style="vertical-align: middle">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
+            Ações
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Editar</a></li>
+            <li><a class="dropdown-item" href="#">Inativar</a></li>
+            <li><a class="dropdown-item" href="#">Excluir</a></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
 
+    <tr>
+      <td> 
+        <div class="form-check" style="display: flex; align-items: center;">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      </div>
+    </td>
+      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
+      <td>Giovana Santos</td>
+      <td style="vertical-align: middle">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ações
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Editar</a></li>
+            <li><a class="dropdown-item" href="#">Inativar</a></li>
+            <li><a class="dropdown-item" href="#">Excluir</a></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  
+
+<div class="botoes">
         <button class="btn-padrao-confirm"(click)="salvarDados()">Iniciar</button>
         <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
     </div>

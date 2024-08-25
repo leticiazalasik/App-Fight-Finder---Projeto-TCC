@@ -66,5 +66,52 @@ app-footer{
 }
 
 .dropdown{
-    margin-bottom: 10%;
+    margin-bottom: 15%;
+    margin-top: 10%;
 }
+
+.form-check{
+    display: flex;
+    justify-content: center;
+  }
+
+  
+  td{
+    width: 10%;
+    
+  }
+
+  .table-treinadores{
+    width: 80%;
+  }
+
+  .table-treinadores .form-check input[type="checkbox"] {
+    padding: 40%;
+    width: 15%;
+    }
+
+    .table .form-check input[type="checkbox"] {
+        padding: 100%;
+        width: 50%;
+        }
+    
+  
+  .form-check-input:checked {
+    background-color:  #001a71;
+    border-color: hsl(0, 79%, 34%);
+  }
+  
+  .table-treinadores tr{
+    border-bottom: solid 1px rgb(222, 218, 218);
+  }
+
+  .table-treinadores td{
+    padding: 1%;
+  }
+
+  
+
+  td[_ngcontent-ng-c3465641607] {
+    width: 6%;
+}
+  

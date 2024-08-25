@@ -1,42 +1,12 @@
-<div class="container">
+<div class="div-total">
+<app-header></app-header>
+<h2>Editar Lutador</h2>
 
-    <h1>Lista de lutadores</h1>
-    
+<div class="botoes">
+<button class="btn-padrao-inactive">Inativar Lutador</button>
+<button class="btn-padrao-cancel"> Excluir lutador</button>
+</div>
 
-      <p *ngIf="listaLutadores.length==0">
-        Nennhum registro encontrado. 
-      </p>
-      <div class="table-responsive" *ngIf="listaLutadores.length>0">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Foto</th>
-              <th>Nome</th>
-              <th>Idade</th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let lutador of listaLutadores">
-              <td><img src="{{ lutador.foto }}" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-              <td>{{ lutador.nome }} </td>
-              <td>{{ lutador.idade }}</td>
-              <td><button class="btn-padrao-cancel" (click)="excluirLutador(lutador.id)">Excluir</button></td>
-              <td> <button class="btn-padrao-edit" (click)="editarLutador(lutador)">Editar</button> </td>
-              <td>
-                <button class="btn-padrao-inactive" (click)="inativarLutador(lutador)">
-                    {{ lutador.ativo ? 'Inativar' : 'Ativar' }}
-                </button>
-            </td>
-            
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-      
-    <app-lutador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
-    [lutador]="lutadorEditar" 
-    (salvar)="onSalvar($event)"> </app-lutador-form>
+<app-lutador-form-complete></app-lutador-form-complete>
+<app-header></app-header>
+</div>

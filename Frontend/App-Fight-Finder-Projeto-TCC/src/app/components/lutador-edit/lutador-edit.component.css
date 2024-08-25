@@ -1,1 +1,23 @@
 @import '../styleSass.css';
+
+
+h2{
+    margin-top: 12%;
+    margin-bottom: 7%;
+}
+
+.botoes, h2{
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; 
+}
+
+.btn-padrao-cancel, .btn-padrao-inactive{
+width: 40%;
+padding: 2%;
+}
+
+.div-total{
+    margin-left: 2%;
+    
+}
