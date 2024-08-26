@@ -1,0 +1,19 @@
+@import '../../components/styleSass.css';
+
+.container-imagem{
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 180%;
+  }
+  
+  .imagem-login{
+    width: 120%;
+    height: 180%;
+  }
+  
+  .container-imagem2{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
