@@ -17,3 +17,73 @@
     width: 100%;
     height: 100%;
   }
+
+  .toda{
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .table-comentarios{
+    margin-top: 5%;
+  }
+
+  .table-presencasfaltas{
+width: 60%;
+  }
+
+  td, th{
+  border-bottom: solid 1px rgb(209, 209, 209);
+  text-align: center;
+  padding: 2%;
+  width: 2%;
+
+  }
+
+  .table-comentarios{
+    width: 95%;
+  }
+
+  .table-presencasfaltas td, th, tr{
+    padding: 5%;
+    
+  }
+
+  .table-presencasfaltas{
+    font-size: 18px;
+
+  }
+
+  h4{
+    text-align: center;
+    color:  #001a71;/* Aqui você define a cor desejada */
+
+}
+
+h5{
+    margin-bottom: 7%;
+
+}
+
+.dados-pessoais{
+    margin-bottom: 5%;
+    margin-top: 10%;
+    border: solid 1px rgb(207, 207, 207);
+            padding: 5%;
+}
+
+.dados-pratica{
+    border: solid 1px rgb(207, 207, 207);
+            padding: 5%;
+}
+
+.destaque{
+        color:  #001a71;/* Aqui você define a cor desejada */
+        font-weight: bolder;    }
+
+
+        .dados{
+            margin-left:4%;
+            margin-right: 4%;
+        }
+
+    

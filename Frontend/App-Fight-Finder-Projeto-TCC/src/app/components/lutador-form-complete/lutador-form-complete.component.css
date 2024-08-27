@@ -45,11 +45,22 @@ width: 60%;
   td, th{
   border-bottom: solid 1px rgb(209, 209, 209);
   text-align: center;
-  padding: 10%;
+  padding: 4%;
+  width: 2%;
+
   }
 
   .table-comentarios{
     width: 95%;
+  }
+
+  .table-presencasfaltas td, th, tr{
+    padding: 10%;
+  }
+
+  .table-presencasfaltas{
+    font-size: 18px;
+
   }
 
   .btn-padrao-edit{
