@@ -1,29 +1,18 @@
 <div class="container">
-<div class="row">
-  <div class="col-sm">
+
 <app-header></app-header>
-</div>
-</div>
 
-  <div class="row">
-    <div class="col-sm">
+<button class="btn-padrao"> <i class="fa-solid fa-plus"></i> Adicionar novo</button>
+
   <h1>Lista de lutadores</h1>
-</div>
-</div>
 
-  <div class="row">
-    <div class="col-sm">
         <div class="container-fluid">
           <form class="d-flex" role="search">
             <input [(ngModel)]="nomePesquisado" class="form-control me-2" type="search" placeholder="Pesquisar nome..." aria-label="Search">
             <button class="btn btn-outline-success" type="button">Pesquisar</button>
           </form>
         </div>
-    </div>
-  </div>
       
-  <div class="row">
-  <div class="col-sm">
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Filtros
@@ -37,9 +26,6 @@
         <li><a class="dropdown-item" href="#">Masculino</a></li>
       </ul>
     </div>
-      </div>
-      </div>
-
 
       <table class="table">
         <thead>
@@ -91,16 +77,15 @@
                   <li><a class="dropdown-item" href="#">Editar</a></li>
                   <li><a class="dropdown-item" href="#">Inativar</a></li>
                   <li><a class="dropdown-item" href="#">Excluir</a></li>
+                  <li><a class="dropdown-item" href="#">Perfil completo</a></li>
                 </ul>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
-    </div>
 
-  <div class="row">
-    <div class="col-sm">
+    <app-menunav></app-menunav>
+
   <app-footer></app-footer>
-</div>
 </div>

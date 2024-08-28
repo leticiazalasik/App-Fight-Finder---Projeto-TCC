@@ -1,33 +1,21 @@
 
-<div class="container" >
-    <div class="row">
-      <div class="col-sm">
 <app-header> </app-header>
-</div>
-</div>
 
-    <div class="row">
-      <div class="col-sm">
-        <h1>Criar conta</h1>
-    </div>
-</div>
+
+        <div class="container" >
+
+            <h2>Criar conta</h2>
+
 
 <div class="botoes">
-<div class="row" >
-    <div class="col-sm">
+    <div>
         <button class="btn-padrao">Conectar com sua conta google</button>
     </div>
-</div>
-        <div class="row" >
-            <div class="col-sm">
+
+    <div>
         <button class="btn-padrao" (click)="alternarExibicaoFormulario()">Criar cadastro manual </button>
     </div>
 </div>
+
 </div>
-
-<div *ngIf="exibirFormularioEscola">
-<app-escola-form> </app-escola-form>
-</div>
-
-
 <app-footer> </app-footer>

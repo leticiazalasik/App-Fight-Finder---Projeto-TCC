@@ -45,6 +45,8 @@
 
 h3{
     width: 100%;
+    margin-bottom: 10%;
+    margin-top: 10%;
 }
 
 
@@ -69,4 +71,12 @@ h3{
       margin-bottom: 2%;
   }
       
-      
+  .form[_ngcontent-ng-c2505286842] {
+    margin-left: 3%;
+    margin-right: 3%;
+    }
+    .form[_ngcontent-ng-c3184188350] input[type=text][_ngcontent-ng-c3184188350], select[_ngcontent-ng-c3184188350] {
+      width: 95%;
+      display: flex;
+      justify-content: center; /* Centraliza horizontalmente */
+      align-items: center;     }

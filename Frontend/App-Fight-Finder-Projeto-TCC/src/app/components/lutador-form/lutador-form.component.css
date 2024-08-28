@@ -49,11 +49,12 @@ padding: 3%;
         padding-top: 10%;
     }
 
-    .form{
-        margin-left: 5%;
-      }
-
       .center-horizontal {
         display: flex;
         justify-content: center; /* Centraliza horizontalmente */
       }
+
+    .form{
+        margin-left: 5%;
+        margin-right: 5%;
+    }

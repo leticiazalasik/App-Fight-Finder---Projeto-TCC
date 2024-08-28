@@ -3,6 +3,7 @@
 
 .form h3{
     text-align: center;
+    color: #001a71;
 }
 
 .radio-quebra-de-linha{
@@ -35,7 +36,7 @@ padding-top: 5%;
   }
 
   .table-comentarios{
-    margin-top: 5%;
+    margin-top: 1%;
   }
 
   .table-presencasfaltas{
@@ -64,8 +65,8 @@ width: 60%;
   }
 
   .btn-padrao-edit{
-    padding: 7%;
-    width: 110%;
+    padding: 8%;
+    width: 130%;
   }
 
   .btn-padrao-confirm,

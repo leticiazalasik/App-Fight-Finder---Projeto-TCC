@@ -3,7 +3,7 @@
 
 
 .container{
-    height: 60%;
+    padding: 3;
     align-items: center;
 background-color: hsl(0, 79%, 34%);
     color: #FFF;
@@ -14,3 +14,4 @@ background-color: hsl(0, 79%, 34%);
 p{
     margin-top: 3%;
 }
+

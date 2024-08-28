@@ -30,8 +30,24 @@ button {
   
   .container .row .col-sm {
     flex: 1; /* Isso faz com que cada coluna ocupe todo o espaço disponível na linha */
+    margin: 0;    
+
   }
   
+  .container{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .row{
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .form div {
+    margin: 5px 0;
+}
   .container .row .col-sm button {
     width: 100%; /* Isso faz com que cada botão ocupe toda a largura da coluna */
   }

@@ -1,26 +1,30 @@
 <div class="container">
-  <div class="row">
-      <div class="col-sm">
-<app-header> </app-header>
-</div> 
-</div>
 
-<div class="row">
-  <div class="col-sm">
+  <app-header></app-header>
+  
+  <button class="btn-padrao"> <i class="fa-solid fa-plus"></i> Adicionar novo</button>
+  
     <h1>Lista de treinadores</h1>
-  </div> 
-</div>
-
-<div class="espacamento">
-    <app-menu-lista-treinadores> </app-menu-lista-treinadores>
-  </div>
-
-    <div class="row">
-      <div class="col-sm">
-      <p *ngIf="listaTreinadores.length==0">
-        Nennhum registro encontrado. 
-      </p>
-      <div class="table-responsive" *ngIf="listaTreinadores.length>0">
+  
+          <div class="container-fluid">
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Pesquisar nome..." aria-label="Search">
+              <button class="btn btn-outline-success" type="button">Pesquisar</button>
+            </form>
+          </div>
+        
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Filtros
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Todos</a></li>
+          <li><a class="dropdown-item" href="#">Ativos</a></li>
+          <li><a class="dropdown-item" href="#">Feminino</a></li>
+          <li><a class="dropdown-item" href="#">Masculino</a></li>
+        </ul>
+      </div>
+  
         <table class="table">
           <thead>
             <tr>
@@ -31,31 +35,46 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let treinador of listaTreinadoresFiltro">
-              <td><img src="{{ treinador.foto }}" alt="Foto do treinador" style="width: 60px; height: 60px;" ></td>
-              <td>{{ treinador.nome }} </td>
-              <td>{{ treinador.idade }}</td>
+            <tr>
+              <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
+              <td>Valério Alves</td>
+              <td>34</td>
               <td>
-                <button class="btn-padrao-edit" (click)="editarTreinador(treinador)">Editar</button>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ações
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Editar</a></li>
+                    <li><a class="dropdown-item" href="#">Inativar</a></li>
+                    <li><a class="dropdown-item" href="#">Excluir</a></li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
+              <td>Antônio Valindolfo</td>
+              <td>39</td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ações
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Editar</a></li>
+                    <li><a class="dropdown-item" href="#">Inativar</a></li>
+                    <li><a class="dropdown-item" href="#">Excluir</a></li>
+                    <li><a class="dropdown-item" href="#">Perfil completo</a></li>
+                  </ul>
+                </div>
               </td>
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm">
-    <app-treinador-form *ngIf="exibirFormulario =='editar'|| exibirFormulario=='novo'" 
-    [treinador]="treinadorEditar" 
-    (salvar)="onSalvar($event)"> </app-treinador-form>
-  </div>
-</div> 
-
-    <div class="row">
-      <div class="col-sm">
-    <app-footer> </app-footer>
-    </div>
-    </div>
-    </div> 
+  
+      <app-menunav></app-menunav>
+  
+    <app-footer></app-footer>
+  </div>  

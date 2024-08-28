@@ -1,0 +1,33 @@
+.card-luta{
+    border: solid 1-x rgb(128, 128, 128);
+    border-radius: 10%;
+    background-color: rgb(224, 224, 224);
+    width: 100%;
+    padding: 5%;
+}
+
+.tela-toda{
+    margin-left: 2%;
+    margin-right:2%
+}
+
+.todos-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas com largura igual */
+    gap: 20px; /* Espaço entre os cards */
+}
+
+h2{
+margin-top: 10%;
+margin-bottom: 5%;
+text-align: center;
+}
+
+h5{ 
+    text-align: center;
+    margin-bottom: 10%;
+
+}
+
+.destaque{
+    font-weight: bolder;    }

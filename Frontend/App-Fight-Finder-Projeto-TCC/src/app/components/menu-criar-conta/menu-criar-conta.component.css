@@ -5,12 +5,11 @@
   }
 
   .btn-padrao{
-    margin-top: 2%;
-    margin-bottom: 10%;
+    margin-top: 1%;
+    margin-bottom: 5%;
     width: 300px !important;
     box-sizing: border-box;
-    height: 90%;
-
+    padding: 8%;
   }
  
   .botoes{ 
@@ -26,9 +25,10 @@
 
   .container{
     width: 100%;
+    padding: 20%;
   }
 
-  h1{ 
+  h2{ 
     text-align: center;
     margin-top: 15%;
 

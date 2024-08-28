@@ -1,1 +1,58 @@
 @import '../styleSass.css';
+
+h3{
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 10%;
+}
+.botoes{
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; 
+}
+
+.botoes-final{
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; 
+}
+
+  .btn-padrao-inactive,
+  .btn-padrao-cancel {
+      width: 40%;
+      padding: 3%;
+      display: block;
+      margin-right: 1%;/* Isso centraliza horizontalmente os botões */
+  }
+
+
+
+.center-horizontal2 {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; 
+    padding-top: 10%;
+}
+  .center-horizontal {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+  }
+  
+  .center-horizontal2[_ngcontent-ng-c2398611961] {
+padding-top: 5%;
+  }
+
+
+.form{
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.form[_ngcontent-ng-c2505286842] input[type=text][_ngcontent-ng-c2505286842], select[_ngcontent-ng-c2505286842] input {
+padding: 3%;
+}
+  
+.botoes-final .btn-padrao-cancel, .btn-padrao-confirm{
+  width: 40%;
+  padding: 3%;
+}
