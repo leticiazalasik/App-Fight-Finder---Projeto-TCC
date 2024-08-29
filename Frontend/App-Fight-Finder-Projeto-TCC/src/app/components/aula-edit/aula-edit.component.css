@@ -1,1 +1,138 @@
-@import '../styleSass.css';
+@import '../../components/styleSass.css';
+
+*{
+    box-sizing: border-box;
+}
+.class1{
+    background-color:  hsl(0, 79%, 34%);
+    padding: 3%;
+}
+
+.class2{
+  background-color: #001a71;
+}
+.pg-total{
+    margin-left: 2%;
+}
+
+.btn-padrao{
+    width: 50%;
+    padding: 2%;
+    margin-bottom: 0%;
+}
+
+
+.botoes{ 
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form{ 
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 80%;
+}
+
+.btn-padrao-cancel{
+    margin-bottom: 5%;
+    padding: 3%;
+    width: 30%;
+}
+
+.btn-padrao-confirm{
+    margin-top: 10%;
+    padding: 3%;
+    width: 30%;
+
+}
+
+.data input{
+    height: 50px;
+    font-size: 18px;
+    border: 1px solid;
+    border-radius: 6%;
+    border-color: rgb(145, 145, 145);
+    
+}
+
+h2{
+    margin-top: 0%;
+}
+
+app-footer{
+    height: 30%;
+}
+
+.dropdown{
+    margin-bottom: 15%;
+    margin-top: 10%;
+}
+
+.form-check{
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-check-input:checked {
+    background-color:  #001a71;
+    border-color: hsl(0, 79%, 34%);
+  }
+
+  h3{
+    color: #001a71;
+    text-align: center;
+  }
+  
+  .table-treinadores td{
+    width: 10%;
+    
+  }
+  .table-treinadores .form-check input[type="checkbox"] {
+    padding: 40%;
+    width: 30%;
+    }
+
+    .table-treinadores tr{
+      border-bottom: solid 1px rgb(222, 218, 218);
+    }
+  
+    .table-treinadores td{
+      padding: 1%;
+    }
+  
+    .table-treinadores {
+      width: 100%;
+      padding: 60%;
+      margin-left: 5%;
+      margin-right: 5%;
+  
+    }
+
+    .table input#flexCheckDefault.form-check-input{
+      width: 200%;
+      padding: 50%;
+    }
+
+
+    .botoes-inicio{
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; 
+      }
+
+
+      .btn-padrao-inactive,
+      .btn-padrao-edit {
+          width: 40%;
+          padding: 3%;
+          display: block;
+          margin-right: 1%;/* Isso centraliza horizontalmente os botões */
+      }
+
+      .btn-padrao-edit {
+background-color: hsl(0, 79%, 34%);
+    
+      }
+  

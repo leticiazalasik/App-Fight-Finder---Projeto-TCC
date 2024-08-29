@@ -1,0 +1,55 @@
+@import '../styleSass.css';
+
+
+img { 
+    border-radius: 30%;
+}
+
+.table-responsive{
+    align-items: center;
+}
+
+h1{
+    color:  hsl(0, 79%, 34%);
+    text-align: center;
+    margin-bottom: 8%;
+    margin-top: 5%;
+}
+
+.container-fluid{
+    margin-bottom: 10%;
+    background-color: none;
+}
+
+.class1{
+    background-color: hsl(0, 79%, 34%);
+    border: none;
+    margin-bottom: 7%;
+    margin-left: 2%;
+    height: 45px;
+    width: 25%;
+}
+.class2{
+    background-color: #001a71;
+}
+
+.btn-outline-success{
+    border: solid, 2px, #001a71;
+    color: #001a71;
+}
+
+.form-control{
+    border: solid rgb(201, 200, 200);
+}
+
+.table{
+    margin-bottom: 20%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.btn-padrao{
+    padding: 3%;
+    margin-bottom: 5%;
+    margin-top: 10%;
+}

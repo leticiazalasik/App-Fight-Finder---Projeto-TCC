@@ -1,9 +1,14 @@
 .card-luta{
-    border: solid 1-x rgb(128, 128, 128);
+    border: solid 1-x rgb(210, 209, 209);
     border-radius: 10%;
-    background-color: rgb(224, 224, 224);
+    background-color: rgb(246, 246, 246);
     width: 100%;
-    padding: 5%;
+    padding: 7%;
+    border-left: solid #001a71 3px;
+    border-top: solid #001a71 3px;
+    position: relative;
+
+
 }
 
 .tela-toda{
@@ -14,7 +19,9 @@
 .todos-cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Duas colunas com largura igual */
-    gap: 20px; /* Espaço entre os cards */
+    gap: 25px; /* Espaço entre os cards */
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 h2{
@@ -31,3 +38,58 @@ h5{
 
 .destaque{
     font-weight: bolder;    }
+
+    .tela-toda{
+        margin-bottom: 10%;
+    }
+
+    .btn-detalhes{
+        width: 50%;
+        padding: 1%;
+    
+        background-color: hsl(0, 79%, 34%);
+        color: white;
+        border: solid 1px hsl(0, 79%, 34%);
+        border-radius: 12%;
+    }
+
+    .btn-padrao {
+        height: 0;
+        width: 45%;
+        padding: 6%;
+        display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+    bottom: 2%;
+   
+    }
+
+    .espaco{
+        width: 80%;
+        padding: 5px;
+    }
+
+    .btn-padrao-edit {
+        height: 0;
+       padding: 5%;
+       width: 60%;
+  background-color: #001a71;
+text-align: center;
+display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    }
+
+    .centralizar {
+        /* Outras propriedades de estilo para a div */
+        text-align: center; /* Centraliza o conteúdo horizontalmente */
+        margin-bottom: 10%;
+        display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 3vh; /* Define a altura da div para ocupar toda a tela */
+        
+    }
+    

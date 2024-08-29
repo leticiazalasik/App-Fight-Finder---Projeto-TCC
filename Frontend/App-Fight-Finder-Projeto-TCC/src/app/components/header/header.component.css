@@ -8,6 +8,10 @@
     color: white;
 }
 
+.headertodo{
+    width: 100%;
+
+}
 img{ 
     max-height: 50px; /* A imagem vai ocupar no máximo 50px de altura */
     border-radius: 10%;

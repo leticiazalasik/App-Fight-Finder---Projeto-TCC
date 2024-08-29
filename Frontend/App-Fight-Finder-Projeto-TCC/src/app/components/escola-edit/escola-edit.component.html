@@ -1,34 +1,49 @@
 <div class="container">
-  <div class="row">
-      <div class="col-sm">
-<app-header> </app-header>
+    <app-header></app-header>
+
+
+    <h3>Editar conta</h3>
+
+    <div class="form">
+
+
+    <div class="botoes">
+        <button class="btn-padrao-inactive">Inativar Conta</button>
+        <button class="btn-padrao-cancel"> Excluir Conta</button>
+        </div>
+
+    <div class="cent">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" required >
+    </div>
+
+<div>
+    <label for="idade">Email</label>
+    <input type="text" id="email"required>
+</div>
+
+<div>
+    <label for="nome">Senha</label>
+    <input type="text" id="senha" required >
 </div>
 </div>
 
-<div class="row">
-    <div class="col-sm">
-      <h1>Editar Perfil</h1>
+
+        <div class="form-group center-horizontal2" >
+            <label for="file">Foto de perfil (opcional):</label>
+            <input type="file" id="file"style="display: none" >
+            <label for="file" class="btn-padrao">Escolher arquivo</label>
   </div>
+  
+      <div class="center-horizontal">
+  <span id="file-name">Nenhum arquivo selecionado</span>
+  </div>
+  <div class="botoes2">
+    <button class="btn-padrao-confirm">Salvar</button>
+    <button class="btn-padrao-cancel">Cancelar</button>
+
 </div>
 
-<div class="botoes">
-<div class="row">
-    <div class="col-sm">
-<button class="btn-padrao" (click)="alternarExibicaoFormulario()">Editar perfil</button>
+<app-menunav></app-menunav>
+<app-footer></app-footer>
 </div>
-</div>
-
-<div class="row">
-    <div class="col-sm">
-<button class="btn-padrao" (click)="excluirConta()"> Excluir conta</button>
-</div>
-</div>
-</div>
-
-<div *ngIf="exibirFormularioEscola">
-<app-escola-form ></app-escola-form>
-</div>
-
-
-<app-footer> </app-footer>
-

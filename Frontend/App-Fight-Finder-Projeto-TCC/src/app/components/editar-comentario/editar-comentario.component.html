@@ -1,22 +1,16 @@
 <app-header></app-header>
 
-<h3>Resultado</h3>
+<div class="tela-margim">
+<h3>Editar Feedback</h3>
 
+<div class="botoes">
+    <button class="btn-padrao">Excluir o feedback</button>
 
-<div class="lutador">
-<p>Lutador</p>
-    <label>
-  <input type="radio" value="lutador1" [(ngModel)]="nomeLutador"name="lutador" value="lutador1" class="hidden-radio" />
-  <span class="custom-radio"  for="lutador1"></span>
-  Lutador 1
-</label>
+    <button class="btn-padrao"> Excluir o resultado</button>
 
-<label>
-  <input type="radio" value="lutador2" [(ngModel)]="nomeLutador" name="lutador" value="lutador2" class="hidden-radio" />
-  <span class="custom-radio" for="lutador2"></span>
-  Lutador 2
-</label>
-</div>
+    <button class="btn-padrao"> Excluir o comentário</button>
+
+    </div>
 
 <div class="comentario">
     <label for="">Comentário</label>
@@ -50,6 +44,7 @@
     <button class="btn-padrao">Adicionar Informações</button>
   </div>
 
+</div>
   <app-menunav>  </app-menunav>
   
   <app-footer></app-footer>

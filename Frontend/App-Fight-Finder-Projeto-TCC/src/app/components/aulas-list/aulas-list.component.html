@@ -1,0 +1,96 @@
+<div class="container">
+
+    <app-header></app-header>
+    
+    <button class="btn-padrao"> <i class="fa-solid fa-plus"></i> Iniciar nova aula</button>
+    
+      <h1>Lista Aulas</h1>
+    
+            <div class="container-fluid">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Pesquisar data. ex.: xx/xx/xxxx " aria-label="Search">
+                <button class="btn btn-outline-success" type="button">Pesquisar</button>
+              </form>
+            </div>
+          
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Filtros
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Todas</a></li>
+            <li><a class="dropdown-item" href="#">Do último mês</a></li>
+            <li><a class="dropdown-item" href="#">Do ano</a></li>
+          </ul>
+        </div>
+    
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Horário</th>
+                <th>Presentes</th>
+                <th>Ausentes</th>
+                <th>Ações</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>19:00</td>
+                <td><button class="btn-padrao">Lista</button></td>
+                <td><button class="btn-padrao">Lista</button></td>
+                <td>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ações
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Editar</a></li>
+                      <li><a class="dropdown-item" href="#">Excluir</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+    
+              <tr>
+                <td>18:00</td>
+                <td><button class="btn-padrao">Lista</button></td>
+                <td><button class="btn-padrao">Lista</button></td>
+                <td>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ações
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Editar</a></li>
+                      <li><a class="dropdown-item" href="#">Excluir</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td>18:00</td>
+                <td><button class="btn-padrao">Lista</button></td>
+                <td><button class="btn-padrao">Lista</button></td>
+                <td>
+                  <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Ações
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Editar</a></li>
+                      <li><a class="dropdown-item" href="#">Excluir</a></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+    
+            </tbody>
+          </table>
+    
+        <app-menunav></app-menunav>
+    
+      <app-footer></app-footer>
+    </div>
+    

@@ -86,11 +86,18 @@ h3{
   align-items: center;
   justify-content: center;
   margin-top: 0%;
-  margin-bottom: 3%;
+  margin-bottom: 1%;
+  margin-top: 5%;
+}
+
+.button .btn-padrao{
+width: 60%;
+padding: 5%;
 }
 
 .btn-padrao{
     padding: 4%;
+    width: 30%;
 
 }
 
@@ -122,4 +129,21 @@ input[type='radio']:checked + span {
 
 .lutador, .comentario, .resultado{
   margin-left: 10%;
+}
+
+.botoes{ 
+  margin-bottom: 20%;
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+  }
+
+  *[_ngcontent-ng-c2462771255] {
+    margin-left: 0%; 
+}
+.tela-margim{
+    margin-left: 4%;
+    margin-bottom: 4%;
 }

@@ -19,8 +19,8 @@
   }
 
   .toda{
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
   }
 
   .table-comentarios{
@@ -65,7 +65,7 @@ h5{
 }
 
 .dados-pessoais{
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     margin-top: 10%;
     border: solid 1px rgb(207, 207, 207);
             padding: 5%;
