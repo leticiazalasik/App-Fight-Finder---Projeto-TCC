@@ -17,7 +17,8 @@ public class LutaService {
         return lutaRepository.findAll();
     }
 
-    public static Luta findById(Integer id) {
+    public Luta findById(Integer id) {
+
         return lutaRepository.findById(id).orElse(null);
     }
 

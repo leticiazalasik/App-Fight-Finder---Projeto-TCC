@@ -18,7 +18,7 @@ public class EscolaService {
         return escolaRepository.findAll();
     }
 
-    public static Escola findById(Integer id) {
+    public Escola findById(Integer id) {
         return escolaRepository.findById(id).orElse(null);
     }
 

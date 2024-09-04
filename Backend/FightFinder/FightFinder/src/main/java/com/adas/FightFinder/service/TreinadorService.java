@@ -20,7 +20,8 @@ public class TreinadorService {
         return treinadorRepository.findAll();
     }
 
-    public static Treinador findById(Integer id) {
+    public Treinador findById(Integer id) {
+
         return treinadorRepository.findById(id).orElse(null);
     }
 

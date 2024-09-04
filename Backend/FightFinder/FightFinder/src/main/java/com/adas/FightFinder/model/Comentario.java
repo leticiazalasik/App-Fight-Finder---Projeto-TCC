@@ -10,23 +10,27 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 
-public class Pessoa {
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Data
+public class Comentario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
     @Nonnull
-    private String nome;
+    private LocalDateTime data;
 
     @Nonnull
-    private Integer idade;
+    private String nomeLutador;
 
     @Nonnull
-    private String modalidade;
+    private String descricao;
 
-    private String foto;
-
-    private Boolean ativo;
 }

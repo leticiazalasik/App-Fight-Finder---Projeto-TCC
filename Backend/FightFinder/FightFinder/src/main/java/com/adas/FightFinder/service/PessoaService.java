@@ -16,7 +16,7 @@ public class PessoaService {
         return pessoaRepository.findAll();
     }
 
-    public static Pessoa findById(Integer id) {
+    public Pessoa findById(Integer id) {
         return pessoaRepository.findById(id).orElse(null);
     }
 

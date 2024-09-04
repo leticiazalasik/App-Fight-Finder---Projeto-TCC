@@ -18,7 +18,8 @@ public class LutadorService {
         return lutadorRepository.findAll();
     }
 
-    public static Lutador findById(Integer id) {
+    public Lutador findById(Integer id) {
+
         return lutadorRepository.findById(id).orElse(null);
     }
 
