@@ -15,22 +15,22 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Data
-public class Pessoa {
-
+public class Luta {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
     @Nonnull
-    private String nome;
+    private String lutador1;
 
     @Nonnull
-    private Integer idade;
+    private String lutador2;
 
     @Nonnull
-    private String modalidade;
+    private String treinador;
 
-    private String foto;
+    @Nonnull
+    private Integer rodada;
 
-    private Boolean ativo;
+    private Boolean status;
 }
