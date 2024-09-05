@@ -5,7 +5,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Data
 public class Pessoa {
 
 

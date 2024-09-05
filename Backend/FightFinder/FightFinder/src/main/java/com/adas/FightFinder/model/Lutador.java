@@ -10,10 +10,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Data
+
 public class Lutador extends Pessoa{
 
     @Nonnull

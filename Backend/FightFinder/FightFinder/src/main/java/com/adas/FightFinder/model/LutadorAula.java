@@ -11,27 +11,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Data
-public class Aula {
+public class LutadorAula {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
     @Nonnull
-    private LocalDateTime data;
+    private String nomeLutador;
 
-    private List<LutadorAula> lutadores;
-
-    private List<TreinadorAula> treinadores;
+    @Nonnull
+private Boolean presente;
 
 
 
 }
-
