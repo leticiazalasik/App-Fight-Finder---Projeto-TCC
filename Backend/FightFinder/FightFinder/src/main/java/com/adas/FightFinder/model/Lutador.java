@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -34,11 +36,11 @@ public class Lutador extends Pessoa{
 
     private Integer turma;
 
-    private List<Comentarios> comentarios;
+    private List<Comentario> comentarios;
 
     private String observacoes;
 
-    private List<Aulas> aulas;
+    private List<Aula> aulas;
 
 
 }

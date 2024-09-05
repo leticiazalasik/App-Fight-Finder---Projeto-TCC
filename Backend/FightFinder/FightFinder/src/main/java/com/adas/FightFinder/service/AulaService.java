@@ -25,7 +25,7 @@ public class AulaService {
 
     public Aula save(Aula aula) {
 
-        return AulaRepository.save(aula);
+        return aulaRepository.save(aula);
     }
 
 
