@@ -13,6 +13,5 @@ import lombok.NoArgsConstructor;
 @Data
 public class Treinador extends Pessoa {
 
-    @OneToOne(mappedBy = "treinador") // Ou "lutador2", dependendo do relacionamento
-    private Luta luta;
+
 }

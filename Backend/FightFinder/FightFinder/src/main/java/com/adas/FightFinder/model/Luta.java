@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,16 +24,10 @@ public class Luta {
 
     private Boolean status;
 
-    @OneToOne
-    @JoinColumn(name = "lutador1_id")
-    private Lutador lutador1;
+    @OneToMany(mappedBy = "lutaLutador")
+    private List<LutaLutador> lutadorLuta;
 
-    @OneToOne
-    @JoinColumn(name = "lutador2_id")
-    @Nonnull
-    private Lutador lutador2;
+    @OneToMany(mappedBy = "lutaTreinador")
+    private List<LutaTreinador> treinadorLuta;
 
-    @OneToOne
-    @JoinColumn(name = "treinador_id")
-    private Treinador treinador;
 }
