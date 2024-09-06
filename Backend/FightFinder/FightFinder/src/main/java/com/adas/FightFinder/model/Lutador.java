@@ -3,6 +3,7 @@ package com.adas.FightFinder.model;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -40,5 +41,7 @@ public class Lutador extends Pessoa{
     @OneToMany(mappedBy = "lutadorComentario")
     private List<Comentario> comentarios;
 
+    @OneToOne(mappedBy = "lutador1") // Ou "lutador2", dependendo do relacionamento
+    private Luta luta;
 
 }
