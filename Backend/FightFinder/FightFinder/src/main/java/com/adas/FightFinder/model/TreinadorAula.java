@@ -1,10 +1,7 @@
 package com.adas.FightFinder.model;
 
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,8 +19,13 @@ public class TreinadorAula {
     private Integer id;
 
     @Nonnull
-    private String nomeTreinador;
+    private Boolean presente;
 
     @Nonnull
-    private Boolean presente;
+    @OneToOne
+    private Treinador treinador;
+
+    @ManyToOne
+    @JoinColumn(name="aula_id")
+    private Aula aulaTreinador;
 }

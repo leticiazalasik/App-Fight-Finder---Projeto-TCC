@@ -2,6 +2,7 @@ package com.adas.FightFinder.model;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,7 +11,9 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class Lutador extends Pessoa{
 
     @Nonnull
@@ -32,12 +35,10 @@ public class Lutador extends Pessoa{
     private Integer empates;
 
     private Integer turma;
-
-    private List<Comentario> comentarios;
-
     private String observacoes;
 
-    private List<Aula> aulas;
+    @OneToMany(mappedBy = "lutadorComentario")
+    private List<Comentario> comentarios;
 
 
 }

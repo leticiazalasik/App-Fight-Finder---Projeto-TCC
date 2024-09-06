@@ -28,7 +28,7 @@ public class LutadorController {
         return ResponseEntity.ok(lutadorService.findById(id));
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Lutador> create(@RequestBody Lutador lutador){
         return ResponseEntity.ok(lutadorService.save(lutador));
     }

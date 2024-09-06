@@ -25,7 +25,7 @@ public class TreinadorController {
         return ResponseEntity.ok(treinadorService.findById(id));
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Treinador> create(@RequestBody Treinador treinador){
         return ResponseEntity.ok(treinadorService.save(treinador));
     }

@@ -1,10 +1,7 @@
 package com.adas.FightFinder.model;
 
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,9 +25,10 @@ public class Comentario {
     private LocalDateTime data;
 
     @Nonnull
-    private String nomeLutador;
-
-    @Nonnull
     private String descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "lutador_id")
+    private Lutador lutadorComentario;
 
 }

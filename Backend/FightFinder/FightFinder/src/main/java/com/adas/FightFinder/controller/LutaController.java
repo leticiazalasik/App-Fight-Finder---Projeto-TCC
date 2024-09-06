@@ -26,7 +26,7 @@ public class LutaController {
         return ResponseEntity.ok(lutaService.findById(id));
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Luta> create(@RequestBody Luta luta){
         return ResponseEntity.ok(lutaService.save(luta));
     }
