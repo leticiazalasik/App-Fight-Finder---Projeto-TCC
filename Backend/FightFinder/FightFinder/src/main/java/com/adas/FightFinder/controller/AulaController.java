@@ -27,7 +27,7 @@ public class AulaController {
         return ResponseEntity.ok(aulaService.findById(id));
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Aula> create(@RequestBody Aula aula){
         return ResponseEntity.ok(aulaService.save(aula));
     }

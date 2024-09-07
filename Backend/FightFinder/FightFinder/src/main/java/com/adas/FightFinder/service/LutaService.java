@@ -30,3 +30,4 @@ public class LutaService {
         lutaRepository.delete(luta);
     }
 }
+

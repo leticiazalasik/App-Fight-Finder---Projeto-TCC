@@ -1,17 +1,22 @@
 package com.adas.FightFinder.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Data
 @Entity
 public class LutaTreinador {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Integer id;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @ManyToOne
-    private Luta luta;
-
-    @ManyToOne
-    private Lutador lutador;
-}
+        @ManyToOne
+        @JoinColumn(name="luta_id")
+        private Luta lutaTreinador;
+    }

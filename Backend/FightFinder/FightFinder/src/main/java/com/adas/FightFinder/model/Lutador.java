@@ -41,4 +41,5 @@ public class Lutador extends Pessoa{
     @OneToMany(mappedBy = "lutadorComentario")
     private List<Comentario> comentarios;
 
+
 }
