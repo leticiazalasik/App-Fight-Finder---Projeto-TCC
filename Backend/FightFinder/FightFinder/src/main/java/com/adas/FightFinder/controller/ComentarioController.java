@@ -27,7 +27,7 @@ public class ComentarioController {
         return ResponseEntity.ok(comentarioService.findById(id));
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Comentario> create(@RequestBody Comentario comentario){
         return ResponseEntity.ok(comentarioService.save(comentario));
     }
