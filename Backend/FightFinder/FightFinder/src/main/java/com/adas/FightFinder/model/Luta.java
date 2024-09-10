@@ -24,9 +24,12 @@ public class Luta {
 
     private Boolean status;
 
-    @OneToMany(mappedBy = "lutaTreinador")
-    private List<LutaTreinador> treinadores;
+    @OneToOne
+    private Treinador treinador;
 
-    @OneToMany(mappedBy = "lutaLutador")
-    private List<LutaLutador> lutadores;
+    @OneToOne
+    private Lutador lutador1;
+
+    @OneToOne
+    private Lutador lutador2;
 }

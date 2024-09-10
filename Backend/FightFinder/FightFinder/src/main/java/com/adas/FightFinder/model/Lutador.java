@@ -2,9 +2,7 @@ package com.adas.FightFinder.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,10 +11,14 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Table (name = "lutador")
 public class Lutador extends Pessoa{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Integer id;
 
     @Nonnull
     private Double peso;
@@ -41,6 +43,5 @@ public class Lutador extends Pessoa{
 
     @OneToMany(mappedBy = "lutadorComentario")
     private List<Comentario> comentarios;
-
 
 }

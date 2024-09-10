@@ -1,8 +1,6 @@
 package com.adas.FightFinder.service;
 
-import com.adas.FightFinder.model.Pessoa;
 import com.adas.FightFinder.model.Treinador;
-import com.adas.FightFinder.repository.PessoaRepository;
 import com.adas.FightFinder.repository.TreinadorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

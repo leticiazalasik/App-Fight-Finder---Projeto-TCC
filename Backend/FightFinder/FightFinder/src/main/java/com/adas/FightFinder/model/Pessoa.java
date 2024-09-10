@@ -5,17 +5,10 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
-@Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
 @Data
+@NoArgsConstructor
+@MappedSuperclass
 public class Pessoa {
-
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
 
     @Nonnull
     private String nome;
@@ -29,4 +22,5 @@ public class Pessoa {
     private String foto;
 
     private Boolean ativo;
+
 }

@@ -28,6 +28,7 @@ public class Comentario {
     @Nonnull
     private String descricao;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "lutador_id")
     private Lutador lutadorComentario;
