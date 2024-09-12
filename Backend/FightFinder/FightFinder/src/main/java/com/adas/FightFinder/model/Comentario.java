@@ -30,7 +30,6 @@ public class Comentario {
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "lutador_id")
+    @JoinColumn(name = "lutador_id", referencedColumnName = "id")
     private Lutador lutadorComentario;
-
 }

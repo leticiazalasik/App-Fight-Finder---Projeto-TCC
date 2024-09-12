@@ -18,7 +18,6 @@ public class TreinadorAula {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Nonnull
     private Boolean presente;
 
     @Nonnull

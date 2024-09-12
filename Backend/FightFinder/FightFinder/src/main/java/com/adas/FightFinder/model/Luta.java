@@ -24,12 +24,15 @@ public class Luta {
 
     private Boolean status;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "treinador_id", referencedColumnName = "id")
     private Treinador treinador;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "lutador1_id", referencedColumnName = "id")
     private Lutador lutador1;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "lutador2_id", referencedColumnName = "id")
     private Lutador lutador2;
 }

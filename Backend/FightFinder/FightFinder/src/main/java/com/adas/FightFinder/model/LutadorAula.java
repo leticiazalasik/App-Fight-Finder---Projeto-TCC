@@ -18,11 +18,10 @@ public class LutadorAula {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Nonnull
     private Boolean presente;
 
-    @Nonnull
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "lutador_id")
     private Lutador lutador;
 
     @ManyToOne

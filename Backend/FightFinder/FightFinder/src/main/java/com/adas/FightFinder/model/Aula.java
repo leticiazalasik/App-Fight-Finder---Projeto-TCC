@@ -24,12 +24,11 @@ public class Aula {
     @Nonnull
     private LocalDateTime data;
 
-    @OneToMany(mappedBy = "aulaLutador")
+    @OneToMany(mappedBy = "aulaLutador" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<LutadorAula> lutadores;
 
-    @OneToMany(mappedBy = "aulaTreinador")
+    @OneToMany(mappedBy = "aulaTreinador", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<TreinadorAula> treinadores;
-
 
 
 }

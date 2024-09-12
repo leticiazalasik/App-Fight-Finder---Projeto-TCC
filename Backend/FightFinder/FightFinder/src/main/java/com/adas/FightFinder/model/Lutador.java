@@ -41,7 +41,6 @@ public class Lutador extends Pessoa{
     private Integer turma;
     private String observacoes;
 
-    @OneToMany(mappedBy = "lutadorComentario")
+    @OneToMany(mappedBy = "lutadorComentario", cascade = CascadeType.ALL)
     private List<Comentario> comentarios;
-
 }
