@@ -1,5 +1,5 @@
 import { Pessoa } from './Pessoa';
-import { Comentario } from './comentario';
+import { Comentario } from './Comentario';
 
 
 export interface Lutador extends Pessoa{

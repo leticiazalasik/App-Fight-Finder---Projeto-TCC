@@ -1,5 +1,5 @@
-import { Lutador } from "./lutador";
-import { Treinador } from "./treinador";
+import { Lutador } from "./Lutador";
+import { Treinador } from "./Treinador";
 
 export interface Luta{
     id: number; 

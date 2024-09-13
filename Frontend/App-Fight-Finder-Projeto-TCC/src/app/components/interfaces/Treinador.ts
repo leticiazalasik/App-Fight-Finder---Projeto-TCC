@@ -1,5 +1,5 @@
 import { Pessoa } from './Pessoa';
-import { Aula } from './aula';
+import { Aula } from './Aula';
 
 export interface Treinador extends Pessoa{
     id: number; 

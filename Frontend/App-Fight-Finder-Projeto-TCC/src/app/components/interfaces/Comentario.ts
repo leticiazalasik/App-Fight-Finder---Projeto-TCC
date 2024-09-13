@@ -1,4 +1,4 @@
-import { Lutador } from "./lutador";
+import { Lutador } from "./Lutador";
 
 export interface Comentario{
     id: number; 

@@ -1,5 +1,5 @@
-import { Aula } from './aula';
-import { Lutador } from './lutador';
+import { Aula } from './Aula';
+import { Lutador } from './Lutador';
 
 
 export interface LutadorAula{
