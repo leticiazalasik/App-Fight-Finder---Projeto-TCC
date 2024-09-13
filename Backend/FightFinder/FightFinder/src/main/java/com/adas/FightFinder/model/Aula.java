@@ -1,5 +1,6 @@
 package com.adas.FightFinder.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,10 +25,12 @@ public class Aula {
     @Nonnull
     private LocalDateTime data;
 
-    @OneToMany(mappedBy = "aulaLutador" , cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    @OneToMany(mappedBy = "aulaLutador")
     private List<LutadorAula> lutadores;
 
-    @OneToMany(mappedBy = "aulaTreinador", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    @OneToMany(mappedBy = "aulaTreinador")
     private List<TreinadorAula> treinadores;
 
 

@@ -30,6 +30,10 @@ public class LutadorAulaService {
         return lutadorAulaRepository.save(lutadorAula);
     }
 
+    public void saveAll(List<LutadorAula> lutadores){
+       lutadorAulaRepository.saveAll(lutadores);
+    }
+
 
     public void delete(LutadorAula lutadorAula){
 

@@ -30,7 +30,9 @@ public class TreinadorAulaService {
         return treinadorAulaRepository.save(treinadorAula);
     }
 
-
+    public void saveAll(List<TreinadorAula> treinadores){
+        treinadorAulaRepository.saveAll(treinadores);
+    }
     public void delete(TreinadorAula treinadorAula){
 
         treinadorAulaRepository.delete(treinadorAula);

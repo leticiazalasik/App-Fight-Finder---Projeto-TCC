@@ -20,11 +20,20 @@ public class TreinadorAula {
 
     private Boolean presente;
 
-    @Nonnull
-    @OneToOne
+    //@OneToOne
+    //private Treinador treinador;
+
+    //@ManyToOne
+    //@JoinColumn(name="aula_id")
+    //private Aula aulaTreinador;
+
+    @ManyToOne
+    @JoinColumn(name = "treinador_id")
     private Treinador treinador;
 
     @ManyToOne
     @JoinColumn(name="aula_id")
     private Aula aulaTreinador;
+
+
 }
