@@ -3,6 +3,6 @@ import { Aula } from './Aula';
 
 export interface Treinador extends Pessoa{
     id: number; 
-    treinador: Treinador; 
-    aulaTreinador: Aula; 
+    treinador?: Treinador; 
+    aulaTreinador?: Aula; 
 }

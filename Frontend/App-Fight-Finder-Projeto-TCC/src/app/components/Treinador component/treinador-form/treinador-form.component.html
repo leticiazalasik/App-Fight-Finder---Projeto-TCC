@@ -1,16 +1,16 @@
 <app-header></app-header>
 <div class="container " >
-    <div class="form ">
+    <div class="form " (ngSubmit)="salvar()">
     <h3>Formulário do Treinador</h3>
 
         <label for="nome">Nome</label>
-        <input type="text" id="nome" [(ngModel)]="treinadorEditado.nome" required >
+        <input type="text" id="nome" [(ngModel)]="treinador.nome" name="nome" required >
 
     <label for="idade">Idade</label>
-    <input type="text" id="idade" [(ngModel)]="treinadorEditado.idade" required>
+    <input type="text" id="idade" [(ngModel)]="treinador.idade" required>
 
     <label for="nivel">Modalidade</label>
-    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade" [(ngModel)]="treinadorEditado.modalidade" required>
+    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade" [(ngModel)]="treinador.modalidade" required>
         <option value="Taekwondo">Taekwondo</option>
         <option value="Karatê">Karatê</option>
         <option value="Jiu-jitsu">Jiu-jitsu</option>
@@ -18,7 +18,7 @@
         <option value="Outro">Outro</option>
       </select>
 
-      <div style="margin-top:10%;">
+      <div style="margin-top:10%;" [(ngModel)]="treinador.ativo" required>
         <p>Status:</p>
         <label for="true">
             <input type="radio" id="true" name="ativo" value="true" required class="hidden-radio">
@@ -35,7 +35,7 @@
 
         <div class="form-group center-horizontal2" >
           <label for="file">Foto de perfil (opcional):</label>
-          <input type="file" id="file" (change)="onFileSelected($event)" style="display: none" >
+          <input type="file" id="file" [(ngModel)]="treinador.foto"  style="display: none" >
           <label for="file" class="btn-padrao">Escolher arquivo</label>
 </div>
 
@@ -44,8 +44,8 @@
 </div>
 
         <div class="botoes">
-    <button class="btn-padrao-confirm"(click)="salvarDados()">Salvar</button>
-    <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
+    <button class="btn-padrao-confirm" type="submit">Salvar</button>
+    <button class="btn-padrao-cancel">Cancelar</button>
 </div>
 </div>
 </div>
