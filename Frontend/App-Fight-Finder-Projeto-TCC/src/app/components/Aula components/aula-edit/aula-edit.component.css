@@ -1,4 +1,4 @@
-@import '../../components/styleSass.css';
+@import '../../components/../styleSass.scss';
 
 *{
     box-sizing: border-box;

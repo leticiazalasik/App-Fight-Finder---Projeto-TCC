@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Treinador } from '../../interfaces/Treinador';
+import { TreinadorService } from '../../../servicos/treinador.service';
 
 @Component({
   selector: 'app-treinador-list',
@@ -8,66 +9,45 @@ import { Treinador } from '../../interfaces/Treinador';
 })
 export class TreinadorListComponent implements OnInit{
 
-  @Input() treinador!: Treinador;
+  treinadores: Treinador[]=[]; 
+  
+  constructor(private treinadorService: TreinadorService){}; 
 
-  @Input() listaTreinadores: Treinador[] = [];
-
-  @Input() salvar: any;
-
-
-  listaTreinadoresFiltro: Treinador[]= this.listaTreinadores; 
-
-  ngOnInit() {
-    this.listaTreinadoresFiltro = this.listaTreinadoresFiltro;
+  ngOnInit():void{
+    this.carregarTreinadores();
   }
 
-  @Output() excluir: EventEmitter<number>=new EventEmitter<number>();
-
-  @Output() editar: EventEmitter<any>=new EventEmitter(); 
-
-  @Output() inserir: EventEmitter<any>=new EventEmitter();
-
-  treinadorEditar:Treinador|null=null;
-  exibirFormulario: string=''; 
-
-  excluirTreinador (id:number): void {
-    this.excluir.emit(id); 
+  carregarTreinadores():void{
+    this.treinadorService.findAll().subscribe(data=> {
+      this.treinadores=data; 
+    }); 
   }
 
-  editarTreinador(treinador:Treinador): void {
-    this.exibirFormulario='editar';
-    this.treinadorEditar=treinador;
+  delete(id:number):void{
+    this.treinadorService.delete(id).subscribe(()=>{
+      this.carregarTreinadores(); 
+    })
   }
 
-  novoTreinador(novoTreinador: Treinador): void {
-    this.exibirFormulario='novo';
-    this.treinadorEditar=null;
-    
-  }
-
-  onSalvar(treinador:Treinador): void {
-    this.exibirFormulario=' '; 
-    
-    if (treinador.id!=0){
-    this.editar.emit(treinador);
-    } else {
-    this.inserir.emit(treinador); 
+  confirmDelete(treinadorId: number) {
+    const confirmResult = confirm('Tem certeza de que deseja excluir este treinador?');
+    if (confirmResult) {
+      this.delete(treinadorId); 
     }
   }
 
-  filtro:Boolean=true; 
+  inativarTreinador(treinadorId: number) {
+    this.treinadorService.findById(treinadorId).subscribe((treinador) => {
+      if (treinador.ativo ==false) {
+        treinador.ativo=true;
+      } else {
+        treinador.ativo=false;
+      }
 
-  telaTreinadoresFiltro(tela:Boolean):void{
-  this.filtro=tela; 
-  console.log(tela);
-  this.filtrarTreinadores(tela);
-  }
+      this.treinadorService.update(treinador).subscribe(() => {
 
-  filtrarTreinadores(tela?: Boolean): void { 
-    this.listaTreinadoresFiltro = this.listaTreinadores.filter(treinadores => {
-        return tela === undefined || this.treinador.ativo == tela; 
+      });
     });
 }
-
 
 }

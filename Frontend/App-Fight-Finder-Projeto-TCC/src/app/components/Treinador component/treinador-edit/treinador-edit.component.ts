@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Treinador } from '../../interfaces/Treinador';
+import { TreinadorService } from '../../../servicos/treinador.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-treinador-edit',
@@ -8,48 +10,60 @@ import { Treinador } from '../../interfaces/Treinador';
 })
 export class TreinadorEditComponent {
 
-  @Output() excluir: EventEmitter<number>=new EventEmitter<number>();
+  
+  treinador: Treinador = {
+    id: 0, 
+    nome: '',
+    idade: 0,
+    modalidade: '',
+    foto: '',
+    ativo: true
+  }; 
 
+  constructor(
+    private treinadorService: TreinadorService, 
+    private route: ActivatedRoute,
+    private router: Router
 
-  @Input() listaTreinadores: Treinador[] = [];
-  @Input() treinador!: Treinador;
+  ){}
 
-
-  @Output() editar: EventEmitter<any>=new EventEmitter(); 
-
-  @Output() inserir: EventEmitter<any>=new EventEmitter();
-
-  @Output() inativar: EventEmitter<any> = new EventEmitter();
-
-
-
-treinadorEditar:Treinador|null=null;
-  exibirFormulario: string=''; 
-
-  excluirTreinador (id:number): void {
-    this.excluir.emit(id); 
-  }
-
-  editarTreinador(treinador:Treinador): void {
-    this.exibirFormulario='editar';
-    this.treinadorEditar=treinador;
-  }
-
-  novoTreinador(): void {
-    this.exibirFormulario='novo';
-    this.treinadorEditar=null;
-  }
-  onSalvar(treinador:Treinador): void {
-    this.exibirFormulario=' '; 
-    if (treinador.id!=0){
-    this.editar.emit(treinador);
-    } else {
-    this.inserir.emit(treinador); 
+  ngOnInit(): void{
+    const id = Number(this.route.snapshot.paramMap.get('id')); 
+    if (id){
+      this.treinadorService.findById(id).subscribe(data=> {
+        this.treinador=data; 
+      });
     }
   }
 
-  inativarTreinador(treinador: Treinador): void {
-    treinador.ativo = !treinador.ativo;
+  confirmDelete(treinadorId: number) {
+    const confirmResult = confirm('Tem certeza de que deseja excluir este treinador?');
+    if (confirmResult) {
+        this.treinadorService.delete(treinadorId).subscribe(() => {
+            
+        });
+    }
+}
 
+
+  inativarTreinador(treinadorId: number) {
+    this.treinadorService.findById(treinadorId).subscribe((treinador) => {
+      if (treinador.ativo ==false) {
+        treinador.ativo=true;
+      } else {
+        treinador.ativo=false;
+      }
+
+      this.treinadorService.update(treinador).subscribe(() => {
+
+      });
+    });
+}
+
+salvar(): void {
+    this.treinadorService.update(this.treinador).subscribe(() => {
+      this.router.navigate(['/treinador']); 
+    });
   }
+ 
 }

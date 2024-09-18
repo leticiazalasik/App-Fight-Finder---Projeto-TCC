@@ -1,34 +1,34 @@
 
 <app-header></app-header>
 
-<div class="form">
+<div class="form" *ngIf="treinador">
 
   <h3>Editar Treinador</h3>
 
   <div class="botoes">
-    <button class="btn-padrao-inactive">Inativar Lutador</button>
-    <button class="btn-padrao-cancel"> Excluir lutador</button>
+    <button class="btn-padrao-inactive" (click)="inativarTreinador(treinador.id)">Inativar Lutador</button>
+    <button class="btn-padrao-cancel" (click)="confirmDelete(treinador.id)">Excluir> Excluir lutador</button>
     </div>
 
   <div>
     <label for="id">ID</label>
-    <input type="text" id="id" readonly placeholder="01">
+    <input type="text" id="id" readonly>
 </div>
 
 
   <div>
       <label for="nome">Nome</label>
-      <input type="text" id="nome" required >
+      <input type="text" id="nome" [(ngModel)]="treinador.nome">
   </div>
 
 <div>
   <label for="idade">Idade</label>
-  <input type="text" id="idade" required>
+  <input type="text" id="idade" [(ngModel)]="treinador.idade">
 </div>
 
 <div>
   <label for="nivel">Modalidade</label>
-  <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade"required>
+  <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade" [(ngModel)]="treinador.modalidade">
       <option value="Taekwondo">Taekwondo</option>
       <option value="Karatê">Karatê</option>
       <option value="Jiu-jitsu">Jiu-jitsu</option>
@@ -41,14 +41,14 @@
 <p>Status:</p>
 <label for="true">
 <input type="radio" id="true" name="ativo" 
-value="true" required class="hidden-radio">
+value="true" [(ngModel)]="treinador.ativo" class="hidden-radio">
 <span class="custom-radio"></span>
 Ativo
 </label>
 
 <label for="false">
 <input type="radio" id="false" name="ativo" 
-value="false" class="hidden-radio"> 
+value="false" [(ngModel)]="treinador.ativo" class="hidden-radio"> 
 <span class="custom-radio"></span>
 Inativo
 </label>
@@ -61,16 +61,16 @@ Inativo
         <label for="file" class="btn-padrao">Escolher arquivo</label>
 </div>
 
-  <div class="center-horizontal">
-<span id="file-name">Nenhum arquivo selecionado</span>
+<div class="center-horizontal">
+  <span id="file-name">{{ treinador.foto ? treinador.foto : 'Nenhum arquivo selecionado' }}</span>
 </div>
 
 
 <div class="botoes-final" style="margin-top: 15%;">
-  <button class="btn-padrao-confirm">Salvar</button>
+  <button class="btn-padrao-confirm" (click)="salvar()">Salvar</button>
 </div>
 <div class="botoes-final" style="margin-top: 10px;">
-  <button class="btn-padrao-cancel">Cancelar</button>
+  <button class="btn-padrao-cancel" [routerLink]="['/treinador']">Cancelar</button>
 </div>
 
 </div>

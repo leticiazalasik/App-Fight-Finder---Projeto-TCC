@@ -1,13 +1,15 @@
 <div class="toda">
     <app-header></app-header>
     
-    
+    <div *ngIf="treinador">
+
     <div class="container-imagem">
-    <div class="imagem-login"> 
-        <img src="../../assets/img/perfil.png" alt="Descrição da imagem">
-        <h3>Valério Alves</h3>
+        <div class="imagem-login">
+            <img [src]="treinador.foto || '../../assets/img/perfil.png'" alt="Foto do treinador">
+          
+        <h3>{{ treinador.nome}}</h3>
     
-    <p>Modalidade: Taekwondo</p>
+    <p>Modalidade: {{ treinador.modalidade}}</p>
     
         </div>
     </div>
@@ -15,9 +17,9 @@
     <div class="dados">
     <div class="dados-pessoais">
     <h5>Dados pessoais </h5>
-    <p> <span class="destaque">Id:</span> 01 </p>
-    <p> <span class="destaque">Idade:</span> 33 </p>
-    <p> <span class="destaque">Status:</span> Ativo </p>
+    <p> <span class="destaque">Id:</span> {{ treinador.id}} </p>
+    <p> <span class="destaque">Idade:</span> {{ treinador.idade}}</p>
+    <p><span class="destaque">Status:</span> {{ treinador.ativo ? 'Ativo' : 'Inativo' }}</p>
     </div>
     
    
@@ -29,30 +31,23 @@
         <table class="table-presencasfaltas">
             <thead>
                 <tr>
-                    <th scope="col">Presenças</th> <!-- Nova coluna -->
+                    <th scope="col">Presenças</th>
                     <th scope="col">Faltas</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>15/08/24</td> <!-- Data aleatória para teste -->
+                    <td>15/08/24</td>
                     <td>07/08/24</td>
-                </tr>
-                <tr>
-                    <td>10/08/24</td> <!-- Data aleatória para teste -->
-                    <td>30/07/24</td>
-                </tr>
-                <tr>
-                    <td>20/08/24</td> <!-- Data aleatória para teste -->
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>05/08/24</td> <!-- Data aleatória para teste -->
-                    <td></td>
                 </tr>
             </tbody>
         </table>
     
+        <div class="botoes">
+            <button class="btn-padrao-confirm" [routerLink]="['/produto/editar', treinador.id]">Editar</button>
+            <button class="btn-padrao-cancel" [routerLink]="['/treinador']">Cancelar</button>
+        </div>
+
       </div>
         <app-menunav></app-menunav>
     <app-footer></app-footer>

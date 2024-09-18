@@ -2,7 +2,7 @@
 
   <app-header></app-header>
   
-  <button class="btn-padrao"> <i class="fa-solid fa-plus"></i> Adicionar novo</button>
+  <button class="btn-padrao" routerLink="/treinador/create"> <i class="fa-solid fa-plus"></i> Adicionar novo</button>
   
     <h1>Lista de treinadores</h1>
   
@@ -35,38 +35,24 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-              <td>Valério Alves</td>
-              <td>34</td>
+            <tr *ngFor="let treinador of treinadores">
+              <td style="width: 60px; height: 60px;"> <img [src]="treinador.foto || '../../assets/img/perfil.png'" alt="Foto do treinador"> ></td>
+              <td>{{treinador.nome}}</td>
+              <td>{{treinador.idade}}</td>
               <td>
                 <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Ações
                   </button>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Editar</a></li>
-                    <li><a class="dropdown-item" href="#">Inativar</a></li>
-                    <li><a class="dropdown-item" href="#">Excluir</a></li>
-                  </ul>
-                </div>
-              </td>
-            </tr>
-  
-            <tr>
-              <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-              <td>Antônio Valindolfo</td>
-              <td>39</td>
-              <td>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ações
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Editar</a></li>
-                    <li><a class="dropdown-item" href="#">Inativar</a></li>
-                    <li><a class="dropdown-item" href="#">Excluir</a></li>
-                    <li><a class="dropdown-item" href="#">Perfil completo</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/treinador', treinador.id]">Ver</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/treinador', treinador.id]">Editar</a></li>
+                    <li>
+                      <a class="dropdown-item" (click)="inativarTreinador(treinador.id)">
+                          {{ treinador.ativo ? 'Inativar' : 'Ativar' }}
+                      </a>
+                  </li>                  
+                    <a class="dropdown-item" (click)="confirmDelete(treinador.id)">Excluir</a>
                   </ul>
                 </div>
               </td>

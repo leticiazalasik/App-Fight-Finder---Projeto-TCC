@@ -39,14 +39,9 @@ ngOnInit(): void{
 }
 
 salvar(): void {
-  if(this.isEdicao){
-    this.treinadorService.update(this.treinador).subscribe(() => {
-      this.router.navigate(['/treinador']); 
-    }); 
-  } else { 
     this.treinadorService.add(this.treinador).subscribe(() => {
-      this.router.navigate(['/produtos']);
+      this.router.navigate(['/treinadores']);
     })
   }
-  }
+  
 }
