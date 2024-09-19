@@ -1,5 +1,6 @@
 package com.adas.FightFinder.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,17 +21,11 @@ public class TreinadorAula {
 
     private Boolean presente;
 
-    //@OneToOne
-    //private Treinador treinador;
-
-    //@ManyToOne
-    //@JoinColumn(name="aula_id")
-    //private Aula aulaTreinador;
-
     @ManyToOne
     @JoinColumn(name = "treinador_id")
     private Treinador treinador;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="aula_id")
     private Aula aulaTreinador;

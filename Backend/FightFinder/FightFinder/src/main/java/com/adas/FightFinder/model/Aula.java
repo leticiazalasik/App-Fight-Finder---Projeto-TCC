@@ -25,11 +25,11 @@ public class Aula {
     @Nonnull
     private LocalDateTime data;
 
-    @JsonIgnore
+
     @OneToMany(mappedBy = "aulaLutador")
     private List<LutadorAula> lutadores;
 
-    @JsonIgnore
+
     @OneToMany(mappedBy = "aulaTreinador")
     private List<TreinadorAula> treinadores;
 

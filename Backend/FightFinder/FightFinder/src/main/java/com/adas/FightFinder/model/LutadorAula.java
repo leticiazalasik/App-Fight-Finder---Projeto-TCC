@@ -1,5 +1,6 @@
 package com.adas.FightFinder.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,7 @@ public class LutadorAula {
     @JoinColumn(name = "lutador_id")
     private Lutador lutador;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name="aula_id")
     private Aula aulaLutador;
