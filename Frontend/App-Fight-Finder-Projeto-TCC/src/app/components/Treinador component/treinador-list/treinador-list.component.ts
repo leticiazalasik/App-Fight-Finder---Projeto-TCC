@@ -10,6 +10,7 @@ import { TreinadorService } from '../../../servicos/treinador.service';
 export class TreinadorListComponent implements OnInit{
 
   treinadores: Treinador[]=[]; 
+  treinadoresFiltro: Treinador[] = [];
   
   constructor(private treinadorService: TreinadorService){}; 
 
@@ -50,4 +51,10 @@ export class TreinadorListComponent implements OnInit{
     });
 }
 
+treinadoresAtivos(): void {
+  this.treinadoresFiltro = this.treinadores.filter(treinador => treinador.ativo);
+  this.treinadores=this.treinadoresFiltro; 
+
 }
+}
+

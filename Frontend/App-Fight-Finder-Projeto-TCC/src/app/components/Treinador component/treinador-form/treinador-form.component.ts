@@ -40,7 +40,7 @@ ngOnInit(): void{
 
 salvar(): void {
     this.treinadorService.add(this.treinador).subscribe(() => {
-      this.router.navigate(['/treinadores']);
+      this.router.navigate(['/treinador']);
     })
   }
   
