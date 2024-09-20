@@ -19,7 +19,6 @@ this.escolaEditada={
   email:' ', 
   senha:' ', 
   foto:' ', 
-  treinadores: ' ',
   alunos:' ', 
   aulas:0,
 }
