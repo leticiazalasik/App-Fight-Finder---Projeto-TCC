@@ -18,10 +18,8 @@
           Filtros
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Todos</a></li>
-          <li><a class="dropdown-item" href="#">Ativos</a></li>
-          <li><a class="dropdown-item" href="#">Feminino</a></li>
-          <li><a class="dropdown-item" href="#">Masculino</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/treinador', treinador.id]">Todos</a></li>
+          <li><a class="dropdown-item" (click)="treinadoresAtivos()">Ativos</a></li>
         </ul>
       </div>
   

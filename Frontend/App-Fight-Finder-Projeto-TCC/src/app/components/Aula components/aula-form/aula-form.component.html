@@ -12,7 +12,7 @@
 
     <div>
         <label for="nivel">Horário</label>
-        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="horario" [(ngModel)]="aulaEditada.horario" required>
+        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="horario" [(ngModel)]="aula.data" required>
             <option value="05:00">05:00</option>
             <option value="05:30">05:30</option>
             <option value="06:00">06:00</option>
@@ -190,9 +190,10 @@
 </table>
 
 <div class="botoes">
-        <button class="btn-padrao-confirm"(click)="salvarDados()">Iniciar</button>
-        <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
+  <button class="btn-padrao-confirm" (click)="salvar()" >Salvar</button>
+  <button class="btn-padrao-cancel" [routerLink]="['/aula']">Cancelar</button>
     </div>
+    
 
   </div>
     <app-menunav></app-menunav>

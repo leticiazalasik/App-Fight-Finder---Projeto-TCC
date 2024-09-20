@@ -18,9 +18,9 @@
             Filtros
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Todas</a></li>
-            <li><a class="dropdown-item" href="#">Do último mês</a></li>
-            <li><a class="dropdown-item" href="#">Do ano</a></li>
+            <li><a class="dropdown-item"  [routerLink]="['/aula']">Todas</a></li>
+            <li><a class="dropdown-item" (click)="aulasDoMes()">Do último mês</a></li>
+            <li><a class="dropdown-item" (click)="aulasDoAno()">Do atual ano</a></li>
           </ul>
         </div>
     

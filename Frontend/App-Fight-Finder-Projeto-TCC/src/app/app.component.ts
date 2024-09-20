@@ -1,9 +1,8 @@
 import { Component, EventEmitter, Input, Output, input } from '@angular/core';
-import { Lutador } from './interfaces/Lutador';
 import { filter } from 'rxjs';
-import { ComentarioComponent } from './components/comentario/comentario.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ComentarioComponent } from './components/Comentario-components/comentario/comentario.component';
 
 @NgModule({
   // ...

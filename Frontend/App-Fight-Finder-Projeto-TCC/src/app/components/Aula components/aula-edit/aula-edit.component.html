@@ -5,7 +5,7 @@
 
 
     <div class="botoes-inicio">
-      <button class="btn-padrao-edit"> Excluir aula</button>
+      <button class="btn-padrao-edit" (click)="confirmDelete(aula.id)"> Excluir aula</button>
       </div>
   
     <div class="data">
@@ -61,16 +61,16 @@
     
     <div class="dropdown" style="margin-top: 8%; margin-bottom: 10%;">
         <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Filtros da lista
+          Adicionar outros lutadores
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Alunos da turma</a></li>
-          <li><a class="dropdown-item" href="#">Todos os alunos ativos</a></li>
+          <li><a class="dropdown-item" (click)="exibirTabelaLutadoresDaTurma = !exibirTabelaLutadoresDaTurma">Lutadores da turma</a></li>
+          <li><a class="dropdown-item" (click)="exibirTabelaLutadoresAtivos = !exibirTabelaLutadoresAtivos">Todos lutadores ativos</a></li>
         </ul>
       </div>
 </div>
 
-<table class="table">
+<table *ngIf="exibirTabelaLutadoresDaTurma || exibirTabelaLutadoresAtivos" class="table" class="table">
   <thead>
     <tr>
       <th></th>
@@ -82,51 +82,18 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr  *ngFor="let lutador of lutadores">
       <td> 
         <div class="form-check" style="display: flex; align-items: center;">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
       </div>
     </td>
-      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-      <td>John Deik</td>
-      <td style="vertical-align: middle">33</td>
-      <td style="vertical-align: middle">Preta</td>
+    <td style="width: 60px; height: 60px;"> <img [src]="lutador.foto || '../../assets/img/perfil.png'" alt="Foto do treinador"> ></td>
+    <td>{{lutador.nome}}</td>
+      <td style="vertical-align: middle">{{lutador.idade}}</td>
+      <td style="vertical-align: middle">{{lutador.isColorida}}</td>
       <td style="vertical-align: middle">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
-            Ações
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Inativar</a></li>
-            <li><a class="dropdown-item" href="#">Excluir</a></li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td> 
-        <div class="form-check" style="display: flex; align-items: center;">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      </div>
-    </td>
-      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-      <td>Giovana Santos</td>
-      <td style="vertical-align: middle">28</td>
-      <td style="vertical-align: middle">Colorida</td>
-      <td style="vertical-align: middle">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ações
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Inativar</a></li>
-            <li><a class="dropdown-item" href="#">Excluir</a></li>
-          </ul>
-        </div>
+        <button [routerLink]="['/lutador', lutador.id]">Editar lutador</button>
       </td>
     </tr>
   </tbody>
@@ -137,7 +104,9 @@
   <h3>Treinadores presentes</h3>
 </div>
 
-<table class="table-treinadores" style="margin-top: 7%;">
+<button class="btn-padrao-confirm" (click)="exibirTabelaTreinadores = !exibirTabelaTreinadores">Mostrar Tabela</button>Adicionar treinadores</button>
+
+<table *ngIf="exibirTabelaTreinadores" class="table-treinadores" style="margin-top: 7%;">
   <thead>
     <tr>
       <th></th>
@@ -147,55 +116,24 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let treinador of treinadores">
       <td> 
         <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
       </div>
     </td>
-      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-      <td>John Deik</td>
+      <td> <img [src]="treinador.foto || '../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"> ></td>
+      <td>{{treinador.nome}}</td>
       <td style="vertical-align: middle">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
-            Ações
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Inativar</a></li>
-            <li><a class="dropdown-item" href="#">Excluir</a></li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td> 
-        <div class="form-check" style="display: flex; align-items: center;">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      </div>
-    </td>
-      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-      <td>Giovana Santos</td>
-      <td style="vertical-align: middle">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ações
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Inativar</a></li>
-            <li><a class="dropdown-item" href="#">Excluir</a></li>
-          </ul>
-        </div>
+        <button [routerLink]="['/treinador', treinador.id]">Editar lutador</button>
       </td>
     </tr>
   </tbody>
 </table>
 
 <div class="botoes">
-        <button class="btn-padrao-confirm">Salvar</button>
-        <button class="btn-padrao-cancel">Cancelar</button>
+        <button class="btn-padrao-confirm" (click)="salvar()">Salvar</button>
+        <button class="btn-padrao-cancel" [routerLink]="['/aula']">Cancelar</button>
     </div>
 
   </div>
