@@ -6,7 +6,7 @@ export interface Lutador extends Pessoa{
     id: number; 
     peso: number; 
     altura: number; 
-    genero: boolean;
+    genero: string;
     isColorida: boolean;
     vitorias: number;
     derrotas: number; 
