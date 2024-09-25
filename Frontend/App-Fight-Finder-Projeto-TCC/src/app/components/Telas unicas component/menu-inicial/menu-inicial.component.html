@@ -1,24 +1,20 @@
-<app-header></app-header>
-
 <h3>Menu inicial</h3>
 
 <div class="container">
 
   <div class="lado-lado">
-    <button class="btn-padrao" style= "height: 80px;"  (click)="tela('lutadores')"> Lutadores</button>
-    <button class="btn-padrao" style= "height: 80px;" (click)="tela('treinadores')"> Treinadores</button>
+    <button class="btn-padrao" style= "height: 80px;" [routerLink]="['/lutador']"> Lutadores</button>
+    <button class="btn-padrao" style= "height: 80px;" [routerLink]="['/treinador']"> Treinadores</button>
         </div>
 
         <div class="lado-lado">
-          <button class="btn-padrao" (click)="tela('a')" style= "height: 80px;"> Aulas</button>
-        <button class="btn-padrao-edit" style= "height: 80px; background-color: #001b72;"(click)="tela('lutas')"> Gerar lutas </button>
+          <button class="btn-padrao" style= "height: 80px;" [routerLink]="['/aula']"> Aulas</button>
+        <button class="btn-padrao-edit" style= "height: 80px; background-color: #001b72;" [routerLink]="['/gerarLuta']"> Gerar lutas </button>
       </div>   
 </div>
 
 <div class="container2">
-<button class="btn-padrao-ajuda" style= "height: 40px;"(click)="tela('ajuda')"> Precisa de ajuda?</button>
+<button class="btn-padrao-ajuda" style= "height: 40px;" [routerLink]="['/adicionarComentario']"> Precisa de ajuda?</button>
 </div>
 
 <app-menunav></app-menunav>
-
-<app-footer></app-footer>

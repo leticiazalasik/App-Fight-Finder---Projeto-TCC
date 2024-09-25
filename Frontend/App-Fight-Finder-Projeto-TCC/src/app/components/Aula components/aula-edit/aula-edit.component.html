@@ -1,11 +1,11 @@
-<app-header></app-header>
+
 
 <div class="form">
     <h2 class="botoes">Editar aula</h2>
 
 
     <div class="botoes-inicio">
-      <button class="btn-padrao-edit" (click)="confirmDelete(aula.id)"> Excluir aula</button>
+      <button class="btn-padrao-edit"> Excluir aula</button>
       </div>
   
     <div class="data">
@@ -104,7 +104,9 @@
   <h3>Treinadores presentes</h3>
 </div>
 
-<button class="btn-padrao-confirm" (click)="exibirTabelaTreinadores = !exibirTabelaTreinadores">Mostrar Tabela</button>Adicionar treinadores</button>
+<button class="btn-padrao-confirm" (click)="exibirTabelaTreinadores = !exibirTabelaTreinadores">Mostrar Tabela</button>
+
+<button> Adicionar treinadores</button>
 
 <table *ngIf="exibirTabelaTreinadores" class="table-treinadores" style="margin-top: 7%;">
   <thead>
@@ -138,5 +140,4 @@
 
   </div>
     <app-menunav></app-menunav>
-    <app-footer ></app-footer>
 

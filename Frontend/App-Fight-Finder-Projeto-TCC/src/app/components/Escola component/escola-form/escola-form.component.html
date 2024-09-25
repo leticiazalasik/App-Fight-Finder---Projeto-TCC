@@ -1,23 +1,21 @@
 <div class="container">
-    <app-header></app-header>
-
     <div class="form">
 
     <h3>Criar conta da escola</h3>
 
     <div class="cent">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" required >
+        <input type="text" id="nome" [(ngModel)]="escola.nome" required >
     </div>
 
 <div>
     <label for="idade">Email</label>
-    <input type="text" id="email"required>
+    <input type="text" id="email"required [(ngModel)]="escola.email" >
 </div>
 
 <div>
     <label for="nome">Senha</label>
-    <input type="text" id="senha" required >
+    <input type="text" id="senha" required [(ngModel)]="escola.senha" >
 </div>
 </div>
 
@@ -37,5 +35,4 @@
 
 </div>
 
-<app-footer></app-footer>
 </div>

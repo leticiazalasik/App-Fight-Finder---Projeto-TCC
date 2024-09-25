@@ -1,7 +1,4 @@
-<div class="container">
-
-  <app-header></app-header>
-  
+<div class="container">  
   <button class="btn-padrao" routerLink="/treinador/create"> <i class="fa-solid fa-plus"></i> Adicionar novo</button>
   
     <h1>Lista de treinadores</h1>
@@ -18,7 +15,7 @@
           Filtros
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/treinador', treinador.id]">Todos</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/treinador']">Todos</a></li>
           <li><a class="dropdown-item" (click)="treinadoresAtivos()">Ativos</a></li>
         </ul>
       </div>
@@ -59,6 +56,4 @@
         </table>
   
       <app-menunav></app-menunav>
-  
-    <app-footer></app-footer>
-  </div>  
+    </div>  

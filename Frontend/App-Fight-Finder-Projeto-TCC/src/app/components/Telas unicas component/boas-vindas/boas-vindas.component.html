@@ -1,9 +1,4 @@
 <div class="container">
-    <div class="row">
-        <div class="col-sm">
-<app-header> </app-header>
-</div>
-</div>
 
     <div class="row">
         <div class="col-sm">
@@ -20,7 +15,7 @@
 <div class="botoes">
 <div class="row">
     <div class="col-sm">
-        <button class="btn-padrao">Entrar com e-mail e senha</button>
+        <button class="btn-padrao" [routerLink]="['/login']">Entrar com e-mail e senha</button>
     </div>
 </div>
 <div class="row">
@@ -39,17 +34,11 @@
 <div class="botoes">
     <div class="row">
         <div class="col-sm">
-    <button class="btn-padrao-edit" >Nova conta</button>
+    <button class="btn-padrao-edit" [routerLink]="['/escolaForm']">Nova conta</button>
 </div>
 </div>
 </div>
 
-
-<div class="row">
-    <div class="col-sm">
-<app-footer> </app-footer>
-</div>
-</div>
 </div>
 
 
