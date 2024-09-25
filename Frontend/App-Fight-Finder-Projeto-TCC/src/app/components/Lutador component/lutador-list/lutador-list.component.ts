@@ -38,13 +38,18 @@ export class LutadorListComponent implements OnInit{
       nome: 'John Deik',
     idade: 31,
     modalidade: 'Taekwondo',
-    nivel: 9,
+    isColorida: false,
     peso: 80,
     altura: 182,
     genero: 'masculino',
     ativo: false,
     foto: 'assets/img/perfil.png',
-    
+    vitorias: 2,
+    derrotas: 4, 
+    empates: 1, 
+    turma: 19,  
+    observacoes: '', 
+    comentarios: []
     }
   ];
 

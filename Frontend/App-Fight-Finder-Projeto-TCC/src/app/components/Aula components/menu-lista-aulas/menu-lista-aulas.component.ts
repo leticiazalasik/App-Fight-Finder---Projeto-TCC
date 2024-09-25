@@ -38,11 +38,8 @@ export class MenuListaAulasComponent {
     {
       id: 1,
       data: new Date(2024, 7, 15),
-       horario:"19",
-      lutadoresPresentes: [1],
-      treinadoresPresentes: [1],
-      lutadoresAusentes: [],
-      treinadoresAusentes: [],
+      lutadores: [],
+      treinadores: []
     }
   ];
 

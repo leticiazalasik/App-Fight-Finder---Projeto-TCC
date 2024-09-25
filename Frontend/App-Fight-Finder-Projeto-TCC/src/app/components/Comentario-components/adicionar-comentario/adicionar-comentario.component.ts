@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ComentarioComponent } from '../comentario/comentario.component';
+import { Comentario } from '../../interfaces/Comentario';
+import { ComentarioService } from '../../../servicos/comentario.service';
+import { Router } from '@angular/router';
+import { Lutador } from '../../interfaces/Lutador';
 
 @Component({
   selector: 'app-adicionar-comentario',
@@ -7,15 +11,38 @@ import { ComentarioComponent } from '../comentario/comentario.component';
   styleUrls: ['./adicionar-comentario.component.css']
 })
 export class AdicionarComentarioComponent {
-  nomeLutador: string='';  
 
-  @Output() novoComentario = new EventEmitter<ComentarioComponent>();
+  comentario!: Comentario;
+  lutador!: Lutador; 
 
-  adicionarComentario(descricao: string, nomeLutador:string){
-    const comentario = new ComentarioComponent();
-    comentario.descricao = descricao; 
-    comentario.data=new Date(); 
-    comentario.nomeLutador=nomeLutador; 
-    this.novoComentario.emit(comentario);
+
+  constructor(
+    private comentarioService: ComentarioService, 
+    private router: Router
+  ){}
+  
+
+  limparComentario(): void {
+    this.comentario = {
+      id: 0,
+      data: new Date("2024-09-07T10:00:00"),
+      descricao: "",
+      lutador_id: this.lutador,
+    };
   }
+  
+  ngOnInit():void{ 
+    this.limparComentario();
+    }
+
+salvarDados(): void{
+
+this.comentarioService.add(this.comentario).subscribe(() => {
+  this.router.navigate(['/resultadoLutas']);
+});
+}
+
+
+
+  
 }

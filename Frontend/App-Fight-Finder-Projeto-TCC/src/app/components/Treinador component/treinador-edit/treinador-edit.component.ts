@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component} from '@angular/core';
 import { Treinador } from '../../interfaces/Treinador';
 import { TreinadorService } from '../../../servicos/treinador.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,7 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TreinadorEditComponent {
 
-  
   treinador: Treinador = {
     id: 0, 
     nome: '',

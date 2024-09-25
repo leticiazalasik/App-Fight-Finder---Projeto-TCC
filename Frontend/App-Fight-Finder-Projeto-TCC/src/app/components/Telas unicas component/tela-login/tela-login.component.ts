@@ -8,43 +8,44 @@ import { Escola } from '../../interfaces/Escola';
 })
 export class TelaLoginComponent {
 
-  @Input() escola: Escola | null = null; 
+  @Input() escola: Escola | null = null;
 
-escolaEditada!:Escola; 
+  escolaEditada!: Escola;
 
-limparEscola():void {
-this.escolaEditada={
-  id:0,
-  nome: ' ', 
-  email:' ', 
-  senha:' ', 
-  foto:' ', 
-  alunos:' ', 
-  aulas:0,
-}
+  limparEscola(): void {
+    this.escolaEditada = {
+      id: 0,
+      nome: ' ',
+      email: ' ',
+      senha: ' ',
+      foto: ' ',
+      senhaTemporaria: false
+    }
 
-}
-
-ngOnChanges(): void{
-  if (this.escola !=null ){
-  
-  this.escolaEditada={
-
-  id:this.escola.id, 
-  nome: this.escola.nome,
-  email: this.escola.email,
-  senha: this.escola.senha,
-  foto: this.escola.foto,
-  treinadores: this.escola.treinadores,
-  alunos: this.escola.alunos,
-  aulas:this.escola.aulas, 
-    }; 
-    console.log(this.escola.foto);
-  } else {
-    this.limparEscola(); 
   }
+
+  ngOnInit():void{
+    this.limparEscola();
   }
-       
+
+  ngOnChanges(): void {
+    if (this.escola != null) {
+
+      this.escolaEditada = {
+        id: this.escola.id,
+        nome: this.escola.nome,
+        email: this.escola.email,
+        senha: this.escola.senha,
+        foto: this.escola.foto, 
+        senhaTemporaria: this.escola.senhaTemporaria
+      };
+
+      console.log(this.escola.foto);
+    } else {
+      this.limparEscola();
+    }
+  }
+
 
 }
 

@@ -32,7 +32,6 @@ import { TreinadorComponent } from './components/Treinador component/treinador/t
 import { TreinadorListComponent } from './components/Treinador component/treinador-list/treinador-list.component';
 import { TreinadorFormComponent } from './components/Treinador component/treinador-form/treinador-form.component';
 import { TreinadorEditComponent } from './components/Treinador component/treinador-edit/treinador-edit.component';
-import { AulaListComponent } from './components/Aula components/aula-list/aula-list.component';
 import { MenuListaAulasComponent } from './components/Aula components/menu-lista-aulas/menu-lista-aulas.component';
 import { AulaEditComponent } from './components/Aula components/aula-edit/aula-edit.component';
 import { VisualizacaoLutadorComponent } from './components/Lutador component/visualizacao-lutador/visualizacao-lutador.component';
@@ -45,6 +44,7 @@ import { AulasListComponent } from './components/Aula components/aulas-list/aula
 import { PresentesAulaComponent } from './components/Aula components/presentes-aula/presentes-aula.component';
 import { AusentesAulasComponent } from './components/Aula components/ausentes-aulas/ausentes-aulas.component';
 import { EditarComentarioComponent } from './components/Comentario-components/editar-comentario/editar-comentario.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -55,12 +55,49 @@ import { EditarComentarioComponent } from './components/Comentario-components/ed
     LutadorComponent,
     LutadorFormComponent, 
     LutadorListComponent, 
-    LutadorEditComponent, FooterComponent, HeaderComponent, MenunavComponent, MenuInicialComponent, MenuLutadoresComponent, SplashScreenComponent, ComentarioComponent, AdicionarComentarioComponent, TelaLoginComponent, EscolaComponent, EscolaFormComponent, BoasVindasComponent, MenuCriarContaComponent, AjudaComponent, EscolaEditComponent, AulaComponent, AulaFormComponent, PresencaLutadoresManualComponent, PresencaTreinadoresManualComponent, TreinadorComponent, TreinadorListComponent, TreinadorFormComponent, TreinadorEditComponent, AulaListComponent, MenuListaAulasComponent, AulaEditComponent, VisualizacaoLutadorComponent, LutadorFormCompleteComponent, EsqueciSenhaComponent, GerarLutaComponent, ResultadoLutasComponent, VisualizacaoTreinadorComponent, AulasListComponent, PresentesAulaComponent, AusentesAulasComponent, EditarComentarioComponent
+    LutadorEditComponent, 
+    FooterComponent, 
+    HeaderComponent, 
+    MenunavComponent, 
+    MenuInicialComponent, 
+    MenuLutadoresComponent, 
+    SplashScreenComponent, 
+    ComentarioComponent, 
+    AdicionarComentarioComponent, 
+    TelaLoginComponent, 
+    EscolaComponent, 
+    EscolaFormComponent, 
+    BoasVindasComponent, 
+    MenuCriarContaComponent, 
+    AjudaComponent, 
+    EscolaEditComponent, 
+    AulaComponent, 
+    AulaFormComponent, 
+    PresencaLutadoresManualComponent, 
+    PresencaTreinadoresManualComponent, 
+    TreinadorComponent, 
+    TreinadorListComponent, 
+    TreinadorFormComponent, 
+    TreinadorEditComponent, 
+    AulasListComponent, 
+    MenuListaAulasComponent, 
+    AulaEditComponent, 
+    VisualizacaoLutadorComponent, 
+    LutadorFormCompleteComponent, 
+    EsqueciSenhaComponent, 
+    GerarLutaComponent, 
+    ResultadoLutasComponent, 
+    VisualizacaoTreinadorComponent, 
+    AulasListComponent, 
+    PresentesAulaComponent, 
+    AusentesAulasComponent, 
+    EditarComentarioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule, 
+    HttpClientModule
 
   ],
   providers: [

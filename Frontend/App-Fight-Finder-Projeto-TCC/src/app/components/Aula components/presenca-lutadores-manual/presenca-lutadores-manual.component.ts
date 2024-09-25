@@ -21,13 +21,18 @@ export class PresencaLutadoresManualComponent {
       nome: 'John Deik',
     idade: 31,
     modalidade: 'Taekwondo',
-    nivel: 9,
+    isColorida: false,
     peso: 80,
     altura: 180,
     genero: 'masculino',
     ativo: true,
     foto: 'assets/img/perfil.png',
-    
+    comentarios: [],
+    vitorias: 2, 
+    empates: 1,
+    derrotas: 0,
+    observacoes: '', 
+    turma: 19
     }
   ];
   lutadoresSelecionados: Lutador[] = [];

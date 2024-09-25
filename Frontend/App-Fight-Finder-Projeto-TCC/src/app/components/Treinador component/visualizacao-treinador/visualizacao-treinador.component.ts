@@ -10,7 +10,9 @@ import { Treinador } from '../../interfaces/Treinador';
 })
 export class VisualizacaoTreinadorComponent {
 
-  treinador: Treinador | undefined; 
+  treinador!: Treinador; 
+
+  treinadoresAula: Treinador[]=[];
 
   constructor(
     private treinadorService: TreinadorService, 

@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Escola } from '../../interfaces/Escola';
+import { EscolaService } from '../../../servicos/escola.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-escola-form',
@@ -12,9 +14,14 @@ export class EscolaFormComponent {
   exibirFormulario: string | undefined;
 
 
-  @Input() escola: Escola | null = null; 
+  @Input() escola!: Escola;  
   @Output() salvar: EventEmitter<any> = new EventEmitter<any>(); 
 @Output() editar: EventEmitter<any> = new EventEmitter<any>(); 
+
+constructor(
+  private escolaService: EscolaService, 
+  private router: Router
+){}
 
 escolaEditada!:Escola; 
 
@@ -25,11 +32,21 @@ this.escolaEditada={
   email:' ', 
   senha:' ', 
   foto:' ', 
-  treinadores: ' ',
-  alunos:' ', 
-  aulas:0,
+  senhaTemporaria: false
+}
+this.escola={
+  id:0,
+  nome: ' ', 
+  email:' ', 
+  senha:' ', 
+  foto:' ', 
+  senhaTemporaria: false
 }
 
+}
+
+ngOnInit():void{ 
+this.limparEscola();
 }
 
 ngOnChanges(): void{
@@ -42,9 +59,7 @@ ngOnChanges(): void{
   email: this.escola.email,
   senha: this.escola.senha,
   foto: this.escola.foto,
-  treinadores: this.escola.treinadores,
-  alunos: this.escola.alunos,
-  aulas:this.escola.aulas, 
+  senhaTemporaria:this.escola.senhaTemporaria
     }; 
     console.log(this.escola.foto);
   } else {
@@ -55,7 +70,9 @@ ngOnChanges(): void{
 
 salvarDados(): void{
 
-  this.salvar.emit(this.escolaEditada);
+this.escolaService.add(this.escola).subscribe(() => {
+  this.router.navigate(['/menuInicial']);
+});
 }
 
 
