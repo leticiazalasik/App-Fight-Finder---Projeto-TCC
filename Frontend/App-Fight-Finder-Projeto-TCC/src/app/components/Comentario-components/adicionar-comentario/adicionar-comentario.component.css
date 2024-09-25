@@ -1,4 +1,5 @@
-@import '../../components/styleSass.css';
+@import '../../styleSass.css';
+
 
 input{ 
     margin-bottom: 3%;
