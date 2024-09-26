@@ -41,10 +41,10 @@ limparLutador():void {
     genero: '',
     ativo: false,
     foto: '', 
-    vitorias: 2,
-    derrotas: 4, 
-    empates: 1, 
-    turma: 19,  
+    vitorias: 0,
+    derrotas: 0, 
+    empates: 0, 
+    turma: 0,  
     observacoes: '', 
     comentarios: []
   }
