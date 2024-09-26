@@ -6,9 +6,9 @@ Está aplicação foi criada para agilizar a organização de lutas de artes mar
 
 ## 👨‍💻️ Tecnologias Utilizadas
 Esse projeto foi criado utilizando as tecnologias:
-## :small_blue_diamond: IntelliJ - JAVA, Spring Boot, Spring Data, Lombok
-## :small_blue_diamond: Postgres - SQL
-## :small_blue_diamond: Vscode - HTML, CSS, SCSS, Angular, HTML, Sass, Typescript, JavaScript e Bootstrap
-## :small_blue_diamond: Projeto - Figma (protótipo), Draw.io(diagrama de classe e de caso de uso). 
-## :small_blue_diamond: Kanban - Trello 
+#### :small_blue_diamond: IntelliJ - JAVA, Spring Boot, Spring Data, Lombok
+#### :small_blue_diamond: Postgres - SQL
+#### :small_blue_diamond: Vscode - HTML, CSS, SCSS, Angular, HTML, Sass, Typescript, JavaScript e Bootstrap
+#### :small_blue_diamond: Projeto - Figma (protótipo), Draw.io(diagrama de classe e de caso de uso). 
+#### :small_blue_diamond: Kanban - Trello 
 
