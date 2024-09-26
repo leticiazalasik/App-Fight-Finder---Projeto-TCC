@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Lutador } from "../components/interfaces/Lutador";
+import { create } from "domain";
 
 @Injectable({
     providedIn: 'root'
@@ -19,7 +20,7 @@ import { Lutador } from "../components/interfaces/Lutador";
     return this.http.get<Lutador>(`$(this.apiUrl)/${id}`); 
   }
   add(lutador:Lutador):Observable<Lutador>{
-    return this.http.post<Lutador>(this.apiUrl, lutador);
+    return this.http.post<Lutador>(`${this.apiUrl}/create`, lutador);
   }
   
   update(lutador: Lutador): Observable<Lutador>{

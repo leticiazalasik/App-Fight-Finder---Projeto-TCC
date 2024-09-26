@@ -27,7 +27,7 @@ public class Lutador extends Pessoa{
     private Double altura;
 
     @Nonnull
-    private Boolean genero;
+    private String genero;
 
     @Nonnull
     private Boolean isColorida;

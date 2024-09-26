@@ -24,6 +24,9 @@ public class Luta {
 
     private Boolean status;
 
+    private Integer totalLutas;
+
+
     @ManyToOne
     @JoinColumn(name = "treinador_id", referencedColumnName = "id")
     private Treinador treinador;

@@ -8,5 +8,6 @@ export interface Luta{
     treinador: Treinador; 
     lutador1: Lutador; 
     lutador2: Lutador; 
+    totalLutas: number; 
     
 }
