@@ -1,5 +1,5 @@
 <div class="container">  
-  <button class="btn-padrao" routerLink="/treinador/create"> <i class="fa-solid fa-plus"></i> Adicionar novo</button>
+  <button class="btn-padrao" [routerLink]="['/treinadorForm']"> <i class="fa-solid fa-plus"></i> Adicionar novo</button>
   
     <h1>Lista de treinadores</h1>
   
@@ -31,7 +31,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let treinador of treinadores">
-              <td style="width: 60px; height: 60px;"> <img [src]="treinador.foto || '../../assets/img/perfil.png'" alt="Foto do treinador"> ></td>
+              <td style="width: 60px; height: 60px;"> <img [src]="treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do treinador"> ></td>
               <td>{{treinador.nome}}</td>
               <td>{{treinador.idade}}</td>
               <td>
