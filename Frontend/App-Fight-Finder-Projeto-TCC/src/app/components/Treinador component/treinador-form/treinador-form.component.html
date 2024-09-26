@@ -1,15 +1,15 @@
 <div class="container " >
-    <div class="form " (ngSubmit)="salvar()">
+    <div class="form ">
     <h3>Formulário do Treinador</h3>
 
         <label for="nome">Nome</label>
-        <input type="text" id="nome" [(ngModel)]="treinador.nome" name="nome" required >
+        <input type="text" id="nome" [(ngModel)]="treinadorEditado.nome" name="nome" required >
 
     <label for="idade">Idade</label>
-    <input type="text" id="idade" [(ngModel)]="treinador.idade" required>
+    <input type="text" id="idade" name="idade" [(ngModel)]="treinadorEditado.idade" required>
 
     <label for="nivel">Modalidade</label>
-    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade" [(ngModel)]="treinador.modalidade" required>
+    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade" name="modalidade" [(ngModel)]="treinadorEditado.modalidade" required>
         <option value="Taekwondo">Taekwondo</option>
         <option value="Karatê">Karatê</option>
         <option value="Jiu-jitsu">Jiu-jitsu</option>
@@ -17,24 +17,17 @@
         <option value="Outro">Outro</option>
       </select>
 
-      <div style="margin-top:10%;" [(ngModel)]="treinador.ativo" required>
+      <div style="margin-top:10%;">
         <p>Status:</p>
-        <label for="true">
-            <input type="radio" id="true" name="ativo" value="true" required class="hidden-radio">
-            <span class="custom-radio"></span>
-            Ativo
-        </label>
-        
-        <label for="false">
-            <input type="radio" id="false" name="ativo" value="false" class="hidden-radio"> 
-            <span class="custom-radio"></span>
-            Inativo
-        </label>
-        </div>
+        <input type="checkbox" id="ativo" name="ativo" [(ngModel)]="treinadorEditado.ativo"
+            class="hidden-radio">
+        <span class="custom-radio"></span>
+        Ativo
+    </div>
 
         <div class="form-group center-horizontal2" >
           <label for="file">Foto de perfil (opcional):</label>
-          <input type="file" id="file" [(ngModel)]="treinador.foto"  style="display: none" >
+          <input type="file" id="file" name="file" [(ngModel)]="treinadorEditado.foto"  style="display: none" >
           <label for="file" class="btn-padrao">Escolher arquivo</label>
 </div>
 
@@ -43,7 +36,7 @@
 </div>
 
         <div class="botoes">
-    <button class="btn-padrao-confirm" (click)="salvar()" >Salvar</button>
+    <button class="btn-padrao-confirm" (click)="salvarDados()" >Salvar</button>
     <button class="btn-padrao-cancel" [routerLink]="['/treinador']">Cancelar</button>
 </div>
 </div>
