@@ -1,12 +1,12 @@
 <div class="container">
 
-<button class="btn-padrao"> <i class="fa-solid fa-plus" [routerLink]="['/lutadorForm']"></i> Adicionar novo</button>
+<button class="btn-padrao" [routerLink]="['/lutadorForm']"> <i class="fa-solid fa-plus" ></i> Adicionar novo</button>
 
   <h1>Lista de lutadores</h1>
 
         <div class="container-fluid">
           <form class="d-flex" role="search">
-            <input [(ngModel)]="nomePesquisado" class="form-control me-2" type="search" placeholder="Pesquisar nome..." aria-label="Search">
+            <input  class="form-control me-2" type="search" placeholder="Pesquisar nome..." aria-label="Search">
             <button class="btn btn-outline-success" type="button">Pesquisar</button>
           </form>
         </div>

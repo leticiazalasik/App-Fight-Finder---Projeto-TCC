@@ -11,37 +11,64 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TreinadorFormComponent {
 
-treinador: Treinador = {
-  id: 0, 
-  nome: 'Valério Valindolfo',
-  idade: 40,
-  modalidade: 'taekwondo',
-  foto: 'string',
-  ativo: true
-}; 
 
-isEdicao: boolean = false; 
+  constructor(
+    private treinadorService: TreinadorService, 
+    private router: Router
+  ){}
 
-constructor(
-  private treinadorService: TreinadorService, 
-  private route: ActivatedRoute, 
-  private router: Router
-){}
+  @Input() treinador: Treinador | null = null; 
+  exibirFormulario: string | undefined;
 
-ngOnInit(): void{
-  const id = Number(this.route.snapshot.paramMap.get('id')); 
-  if (id && id !=0){
-    this.isEdicao= true; 
-    this.treinadorService.findById(id).subscribe(data => {
-      this.treinador = data; 
-    }); 
+
+  treinadorEditado!: Treinador; 
+  limparTreinador():void {
+    this.treinadorEditado={
+      id: 0,
+      nome: '',
+      idade: 0,
+      modalidade: '',
+      ativo: false,
+      foto: '', 
+    }
   }
-}
-
-salvar(): void {
-    this.treinadorService.add(this.treinador).subscribe(() => {
-      this.router.navigate(['/treinador']);
-    })
+  
+  
+  ngOnChanges(): void{
+    if (this.treinador !=null ){
+    
+      this.treinadorEditado={
+        id: this.treinadorEditado.id,
+        nome: this.treinadorEditado.nome,
+        idade: this.treinadorEditado.idade,
+        modalidade: this.treinadorEditado.modalidade,
+        ativo: this.treinadorEditado.ativo,
+        foto: this.treinadorEditado.foto
+      }; 
+    } else {
+      this.limparTreinador(); 
+    }
+    }
+  
+    ngOnInit():void{ 
+      this.limparTreinador();
+      }
+  
+  salvarDados(): void{
+    this.treinadorService.add(this.treinadorEditado).subscribe(() => {
+      this.router.navigate(['/menuInicial']);
+    });
+  }
+  
+  
+  cancelar(): void {
+    this.limparTreinador();
+  }
+  
+  
+  novoLutador(novoLutador: Lutador): void {
+    this.exibirFormulario='novo';
+    
   }
   
 }
