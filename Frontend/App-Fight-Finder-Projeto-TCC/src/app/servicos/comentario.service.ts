@@ -19,7 +19,7 @@ import { Comentario } from "../components/interfaces/Comentario";
     return this.http.get<Comentario>(`$(this.apiUrl)/${id}`); 
   }
   add(comentario:Comentario):Observable<Comentario>{
-    return this.http.post<Comentario>(this.apiUrl, comentario);
+    return this.http.post<Comentario>(`${this.apiUrl}/create`, comentario);
   }
   
   update(comentario: Comentario): Observable<Comentario>{

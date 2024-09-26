@@ -19,7 +19,7 @@ import { Luta } from "../components/interfaces/Luta";
     return this.http.get<Luta>(`$(this.apiUrl)/${id}`); 
   }
   add(luta:Luta):Observable<Luta>{
-    return this.http.post<Luta>(this.apiUrl, luta);
+    return this.http.post<Luta>(`${this.apiUrl}/create`, luta);
   }
   
   update(luta: Luta): Observable<Luta>{

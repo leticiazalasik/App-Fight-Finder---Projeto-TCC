@@ -19,7 +19,7 @@ import { Treinador } from "../components/interfaces/Treinador";
     return this.http.get<Treinador>(`$(this.apiUrl)/${id}`); 
   }
   add(treinador:Treinador):Observable<Treinador>{
-    return this.http.post<Treinador>(this.apiUrl, treinador);
+    return this.http.post<Treinador>(`${this.apiUrl}/create`, treinador);
   }
   
   update(treinador: Treinador): Observable<Treinador>{
