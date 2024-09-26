@@ -17,12 +17,13 @@
 
 <div class="form-group">
     <label for="total-lutas" >Total de lutas</label>
-    <input type="number" id="total-lutas" name="total-lutas" required>
+    <input type="number" id="totalLutas" name="totalLutas" [(ngModel)]="luta.totalLutas" private Integer rodada;
+ required>
 </div>
 
 <div class="form-group">
     <label for="nome">Número de lutas simultaneas</label>
-    <input type="number"required >
+    <input type="number"required id="rodada" name="rodada" [(ngModel)]="luta.rodada">
 </div>
 
 <div style="margin-top: 10%;">
