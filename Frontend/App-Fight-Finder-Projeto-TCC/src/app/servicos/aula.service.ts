@@ -19,7 +19,7 @@ import { Aula } from "../components/interfaces/Aula";
     return this.http.get<Aula>(`$(this.apiUrl)/${id}`); 
   }
   add(aula:Aula):Observable<Aula>{
-    return this.http.post<Aula>(this.apiUrl, aula);
+    return this.http.post<Aula>(`${this.apiUrl}/create`, aula);
   }
   
   update(aula: Aula): Observable<Aula>{
