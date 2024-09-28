@@ -32,7 +32,7 @@ export class PresencaLutadoresManualComponent {
     empates: 1,
     derrotas: 0,
     observacoes: '', 
-    turma: 19
+    turma: '19:00'
     }
   ];
   lutadoresSelecionados: Lutador[] = [];

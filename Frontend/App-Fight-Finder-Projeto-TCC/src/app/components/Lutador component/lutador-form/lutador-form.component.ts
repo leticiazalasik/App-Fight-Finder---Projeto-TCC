@@ -36,7 +36,7 @@ limparLutador():void {
     idade: 0,
     isColorida: false,
     modalidade: '',
-    altura: 0,
+    altura: -1,
     peso: 0,
     genero: '',
     ativo: false,
@@ -44,7 +44,7 @@ limparLutador():void {
     vitorias: 0,
     derrotas: 0, 
     empates: 0, 
-    turma: 0,  
+    turma: '',  
     observacoes: '', 
     comentarios: []
   }

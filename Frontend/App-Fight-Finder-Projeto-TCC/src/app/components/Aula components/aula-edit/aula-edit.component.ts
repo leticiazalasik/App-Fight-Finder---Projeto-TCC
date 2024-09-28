@@ -23,7 +23,8 @@ export class AulaEditComponent {
     id: 1,
     data: new Date('2024-09-07T10:00:00'), 
     treinadores: [],
-    lutadores: []
+    lutadores: [], 
+    hora: ''
   }; 
   
   isEdicao: boolean = false; 
