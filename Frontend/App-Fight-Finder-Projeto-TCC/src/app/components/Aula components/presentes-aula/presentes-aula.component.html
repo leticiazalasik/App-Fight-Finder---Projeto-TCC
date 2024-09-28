@@ -1,59 +1,53 @@
+<div class="container">
 
-   <div class="container">
+  <div class="filtro">
+    <button (click)="toggleListas()">Mostrar {{ isPresente ? 'presentes' : 'ausentes' }}</button>
+  </div>
 
-<h1>Lista de presentes</h1>    
-      <h3>Lutadores Presentes</h3>
-    
-      <table class="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Foto</th>
-            <th>Nome</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let lutador of lutadores">
-            <td>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-              </div>
-            </td>
-            <td><img [src]="lutador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"></td>
-            <td>{{lutador.nome}}</td>
-          </tr>
-        </tbody>
-      </table>
-    
-          <div class="container">
-            
-              <h3>Treinadores presentes</h3>
-            
-            
-              <table class="table" style="margin-top: 7%;">
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Foto</th>
-                    <th>Nome</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let treinador of treinadores">
-                    <td>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                      </div>
-                    </td>
-                    <td><img [src]="treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"></td>
-                    <td> {{treinador.nome}}</td>
-                        </tr>
-                </tbody>
-              </table>
-            
-            </div>  
-        </div>
+  <h1>Lista de {{ isPresente ? 'presentes' : 'ausentes' }}</h1>
+  <h3>{{ isPresente ? 'Lutadores presentes' : 'Lutadores ausentes' }}</h3>
 
-        <button class="btn-padrao">Editar essa aula</button>
-        <app-menunav></app-menunav>   
-    
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Foto</th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lutadorAula of lutadoresAula">
+        <td><img [src]="lutadorAula.lutador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador"
+            style="width: 60px; height: 60px;">
+        </td>
+        <td>{{lutadorAula.lutador.nome}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="container">
+
+    <h3>{{ isPresente ? 'Treinadores presentes' : 'Treinadores ausentes' }}</h3>
+
+
+    <table class="table" style="margin-top: 7%;">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Nome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let treinadorAula of treinadoresAula">
+          <td><img [src]="treinadorAula.treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador"
+              style="width: 60px; height: 60px;">
+          </td>
+          <td> {{treinadorAula.treinador.nome}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+<button class="btn-padrao">Editar essa aula</button>
+<app-menunav></app-menunav>

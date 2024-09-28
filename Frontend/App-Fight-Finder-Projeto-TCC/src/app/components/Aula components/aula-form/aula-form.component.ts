@@ -62,7 +62,6 @@ export class AulaFormComponent {
       this.aulaService.findById(id).subscribe(data => {
         this.aula = data;
       });
-
     }
 
     this.lutadorService.findAll().subscribe(data => {
@@ -80,7 +79,7 @@ export class AulaFormComponent {
 
   salvar(): void {
     // Criar uma cópia da aula para remover a referência circular
-    const aulaParaSalvar = {
+    const aulaParaSalvar: Aula = {
       ...this.aula,
       lutadores: this.listaLutadorAula.map(lutadorAula => ({
         ...lutadorAula,

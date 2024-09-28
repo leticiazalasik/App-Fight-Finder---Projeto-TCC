@@ -6,7 +6,7 @@
     
             <div class="container-fluid">
               <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar data. ex.: xx/xx/xxxx " aria-label="Search">
+                <input class="form-control me-2" type="date" placeholder="Pesquisar data. ex.: xx/xx/xxxx " aria-label="Search">
                 <button class="btn btn-outline-success" type="button">Pesquisar</button>
               </form>
             </div>
@@ -16,32 +16,31 @@
             Filtros
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item"  [routerLink]="['/aula']">Todas</a></li>
-            <li><a class="dropdown-item" >Do último mês</a></li>
-            <li><a class="dropdown-item">Do atual ano</a></li>
+            <li><a class="dropdown-item"  (click)="filtroSelecionado = 'todas'; filtrarAulas()">Todas</a></li>
+            <li><a class="dropdown-item" (click)="filtroSelecionado = 'mes'; filtrarAulas()">mês atual</a></li>
+            <li><a class="dropdown-item" (click)="filtroSelecionado = 'ano'; filtrarAulas()">Do atual ano</a></li>
           </ul>
         </div>
     
           <table class="table">
             <thead>
               <tr>
+                <th>Data</th>
                 <th>Horário</th>
-                <th>Presentes</th>
-                <th>Ausentes</th>
                 <th>Ações</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let aula of aulas">
+                <td>{{ aula.data | date:'dd/MM/yyyy' }}</td>
                 <td>{{aula.hora}}</td>
-                <td><button class="btn-padrao" [routerLink]="['/presentesAula']">Lista</button></td>
-                <td><button class="btn-padrao" [routerLink]="['/ausentesAula']">Lista</button></td>
                 <td>
                   <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Ações
                     </button>
                     <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" [routerLink]="['/presentesAula', aula.id]">Ver Aula</a></li>
                       <li><a class="dropdown-item" href="#">Editar</a></li>
                       <li><a class="dropdown-item" (click)="confirmDelete(aula.id)">Excluir</a></li>
                     </ul>
