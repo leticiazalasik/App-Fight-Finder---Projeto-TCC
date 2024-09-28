@@ -31,5 +31,11 @@ import { create } from "domain";
   delete(id:number):Observable<void>{
     return this.http.delete<void>(`${this.apiUrl}/${id}`); 
   }
+
+  getPresentesByAulaId(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${id}/presentes`);
     
   }
+
+
+}

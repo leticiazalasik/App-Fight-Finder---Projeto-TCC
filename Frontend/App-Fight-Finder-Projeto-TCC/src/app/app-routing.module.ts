@@ -26,6 +26,8 @@ import { EscolaComponent } from './components/Escola component/escola/escola.com
 import { AdicionarComentarioComponent } from './components/Comentario-components/adicionar-comentario/adicionar-comentario.component';
 import { EditarComentarioComponent } from './components/Comentario-components/editar-comentario/editar-comentario.component';
 import { BoasVindasComponent } from './components/Telas unicas component/boas-vindas/boas-vindas.component';
+import { AusentesAulasComponent } from './components/Aula components/ausentes-aulas/ausentes-aulas.component';
+import { PresentesAulaComponent } from './components/Aula components/presentes-aula/presentes-aula.component';
 
 const routes: Routes = [ 
   {path:"login", component: TelaLoginComponent},
@@ -52,6 +54,9 @@ const routes: Routes = [
   {path:"adicionarComentario", component: AdicionarComentarioComponent},
   {path:"editarComentario", component: EditarComentarioComponent},
   {path:"boasVindas", component: BoasVindasComponent},
+  {path:"ausentesAula", component: AusentesAulasComponent},
+  {path:"presentesAula", component: PresentesAulaComponent},
+
 
 
   {path:"", redirectTo:"boasVindas", pathMatch:'full'}
