@@ -3,9 +3,9 @@ import { Treinador } from './Treinador';
 
 
 export interface TreinadorAula{
-    id: number; 
+    id: number | undefined; 
     presente: boolean; 
     treinador: Treinador; 
-    aulaTreinador: Aula; 
+    aulaTreinador: Aula | undefined; 
 }
 
