@@ -1,6 +1,6 @@
 <div class="container">
     
-    <button class="btn-padrao" [routerLink]="['/ajuda']"> <i class="fa-solid fa-plus"></i> Iniciar nova aula</button>
+    <button class="btn-padrao" [routerLink]="['/aulaForm']"> <i class="fa-solid fa-plus"></i> Iniciar nova aula</button>
     
       <h1>Lista Aulas</h1>
     
@@ -17,8 +17,8 @@
           </button>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item"  [routerLink]="['/aula']">Todas</a></li>
-            <li><a class="dropdown-item" (click)="aulasDoMes()">Do último mês</a></li>
-            <li><a class="dropdown-item" (click)="aulasDoAno()">Do atual ano</a></li>
+            <li><a class="dropdown-item" >Do último mês</a></li>
+            <li><a class="dropdown-item">Do atual ano</a></li>
           </ul>
         </div>
     
@@ -29,14 +29,13 @@
                 <th>Presentes</th>
                 <th>Ausentes</th>
                 <th>Ações</th>
-
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>19:00</td>
-                <td><button class="btn-padrao">Lista</button></td>
-                <td><button class="btn-padrao">Lista</button></td>
+              <tr *ngFor="let aula of aulas">
+                <td>{{aula.hora}}</td>
+                <td><button class="btn-padrao" [routerLink]="['/presentesAula']">Lista</button></td>
+                <td><button class="btn-padrao" [routerLink]="['/ausentesAula']">Lista</button></td>
                 <td>
                   <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,46 +43,12 @@
                     </button>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="#">Editar</a></li>
-                      <li><a class="dropdown-item" href="#">Excluir</a></li>
-                    </ul>
-                  </div>
-                </td>
-              </tr>
-    
-              <tr>
-                <td>18:00</td>
-                <td><button class="btn-padrao">Lista</button></td>
-                <td><button class="btn-padrao">Lista</button></td>
-                <td>
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Ações
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Editar</a></li>
-                      <li><a class="dropdown-item" href="#">Excluir</a></li>
+                      <li><a class="dropdown-item" (click)="confirmDelete(aula.id)">Excluir</a></li>
                     </ul>
                   </div>
                 </td>
               </tr>
 
-              <tr>
-                <td>18:00</td>
-                <td><button class="btn-padrao">Lista</button></td>
-                <td><button class="btn-padrao">Lista</button></td>
-                <td>
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Ações
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Editar</a></li>
-                      <li><a class="dropdown-item" href="#">Excluir</a></li>
-                    </ul>
-                  </div>
-                </td>
-              </tr>
-    
             </tbody>
           </table>
     

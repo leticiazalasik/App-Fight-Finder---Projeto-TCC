@@ -37,28 +37,5 @@ export class AulasListComponent {
     }
   }
 
-  aulasDoMes(): void {
-    const dataAtual = new Date(); // Obtém a data atual
-
-    this.aulasFiltro = this.aulas.filter(aula => {
-      const dataAula = new Date(aula.data);
-      const anoDaAula = dataAula.getFullYear();
-      const mesDaAula = dataAula.getMonth();
   
-      // Verifica se o ano e o mês da aula correspondem ao ano e mês atuais
-      return anoDaAula === dataAtual.getFullYear() && mesDaAula === dataAtual.getMonth();
-    });
-
-    this.aulas=this.aulasFiltro; 
-}
-
-aulasDoAno(): void {
-  const anoAtual = new Date().getFullYear(); // Obtém o ano atual
-
-  this.aulasFiltro = this.aulas.filter(aula => {
-    const anoDaAula = new Date(aula.data).getFullYear();
-    return anoDaAula === anoAtual;
-  });
-this.aulas=this.aulasFiltro; 
-}
 }

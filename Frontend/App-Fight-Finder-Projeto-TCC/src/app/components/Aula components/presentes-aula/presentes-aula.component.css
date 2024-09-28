@@ -55,9 +55,15 @@ h1{
 }
 
 .btn-padrao{
-    padding: 2%;
+    padding: 5%;
+    width: 35%;
     margin-bottom: 5%;
     margin-top: 10%;
+    height: 0;
+        vertical-align: middle; 
+            display: flex;
+            align-items: center; 
+            justify-content: center; 
 }
 
 .container{

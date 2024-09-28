@@ -4,116 +4,56 @@
 <h1>Lista de presentes</h1>    
       <h3>Lutadores Presentes</h3>
     
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Foto</th>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Nível</th>
-                <th>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-                <td>John Deik</td>
-                <td>33</td>
-                <td>preta</td>
-                <td>
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Ações
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Editar Aluno</a></li>
-                      <li><a class="dropdown-item" href="#">Excluir presença</a></li>
-                      <li><a class="dropdown-item" href="#">Ver perfil completo</a></li>
-
-                    </ul>
-                  </div>
-                </td>
-              </tr>
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Foto</th>
+            <th>Nome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let lutador of lutadores">
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              </div>
+            </td>
+            <td><img [src]="lutador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"></td>
+            <td>{{lutador.nome}}</td>
+          </tr>
+        </tbody>
+      </table>
     
-              <tr>
-                <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-                <td>Giovana Santos</td>
-                <td>28</td>
-                <td>colorida</td>
-                <td>
-                  <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Ações
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Editar Aluno</a></li>
-                      <li><a class="dropdown-item" href="#">Excluir presença</a></li>
-                      <li><a class="dropdown-item" href="#">Ver perfil completo</a></li>
-
-                    </ul>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-    
-
           <div class="container">
             
               <h3>Treinadores presentes</h3>
             
             
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th>Foto</th>
-                        <th>Nome</th>
-                        <th>Idade</th>
-                        <th>Ações</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-                        <td>Valério Alves</td>
-                        <td>34</td>
-                        <td>
-                          <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Ações
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Editar Treinador</a></li>
-                              <li><a class="dropdown-item" href="#">Excluir presença</a></li>
-                              <li><a class="dropdown-item" href="#">Ver perfil completo</a></li>
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-            
-                      <tr>
-                        <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-                        <td>Antônio Valindolfo</td>
-                        <td>39</td>
-                        <td>
-                          <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Ações
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="#">Editar Aluno</a></li>
-                              <li><a class="dropdown-item" href="#">Excluir presença</a></li>
-                              <li><a class="dropdown-item" href="#">Ver perfil completo</a></li>
-
-                            </ul>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-            
+              <table class="table" style="margin-top: 7%;">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Foto</th>
+                    <th>Nome</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let treinador of treinadores">
+                    <td>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      </div>
+                    </td>
+                    <td><img [src]="treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"></td>
+                    <td> {{treinador.nome}}</td>
+                        </tr>
+                </tbody>
+              </table>
             
             </div>  
         </div>
+
+        <button class="btn-padrao">Editar essa aula</button>
         <app-menunav></app-menunav>   
     
