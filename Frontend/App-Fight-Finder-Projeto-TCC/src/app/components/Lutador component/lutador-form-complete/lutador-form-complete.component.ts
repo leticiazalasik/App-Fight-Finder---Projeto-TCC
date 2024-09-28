@@ -39,11 +39,11 @@ limparLutador():void {
     ativo: false,
     foto: '',
     comentarios: [],
-    vitorias: 2, 
-    empates: 1,
+    vitorias: 0, 
+    empates: 0,
     derrotas: 0,
     observacoes: '', 
-    turma: 19
+    turma: ''
   }
 }
 

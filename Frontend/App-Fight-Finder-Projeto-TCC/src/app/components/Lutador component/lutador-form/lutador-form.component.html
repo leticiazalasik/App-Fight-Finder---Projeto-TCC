@@ -5,8 +5,8 @@
 
         <form>
             <div>
-                <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" [(ngModel)]="lutadorEditado.nome" required>
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" name="nome" [(ngModel)]="lutadorEditado.nome" required placeholder="nome">
             </div>
 
             <div>
@@ -31,18 +31,18 @@
                 <label for="nivel">Faixa</label>
                 <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="isColorida"
                     [(ngModel)]="lutadorEditado.isColorida" name="isColorida" required>
-                    <option value="1">Colorida</option>
-                    <option value="2">Preta</option>
+                    <option value="true">Colorida</option>
+                    <option value="false">Preta</option>
                 </select>
 
                 <div>
                     <label for="peso">Peso</label>
-                    <input type="text" id="peso" name="peso" [(ngModel)]="lutadorEditado.peso" required>
+                    <input type="text" id="peso" name="peso" [(ngModel)]="lutadorEditado.peso" required placeholder="somente kg. Ex.: 82">
                 </div>
 
                 <div>
                     <label for="altura">Altura</label>
-                    <input type="text" id="altura" name="altura" [(ngModel)]="lutadorEditado.altura" required>
+                    <input type="text" id="altura" name="altura" [(ngModel)]="lutadorEditado.altura" required placeholder="Em centímetros: ex.: 175">
                 </div>
 
                 <div>
@@ -100,7 +100,7 @@
                     <label for="genero">Gênero</label>
                     <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="genero"
                         name="genero" [(ngModel)]="lutadorEditado.genero" required>
-                        <option value="feminino">Faminino</option>
+                        <option value="feminino">Feminino</option>
                         <option value="masculino">Masculino</option>
                     </select>
                 </div>
