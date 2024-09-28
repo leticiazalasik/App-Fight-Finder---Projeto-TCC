@@ -64,35 +64,27 @@ export class LutadorListComponent implements OnInit {
   filtrarLutadores() {
     if (this.filtroSelecionado === 'preta') {
       this.lutadores = this.listaLutadoresInicial.filter(lutador => lutador.isColorida === false);
-      console.log('Lutadores filtrados (preta):', this.lutadores);
   
     } else if (this.filtroSelecionado === 'colorida') {
       this.lutadores = this.listaLutadoresInicial.filter(lutador => lutador.isColorida === true);
-      console.log('Lutadores filtrados (colorida):', this.lutadores);
   
     } else if (this.filtroSelecionado === 'ativos') {
       this.lutadores = this.listaLutadoresInicial.filter(lutador => lutador.ativo === true);
-      console.log('Lutadores filtrados (ativos):', this.lutadores);
   
     } else if (this.filtroSelecionado === 'inativos') {
       this.lutadores = this.listaLutadoresInicial.filter(lutador => lutador.ativo === false);
-      console.log('Lutadores filtrados (inativos):', this.lutadores);
   
     } else if (this.filtroSelecionado === 'feminino') {
       this.lutadores = this.listaLutadoresInicial.filter(lutador => lutador.genero === 'feminino');
-      console.log('Lutadores filtrados (feminino):', this.lutadores);
   
     } else if (this.filtroSelecionado === 'masculino') {
       this.lutadores = this.listaLutadoresInicial.filter(lutador => lutador.genero === 'masculino');
-      console.log('Lutadores filtrados (masculino):', this.lutadores);
   
     } else if (this.filtroSelecionado === 'todos') {
       this.lutadores = this.listaLutadoresInicial;
-      console.log('Exibindo todos os lutadores:', this.lutadores);
   
     } else {
       this.lutadores = this.listaLutadoresInicial;
-      console.log('Exibindo todos os lutadores (default):', this.lutadores);
     }
   }
   
