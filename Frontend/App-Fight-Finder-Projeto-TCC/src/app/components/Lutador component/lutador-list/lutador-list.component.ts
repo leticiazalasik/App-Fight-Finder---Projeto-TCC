@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, } from '@angular/core';
 import { Lutador } from '../../interfaces/Lutador';
 import { Output, EventEmitter } from '@angular/core';
+import { LutadorService } from '../../../servicos/lutador.service';
 
 
 @Component({
@@ -10,109 +11,51 @@ import { Output, EventEmitter } from '@angular/core';
 })
 export class LutadorListComponent implements OnInit{
 
-  @Input() lutador!: Lutador;
-
-  @Input() listaLutadores: Lutador[] = [];
-
-  @Input() salvar: any;
-
-
-  listaLutadoresFiltro: Lutador[]= this.listaLutadores; 
-
-  ngOnInit() {
-    this.listaLutadoresFiltro = this.listaLutadores;
-  }
-
-  @Output() excluir: EventEmitter<number>=new EventEmitter<number>();
-
-  @Output() editar: EventEmitter<any>=new EventEmitter(); 
-
-  @Output() inserir: EventEmitter<any>=new EventEmitter();
-
-  lutadorEditar:Lutador|null=null;
-  exibirFormulario: string=''; 
-
-  listalutadores: Lutador[] = [
-    {
-      id: 1,
-      nome: 'John Deik',
-    idade: 31,
-    modalidade: 'Taekwondo',
-    isColorida: false,
-    peso: 80,
-    altura: 182,
-    genero: 'masculino',
-    ativo: false,
-    foto: 'assets/img/perfil.png',
-    vitorias: 2,
-    derrotas: 4, 
-    empates: 1, 
-    turma: 19,  
-    observacoes: '', 
-    comentarios: []
-    }
-  ];
-
-
-  @Output() filtro: EventEmitter<Boolean> = new EventEmitter<Boolean>();
-
-  tela(tela?:Boolean): void { 
-    this.filtro.emit(tela); 
-  }
-
-   exibirTodos():void{
-    this.listaLutadoresFiltro=this.listalutadores;
-  }
-  excluirLutador (id:number): void {
-    this.excluir.emit(id); 
-  }
-
-  editarLutador(lutador:Lutador): void {
-    this.exibirFormulario='editar';
-    this.lutadorEditar=lutador;
-  }
-
-  novoLutador(novoLutador: Lutador): void {
-    this.exibirFormulario='novo';
-    this.lutadorEditar=null;
-    
-  }
-
-  onSalvar(lutador:Lutador): void {
-    this.exibirFormulario=' '; 
-    
-    if (lutador.id!=0){
-    this.editar.emit(lutador);
-    } else {
-    this.inserir.emit(lutador); 
-    }
-  }
-
+  lutadores: Lutador[]=[]; 
+  lutadoresFiltro: Lutador[] = [];
   
+  constructor(private lutadorService: LutadorService){}; 
 
-  filtrarLutadores(tela?: Boolean): void { 
-    this.listaLutadoresFiltro = this.listaLutadores.filter(lutador => {
-        return tela === undefined || lutador.ativo == tela; 
+  ngOnInit():void{
+    this.carregarLutadores();
+  }
+
+  carregarLutadores():void{
+    this.lutadorService.findAll().subscribe(data=> {
+      this.lutadores=data; 
+    }); 
+  }
+
+  delete(id:number):void{
+    this.lutadorService.delete(id).subscribe(()=>{
+      this.carregarLutadores(); 
+    })
+  }
+
+  confirmDelete(lutadorId: number) {
+    const confirmResult = confirm('Tem certeza de que deseja excluir este Lutador?');
+    if (confirmResult) {
+      this.delete(lutadorId); 
+    }
+  }
+
+  inativarTreinador(lutadorId: number) {
+    this.lutadorService.findById(lutadorId).subscribe((lutador) => {
+      if (lutador.ativo ==false) {
+        lutador.ativo=true;
+      } else {
+        lutador.ativo=false;
+      }
+
+      this.lutadorService.update(lutador).subscribe(() => {
+
+      });
     });
 }
 
-nomePesquisado: string = '';
-  
-  pesquisarLutador(nomePesquisado: string): void {
-    const lutadorEncontrado = this.listalutadores.find(lutador =>
-      lutador.nome.toLowerCase() === nomePesquisado.toLowerCase()
-    );
-  
-    if (lutadorEncontrado) {
-      // Adicione o lutador à lista listaLutadoresFiltro
-      this.listaLutadoresFiltro.push(lutadorEncontrado);
-      console.log(`Lutador encontrado: ${lutadorEncontrado.nome}`);
-      // Faça outras operações necessárias com o lutador encontrado
-    } else {
-      // Exiba um alerta informando que o lutador não foi encontrado
-      alert('Lutador não encontrado.');
-    }
-  }
-  
+lutadoresAtivos(): void {
+  this.lutadoresFiltro = this.lutadores.filter(lutador => lutador.ativo);
+  this.lutadores=this.lutadoresFiltro; 
 
+}
 }

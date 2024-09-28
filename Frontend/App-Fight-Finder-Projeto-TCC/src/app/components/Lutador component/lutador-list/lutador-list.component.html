@@ -38,13 +38,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-            <td>John Deik</td>
-            <td>33</td>
-            <td>85</td>
-            <td>182</td>
-            <td>preta</td>
+          <tr *ngFor="let lutador of lutadores">
+            <td> <img [src]="lutador.foto || '../../../assets/img/perfil.png'" alt="Foto do treinador" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
+            <td>{{lutador.nome}}</td>
+            <td>{{lutador.idade}}</td>
+            <td>{{lutador.peso}}</td>
+            <td>{{lutador.altura}}</td>
+            <td>{{ lutador.isColorida ? 'Colorida' : 'Preta' }}</td>
             <td>
               <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,30 +52,12 @@
                 </button>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Inativar</a></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
-                </ul>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-            <td>Giovana Santos</td>
-            <td>28</td>
-            <td>75</td>
-            <td>176</td>
-            <td>colorida</td>
-            <td>
-              <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Ações
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li><a class="dropdown-item" href="#">Inativar</a></li>
-                  <li><a class="dropdown-item" href="#">Excluir</a></li>
-                  <li><a class="dropdown-item" href="#">Perfil completo</a></li>
+                  <li>
+                    <a class="dropdown-item" (click)="inativarTreinador(lutador.id)">
+                      {{ lutador.ativo ? 'Inativar' : 'Ativar' }}
+                  </a>
+              </li>                  
+                <a class="dropdown-item" (click)="confirmDelete(lutador.id)">Excluir</a>
                 </ul>
               </div>
             </td>
