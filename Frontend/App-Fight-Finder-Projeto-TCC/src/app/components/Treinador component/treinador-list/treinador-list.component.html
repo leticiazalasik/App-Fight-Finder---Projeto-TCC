@@ -15,8 +15,9 @@
           Filtros
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" [routerLink]="['/treinador']">Todos</a></li>
-          <li><a class="dropdown-item" (click)="treinadoresAtivos()">Ativos</a></li>
+          <li><a class="dropdown-item" (click)="filtroSelecionado = 'todos'; filtrarTreinadores()">Todos</a></li>
+          <li><a class="dropdown-item" (click)="filtroSelecionado = 'ativos'; filtrarTreinadores()">Ativos</a></li>
+          <li><a class="dropdown-item" (click)="filtroSelecionado = 'inativos'; filtrarTreinadores()">Ativos</a></li>
         </ul>
       </div>
   
@@ -31,7 +32,7 @@
           </thead>
           <tbody>
             <tr *ngFor="let treinador of treinadores">
-              <td style="width: 60px; height: 60px;"> <img [src]="treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do treinador"> ></td>
+              <td class="td-imagem"> <img class="imagem" [src]="treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do treinador"> </td>
               <td>{{treinador.nome}}</td>
               <td>{{treinador.idade}}</td>
               <td>

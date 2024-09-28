@@ -11,6 +11,8 @@ export class TreinadorListComponent implements OnInit{
 
   treinadores: Treinador[]=[]; 
   treinadoresFiltro: Treinador[] = [];
+  listaTreinadoresInicial: Treinador[]=[];
+  filtroSelecionado: string='';
   
   constructor(private treinadorService: TreinadorService){}; 
 
@@ -18,10 +20,12 @@ export class TreinadorListComponent implements OnInit{
     this.carregarTreinadores();
   }
 
-  carregarTreinadores():void{
-    this.treinadorService.findAll().subscribe(data=> {
-      this.treinadores=data; 
-    }); 
+  
+  carregarTreinadores(): void {
+    this.treinadorService.findAll().subscribe(data => {
+      this.treinadores = data;
+      this.listaTreinadoresInicial = data; // Atualize listaLutadoresInicial com os dados recebidos
+    });
   }
 
   delete(id:number):void{
@@ -51,10 +55,21 @@ export class TreinadorListComponent implements OnInit{
     });
 }
 
-treinadoresAtivos(): void {
-  this.treinadoresFiltro = this.treinadores.filter(treinador => treinador.ativo);
-  this.treinadores=this.treinadoresFiltro; 
+filtrarTreinadores() {
+  if (this.filtroSelecionado === 'ativos') {
+    this.treinadores = this.listaTreinadoresInicial.filter(treinador => treinador.ativo === true);
 
+  } else if (this.filtroSelecionado === 'inativos') {
+    this.treinadores = this.listaTreinadoresInicial.filter(treinador => treinador.ativo === false);
+
+  } else if (this.filtroSelecionado === 'todos') {
+    this.treinadores = this.listaTreinadoresInicial;
+
+  } else {
+    this.treinadores = this.listaTreinadoresInicial;
+  }
 }
+
+
 }
 
