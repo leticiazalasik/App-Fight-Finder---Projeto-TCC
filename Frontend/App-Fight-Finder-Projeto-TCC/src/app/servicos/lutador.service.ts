@@ -17,7 +17,7 @@ import { create } from "domain";
       return this.http.get<Lutador[]>(this.apiUrl); 
     }
   findById(id:number): Observable<Lutador>{
-    return this.http.get<Lutador>(`$(this.apiUrl)/${id}`); 
+    return this.http.get<Lutador>(`${this.apiUrl}/${id}`); 
   }
   add(lutador:Lutador):Observable<Lutador>{
     return this.http.post<Lutador>(`${this.apiUrl}/create`, lutador);

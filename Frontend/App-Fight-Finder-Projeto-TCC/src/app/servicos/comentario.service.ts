@@ -16,7 +16,7 @@ import { Comentario } from "../components/interfaces/Comentario";
       return this.http.get<Comentario[]>(this.apiUrl); 
     }
   findById(id:number): Observable<Comentario>{
-    return this.http.get<Comentario>(`$(this.apiUrl)/${id}`); 
+    return this.http.get<Comentario>(`${this.apiUrl}/${id}`); 
   }
   add(comentario:Comentario):Observable<Comentario>{
     return this.http.post<Comentario>(`${this.apiUrl}/create`, comentario);

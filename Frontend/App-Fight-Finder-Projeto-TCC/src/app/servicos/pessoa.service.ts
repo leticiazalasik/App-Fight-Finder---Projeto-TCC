@@ -16,7 +16,7 @@ import { Pessoa } from "../components/interfaces/Pessoa";
       return this.http.get<Pessoa[]>(this.apiUrl); 
     }
   findById(id:number): Observable<Pessoa>{
-    return this.http.get<Pessoa>(`$(this.apiUrl)/${id}`); 
+    return this.http.get<Pessoa>(`${this.apiUrl}/${id}`);  
   }
   add(pessoa:Pessoa):Observable<Pessoa>{
     return this.http.post<Pessoa>(this.apiUrl, pessoa);

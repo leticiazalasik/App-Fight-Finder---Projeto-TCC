@@ -16,7 +16,7 @@ import { Escola } from "../components/interfaces/Escola";
       return this.http.get<Escola[]>(this.apiUrl); 
     }
   findById(id:number): Observable<Escola>{
-    return this.http.get<Escola>(`$(this.apiUrl)/${id}`); 
+    return this.http.get<Escola>(`${this.apiUrl}/${id}`); 
   }
   add(escola:Escola):Observable<Escola>{
     return this.http.post<Escola>(this.apiUrl, escola);

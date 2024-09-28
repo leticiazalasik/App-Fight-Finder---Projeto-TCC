@@ -16,7 +16,7 @@ import { Aula } from "../components/interfaces/Aula";
       return this.http.get<Aula[]>(this.apiUrl); 
     }
   findById(id:number): Observable<Aula>{
-    return this.http.get<Aula>(`$(this.apiUrl)/${id}`); 
+    return this.http.get<Aula>(`${this.apiUrl}/${id}`); 
   }
   add(aula:Aula):Observable<Aula>{
     return this.http.post<Aula>(`${this.apiUrl}/create`, aula);
