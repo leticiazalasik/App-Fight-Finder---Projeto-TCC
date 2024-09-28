@@ -137,7 +137,6 @@ export class AulaFormComponent {
     }
   }
   
-
   criarListaLutadorAula(listaLutadores:Lutador[]){
     listaLutadores.forEach(lutador => {
       const LutadorAula:LutadorAula={

@@ -16,12 +16,13 @@
         Filtros
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Todos</a></li>
-        <li><a class="dropdown-item" href="#">Ativos</a></li>
-        <li><a class="dropdown-item" href="#">F.preta</a></li>
-        <li><a class="dropdown-item" href="#">F.colorida</a></li>
-        <li><a class="dropdown-item" href="#">Feminino</a></li>
-        <li><a class="dropdown-item" href="#">Masculino</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'todos'; filtrarLutadores()">Todos</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'ativos'; filtrarLutadores()">Ativos</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'inativos'; filtrarLutadores()">Inativos</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'preta'; filtrarLutadores()">F.preta</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'colorida'; filtrarLutadores()">F.colorida</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'feminino'; filtrarLutadores()">Feminino</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'masculino'; filtrarLutadores()">Masculino</a></li>
       </ul>
     </div>
 
