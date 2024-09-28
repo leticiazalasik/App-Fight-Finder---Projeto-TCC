@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 export class LutadorFormComponent {
   inserir: any;
   exibirFormulario: string | undefined;
-
+  formularioValido: boolean = true;
 
 
   @Input() lutador: Lutador | null = null; 
@@ -36,8 +36,8 @@ limparLutador():void {
     idade: 0,
     isColorida: false,
     modalidade: '',
-    altura: -1,
-    peso: 0,
+    altura: 0,
+    peso: null,
     genero: '',
     ativo: false,
     foto: '', 
@@ -83,9 +83,20 @@ ngOnChanges(): void{
     }
 
 salvarDados(): void{
-  this.lutadorService.add(this.lutadorEditado).subscribe(() => {
-    this.router.navigate(['/menuInicial']);
-  });
+  this.validarFormulario();
+  if (this.formularioValido == true) {
+    this.lutadorService.add(this.lutadorEditado).subscribe(() => {
+      this.router.navigate(['/menuInicial']);
+    });
+  } else {
+    alert('Preencha os campos obrigatórios!');
+  }
+}
+
+validarFormulario(){
+  if(this.lutadorEditado.peso == null){
+    this.formularioValido = false;
+  }
 }
 
 

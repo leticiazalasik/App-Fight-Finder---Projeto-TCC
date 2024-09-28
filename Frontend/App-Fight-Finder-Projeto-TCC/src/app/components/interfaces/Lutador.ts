@@ -4,7 +4,7 @@ import { Comentario } from './Comentario';
 
 export interface Lutador extends Pessoa{
     id: number; 
-    peso: number; 
+    peso: number | null; 
     altura: number ; 
     genero: string;
     isColorida: boolean;
