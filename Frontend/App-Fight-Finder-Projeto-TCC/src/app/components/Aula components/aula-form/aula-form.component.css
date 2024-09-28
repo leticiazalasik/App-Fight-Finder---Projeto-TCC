@@ -85,37 +85,21 @@ app-footer{
     text-align: center;
   }
   
-  .table-treinadores td{
-    width: 10%;
+  .form-check-input{
+    width: 70%;
+    padding: 35%;
+  }
+
+  table{
+    width: 95%;
+  }
+  tr{ 
+    padding: 1%;
+  }
+  td{
+    width: 8%;
     
   }
-  .table-treinadores .form-check input[type="checkbox"] {
-    padding: 40%;
-    width: 30%;
-    }
-
-    .table-treinadores tr{
-      border-bottom: solid 1px rgb(222, 218, 218);
-    }
-  
-    .table-treinadores td{
-      padding: 1%;
-    }
-  
-    .table-treinadores {
-      width: 100%;
-      padding: 60%;
-      margin-left: 5%;
-      margin-right: 5%;
-  
-    }
-
-    .table input#flexCheckDefault.form-check-input{
-      width: 200%;
-      padding: 50%;
-    }
-
-
   
 
 

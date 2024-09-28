@@ -1,198 +1,127 @@
-
 <div class="form">
-    <h2 class="botoes">Iniciar aula!</h2>
+  <h2 class="botoes">Iniciar aula!</h2>
 
 
-    <div class="data">
-        <label for="data">Data</label><br>
-        <input type="text" id="data" name="data" placeholder="25/08/24" readonly>
-    </div>
-
-
-    <div>
-        <label for="nivel">Horário</label>
-        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="horario" [(ngModel)]="aula.data" required>
-            <option value="05:00">05:00</option>
-            <option value="05:30">05:30</option>
-            <option value="06:00">06:00</option>
-            <option value="06:30">06:30</option>
-            <option value="07:00">07:00</option>
-            <option value="07:30">07:30</option>
-            <option value="08:00">08:00</option>
-            <option value="08:30">08:30</option>
-            <option value="09:00">09:00</option>
-            <option value="09:30">09:30</option>
-            <option value="10:00">10:00</option>
-            <option value="10:30">10:30</option>
-            <option value="11:00">11:00</option>
-            <option value="11:30">11:30</option>
-            <option value="12:00">12:00</option>
-            <option value="12:30">12:30</option>
-            <option value="13:00">13:00</option>
-            <option value="13:30">13:30</option>
-            <option value="14:00">14:00</option>
-            <option value="14:30">14:30</option>
-            <option value="15:00">15:00</option>
-            <option value="15:30">15:30</option>
-            <option value="16:00">16:00</option>
-            <option value="16:30">16:30</option>
-            <option value="17:00">17:00</option>
-            <option value="17:30">17:30</option>
-            <option value="18:00">18:00</option>
-            <option value="18:30">18:30</option>
-            <option value="19:00">19:00</option>
-            <option value="19:30">19:30</option>
-            <option value="20:00">20:00</option>
-            <option value="20:30">20:30</option>
-            <option value="21:00">21:00</option>
-            <option value="21:30">21:30</option>
-            <option value="22:00">22:00</option>
-            <option value="Outro">Outro</option>
-          </select>
-    </div>
-
-    <div style="margin-top: 12%;">
-    <h3>Lutadores presentes</h3>
-    
-    <div class="dropdown" style="margin-top: 8%; margin-bottom: 10%;">
-        <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Filtros da lista
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Alunos da turma</a></li>
-          <li><a class="dropdown-item" href="#">Todos os alunos ativos</a></li>
-        </ul>
-      </div>
-</div>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Foto</th>
-      <th>Nome</th>
-      <th>Idade</th>
-      <th>Faixa</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> 
-        <div class="form-check" style="display: flex; align-items: center;">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      </div>
-    </td>
-      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-      <td>John Deik</td>
-      <td style="vertical-align: middle">33</td>
-      <td style="vertical-align: middle">Preta</td>
-      <td style="vertical-align: middle">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
-            Ações
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Inativar</a></li>
-            <li><a class="dropdown-item" href="#">Excluir</a></li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td> 
-        <div class="form-check" style="display: flex; align-items: center;">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      </div>
-    </td>
-      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-      <td>Giovana Santos</td>
-      <td style="vertical-align: middle">28</td>
-      <td style="vertical-align: middle">Colorida</td>
-      <td style="vertical-align: middle">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ações
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Inativar</a></li>
-            <li><a class="dropdown-item" href="#">Excluir</a></li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-<div class="treinadores" style="margin-top: 10%;">
-  <h3>Treinadores presentes</h3>
-</div>
-
-<table class="table-treinadores" style="margin-top: 7%;">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Foto</th>
-      <th>Nome</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td> 
-        <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      </div>
-    </td>
-      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-      <td>John Deik</td>
-      <td style="vertical-align: middle">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
-            Ações
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Inativar</a></li>
-            <li><a class="dropdown-item" href="#">Excluir</a></li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td> 
-        <div class="form-check" style="display: flex; align-items: center;">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      </div>
-    </td>
-      <td><img src="../../../assets/img/perfil.png" alt="Foto do lutador" style="width: 60px; height: 60px;" ></td>
-      <td>Giovana Santos</td>
-      <td style="vertical-align: middle">
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ações
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Editar</a></li>
-            <li><a class="dropdown-item" href="#">Inativar</a></li>
-            <li><a class="dropdown-item" href="#">Excluir</a></li>
-          </ul>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="botoes">
-  <button class="btn-padrao-confirm" (click)="salvar()" >Salvar</button>
-  <button class="btn-padrao-cancel" [routerLink]="['/aula']">Cancelar</button>
-    </div>
-    
-
+  <div class="data">
+    <label for="data">Data</label><br>
+    <input type="text" id="data" name="data" readonly [(ngModel)]="aula.data">
   </div>
-    <app-menunav></app-menunav>
+
+
+  <div>
+    <label for="nivel">Horário</label>
+    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="hora" name="hora"  [(ngModel)]="aula.hora" 
+      required>
+      <option value="05:00">05:00</option>
+      <option value="05:30">05:30</option>
+      <option value="06:00">06:00</option>
+      <option value="06:30">06:30</option>
+      <option value="07:00">07:00</option>
+      <option value="07:30">07:30</option>
+      <option value="08:00">08:00</option>
+      <option value="08:30">08:30</option>
+      <option value="09:00">09:00</option>
+      <option value="09:30">09:30</option>
+      <option value="10:00">10:00</option>
+      <option value="10:30">10:30</option>
+      <option value="11:00">11:00</option>
+      <option value="11:30">11:30</option>
+      <option value="12:00">12:00</option>
+      <option value="12:30">12:30</option>
+      <option value="13:00">13:00</option>
+      <option value="13:30">13:30</option>
+      <option value="14:00">14:00</option>
+      <option value="14:30">14:30</option>
+      <option value="15:00">15:00</option>
+      <option value="15:30">15:30</option>
+      <option value="16:00">16:00</option>
+      <option value="16:30">16:30</option>
+      <option value="17:00">17:00</option>
+      <option value="17:30">17:30</option>
+      <option value="18:00">18:00</option>
+      <option value="18:30">18:30</option>
+      <option value="19:00">19:00</option>
+      <option value="19:30">19:30</option>
+      <option value="20:00">20:00</option>
+      <option value="20:30">20:30</option>
+      <option value="21:00">21:00</option>
+      <option value="21:30">21:30</option>
+      <option value="22:00">22:00</option>
+      <option value="Outro">Outro</option>
+    </select>
+  </div>
+
+  <div style="margin-top: 12%;">
+    <h3>Lutadores</h3>
+
+    <div class="dropdown" style="margin-top: 8%; margin-bottom: 10%;">
+      <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Filtros da lista
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'alunosDaTurma'; filtrarLutadoresAula()">Lutadores da turma</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'todosLutadoresAtivos'; filtrarLutadoresAula()">Todos os lutadores ativos</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = ''; filtrarLutadoresAula()">Todos os lutadores</a></li>
+
+      </ul>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Foto</th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lutadorAula of listaLutadorAula">
+        <td>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="presente" name="presente" [(ngModel)]="lutadorAula.presente"
+            (change)="onLutadorChange(lutadorAula, $event)">
+          </div>
+        </td>
+        <td><img [src]="lutadorAula.lutador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"></td>
+        <td>{{lutadorAula.lutador.nome}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div class="treinadores" style="margin-top: 10%;">
+    <h3>Treinadores</h3>
+  </div>
+
+  <table class="table" style="margin-top: 7%;">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Foto</th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let treinadorAula of listaTreinadorAula">
+        <td>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="presente" name="presente" [(ngModel)]="treinadorAula.presente"
+            (change)="onTreinadorChange(treinadorAula, $event)" >
+          </div>
+        </td>
+        <td><img [src]="treinadorAula.treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"></td>
+        <td> {{treinadorAula.treinador.nome}}</td>
+            </tr>
+    </tbody>
+  </table>
+
+  <div class="botoes">
+    <button class="btn-padrao-confirm" (click)="salvar()">Salvar</button>
+    <button class="btn-padrao-cancel" [routerLink]="['/aula']">Cancelar</button>
+  </div>
+
+
+</div>
+<app-menunav></app-menunav>
