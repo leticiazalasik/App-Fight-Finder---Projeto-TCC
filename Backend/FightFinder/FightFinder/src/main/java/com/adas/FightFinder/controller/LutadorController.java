@@ -45,3 +45,4 @@ public class LutadorController {
         return ResponseEntity.ok(lutador);
     }
 }
+

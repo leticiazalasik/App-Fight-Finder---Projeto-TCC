@@ -25,6 +25,8 @@ public class Aula {
     @Nonnull
     private LocalDateTime data;
 
+    private String hora;
+
 
     @OneToMany(mappedBy = "aulaLutador")
     private List<LutadorAula> lutadores;

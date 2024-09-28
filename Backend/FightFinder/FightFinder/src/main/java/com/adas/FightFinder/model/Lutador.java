@@ -23,7 +23,6 @@ public class Lutador extends Pessoa{
     @Nonnull
     private Double peso;
 
-    @Nonnull
     private Double altura;
 
     @Nonnull
@@ -38,7 +37,7 @@ public class Lutador extends Pessoa{
 
     private Integer empates;
 
-    private Integer turma;
+    private String turma;
     private String observacoes;
 
     @OneToMany(mappedBy = "lutadorComentario", cascade = CascadeType.ALL)

@@ -1,14 +1,19 @@
 package com.adas.FightFinder.service;
 
 import com.adas.FightFinder.model.Aula;
+import com.adas.FightFinder.model.Lutador;
 import com.adas.FightFinder.model.LutadorAula;
 import com.adas.FightFinder.model.TreinadorAula;
 import com.adas.FightFinder.repository.AulaRepository;
+import com.adas.FightFinder.repository.LutadorAulaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class AulaService {
@@ -54,4 +59,15 @@ public class AulaService {
 
         aulaRepository.delete(aula);
     }
+
+    public List<Lutador> getPresentesByAulaId(Integer aulaId) {
+        // Buscar todos os LutadorAula associados à aula e que estão presentes
+        List<LutadorAula> lutadoresAula = LutadorAulaRepository.findByAulaLutadorIdAndPresenteTrue(aulaId);
+
+        // Extrair os lutadores presentes
+        return lutadoresAula.stream()
+                .map(LutadorAula::getLutador)
+                .collect(Collectors.toList());
+    }
+
 }
