@@ -1,10 +1,15 @@
 import { Component, Input } from '@angular/core';
 import { Luta } from '../../interfaces/Luta';
 import { LutaService } from '../../../servicos/luta.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TreinadorComponent } from '../../Treinador component/treinador/treinador.component';
 import { Treinador } from '../../interfaces/Treinador';
 import { Lutador } from '../../interfaces/Lutador';
+import { LutadorAula } from '../../interfaces/LutadorAula';
+import { TreinadorAula } from '../../interfaces/TreinadorAula';
+import { AulaService } from '../../../servicos/aula.service';
+import { LutadorService } from '../../../servicos/lutador.service';
+import { TreinadorService } from '../../../servicos/treinador.service';
 
 @Component({
   selector: 'app-gerar-luta',
@@ -14,14 +19,22 @@ import { Lutador } from '../../interfaces/Lutador';
 export class GerarLutaComponent {
 listaTreinadores!: Treinador[];
 listaFiltradaLutadores!: Lutador[];
+listaFiltradaTreinadores!: Treinador[];
+
   aulaService: any;
   aula: any;
   aulasAtivas: any;
   aulaAtiva: any;
+  listaLutadorAula: LutadorAula[] = [];
+  listaTreinadorAula: TreinadorAula[] = [];
+  isEdicao: boolean = false;
 
   constructor(
     private lutaService: LutaService, 
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute,
+    private lutadorService: LutadorService,
+    private treinadorService: TreinadorService
   ){}
 
   @Input() luta: Luta | null = null; 
@@ -43,9 +56,7 @@ listaLutadores:Lutador[]=[];
 
   filtroSelecionado: string = '';
   lutadoresSelecionados: number[] = []; // IDs dos lutadores selecionados
-
-  
-
+  treinadoresSelecionados: number[] = []; // IDs dos lutadores selecionados
 
   lutaEditada!: Luta; 
   limparLuta():void {
@@ -79,7 +90,56 @@ listaLutadores:Lutador[]=[];
     }
   
     ngOnInit():void{ 
+
+      const id = Number(this.route.snapshot.paramMap.get('id'));
+    if (id && id != 0) {
+      this.isEdicao = true;
+      this.aulaService.findById(id).subscribe((data: any) => {
+        this.aula = data;
+      });
+
+    }
+
+    this.lutadorService.findAll().subscribe(data => {
+      this.listaLutadores = data;
+      this.listaFiltradaLutadores = this.listaLutadores; // Exibe todos ao carregar a página
+      this.criarListaLutadorAula(this.listaLutadores);
+    });
+
+    this.treinadorService.findAll().subscribe(data => {
+      this.listaTreinadores = data;
+      this.listaFiltradaTreinadores = this.listaTreinadores; // Exibe todos ao carregar a página
+      this.criarListaTreinadorAula(this.listaTreinadores);
+    });
+  
       this.limparLuta();
+      }
+  
+
+      criarListaLutadorAula(listaLutadores:Lutador[]){
+        listaLutadores.forEach(lutador => {
+          const LutadorAula:LutadorAula={
+            id: undefined,
+            presente: true,
+            lutador: lutador,
+            aulaLutador: undefined
+          }; 
+         this.listaLutadorAula.push(LutadorAula); 
+    
+        });
+      }
+    
+      criarListaTreinadorAula(listaTreinadores:Treinador[]){
+        listaTreinadores.forEach(treinador => {
+          const TreinadorAula:TreinadorAula={
+            id: undefined,
+            presente: true,
+            treinador: treinador,
+            aulaTreinador: undefined
+          }; 
+         this.listaTreinadorAula.push(TreinadorAula); 
+    
+        });
       }
   
   salvarDados(): void{
@@ -93,13 +153,7 @@ listaLutadores:Lutador[]=[];
     this.limparLuta();
   }
   
-  onLutadorChange(lutador: Lutador, event: any) {
-    if (event.target.checked) {
-      this.lutadoresSelecionados.push(lutador.id);
-    } else {
-      this.lutadoresSelecionados = this.lutadoresSelecionados.filter(id => id !== lutador.id);
-    }
-  }
+  
 
   filtrarAulas() {
   this.aulaService.findAll().subscribe((aulas: any[]) => {
@@ -141,6 +195,52 @@ listaLutadores:Lutador[]=[];
         }
       }
     });
+  }
+
+  // Método para filtrar a lista
+  filtrarTreinadores() {
+    // Primeiro, encontre a aula ativa baseada no horário atual ou qualquer outra lógica
+    this.aulaService.getAulaAtiva().subscribe((aulaAtiva: any) => {
+      if (aulaAtiva) {
+        this.aula = aulaAtiva; // Definindo a aula ativa para poder acessar sua hora
+  
+        // Agora que temos a aula ativa, aplicamos os filtros
+        if (this.filtroSelecionado === 'alunosDaTurma') {
+          // Filtra os lutadores que têm a mesma turma (horário) da aula ativa
+          this.listaFiltradaLutadores = this.listaLutadores.filter(
+            lutador => lutador.turma === this.aula.hora
+          );
+  
+          // Seleciona todos os lutadores filtrados por padrão
+          this.lutadoresSelecionados = this.listaFiltradaLutadores.map(
+            lutador => lutador.id
+          );
+        } else if (this.filtroSelecionado === 'todosLutadoresAtivos') {
+          // Filtra os lutadores que estão ativos
+          this.listaFiltradaLutadores = this.listaLutadores.filter(
+            lutador => lutador.ativo === true
+          );
+        } else {
+          // Caso contrário, mostra todos os lutadores
+          this.listaFiltradaLutadores = this.listaLutadores;
+        }
+      }
+    });
+  }
+  onLutadorChange(lutadorAula: LutadorAula, event: any) {
+    if (event.target.checked) {
+      this.lutadoresSelecionados.push(lutadorAula.lutador.id);
+    } else {
+      this.lutadoresSelecionados = this.lutadoresSelecionados.filter(id => id !== lutadorAula.lutador.id);
+    }
+  }
+
+  onTreinadorChange(treinadorAula: TreinadorAula, event: any) {
+    if (event.target.checked) {
+      this.treinadoresSelecionados.push(treinadorAula.treinador.id);
+    } else {
+      this.treinadoresSelecionados = this.treinadoresSelecionados.filter(id => id !== treinadorAula.treinador.id);
+    }
   }
   
 }
