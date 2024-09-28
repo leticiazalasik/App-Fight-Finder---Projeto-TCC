@@ -35,7 +35,7 @@ const routes: Routes = [
   {path:"lutador", component: LutadorListComponent},
   {path:"aula", component: AulasListComponent},
   {path:"menuInicial", component: MenuInicialComponent},
-  {path:"treinadorEditar", component: TreinadorEditComponent},
+  {path:"treinadorEditar/:id", component: TreinadorEditComponent},
   {path:"treinadorForm", component: TreinadorFormComponent},
   {path:"treinadorVisualizacao", component: VisualizacaoTreinadorComponent},
   {path:"lutadorForm", component: LutadorFormComponent},
@@ -55,7 +55,7 @@ const routes: Routes = [
   {path:"editarComentario", component: EditarComentarioComponent},
   {path:"boasVindas", component: BoasVindasComponent},
   {path:"ausentesAula", component: AusentesAulasComponent},
-  {path:"presentesAula", component: PresentesAulaComponent},
+  {path:"presentesAula/:id", component: PresentesAulaComponent},
 
 
 

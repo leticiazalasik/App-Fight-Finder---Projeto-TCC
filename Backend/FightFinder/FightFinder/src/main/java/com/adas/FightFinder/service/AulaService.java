@@ -39,18 +39,17 @@ public class AulaService {
     public Aula save(Aula aula) {
        Aula novaAula = aulaRepository.save(aula);
 
-       List<LutadorAula> lutadores= aula.getLutadores();
+       List<LutadorAula> lutadores = aula.getLutadores();
        for(LutadorAula lutador : lutadores){
            lutador.setAulaLutador(novaAula);
        }
         lutadorAulaService.saveAll(lutadores);
 
-//        List<TreinadorAula> treinadores= aula.getTreinadores();
-//        for(TreinadorAula treinador : treinadores){
-//            treinador.setAulaTreinador(novaAula);
-//        }
-//
-//        treinadorAulaService.saveAll(treinadores);
+        List<TreinadorAula> treinadores = aula.getTreinadores();
+        for(TreinadorAula treinador : treinadores){
+            treinador.setAulaTreinador(novaAula);
+        }
+        treinadorAulaService.saveAll(treinadores);
        return novaAula;
     }
 

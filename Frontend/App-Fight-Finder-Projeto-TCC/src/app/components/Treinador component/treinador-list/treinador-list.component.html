@@ -42,7 +42,7 @@
                   </button>
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" [routerLink]="['/treinador', treinador.id]">Ver</a></li>
-                    <li><a class="dropdown-item" [routerLink]="['/treinador', treinador.id]">Editar</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/treinadorEditar', treinador.id]">Editar</a></li>
                     <li>
                       <a class="dropdown-item" (click)="inativarTreinador(treinador.id)">
                           {{ treinador.ativo ? 'Inativar' : 'Ativar' }}
