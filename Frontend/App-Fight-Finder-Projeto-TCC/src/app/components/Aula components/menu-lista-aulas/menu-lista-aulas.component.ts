@@ -39,7 +39,8 @@ export class MenuListaAulasComponent {
       id: 1,
       data: new Date(2024, 7, 15),
       lutadores: [],
-      treinadores: []
+      treinadores: [],
+      hora: ''
     }
   ];
 

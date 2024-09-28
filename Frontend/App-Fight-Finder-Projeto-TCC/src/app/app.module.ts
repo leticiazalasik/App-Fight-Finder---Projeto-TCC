@@ -13,7 +13,6 @@ import { FooterComponent } from './components/Compartilhados component/footer/fo
 import { HeaderComponent } from './components/Compartilhados component/header/header.component';
 import { MenunavComponent } from './components/Compartilhados component/menunav/menunav.component';
 import { MenuInicialComponent } from './components/Telas unicas component/menu-inicial/menu-inicial.component';
-import { MenuLutadoresComponent } from './components/Lutador component/menu-lutadores/menu-lutadores.component';
 import { SplashScreenComponent } from './components/Telas unicas component/splash-screen/splash-screen.component';
 import { ComentarioComponent } from './components/Comentario-components/comentario/comentario.component';
 import { AdicionarComentarioComponent } from './components/Comentario-components/adicionar-comentario/adicionar-comentario.component';
@@ -60,7 +59,6 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent, 
     MenunavComponent, 
     MenuInicialComponent, 
-    MenuLutadoresComponent, 
     SplashScreenComponent, 
     ComentarioComponent, 
     AdicionarComentarioComponent, 
