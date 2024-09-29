@@ -13,62 +13,72 @@ export class TreinadorFormComponent {
 
 
   constructor(
-    private treinadorService: TreinadorService, 
+    private treinadorService: TreinadorService,
     private router: Router
-  ){}
+  ) { }
 
-  @Input() treinador: Treinador | null = null; 
+  @Input() treinador: Treinador | null = null;
   exibirFormulario: string | undefined;
+  formularioValido: boolean = true;
 
 
-  treinadorEditado!: Treinador; 
-  limparTreinador():void {
-    this.treinadorEditado={
+  treinadorEditado!: Treinador;
+  limparTreinador(): void {
+    this.treinadorEditado = {
       id: 0,
       nome: '',
-      idade: 0,
+      idade: null,
       modalidade: '',
       ativo: false,
-      foto: '', 
+      foto: '',
     }
   }
-  
-  
-  ngOnChanges(): void{
-    if (this.treinador !=null ){
-    
-      this.treinadorEditado={
+
+
+  ngOnChanges(): void {
+    if (this.treinador != null) {
+
+      this.treinadorEditado = {
         id: this.treinadorEditado.id,
         nome: this.treinadorEditado.nome,
         idade: this.treinadorEditado.idade,
         modalidade: this.treinadorEditado.modalidade,
         ativo: this.treinadorEditado.ativo,
         foto: this.treinadorEditado.foto
-      }; 
+      };
     } else {
-      this.limparTreinador(); 
-    }
-    }
-  
-    ngOnInit():void{ 
       this.limparTreinador();
-      }
-  
-  salvarDados(): void{
-    this.treinadorService.add(this.treinadorEditado).subscribe(() => {
-      this.router.navigate(['/menuInicial']);
-    });
+    }
   }
-  
-  
-  cancelar(): void {
+
+  ngOnInit(): void {
     this.limparTreinador();
   }
-  
-  
-  novoLutador(novoLutador: Lutador): void {
-    this.exibirFormulario='novo';
-    
+
+  salvarDados(): void {
+    this.validarFormulario();
+    if (this.formularioValido == true) {
+      this.treinadorService.add(this.treinadorEditado).subscribe(() => {
+        this.router.navigate(['/menuInicial']);
+      });
+    }
   }
-  
-}
+
+    cancelar(): void {
+      this.limparTreinador();
+    }
+
+
+    novoLutador(novoLutador: Lutador): void {
+      this.exibirFormulario = 'novo';
+
+    }
+
+    validarFormulario(){
+      if (this.treinadorEditado.idade == null) {
+        this.formularioValido = false;
+      }
+    }
+
+  }
+

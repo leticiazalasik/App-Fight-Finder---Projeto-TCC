@@ -5,12 +5,12 @@ import { Comentario } from './Comentario';
 export interface Lutador extends Pessoa{
     id: number; 
     peso: number | null; 
-    altura: number ; 
+    altura: number | null; 
     genero: string;
     isColorida: boolean;
-    vitorias: number;
-    derrotas: number; 
-    empates: number; 
+    vitorias: number | null;
+    derrotas: number | null;
+    empates: number | null;
     turma: string; 
     observacoes: string; 
     comentarios: Comentario[];

@@ -33,17 +33,17 @@ limparLutador():void {
   this.lutadorEditado={
     id: 0,
     nome: '',
-    idade: 0,
+    idade: null,
     isColorida: false,
     modalidade: '',
-    altura: 0,
+    altura: null,
     peso: null,
     genero: '',
     ativo: false,
     foto: '', 
-    vitorias: 0,
-    derrotas: 0, 
-    empates: 0, 
+    vitorias: null,
+    derrotas: null, 
+    empates: null, 
     turma: '',  
     observacoes: '', 
     comentarios: []
@@ -96,9 +96,12 @@ salvarDados(): void{
 validarFormulario(){
   if(this.lutadorEditado.peso == null){
     this.formularioValido = false;
-  }
+  } else if (this.lutadorEditado.idade == null){
+    this.formularioValido = false;
+} else if (this.lutadorEditado.altura== null){
+  this.formularioValido = false;
 }
-
+} 
 
 cancelar(): void {
   this.limparLutador();

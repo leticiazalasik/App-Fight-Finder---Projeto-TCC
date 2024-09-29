@@ -20,7 +20,6 @@ public class Lutador extends Pessoa{
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Nonnull
     private Double peso;
 
     private Double altura;

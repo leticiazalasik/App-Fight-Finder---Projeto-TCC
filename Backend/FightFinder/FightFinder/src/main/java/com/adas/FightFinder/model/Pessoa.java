@@ -13,10 +13,8 @@ public class Pessoa {
     @Nonnull
     private String nome;
 
-    @Nonnull
     private Integer idade;
 
-    @Nonnull
     private String modalidade;
 
     private String foto;
