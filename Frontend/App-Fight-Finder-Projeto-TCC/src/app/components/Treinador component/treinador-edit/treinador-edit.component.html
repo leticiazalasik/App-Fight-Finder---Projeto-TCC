@@ -4,15 +4,8 @@
   <h3>Editar Treinador</h3>
 
   <div class="botoes">
-    <button class="btn-padrao-inactive" (click)="inativarTreinador(treinador.id)">Inativar Lutador</button>
-    <button class="btn-padrao-cancel" (click)="confirmDelete(treinador.id)">Excluir> Excluir lutador</button>
+    <button class="btn-padrao-inactive" (click)="inativarTreinador(treinador.id)">{{ treinador.ativo ? 'Inativar' : 'Ativar' }}</button>
     </div>
-
-  <div>
-    <label for="id">ID</label>
-    <input type="text" id="id" readonly>
-</div>
-
 
   <div>
       <label for="nome">Nome</label>
@@ -36,22 +29,11 @@
 </div>
 
 <div style="margin-top:10%;">
-<p>Status:</p>
-<label for="true">
-<input type="radio" id="true" name="ativo" 
-value="true" [(ngModel)]="treinador.ativo" class="hidden-radio">
-<span class="custom-radio"></span>
-Ativo
-</label>
-
-<label for="false">
-<input type="radio" id="false" name="ativo" 
-value="false" [(ngModel)]="treinador.ativo" class="hidden-radio"> 
-<span class="custom-radio"></span>
-Inativo
-</label>
+  <p>Status:</p>
+  <input type="checkbox" id="ativo" name="ativo" [(ngModel)]="treinador.ativo" class="hidden-radio">
+  <span class="custom-radio"></span>
+  Ativo
 </div>
-
 
 <div class="form-group center-horizontal2" >
         <label for="file">Foto de perfil (opcional):</label>

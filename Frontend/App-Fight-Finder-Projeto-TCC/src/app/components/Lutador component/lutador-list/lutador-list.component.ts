@@ -30,20 +30,6 @@ export class LutadorListComponent implements OnInit {
       this.listaLutadoresInicial = data; // Atualize listaLutadoresInicial com os dados recebidos
     });
   }
-  
-
-  delete(id: number): void {
-    this.lutadorService.delete(id).subscribe(() => {
-      this.carregarLutadores();
-    })
-  }
-
-  confirmDelete(lutadorId: number) {
-    const confirmResult = confirm('Tem certeza de que deseja excluir este Lutador?');
-    if (confirmResult) {
-      this.delete(lutadorId);
-    }
-  }
 
   inativarTreinador(lutadorId: number) {
     this.lutadorService.findById(lutadorId).subscribe((lutador) => {

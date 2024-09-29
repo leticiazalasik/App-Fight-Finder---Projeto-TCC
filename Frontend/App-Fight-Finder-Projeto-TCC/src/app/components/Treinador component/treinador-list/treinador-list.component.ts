@@ -28,19 +28,6 @@ export class TreinadorListComponent implements OnInit{
     });
   }
 
-  delete(id:number):void{
-    this.treinadorService.delete(id).subscribe(()=>{
-      this.carregarTreinadores(); 
-    })
-  }
-
-  confirmDelete(treinadorId: number) {
-    const confirmResult = confirm('Tem certeza de que deseja excluir este treinador?');
-    if (confirmResult) {
-      this.delete(treinadorId); 
-    }
-  }
-
   inativarTreinador(treinadorId: number) {
     this.treinadorService.findById(treinadorId).subscribe((treinador) => {
       if (treinador.ativo ==false) {

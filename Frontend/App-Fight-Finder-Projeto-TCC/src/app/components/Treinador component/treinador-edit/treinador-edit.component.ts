@@ -35,16 +35,6 @@ export class TreinadorEditComponent {
     }
   }
 
-  confirmDelete(treinadorId: number) {
-    const confirmResult = confirm('Tem certeza de que deseja excluir este treinador?');
-    if (confirmResult) {
-        this.treinadorService.delete(treinadorId).subscribe(() => {
-            
-        });
-    }
-}
-
-
   inativarTreinador(treinadorId: number) {
     this.treinadorService.findById(treinadorId).subscribe((treinador) => {
       if (treinador.ativo ==false) {

@@ -1,28 +1,27 @@
-<div class="form">
+<div class="form"*ngIf="lutador">
 
   <form>
     <h3>Formulário do Aluno</h3>
 
-    <div>
-      <label for="id">ID</label>
-      <input type="text" id="id" readonly [(ngModel)]="lutadorEditado.id" placeholder="01">
+    <div class="botoes">
+      <button class="btn-padrao-inactive" (click)="inativarLutador(lutador.id)">{{ lutador.ativo ? 'Inativar' : 'Ativar' }}</button>
+      
     </div>
-
 
     <div>
       <label for="nome">Nome</label>
-      <input type="text" id="nome" [(ngModel)]="lutadorEditado.nome" required>
+      <input type="text" id="nome" name="nome" [(ngModel)]="lutador.nome" required>
     </div>
 
     <div>
       <label for="idade">Idade</label>
-      <input type="text" id="idade" [(ngModel)]="lutadorEditado.idade" required>
+      <input type="text" id="idade" name="idade" [(ngModel)]="lutador.idade" required>
     </div>
 
     <div>
       <label for="nivel">Modalidade</label>
-      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade"
-        [(ngModel)]="lutadorEditado.modalidade" required>
+      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade" name="modalidade"
+        [(ngModel)]="lutador.modalidade" required>
         <option value="Taekwondo">Taekwondo</option>
         <option value="Karatê">Karatê</option>
         <option value="Jiu-jitsu">Jiu-jitsu</option>
@@ -34,27 +33,27 @@
     <div>
 
       <label for="nivel">Faixa</label>
-      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="nivel"
-        [(ngModel)]="lutadorEditado.isColorida" required>
-        <option value="1">Colorida</option>
-        <option value="2">Preta</option>
+      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="isColorida" name="isColorida"
+        [(ngModel)]="lutador.isColorida" required>
+        <option value="true">Colorida</option>
+        <option value="false">Preta</option>
       </select>
     </div>
 
     <div>
       <label for="peso">Peso</label>
-      <input type="text" id="peso" [(ngModel)]="lutadorEditado.peso" required>
+      <input type="text" id="peso" name="peso" [(ngModel)]="lutador.peso" required>
     </div>
 
     <div>
       <label for="altura">Altura</label>
-      <input type="text" id="altura" [(ngModel)]="lutadorEditado.altura" required>
+      <input type="text" id="altura" name="altura" [(ngModel)]="lutador.altura" required>
     </div>
 
     <div>
       <label for="nivel">Turma</label>
-      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="turma"
-        [(ngModel)]="lutadorEditado.turma" required>
+      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="turma" name="turma"
+        [(ngModel)]="lutador.turma" required>
         <option value="05:00">05:00</option>
         <option value="05:30">05:30</option>
         <option value="06:00">06:00</option>
@@ -96,16 +95,16 @@
 
     <div style="margin-top:10%;">
       <p>Status:</p>
-      <input type="checkbox" id="ativo" name="ativo" [(ngModel)]="lutadorEditado.ativo" class="hidden-radio">
+      <input type="checkbox" id="ativo" name="ativo" [(ngModel)]="lutador.ativo" class="hidden-radio">
       <span class="custom-radio"></span>
       Ativo
     </div>
 
     <div>
       <label for="genero">Gênero</label>
-      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="genero"
-        [(ngModel)]="lutadorEditado.genero" required>
-        <option value="feminino">Faminino</option>
+      <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="genero" name="genero"
+        [(ngModel)]="lutador.genero" required>
+        <option value="feminino">Feminino</option>
         <option value="masculino">Masculino</option>
       </select>
     </div>
@@ -189,8 +188,8 @@
     </div>
 
     <div class="botoes">
-      <button class="btn-padrao-confirm" (click)="salvarDados()">Salvar</button>
-      <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
+      <button class="btn-padrao-confirm" (click)="salvar()">Salvar</button>
+      <button class="btn-padrao-cancel" [routerLink]="['/lutador']">Cancelar</button>
 
     </div>
 

@@ -39,7 +39,7 @@ const routes: Routes = [
   {path:"treinadorForm", component: TreinadorFormComponent},
   {path:"treinadorVisualizacao", component: VisualizacaoTreinadorComponent},
   {path:"lutadorForm", component: LutadorFormComponent},
-  {path:"lutadorFormComplete", component: LutadorFormCompleteComponent},
+  {path: "lutadorEditar/:id", component: LutadorFormCompleteComponent},
   {path:"lutadorVisualizacao", component: VisualizacaoLutadorComponent},
   {path:"aulaForm", component: AulaFormComponent},
   {path:"aulaEdit", component: AulaEditComponent},

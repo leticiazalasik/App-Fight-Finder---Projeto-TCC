@@ -52,13 +52,8 @@
                   Ações
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Editar</a></li>
-                  <li>
-                    <a class="dropdown-item" (click)="inativarTreinador(lutador.id)">
-                      {{ lutador.ativo ? 'Inativar' : 'Ativar' }}
-                  </a>
-              </li>                  
-                <a class="dropdown-item" (click)="confirmDelete(lutador.id)">Excluir</a>
+                  <li><a class="dropdown-item" [routerLink]="['/lutador', lutador.id]">Ver</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/lutadorEditar', lutador.id]">Editar</a></li>
                 </ul>
               </div>
             </td>
