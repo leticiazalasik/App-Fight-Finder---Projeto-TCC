@@ -21,17 +21,15 @@ public class Escola {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Nonnull
     private String nome;
 
-    @Nonnull
     private String email;
 
-    @Nonnull
     private String senha;
 
-    @Nonnull
     private String foto;
+
+    private Boolean ativo;
 
     private Boolean senhaTemporaria;
 }

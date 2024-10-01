@@ -5,17 +5,17 @@
 
     <div class="cent">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" [(ngModel)]="escola.nome" required >
+        <input type="text" id="nome" [(ngModel)]="escolaEditada.nome" required >
     </div>
 
 <div>
     <label for="idade">Email</label>
-    <input type="text" id="email"required [(ngModel)]="escola.email" >
+    <input type="text" id="email"required [(ngModel)]="escolaEditada.email" >
 </div>
 
 <div>
     <label for="nome">Senha</label>
-    <input type="text" id="senha" required [(ngModel)]="escola.senha" >
+    <input type="text" id="senha" required [(ngModel)]="escolaEditada.senha" >
 </div>
 </div>
 
@@ -30,8 +30,8 @@
   <span id="file-name">Nenhum arquivo selecionado</span>
   </div>
   <div class="botoes">
-    <button class="btn-padrao-confirm"(click)="salvarDados()">Salvar</button>
-    <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
+    <button class="btn-padrao-confirm"(click)="salvarDados()" >Salvar</button>
+    <button class="btn-padrao-cancel"  [routerLink]="['/menuInicial']">Cancelar</button>
 
 </div>
 

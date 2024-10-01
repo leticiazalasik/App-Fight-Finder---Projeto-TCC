@@ -5,5 +5,6 @@ export interface Escola {
     senha: string;
     foto: string;
     senhaTemporaria: boolean;
+    ativo: boolean; 
 }
 
