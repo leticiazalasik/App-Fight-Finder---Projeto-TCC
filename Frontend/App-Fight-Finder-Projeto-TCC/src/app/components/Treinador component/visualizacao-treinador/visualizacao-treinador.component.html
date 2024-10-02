@@ -1,13 +1,14 @@
 <div class="toda">    
-    <div *ngIf="treinador">
+    <div>
 
     <div class="container-imagem">
         <div class="imagem-login">
-            <img [src]="treinador.foto || '../../assets/img/perfil.png'" alt="Foto do treinador">
+            <!-- <img [src]="treinador.foto || '../../assets/img/perfil.png'" alt="Foto do treinador"> -->
+            <img  alt="Foto do treinador">
           
-        <h3>{{ treinador.nome}}</h3>
+        <h3>Maria Júlia</h3>
     
-    <p>Modalidade: {{ treinador.modalidade}}</p>
+    <p>Modalidade: Taekwondo</p>
     
         </div>
     </div>
@@ -15,34 +16,32 @@
     <div class="dados">
     <div class="dados-pessoais">
     <h5>Dados pessoais </h5>
-    <p> <span class="destaque">Id:</span> {{ treinador.id}} </p>
-    <p> <span class="destaque">Idade:</span> {{ treinador.idade}}</p>
-    <p><span class="destaque">Status:</span> {{ treinador.ativo ? 'Ativo' : 'Inativo' }}</p>
+    <p> <span class="destaque">Id:</span> 0 </p>
+    <p> <span class="destaque">Idade:</span> 40 </p>
+    <p><span class="destaque">Status:</span> Ativo</p>
     </div>
     
-   
-    <div style="margin-top: 15%; margin-bottom: 10%; margin-left: 3%;">
-        <h4 style="margin-bottom: 2%;">Presenças e faltas</h4>
-    
-    <p style="text-align: center;">Clique em cima de uma data para editar a informação</p>
-    
-        <table class="table-presencasfaltas">
-            <thead>
-                <tr *ngFor="let treinador of treinadoresAula">
-                    <th scope="col">Presenças</th>
-                    <th scope="col">Faltas</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{treinador.nome}}</td>
-                    <td>{{treinador.nome}}</td>
-                </tr>
-            </tbody>
-        </table>
+    <table class="table-presencasfaltas">
+        <thead>
+        <thead>
+            <tr>
+                <th scope="col">Presenças</th> <!-- Nova coluna -->
+                <th scope="col">Faltas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>15/08/24</td> <!-- Data aleatória para teste -->
+                <td>07/08/24</td>
+            </tr>
+            <tr>
+                <td>01/10/24</td> <!-- Data aleatória para teste -->
+            </tr>
+        </tbody>
+    </table>
     
         <div class="botoes">
-            <button class="btn-padrao-confirm" [routerLink]="['/produto/editar', treinador.id]">Editar</button>
+            <button class="btn-padrao-confirm" [routerLink]="['/escola-editar']">Editar</button>
             <button class="btn-padrao-cancel" [routerLink]="['/treinador']">Cancelar</button>
         </div>
 

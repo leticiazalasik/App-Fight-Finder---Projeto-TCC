@@ -1,54 +1,57 @@
-<div class="container">  
+<div class="container">
   <button class="btn-padrao" [routerLink]="['/treinadorForm']"> <i class="fa-solid fa-plus"></i> Adicionar novo</button>
-  
-    <h1>Lista de treinadores</h1>
-  
-          <div class="container-fluid">
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Pesquisar nome..." aria-label="Search">
-              <button class="btn btn-outline-success" type="button">Pesquisar</button>
-            </form>
+
+  <h1>Lista de treinadores</h1>
+
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+      <input class="form-control me-2" type="search" placeholder="Pesquisar nome..." aria-label="Search">
+      <button class="btn btn-outline-success" type="button">Pesquisar</button>
+    </form>
+  </div>
+
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Filtros
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" (click)="filtroSelecionado = 'todos'; filtrarTreinadores()">Todos</a></li>
+      <li><a class="dropdown-item" (click)="filtroSelecionado = 'ativos'; filtrarTreinadores()">Ativos</a></li>
+      <li><a class="dropdown-item" (click)="filtroSelecionado = 'inativos'; filtrarTreinadores()">Inativos</a></li>
+    </ul>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Foto</th>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let treinador of treinadores">
+        <td class="td-imagem"> <img class="imagem" [src]="treinador.foto || '../../../assets/img/perfil.png'"
+            alt="Foto do treinador"> </td>
+        <td>{{treinador.nome}}</td>
+        <td>{{treinador.idade}}</td>
+        <td>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Ações
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="['/treinadorVisualizacao']">Ver</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/treinadorEditar', treinador.id]">Editar</a></li>
+            </ul>
           </div>
-        
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Filtros
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" (click)="filtroSelecionado = 'todos'; filtrarTreinadores()">Todos</a></li>
-          <li><a class="dropdown-item" (click)="filtroSelecionado = 'ativos'; filtrarTreinadores()">Ativos</a></li>
-          <li><a class="dropdown-item" (click)="filtroSelecionado = 'inativos'; filtrarTreinadores()">Ativos</a></li>
-        </ul>
-      </div>
-  
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Foto</th>
-              <th>Nome</th>
-              <th>Idade</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let treinador of treinadores">
-              <td class="td-imagem"> <img class="imagem" [src]="treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do treinador"> </td>
-              <td>{{treinador.nome}}</td>
-              <td>{{treinador.idade}}</td>
-              <td>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ações
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" [routerLink]="['/treinador', treinador.id]">Ver</a></li>
-                    <li><a class="dropdown-item" [routerLink]="['/treinadorEditar', treinador.id]">Editar</a></li>                  
-                  </ul>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-  
-      <app-menunav></app-menunav>
-    </div>  
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-menunav></app-menunav>
+</div>
