@@ -1,6 +1,5 @@
-.container{ 
-    margin-top: 8%;
-    
+.box{ 
+    width: 100%;
 }
 
 button {
@@ -24,36 +23,19 @@ button {
     background-color: rgb(239, 238, 238);
 
 }
-  .container .row {
+  .box .row {
     display: flex;
   }
   
-  .container .row .col-sm {
+  .box .row .col-sm {
     flex: 1; /* Isso faz com que cada coluna ocupe todo o espaço disponível na linha */
-    margin: 0;    
-
   }
   
-  .container{
-    margin-top: 0;
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .row{
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  .form div {
-    margin: 5px 0;
-}
-  .container .row .col-sm button {
+  .box .row .col-sm button {
     width: 100%; /* Isso faz com que cada botão ocupe toda a largura da coluna */
   }
   
   .fa-solid {
     color: #001a71; /* Altere para a cor desejada */
-    margin-bottom: 1%;
   }
   

@@ -1,17 +1,13 @@
-
-<div class="container" >
-<div class="row">
+<div class="box">
+  <div class="row">
     <div class="col-sm">
-      <button (click)="onButtonClick()"><i class="fa-solid fa-house"></i> Inicial</button>
+      <button [routerLink]="['/menuInicial']"><i class="fa-solid fa-house"></i> Inicial</button>
     </div>
     <div class="col-sm">
-      <button><i class="fa-solid fa-user"></i>Perfil</button>
+      <button [routerLink]="['/escola']"><i class="fa-solid fa-user"></i>Perfil</button>
     </div>
     <div class="col-sm">
-      <button><i class="fa-solid fa-arrow-left"></i>Voltar</button>
-    </div>
-    <div class="col-sm">
-      <button><i class="fa-solid fa-circle-xmark"></i>Sair</button>
+      <button [routerLink]="['/login']"><i class="fa-solid fa-circle-xmark"></i>Sair</button>
     </div>
   </div>
 </div>
