@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AulaService } from '../../../servicos/aula.service';
 import { Treinador } from '../../interfaces/Treinador';
 import { Lutador } from '../../interfaces/Lutador';
+import { LutadorAula } from '../../interfaces/LutadorAula';
+import { TreinadorAula } from '../../interfaces/TreinadorAula';
 
 @Component({
   selector: 'app-aula-edit',
@@ -11,10 +13,6 @@ import { Lutador } from '../../interfaces/Lutador';
   styleUrl: './aula-edit.component.css'
 })
 export class AulaEditComponent {
-
-  exibirTabelaTreinadores = false;
-  exibirTabelaLutadoresDaTurma = false; 
-  exibirTabelaLutadoresAtivos = false; 
 
   treinadores: Treinador[]=[]; 
   lutadores: Lutador[]=[]; 
@@ -26,8 +24,12 @@ export class AulaEditComponent {
     lutadores: [], 
     hora: ''
   }; 
+  lutadoresAula: LutadorAula[]=[];
+  isPresente: Boolean=true;
+  treinadoresAula:TreinadorAula[]=[]; 
+  lutadoresSelecionados: number[] = []; // IDs dos lutadores selecionados
+  treinadoresSelecionados: number[] = []; // IDs dos lutadores selecionados
   
-  isEdicao: boolean = false; 
   
   constructor(
     private aulaService: AulaService, 
@@ -38,16 +40,65 @@ export class AulaEditComponent {
   ngOnInit(): void{
     const id = Number(this.route.snapshot.paramMap.get('id')); 
     if (id && id !=0){
-      this.isEdicao= true; 
-      this.aulaService.findById(id).subscribe(data => {
-        this.aula = data; 
+      this.aulaService.findById(id).subscribe(data=> {
+        this.aula=data; 
       }); 
     }
   }
   
   salvar(): void {
-      this.aulaService.add(this.aula).subscribe(() => {
-        this.router.navigate(['/aula']);
-      })
+    this.aulaService.update(this.aula).subscribe(() => {
+      this.router.navigate(['/aula']); 
+    });
+  }
+
+  carregarLutadores(){
+    this.lutadoresAula = this.aula.lutadores;
+
+    if(this.isPresente) {
+      this.lutadoresAula = this.lutadoresAula.filter(lutador => {
+        return lutador.presente == true;
+      });
+    } else {
+      this.lutadoresAula = this.lutadoresAula.filter(lutador => {
+        return lutador.presente == false;
+      });
     }
+  }
+
+  carregarTreinadores(){
+    this.treinadoresAula = this.aula.treinadores;
+    
+    if(this.isPresente) {
+      this.treinadoresAula = this.treinadoresAula.filter(treinador => {
+        return treinador.presente == true;
+      });
+    } else {
+      this.treinadoresAula = this.treinadoresAula.filter(treinador => {
+        return treinador.presente == false;
+      });
+    }
+  }
+
+  toggleListas() {
+    this.isPresente = !this.isPresente;
+    this.carregarLutadores();
+    this.carregarTreinadores();
+  }
+
+  onLutadorChange(lutadorAula: LutadorAula, event: any) {
+    if (event.target.checked) {
+      this.lutadoresSelecionados.push(lutadorAula.lutador.id);
+    } else {
+      this.lutadoresSelecionados = this.lutadoresSelecionados.filter(id => id !== lutadorAula.lutador.id);
+    }
+  }
+
+  onTreinadorChange(treinadorAula: TreinadorAula, event: any) {
+    if (event.target.checked) {
+      this.treinadoresSelecionados.push(treinadorAula.treinador.id);
+    } else {
+      this.treinadoresSelecionados = this.treinadoresSelecionados.filter(id => id !== treinadorAula.treinador.id);
+    }
+  }
 }

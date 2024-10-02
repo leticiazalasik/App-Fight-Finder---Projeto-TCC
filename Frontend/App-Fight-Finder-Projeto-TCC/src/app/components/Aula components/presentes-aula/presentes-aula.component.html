@@ -1,11 +1,16 @@
 <div class="container">
 
-  <div class="filtro">
-    <button (click)="toggleListas()">Mostrar {{ isPresente ? 'presentes' : 'ausentes' }}</button>
-  </div>
+  <div style="margin-top: 5%; text-align: center; margin-bottom: 7%;">
+  <button class="btn-padrao-edit" [routerLink]="['/aulaEditar', aula.id]">Editar aula</button>
+  <button class="btn-padrao-edit" [routerLink]="['/gerarLuta']">Gerar Lutas</button>
+</div>
 
   <h1>Lista de {{ isPresente ? 'presentes' : 'ausentes' }}</h1>
   <h3>{{ isPresente ? 'Lutadores presentes' : 'Lutadores ausentes' }}</h3>
+
+  <div class="filtro">
+    <button class="btn-padrao" (click)="toggleListas()">Mostrar {{ isPresente ? 'ausentes' : 'presentes' }}</button>
+  </div>
 
   <table class="table">
     <thead>
@@ -49,5 +54,4 @@
   </div>
 </div>
 
-<button class="btn-padrao">Editar essa aula</button>
 <app-menunav></app-menunav>

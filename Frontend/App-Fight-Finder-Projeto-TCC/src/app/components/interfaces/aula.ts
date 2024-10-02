@@ -4,7 +4,7 @@ import { TreinadorAula } from './TreinadorAula';
 export interface Aula{
     id: number; 
     data: Date; 
-    hora: String; 
+    hora: string; 
     treinadores: TreinadorAula[];
     lutadores: LutadorAula[];
 

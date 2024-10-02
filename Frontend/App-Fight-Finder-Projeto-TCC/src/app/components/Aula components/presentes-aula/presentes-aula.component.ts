@@ -15,7 +15,13 @@ import { Aula } from '../../interfaces/Aula';
 })
 export class PresentesAulaComponent {
 
-  aula!: Aula;
+  aula: Aula = {
+    id: 0,
+    data: new Date,
+    hora: '',
+    treinadores: [],
+    lutadores: []
+  };
   lutadoresAula: LutadorAula[] = [];
   treinadoresAula: TreinadorAula[] = [];
   isPresente: boolean = true;

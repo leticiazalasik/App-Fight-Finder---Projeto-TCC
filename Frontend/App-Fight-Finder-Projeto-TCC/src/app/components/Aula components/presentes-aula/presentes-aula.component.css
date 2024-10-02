@@ -12,14 +12,14 @@ img {
 h3{
     color:  #001a71;
     text-align: center;
-    margin-bottom: 8%;
+    margin-bottom: 1%;
     margin-top: 5%;
 }
 
 h1{
-    margin-top: 15%;
+    margin-top: 4%;
     text-align: center;
-    margin-bottom: 15%;
+    margin-bottom: 3%;
 }
 
 .container-fluid{
@@ -49,24 +49,40 @@ h1{
 }
 
 .table{
-    margin-bottom: 20%;
+    margin-bottom: 15%;
     margin-left: 2%;
     margin-right: 2%;
+    width: 80%;
+    text-align: center;
 }
 
 .btn-padrao{
-    padding: 5%;
-    width: 35%;
-    margin-bottom: 5%;
-    margin-top: 10%;
+    padding: 3%;
+    width: 50%;
+    margin-bottom: 0%;
     height: 0;
-        vertical-align: middle; 
-            display: flex;
-            align-items: center; 
-            justify-content: center; 
+                display: flex;
+            display: inline-block;
+            height: 0;
 }
 
+.btn-padrao-edit{
+    padding: 4%;
+    width: 40%;
+    margin-top: 3%;
+    
+}
 .container{
-    margin-left: 1%;
-    margin-right: 3%;
+    margin-left: 4%;
+}
+
+.btn-padrao{
+    padding: 4%;
+    width: 35%;
+    margin-bottom: 5%;
+    padding-bottom: 7%;
+}
+
+.filtro{
+   margin-top: 3%;
 }

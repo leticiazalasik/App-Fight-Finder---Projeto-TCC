@@ -2,6 +2,11 @@
 
 *{
     box-sizing: border-box;
+  
+}
+
+.table{
+  text-align: center;
 }
 .class1{
     background-color:  hsl(0, 79%, 34%);
@@ -18,7 +23,8 @@
 .btn-padrao{
     width: 50%;
     padding: 2%;
-    margin-bottom: 0%;
+    margin-bottom: 1%;
+    margin-top: 6%;
 }
 
 
@@ -52,11 +58,13 @@
     height: 50px;
     font-size: 18px;
     border: 1px solid;
-    border-radius: 6%;
+    border-radius: 4%;
     border-color: rgb(145, 145, 145);
+    padding: 4%;
     
 }
 
+i
 h2{
     margin-top: 0%;
 }
@@ -70,19 +78,21 @@ app-footer{
     margin-top: 10%;
 }
 
-.form-check{
-    display: flex;
-    justify-content: center;
-  }
+.form-check-input[_ngcontent-ng-c960032415]:checked {
+  border: hsl(0, 79%, 34%);
+  background-color: #001a71;
+}
 
-  .form-check-input:checked {
-    background-color:  #001a71;
-    border-color: hsl(0, 79%, 34%);
-  }
+.form-check-input[_ngcontent-ng-c960032415]{
+  width: 90%;
+  padding: 35%;
+
+}
 
   h3{
     color: #001a71;
     text-align: center;
+    margin-bottom: 4%;
   }
   
   .table-treinadores td{
@@ -110,29 +120,25 @@ app-footer{
   
     }
 
-    .table input#flexCheckDefault.form-check-input{
-      width: 200%;
-      padding: 50%;
-    }
-
-
     .botoes-inicio{
         display: flex;
         justify-content: center; /* Centraliza horizontalmente */
         align-items: center; 
       }
 
-
-      .btn-padrao-inactive,
-      .btn-padrao-edit {
-          width: 45%;
-          padding: 3%;
-          display: block;
-          margin-right: 1%;/* Isso centraliza horizontalmente os botões */
-      }
-
       .btn-padrao-edit {
 background-color: hsl(0, 79%, 34%);
     
       }
+  
+ .form-check-input:checked {
+  background-color: hsl(0, 79%, 34%); /* Cor de fundo vermelho quando checado */
+}
+
+  h1{
+    margin-top: 15%;
+    margin-bottom: 10%;
+    text-align: center;
+  }
+  
   

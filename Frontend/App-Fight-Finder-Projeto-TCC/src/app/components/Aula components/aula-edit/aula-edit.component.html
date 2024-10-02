@@ -3,20 +3,15 @@
 <div class="form">
     <h2 class="botoes">Editar aula</h2>
 
-
-    <div class="botoes-inicio">
-      <button class="btn-padrao-edit"> Excluir aula</button>
-      </div>
-  
     <div class="data">
         <label for="data">Data</label><br>
-        <input type="text" id="data" placeholder="25/08/24" readonly>
+        <input type="data" id="data" nome="data" [(ngModel)]="aula.data">
     </div>
 
 
     <div>
         <label for="nivel">Horário</label>
-        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="horario"required>
+        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="hora" name="hora" [(ngModel)]="aula.hora">
             <option value="05:00">05:00</option>
             <option value="05:30">05:30</option>
             <option value="06:00">06:00</option>
@@ -56,88 +51,72 @@
           </select>
     </div>
 
-    <div style="margin-top: 12%;">
-    <h3>Lutadores presentes</h3>
+    <div class="filtro">
+      <button class="btn-padrao" (click)="toggleListas()">Mostrar {{ isPresente ? 'presentes' : 'ausentes' }}</button>
+    </div>
+  
+    <h1>Lista de {{ isPresente ? 'presentes' : 'ausentes' }}</h1>
+    <h3>{{ isPresente ? 'Lutadores presentes' : 'Lutadores ausentes' }}</h3>
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Nome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let lutadorAula of lutadoresAula">
+          <td>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="presente" name="presente" [(ngModel)]="lutadorAula.presente"
+            (change)="onLutadorChange(lutadorAula, $event)" >
+          </div>
+        </td>
+          <td><img [src]="lutadorAula.lutador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador"
+              style="width: 60px; height: 60px;">
+          </td>
+          <td>{{lutadorAula.lutador.nome}}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="container">
+  
+      <h3>{{ isPresente ? 'Treinadores presentes' : 'Treinadores ausentes' }}</h3>
+  
+  
+      <table class="table" style="margin-top: 7%;">
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Nome</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let treinadorAula of treinadoresAula">
+            <td>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="presente" name="presente" [(ngModel)]="treinadorAula.presente"
+                (change)="onTreinadorChange(treinadorAula, $event)" >
+              </div>
+            <td><img [src]="treinadorAula.treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador"
+                style="width: 60px; height: 60px;">
+            </td>
+            <td> {{treinadorAula.treinador.nome}}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+    </div>
+  </div>
     
-    <div class="dropdown" style="margin-top: 8%; margin-bottom: 10%;">
-        <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Adicionar outros lutadores
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" (click)="exibirTabelaLutadoresDaTurma = !exibirTabelaLutadoresDaTurma">Lutadores da turma</a></li>
-          <li><a class="dropdown-item" (click)="exibirTabelaLutadoresAtivos = !exibirTabelaLutadoresAtivos">Todos lutadores ativos</a></li>
-        </ul>
-      </div>
-</div>
-
-<table *ngIf="exibirTabelaLutadoresDaTurma || exibirTabelaLutadoresAtivos" class="table" class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Foto</th>
-      <th>Nome</th>
-      <th>Idade</th>
-      <th>Faixa</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr  *ngFor="let lutador of lutadores">
-      <td> 
-        <div class="form-check" style="display: flex; align-items: center;">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      </div>
-    </td>
-    <td style="width: 60px; height: 60px;"> <img [src]="lutador.foto || '../../assets/img/perfil.png'" alt="Foto do treinador"> ></td>
-    <td>{{lutador.nome}}</td>
-      <td style="vertical-align: middle">{{lutador.idade}}</td>
-      <td style="vertical-align: middle">{{lutador.isColorida}}</td>
-      <td style="vertical-align: middle">
-        <button [routerLink]="['/lutador', lutador.id]">Editar lutador</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
-<div class="treinadores" style="margin-top: 10%;">
-  <h3>Treinadores presentes</h3>
-</div>
-
-<button class="btn-padrao-confirm" (click)="exibirTabelaTreinadores = !exibirTabelaTreinadores">Mostrar Tabela</button>
-
-<button> Adicionar treinadores</button>
-
-<table *ngIf="exibirTabelaTreinadores" class="table-treinadores" style="margin-top: 7%;">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Foto</th>
-      <th>Nome</th>
-      <th>Ações</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let treinador of treinadores">
-      <td> 
-        <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      </div>
-    </td>
-      <td> <img [src]="treinador.foto || '../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"> ></td>
-      <td>{{treinador.nome}}</td>
-      <td style="vertical-align: middle">
-        <button [routerLink]="['/treinador', treinador.id]">Editar lutador</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+    
 
 <div class="botoes">
         <button class="btn-padrao-confirm" (click)="salvar()">Salvar</button>
         <button class="btn-padrao-cancel" [routerLink]="['/aula']">Cancelar</button>
     </div>
 
-  </div>
     <app-menunav></app-menunav>
 
