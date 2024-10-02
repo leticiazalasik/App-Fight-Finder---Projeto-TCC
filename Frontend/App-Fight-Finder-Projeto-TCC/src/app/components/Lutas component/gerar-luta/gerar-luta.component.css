@@ -1,9 +1,20 @@
 @import '../../styleSass.css';
 
+.form-switch {
+    padding-left: 2.5em;
+}
+.form-check-input[type=checkbox] {
+    padding: 30%;
+    width: 80%;
+}
 
+input, button, table, label,p, h5, h2, h4, h3{
+    margin-left: 5%;
+    margin-right: 5%;
+}
 .tela-toda{
-    margin-right: 2%;
-    margin-left: 3%;
+    padding-right: 4%;
+    padding-left: 6%;
 }
 
 h2{
@@ -42,41 +53,52 @@ input{
 
 /* Aumenta o tamanho do botão de alternância */
 .form-check-input input{
-    width: 70%;   /* Largura do botão */
-    padding: 10%;  /* Altura do botão */
+    width: 80%;   /* Largura do botão */
+    padding: 25%;  /* Altura do botão */
 }
 
-/* Estiliza o toggle switch */
-.form-check-input {
-    width: 60px; /* Largura do toggle switch */
-    height: 34px; /* Altura do toggle switch */
-    background-color: #ccc; /* Cor de fundo cinza inicial */
-    border-radius: 34px; /* Arredondamento total para o fundo do toggle switch */
-    position: relative; /* Necessário para posicionar a bolinha */
-    appearance: none; /* Remove a aparência padrão do input */
-    cursor: pointer; /* Adiciona um cursor de ponteiro */
-    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+input[_ngcontent-ng-c355784425] {
+    width: 90%;
+    padding: 35%;
+    border: hsl(0, 79%, 34%);
 }
 
-/* Estiliza a bolinha dentro do toggle switch */
-.form-check-input::before {
-    content: '';
-    position: absolute;
-    top: 4px; /* Ajusta a posição vertical da bolinha */
-    left: 4px; /* Ajusta a posição horizontal da bolinha */
-    width: 26px; /* Largura da bolinha */
-    height: 26px; /* Altura da bolinha */
-    background-color: #fff; /* Cor branca para a bolinha */
-    border-radius: 50%; /* Faz a bolinha ser circular */
-    transition: transform 0.3s; /* Transição suave para o movimento da bolinha */
+.form-check-input[_ngcontent-ng-c355784425]:checked {
+    background-color: #001a71;
 }
-
 /* Muda o fundo e a posição da bolinha quando o toggle switch está ativado */
 .form-check-input:checked {
-    background-color: hsl(0, 79%, 34%); /* Cor de fundo vermelho quando checado */
+    background-color: #001a71; /* Cor de fundo vermelho quando checado */
+
 }
 
 .form-check-input:checked::before {
     transform: translateX(26px); /* Move a bolinha para a direita quando ativado */
+   
+}
+
+.btn-padrao-confirm, .btn-padrao-cancel{
+   width: 40%;
+   padding: 3%;  
+}
+
+.botoes button {
+    display: block;
+    margin-bottom: 10px; /* Opcional: adicione margem inferior para espaçamento entre os botões */
+}
+
+.botoes {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.genero{
+    margin-bottom: 10%;
+}
+
+.nivel{
+    margin-bottom: 10%;
 }
 

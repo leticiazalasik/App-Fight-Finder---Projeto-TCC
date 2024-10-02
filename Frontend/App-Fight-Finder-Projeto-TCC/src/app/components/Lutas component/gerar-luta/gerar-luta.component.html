@@ -1,25 +1,69 @@
-<div class="tela-toda">
 
-<h2>Gerar lutas</h2>
+  <h2>Gerar lutas</h2>
 
-<div>
+  <div>
     <h4>Treinadores</h4>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown" aria-expanded="false" >
-            Selecionar
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" (click)="filtroSelecionado = 'treinadoresPresentes'; filtrarTreinadores()" >Treinadores Presentes</a></li>
-            <li><a class="dropdown-item" (click)="filtroSelecionado = 'treinadoresAtivos'; filtrarTreinadores()">Treinadores ativos</a></li>
-          </ul>
-        </div>
-</div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown"
+        aria-expanded="false">
+        Selecionar
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item"
+            (click)="filtroSelecionado = 'treinadoresPresentes'; filtrarTreinadores()">Treinadores Presentes</a></li>
+        <li><a class="dropdown-item" (click)="filtroSelecionado = 'treinadoresAtivos'; filtrarTreinadores()">Treinadores
+            ativos</a></li>
+      </ul>
+    </div>
+  </div>
 
-<div class="treinadores" style="margin-top: 10%;">
-  <h3>Treinadores</h3>
-</div>
+  <div class="treinadores" style="margin-top: 10%;">
+    <h3>Treinadores</h3>
+  </div>
 
-<table class="table" style="margin-top: 7%;">
+  <table class="table" style="margin-top: 7%;">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Foto</th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let treinadorAula of listaTreinadorAula">
+        <td>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="presente" name="presente"
+              [(ngModel)]="treinadorAula.presente" (change)="onTreinadorChange(treinadorAula, $event)">
+          </div>
+        </td>
+        <td><img [src]="treinadorAula.treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador"
+            style="width: 60px; height: 60px;"></td>
+        <td> {{treinadorAula.treinador.nome}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div class="dropdown" style="margin-top: 8%; margin-bottom: 10%;">
+    <button class="btn btn-secondary dropdown-toggle class2" type="button" data-bs-toggle="dropdown"
+      aria-expanded="false">
+      Selecionar 
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" (click)="filtroSelecionado = 'alunosDaTurma'; filtrarLutadores()">Lutadores
+          presentes</a></li>
+      <li><a class="dropdown-item" (click)="filtroSelecionado = 'todosLutadoresAtivos'; filtrarLutadores()">Lutadores
+          ativos</a></li>
+
+    </ul>
+  </div>
+
+  <div class="treinadores" style="margin-top: 10%;">
+    <h3>Lutadores</h3>
+  </div>
+
+<table class="table">
   <thead>
     <tr>
       <th></th>
@@ -28,134 +72,53 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let treinadorAula of listaTreinadorAula">
+    <tr *ngFor="let lutadorAula of listaLutadorAula">
       <td>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="presente" name="presente" [(ngModel)]="treinadorAula.presente"
-          (change)="onTreinadorChange(treinadorAula, $event)" >
+          <input class="form-check-input" type="checkbox" id="presente" name="presente"
+            [(ngModel)]="lutadorAula.presente" (change)="onLutadorChange(lutadorAula, $event)">
         </div>
       </td>
-      <td><img [src]="treinadorAula.treinador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"></td>
-      <td> {{treinadorAula.treinador.nome}}</td>
-          </tr>
+      <td><img [src]="lutadorAula.lutador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador"
+          style="width: 60px; height: 60px;"></td>
+      <td>{{lutadorAula.lutador.nome}}</td>
+    </tr>
   </tbody>
 </table>
 
-<div class="form-group">
-    <label for="total-lutas" >Total de lutas</label>
-    <input type="number" id="totalLutas" name="totalLutas" [(ngModel)]="lutaEditada.totalLutas"required>
+<h5 style="margin-top: 8%; margin-bottom: 8%;">Selecione os filtros para essa luta.</h5>
+<p>Marque/preencha apenas o que voce quer que seja um filtro para separar as lutas. </p>
+
+<div class="form-check" style="margin-bottom: 10%; margin-left: 5%;">
+  <input class="form-check-input" style="padding: 3%; width: 5%; margin-bottom: 10%;" type="checkbox">
+  <p>Filtro de gênero</p>
+</div>
+
+<div class="form-check" style="margin-bottom: 10%; margin-left: 0%;">
+  <input class="form-check-input" style="padding: 3%; width: 5%; margin-bottom: 10%;" type="checkbox">
+  <p>Filtro nível/faixa</p>
 </div>
 
 <div class="form-group">
-    <label for="nome">Número de lutas simultaneas</label>
-    <input type="number"required id="rodada" name="rodada" [(ngModel)]="lutaEditada.rodada">
+  <label for="nome">Se quiser utilizar o filtro IDADE preencha o intervalo máximo de idade</label>
+  <input type="number" [(ngModel)]="varIdade" id="idade" name="idade">
 </div>
 
 
-<div class="dropdown" style="margin-top: 8%; margin-bottom: 10%;">
-  <button class="btn btn-secondary dropdown-toggle class1" type="button" data-bs-toggle="dropdown"
-    aria-expanded="false">
-    Filtros da lista
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" (click)="filtroSelecionado = 'alunosDaTurma'; filtrarLutadores()">Lutadores presentes</a></li>
-    <li><a class="dropdown-item" (click)="filtroSelecionado = 'todosLutadoresAtivos'; filtrarLutadores()">Lutadores ativos</a></li>
-
-  </ul>
-</div>
-</div>
-
-<table class="table">
-<thead>
-  <tr>
-    <th></th>
-    <th>Foto</th>
-    <th>Nome</th>
-  </tr>
-</thead>
-<tbody>
-  <tr *ngFor="let lutadorAula of listaLutadorAula">
-    <td>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="presente" name="presente" [(ngModel)]="lutadorAula.presente"
-        (change)="onLutadorChange(lutadorAula, $event)">
-      </div>
-    </td>
-    <td><img [src]="lutadorAula.lutador.foto || '../../../assets/img/perfil.png'" alt="Foto do lutador" style="width: 60px; height: 60px;"></td>
-    <td>{{lutadorAula.lutador.nome}}</td>
-  </tr>
-</tbody>
-</table>
-
-<p style="margin-top: 5%; margin-bottom: 1%;">Selecione os filtros para essa luta.</p>
-<p>Marque apenas o que voce quer que seja um filtro para separar as lutas.  </p>
-
-<div class="genero">
-<div class="container mt-5">
-    <div class="d-flex align-items-center">
-        <label class="form-check-label" for="toggleSwitch">Gênero</label>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="isGenero" name="isGenero" [(ngModel)]="isGenero">
-        </div>
-    </div>
-</div>
-</div>
-
-<div class="idade">
-    <div class="container mt-5">
-        <div class="d-flex align-items-center">
-            <label class="form-check-label" for="toggleSwitch">Idade</label>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch">
-            </div>
-        </div>
-<div class="form-group">
-    <label for="nome">Intervalo máximo de idade</label>
-    <input type="number" [(ngModel)]="idade" id="idade" name="idade">
-</div>
-</div>
-
-<div class="nivel">
-<div class="container mt-5">
-    <div class="d-flex align-items-center">
-        <label class="form-check-label" for="toggleSwitch">Nível</label>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="faixa" name="faixa" [(ngModel)]="faixa">
-        </div>
-    </div>
-</div>
-
-<div class="peso">
-    <div class="container mt-5">
-        <div class="d-flex align-items-center">
-            <label class="form-check-label" for="toggleSwitch">Peso</label>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="nome">Número de intervalo máximo de Peso (kilos)</label>
-            <input type="number" id="nome" placeholder="ex.:10">
-        </div>
-        
-</div>
+  <div class="form-group" style="margin-bottom: 10%;">
+    <label for="nome"> Se quiser utilizar o filtro peso preencha o intervalo máximo de PESO (kilos)</label>
+    <input type="number" id="nome" placeholder="ex.:10" [(ngModel)]="varPeso">
+  </div>
 
 
-<div class="altura">
-    <div class="container mt-5">
-        <div class="d-flex align-items-center">
-            <label class="form-check-label" for="toggleSwitch">Altura</label>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="toggleSwitch">
-            </div>
-        </div>
+  <div class="form-group" style="margin-bottom: 10%;">
+    <label for="nome"> Se quiser utilizar o filtro ALTURA preencha o intervalo máximo de ALTURA (centímetros) </label>
+    <input type="number" placeholder="ex.:175" [(ngModel)]="varPeso">
+  </div>
 
-<div class="form-group" style="margin-bottom: 10%;">
-    <label for="nome">Número de intervalo máximo de altura (centímetros)</label>
-    <input type="number" placeholder="ex.:50">
-</div>
-</div>
+  <div class="botoes">
+    <button class="btn-padrao-confirm" [routerLink]="['/lutaResultado']">Salvar</button>
+    <button class="btn-padrao-cancel" [routerLink]="['/aula']">Cancelar</button>
+  </div>
 
-<app-menunav></app-menunav>
-</div>
+  <app-menunav></app-menunav>
