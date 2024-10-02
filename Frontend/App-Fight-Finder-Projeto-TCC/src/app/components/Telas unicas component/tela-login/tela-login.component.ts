@@ -10,41 +10,7 @@ export class TelaLoginComponent {
 
   @Input() escola: Escola | null = null;
 
-  escolaEditada!: Escola;
-
-  limparEscola(): void {
-    this.escolaEditada = {
-      id: 0,
-      nome: ' ',
-      email: ' ',
-      senha: ' ',
-      foto: ' ',
-      senhaTemporaria: false
-    }
-
-  }
-
-  ngOnInit():void{
-    this.limparEscola();
-  }
-
-  ngOnChanges(): void {
-    if (this.escola != null) {
-
-      this.escolaEditada = {
-        id: this.escola.id,
-        nome: this.escola.nome,
-        email: this.escola.email,
-        senha: this.escola.senha,
-        foto: this.escola.foto, 
-        senhaTemporaria: this.escola.senhaTemporaria
-      };
-
-      console.log(this.escola.foto);
-    } else {
-      this.limparEscola();
-    }
-  }
+ 
 
 
 }
