@@ -16,7 +16,7 @@
 
             <div>
                 <label for="nivel">Modalidade</label>
-                <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="modalidade"
+                <select aria-label="Large select example" id="modalidade"
                     [(ngModel)]="lutadorEditado.modalidade" name="modalidade" required>
                     <option value="Taekwondo">Taekwondo</option>
                     <option value="Karatê">Karatê</option>
@@ -29,7 +29,7 @@
             <div>
 
                 <label for="nivel">Faixa</label>
-                <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="isColorida"
+                <select aria-label="Large select example" id="isColorida"
                     [(ngModel)]="lutadorEditado.isColorida" name="isColorida" required>
                     <option value="true">Colorida</option>
                     <option value="false">Preta</option>
@@ -47,7 +47,7 @@
 
                 <div>
                     <label for="nivel">Turma</label>
-                    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="turma"
+                    <select aria-label="Large select example" id="turma"
                         name="turma" [(ngModel)]="lutadorEditado.turma" required>
                         <option value="05:00">05:00</option>
                         <option value="05:30">05:30</option>
@@ -88,22 +88,20 @@
                     </select>
                 </div>
 
-                <div style="margin-top:10%;">
-                    <p>Status:</p>
-                    <input type="checkbox" id="ativo" name="ativo" [(ngModel)]="lutadorEditado.ativo"
-                        class="hidden-radio">
-                    <span class="custom-radio"></span>
-                    Ativo
-                </div>
-
                 <div>
                     <label for="genero">Gênero</label>
-                    <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="genero"
+                    <select aria-label="Large select example" id="genero"
                         name="genero" [(ngModel)]="lutadorEditado.genero" required>
                         <option value="feminino">Feminino</option>
                         <option value="masculino">Masculino</option>
                     </select>
                 </div>
+
+                <div style="margin-top:10%;" class="form-check">
+                    <input class="form-check-input" type="checkbox" id="ativo" name="ativo" [(ngModel)]="lutadorEditado.ativo">
+                    <p style="margin-top: 1%;">Status</p>
+                </div>
+
 
 
                 <div class="form-group center-horizontal2">
@@ -120,7 +118,7 @@
 
                 <div class="botoes">
                     <button class="btn-padrao-confirm" (click)="salvarDados()">Salvar</button>
-                    <button class="btn-padrao-cancel" (click)="cancelar()">Cancelar</button>
+                    <button class="btn-padrao-cancel" [routerLink]="['/lutador']">Cancelar</button>
 
                 </div>
             </div>

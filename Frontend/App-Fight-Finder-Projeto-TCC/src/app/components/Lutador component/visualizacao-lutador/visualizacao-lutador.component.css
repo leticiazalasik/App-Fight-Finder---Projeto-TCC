@@ -1,5 +1,8 @@
 @import '../../styleSass.css';
 
+table{
+  margin-left: 5%;
+}
 .container-imagem{
     align-items: center;
     text-align: center;
@@ -29,6 +32,7 @@
 
   .table-presencasfaltas{
 width: 60%;
+margin-bottom: 10%;
   }
 
   td, th{

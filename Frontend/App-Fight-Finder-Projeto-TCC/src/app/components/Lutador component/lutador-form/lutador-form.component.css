@@ -1,6 +1,25 @@
-/* @import '../styleSass.css'; */
+ @import '../../styleSass.css'; 
 
-
+ .form-check-input[type=checkbox] {
+    padding: 3%;
+    margin-right: 3%;
+  }
+  .form-check[_ngcontent-ng-c3676437276] p[_ngcontent-ng-c3676437276] {
+    margin-left: 6%;
+  height: 0px;
+  }
+  
+  .form-check-input[type=checkbox]:checked {
+    background-color:  #001a71;
+    border-color: hsl(0, 79%, 34%);
+  }
+  
+  .form-check{ 
+    display: flex;
+      flex-direction: row;
+  
+  }
+  
  h3{
     text-align: center;
     margin-top: 10%;

@@ -3,11 +3,6 @@
   <form>
     <h3>Formulário do Aluno</h3>
 
-    <div class="botoes">
-      <button class="btn-padrao-inactive" (click)="inativarLutador(lutador.id)">{{ lutador.ativo ? 'Inativar' : 'Ativar' }}</button>
-      
-    </div>
-
     <div>
       <label for="nome">Nome</label>
       <input type="text" id="nome" name="nome" [(ngModel)]="lutador.nome" required>
@@ -93,13 +88,6 @@
       </select>
     </div>
 
-    <div style="margin-top:10%;">
-      <p>Status:</p>
-      <input type="checkbox" id="ativo" name="ativo" [(ngModel)]="lutador.ativo" class="hidden-radio">
-      <span class="custom-radio"></span>
-      Ativo
-    </div>
-
     <div>
       <label for="genero">Gênero</label>
       <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="genero" name="genero"
@@ -107,6 +95,11 @@
         <option value="feminino">Feminino</option>
         <option value="masculino">Masculino</option>
       </select>
+    </div>
+
+    <div style="margin-top:10%;" class="form-check">
+      <input  class="form-check-input" type="checkbox" id="ativo" name="ativo" [(ngModel)]="lutador.ativo">
+      <p style="margin-top: 2%;">Status</p>
     </div>
 
     <div class="form-group center-horizontal2">
@@ -120,7 +113,7 @@
     </div>
 
     <div class="lutas">
-      <h3 style="margin-top: 17%;">Comentários de lutas</h3>
+      <h3 style="margin-top: 10%;">Comentários de lutas</h3>
 
       <table class="table-comentarios">
         <thead>
@@ -135,19 +128,19 @@
           <tr>
             <td>07/08/24</td>
             <td>Vitória</td>
-            <td>Pode treinar mais a abertura de pernas.</td>
+            <td>Pode treinar mais a abertura lateral.</td>
             <td> <button class="btn-padrao-edit">Editar</button></td>
           </tr>
           <tr>
-            <td>07/08/24</td>
+            <td>26/09/24</td>
             <td>Empate</td>
             <td></td>
             <td> <button class="btn-padrao-edit">Editar</button></td>
           </tr>
           <tr>
-            <td>09/08/24</td>
-            <td>Derrota</td>
-            <td>Treinar defesa com braços</td>
+            <td>01/10/24</td>
+            <td>Vitória</td>
+            <td>Treinar defesa</td>
             <td> <button class="btn-padrao-edit">Editar</button></td>
           </tr>
         </tbody>
@@ -172,15 +165,7 @@
             <td>07/08/24</td>
           </tr>
           <tr>
-            <td>10/08/24</td> <!-- Data aleatória para teste -->
-            <td>30/07/24</td>
-          </tr>
-          <tr>
-            <td>20/08/24</td> <!-- Data aleatória para teste -->
-            <td></td>
-          </tr>
-          <tr>
-            <td>05/08/24</td> <!-- Data aleatória para teste -->
+            <td>01/10/24</td> <!-- Data aleatória para teste -->
             <td></td>
           </tr>
         </tbody>
