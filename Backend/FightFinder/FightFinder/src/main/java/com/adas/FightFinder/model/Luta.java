@@ -19,13 +19,7 @@ public class Luta {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
-    @Nonnull
-    private Integer rodada;
-
     private Boolean status;
-
-    private Integer totalLutas;
-
 
     @ManyToOne
     @JoinColumn(name = "treinador_id", referencedColumnName = "id")
