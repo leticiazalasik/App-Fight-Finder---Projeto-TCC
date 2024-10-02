@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Escola } from '../../interfaces/Escola';
+import { EscolaService } from '../../../servicos/escola.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-escola-edit',
@@ -7,21 +10,53 @@ import { Component } from '@angular/core';
 })
 export class EscolaEditComponent {
 
-  exibirFormularioEscola = false;
+  
+  escola: Escola = {
+    id: 0, 
+    nome: '',
+    email: '',
+    senha: '',
+    foto: '',
+    ativo: true,
+    senhaTemporaria: false, 
+  }; 
 
+  constructor(
+    private escolaService: EscolaService, 
+    private route: ActivatedRoute,
+    private router: Router
 
-  alternarExibicaoFormulario() {
-    this.exibirFormularioEscola = !this.exibirFormularioEscola;
+  ){}
+
+  ngOnInit(): void{
+    const id = Number(this.route.snapshot.paramMap.get('id')); 
+    if (id){
+      this.escolaService.findById(id).subscribe(data=> {
+        this.escola=data; 
+      });
+    }
   }
 
-excluirConta() {
-  const confirmacao = confirm("Tem certeza de que deseja excluir sua conta permanentemente?\n \n Você irá perder todos os seus dados registrados.");
-  if (confirmacao) {
-      // Lógica para excluir a conta
-      alert("Conta excluída com sucesso!");
- 
-  }
+  inativarEscola(escolaId: number) {
+    this.escolaService.findById(escolaId).subscribe((escola) => {
+      if (escola.ativo ==false) {
+        escola.ativo=true;
+      } else {
+        escola.ativo=false;
+      }
+
+      this.escolaService.update(escola).subscribe(() => {
+
+      });
+    });
 }
+
+salvar(): void {
+    this.escolaService.update(this.escola).subscribe(() => {
+      this.router.navigate(['/escola']); 
+    });
+  }
+ 
 
 
 }

@@ -9,77 +9,72 @@ import { Router } from '@angular/router';
   styleUrl: './escola-form.component.css'
 })
 export class EscolaFormComponent {
-
-  inserir: any;
-  exibirFormulario: string | undefined;
-
-
-  @Input() escola!: Escola;  
-  @Output() salvar: EventEmitter<any> = new EventEmitter<any>(); 
-@Output() editar: EventEmitter<any> = new EventEmitter<any>(); 
+  formularioValido: boolean=false; 
 
 constructor(
-  private escolaService: EscolaService, 
-  private router: Router
-){}
+    private escolaService: EscolaService,
+    private router: Router
+  ) { }
 
-escolaEditada!:Escola; 
+  escolaEditada!: Escola;
+  escola: Escola | null = null;
 
-limparEscola():void {
-this.escolaEditada={
-  id:0,
-  nome: ' ', 
-  email:' ', 
-  senha:' ', 
-  foto:' ', 
-  senhaTemporaria: false
-}
-this.escola={
-  id:0,
-  nome: ' ', 
-  email:' ', 
-  senha:' ', 
-  foto:' ', 
-  senhaTemporaria: false
-}
 
-}
-
-ngOnInit():void{ 
-this.limparEscola();
-}
-
-ngOnChanges(): void{
-  if (this.escola !=null ){
-  
-  this.escolaEditada={
-
-  id:this.escola.id, 
-  nome: this.escola.nome,
-  email: this.escola.email,
-  senha: this.escola.senha,
-  foto: this.escola.foto,
-  senhaTemporaria:this.escola.senhaTemporaria
-    }; 
-    console.log(this.escola.foto);
-  } else {
-    this.limparEscola(); 
+  limparEscola(): void {
+    this.escolaEditada = {
+      id: 0,
+      nome: '',
+      email: '',
+      senha: '',
+      senhaTemporaria: false,
+      ativo: true,
+      foto: ''
+    }
   }
+
+
+  ngOnChanges(): void {
+    if (this.escola != null) {
+
+      this.escolaEditada = {
+        id: this.escolaEditada.id,
+        nome: this.escolaEditada.nome,
+        email: this.escolaEditada.email,
+        senha: this.escolaEditada.senha,
+        senhaTemporaria: this.escolaEditada.senhaTemporaria,
+        ativo: this.escolaEditada.ativo,
+        foto: this.escolaEditada.foto
+      };
+    } else {
+      this.limparEscola();
+    }
   }
-       
 
-salvarDados(): void{
+  ngOnInit(): void {
+    this.limparEscola();
+  }
 
-this.escolaService.add(this.escola).subscribe(() => {
-  this.router.navigate(['/menuInicial']);
-});
-}
+  salvarDados(): void {
+    this.validarFormulario();
+    if (this.formularioValido == true) {
+      this.escolaService.add(this.escolaEditada).subscribe(() => {
+        this.router.navigate(['/menuInicial']);
+      });
+    }
+  }
 
+    cancelar(): void {
+      this.limparEscola();
+    }
 
-cancelar(): void {
-  this.limparEscola();
-}
-
-
-
+    validarFormulario(){
+      if (this.escolaEditada.senha == '') {
+        this.formularioValido = false;
+      } else if (this.escolaEditada.senha == '') {
+        this.formularioValido = false;
+    } else if (this.escolaEditada.email == '') {
+      this.formularioValido = false;
+  }
 } 
+
+}

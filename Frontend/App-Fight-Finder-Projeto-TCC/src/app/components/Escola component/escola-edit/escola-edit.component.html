@@ -5,23 +5,22 @@
 
 
     <div class="botoes">
-        <button class="btn-padrao-inactive">Inativar Conta</button>
-        <button class="btn-padrao-cancel"> Excluir Conta</button>
+        <button class="btn-padrao-inactive" (click)="inativarEscola(escola.id)">{{ escola.ativo ? 'Inativar' : 'Ativar' }}</button>
         </div>
 
     <div class="cent">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" required >
+        <input type="text" id="nome" name="nome" [(ngModel)]="escola.nome" required >
     </div>
 
 <div>
     <label for="idade">Email</label>
-    <input type="text" id="email"required>
+    <input type="text" id="email" name="email" [(ngModel)]="escola.email" required>
 </div>
 
 <div>
     <label for="nome">Senha</label>
-    <input type="text" id="senha" required >
+    <input type="text" id="senha" name="senha" [(ngModel)]="escola.senha" required >
 </div>
 </div>
 
@@ -36,8 +35,8 @@
   <span id="file-name">Nenhum arquivo selecionado</span>
   </div>
   <div class="botoes2">
-    <button class="btn-padrao-confirm">Salvar</button>
-    <button class="btn-padrao-cancel">Cancelar</button>
+    <button class="btn-padrao-confirm" (click)="salvar()"> Salvar</button>
+    <button class="btn-padrao-cancel" [routerLink]="['/escola']">Cancelar</button>
 
 </div>
 

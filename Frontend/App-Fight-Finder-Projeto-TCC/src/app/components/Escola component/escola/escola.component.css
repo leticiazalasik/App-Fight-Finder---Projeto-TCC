@@ -88,4 +88,14 @@ h5{
             margin-right: 4%;
         }
 
+        .btn-padrao-edit{
+          width: 30%;
+          padding: 2%;
+        }
     
+        .botoes{
+          display: flex; 
+          flex-direction: column; 
+          align-items: center;
+          margin-bottom: 5%;
+        }
