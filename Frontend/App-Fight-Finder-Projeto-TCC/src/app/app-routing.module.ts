@@ -44,18 +44,20 @@ const routes: Routes = [
   {path:"aulaForm", component: AulaFormComponent},
   {path:"aulaEditar/:id", component: AulaEditComponent},
   {path:"gerarLuta", component: GerarLutaComponent},
-  {path:"resultadoLista", component: ResultadoLutasComponent},
+  {path:"resultadoLutas", component: ResultadoLutasComponent},
   {path:"ajudaComponet", component: AjudaComponent},
   {path:"esqueciSenha", component: EsqueciSenhaComponent},
   {path:"menuCriarConta", component: MenuCriarContaComponent},
   {path:"escolaForm", component: EscolaFormComponent},
-  {path:"escolaEditar/:id", component: EscolaEditComponent},
+  {path:"escola-editar/:id", component: EscolaEditComponent},
   {path:"escola", component: EscolaComponent},
   {path:"adicionarComentario", component: AdicionarComentarioComponent},
   {path:"editarComentario", component: EditarComentarioComponent},
   {path:"boasVindas", component: BoasVindasComponent},
   {path:"ausentesAula", component: AusentesAulasComponent},
   {path:"presentesAula/:id", component: PresentesAulaComponent},
+  {path:"lutaResultado", component: ResultadoLutasComponent},
+
 
 
 
