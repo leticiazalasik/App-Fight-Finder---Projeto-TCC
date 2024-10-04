@@ -86,7 +86,7 @@ salvarDados(): void{
   this.validarFormulario();
   if (this.formularioValido == true) {
     this.lutadorService.add(this.lutadorEditado).subscribe(() => {
-      this.router.navigate(['/menuInicial']);
+      this.router.navigate(['/lutador']);
     });
   } else {
     alert('Preencha os campos obrigatórios!');

@@ -12,10 +12,7 @@ h2{
     align-items: center; 
 }
 
-.btn-padrao-cancel, .btn-padrao-inactive{
-width: 40%;
-padding: 2%;
-}
+
 
 .div-total{
     margin-left: 2%;

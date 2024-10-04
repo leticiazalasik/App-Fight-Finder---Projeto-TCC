@@ -94,12 +94,21 @@ width: 60%;
   .btn-padrao-confirm,
   .btn-padrao-cancel {
       width: 30%;
-      padding: 2%;
+      padding: 3%;
       display: block;
       margin: 0 auto; /* Isso centraliza horizontalmente os botões */
   }
 
   .btn-padrao-confirm{
-    margin-bottom: 2%;
+    margin-bottom: 3%;
   }
   
+  .btn-padrao-cancel{
+    margin-bottom: 5%;
+  }
+  .botoes{ 
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;
+    display: inline;
+  }
