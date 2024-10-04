@@ -3,14 +3,9 @@
 
     <div class="form">
 
-
-    <div class="botoes">
-        <button class="btn-padrao-inactive" (click)="inativarEscola(escola.id)">{{ escola.ativo ? 'Inativar' : 'Ativar' }}</button>
-        </div>
-
     <div class="cent">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" [(ngModel)]="escola.nome" required >
+        <input type="text" id="nome" name="nome" [(ngModel)]="escola.nome" required > 
     </div>
 
 <div>
@@ -20,10 +15,14 @@
 
 <div>
     <label for="nome">Senha</label>
-    <input type="text" id="senha" name="senha" [(ngModel)]="escola.senha" required >
+    <input type="password" id="senha" name="senha" [(ngModel)]="escola.senha" required >
 </div>
 </div>
 
+ <div style="margin-top:10%; margin-left: 5%;" class="form-check">
+        <input class="form-check-input" type="checkbox" id="ativo" name="ativo" [(ngModel)]="escola.ativo">
+        <p style="margin-top: 1%;">Status</p>
+    </div>
 
         <div class="form-group center-horizontal2" >
             <label for="file">Foto de perfil (opcional):</label>
@@ -40,5 +39,5 @@
 
 </div>
 
-<app-menunav></app-menunav>
 </div>
+<app-menunav style="width: 100%;"></app-menunav>

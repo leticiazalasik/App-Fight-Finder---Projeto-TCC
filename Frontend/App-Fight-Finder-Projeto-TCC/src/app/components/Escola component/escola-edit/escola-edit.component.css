@@ -46,8 +46,13 @@ input{
     justify-content: center; /* Centraliza horizontalmente */
 }
 
-.botoes .btn-padrao-inactive, .btn-padrao-cancel{
+.btn-padrao-cancel{
 width: 40%;
+padding: 4%;
+}
+
+.btn-padrao-confirm{
+  width: 40%;
 padding: 4%;
 }
 
@@ -55,3 +60,38 @@ padding: 4%;
   margin-left: 3%;
   margin-right: 3%;
 }
+
+.form[_ngcontent-ng-c2505286842] {
+  margin-left: 3%;
+  margin-right: 3%;
+  }
+  .form[_ngcontent-ng-c3184188350] input[type=text][_ngcontent-ng-c3184188350], select[_ngcontent-ng-c3184188350] {
+    width: 95%;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     }
+
+    .form-check-input[type=checkbox] {
+      padding: 4%;
+      margin-right: 3%;
+      width: 10%;
+    }
+    .form-check[_ngcontent-ng-c3676437276] p[_ngcontent-ng-c3676437276] {
+      margin-left: 6%;
+    height: 0px;
+    }
+    
+    .form-check-input[type=checkbox]:checked {
+      background-color:  #001a71;
+      border-color: hsl(0, 79%, 34%);
+    }
+    
+    .form-check{ 
+      display: flex;
+        flex-direction: row;
+    
+    }
+
+    .box[_ngcontent-ng-c2025035238] .row[_ngcontent-ng-c2025035238] .col-sm[_ngcontent-ng-c2025035238] button[_ngcontent-ng-c2025035238] {
+      width: 100%;
+  }
