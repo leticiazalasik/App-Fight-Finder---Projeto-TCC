@@ -89,31 +89,31 @@
 <h5 style="margin-top: 8%; margin-bottom: 8%;">Selecione os filtros para essa luta.</h5>
 <p>Marque/preencha apenas o que voce quer que seja um filtro para separar as lutas. </p>
 
-<div class="form-check" style="margin-bottom: 10%; margin-left: 5%;">
-  <input class="form-check-input" style="padding: 3%; width: 5%; margin-bottom: 10%;" type="checkbox">
+<div class="form-check" style="margin-bottom: 10%; margin-left: 10%; margin-top: 5%;">
+  <input class="form-check-input" style="padding: 3%; width: 5%; margin-bottom: 5%;" type="checkbox" id="genero">
   <p>Filtro de gênero</p>
 </div>
 
-<div class="form-check" style="margin-bottom: 10%; margin-left: 0%;">
-  <input class="form-check-input" style="padding: 3%; width: 5%; margin-bottom: 10%;" type="checkbox">
+<div class="form-check" style="margin-bottom: 10%; margin-left: 10%;">
+  <input class="form-check-input" style="padding: 3%; width: 5%; margin-bottom: 0%;" type="checkbox"isColorida id="">
   <p>Filtro nível/faixa</p>
 </div>
 
 <div class="form-group">
-  <label for="nome">Se quiser utilizar o filtro IDADE preencha o intervalo máximo de idade</label>
+  <label for="idade">Se quiser utilizar o filtro IDADE preencha o intervalo máximo de idade</label>
   <input type="number" [(ngModel)]="varIdade" id="idade" name="idade">
 </div>
 
 
   <div class="form-group" style="margin-bottom: 10%;">
-    <label for="nome"> Se quiser utilizar o filtro peso preencha o intervalo máximo de PESO (kilos)</label>
-    <input type="number" id="nome" placeholder="ex.:10" [(ngModel)]="varPeso">
+    <label for="peso"> Se quiser utilizar o filtro peso preencha o intervalo máximo de PESO (kilos)</label>
+    <input type="number" id="peso" placeholder="ex.:10" [(ngModel)]="varPeso">
   </div>
 
 
   <div class="form-group" style="margin-bottom: 10%;">
-    <label for="nome"> Se quiser utilizar o filtro ALTURA preencha o intervalo máximo de ALTURA (centímetros) </label>
-    <input type="number" placeholder="ex.:175" [(ngModel)]="varPeso">
+    <label for="altura"> Se quiser utilizar o filtro ALTURA preencha o intervalo máximo de ALTURA (centímetros) </label>
+    <input type="number" placeholder="ex.:175" [(ngModel)]="varAltura" id="altura">
   </div>
 
   <div class="botoes">

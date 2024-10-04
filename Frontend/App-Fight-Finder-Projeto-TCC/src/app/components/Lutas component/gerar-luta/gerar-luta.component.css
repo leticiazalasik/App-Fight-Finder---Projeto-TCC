@@ -102,3 +102,9 @@ input[_ngcontent-ng-c355784425] {
     margin-bottom: 10%;
 }
 
+input:-internal-autofill-selected {
+    appearance: menulist-button;
+    background-image: none !important;
+    background-color: light-dark(rgb(255, 255, 255), rgba(70, 90, 126, 0.4)) !important;
+    color: fieldtext !important;
+}
