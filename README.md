@@ -13,4 +13,4 @@ Esse projeto foi criado utilizando as tecnologias:
 #### :small_blue_diamond: Projeto - Figma (protótipo), Draw.io(diagrama de classe e de caso de uso). 
 #### :small_blue_diamond: Kanban - Trello 
 
-🚧 Em andamento
+🚧 Em andamento...
